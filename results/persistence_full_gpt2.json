@@ -1,0 +1,645 @@
+{
+  "meta": {
+    "model": "gpt2",
+    "dataset": "full",
+    "pooling": "last"
+  },
+  "targets": {
+    "cheeks.color": {
+      "layer": 0,
+      "classes": [
+        "bare",
+        "brown",
+        "nude",
+        "pink",
+        "red"
+      ],
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 392,
+          "accuracy": 0.1760204081632653,
+          "majority_here": 0.04846938775510204
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 563,
+          "accuracy": 0.43161634103019536,
+          "majority_here": 0.36767317939609234
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 469,
+          "accuracy": 0.42217484008528783,
+          "majority_here": 0.3773987206823028
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 752,
+          "accuracy": 0.4148936170212766,
+          "majority_here": 0.36569148936170215
+        },
+        {
+          "distance_min": 5,
+          "distance_max": 7,
+          "n": 689,
+          "accuracy": 0.33236574746008707,
+          "majority_here": 0.33962264150943394
+        },
+        {
+          "distance_min": 8,
+          "distance_max": null,
+          "n": 369,
+          "accuracy": 0.23035230352303523,
+          "majority_here": 0.2791327913279133
+        }
+      ]
+    },
+    "cheeks.coverage": {
+      "layer": 0,
+      "classes": [
+        "bare",
+        "full",
+        "light"
+      ],
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 419,
+          "accuracy": 0.3126491646778043,
+          "majority_here": 0.5035799522673031
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 582,
+          "accuracy": 0.570446735395189,
+          "majority_here": 0.33676975945017185
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 484,
+          "accuracy": 0.6012396694214877,
+          "majority_here": 0.3181818181818182
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 741,
+          "accuracy": 0.5236167341430499,
+          "majority_here": 0.31713900134952766
+        },
+        {
+          "distance_min": 5,
+          "distance_max": 7,
+          "n": 675,
+          "accuracy": 0.4088888888888889,
+          "majority_here": 0.33185185185185184
+        },
+        {
+          "distance_min": 8,
+          "distance_max": null,
+          "n": 333,
+          "accuracy": 0.35435435435435436,
+          "majority_here": 0.33633633633633636
+        }
+      ]
+    },
+    "cheeks.finish": {
+      "layer": 0,
+      "classes": [
+        "dewy",
+        "matte",
+        "none",
+        "satin"
+      ],
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 479,
+          "accuracy": 0.20876826722338204,
+          "majority_here": 0.03966597077244259
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 626,
+          "accuracy": 0.43929712460063897,
+          "majority_here": 0.3306709265175719
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 501,
+          "accuracy": 0.46107784431137727,
+          "majority_here": 0.3532934131736527
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 741,
+          "accuracy": 0.48313090418353577,
+          "majority_here": 0.37112010796221323
+        },
+        {
+          "distance_min": 5,
+          "distance_max": 7,
+          "n": 607,
+          "accuracy": 0.39209225700164746,
+          "majority_here": 0.385502471169687
+        },
+        {
+          "distance_min": 8,
+          "distance_max": null,
+          "n": 280,
+          "accuracy": 0.2571428571428571,
+          "majority_here": 0.3678571428571429
+        }
+      ]
+    },
+    "eyes.color": {
+      "layer": 0,
+      "classes": [
+        "bare",
+        "brown",
+        "nude",
+        "pink",
+        "red"
+      ],
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 411,
+          "accuracy": 0.15815085158150852,
+          "majority_here": 0.043795620437956206
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 583,
+          "accuracy": 0.4219554030874786,
+          "majority_here": 0.37221269296740994
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 493,
+          "accuracy": 0.4665314401622718,
+          "majority_here": 0.3691683569979716
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 753,
+          "accuracy": 0.44754316069057104,
+          "majority_here": 0.3665338645418327
+        },
+        {
+          "distance_min": 5,
+          "distance_max": 7,
+          "n": 649,
+          "accuracy": 0.3189522342064715,
+          "majority_here": 0.349768875192604
+        },
+        {
+          "distance_min": 8,
+          "distance_max": null,
+          "n": 345,
+          "accuracy": 0.19710144927536233,
+          "majority_here": 0.3072463768115942
+        }
+      ]
+    },
+    "eyes.coverage": {
+      "layer": 12,
+      "classes": [
+        "bare",
+        "full",
+        "light"
+      ],
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 423,
+          "accuracy": 0.3475177304964539,
+          "majority_here": 0.5035460992907801
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 593,
+          "accuracy": 0.5362563237774031,
+          "majority_here": 0.3372681281618887
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 498,
+          "accuracy": 0.5040160642570282,
+          "majority_here": 0.3393574297188755
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 755,
+          "accuracy": 0.5602649006622517,
+          "majority_here": 0.3536423841059603
+        },
+        {
+          "distance_min": 5,
+          "distance_max": 7,
+          "n": 632,
+          "accuracy": 0.4920886075949367,
+          "majority_here": 0.3813291139240506
+        },
+        {
+          "distance_min": 8,
+          "distance_max": null,
+          "n": 333,
+          "accuracy": 0.48348348348348347,
+          "majority_here": 0.43243243243243246
+        }
+      ]
+    },
+    "eyes.finish": {
+      "layer": 2,
+      "classes": [
+        "dewy",
+        "matte",
+        "none",
+        "satin"
+      ],
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 499,
+          "accuracy": 0.44889779559118237,
+          "majority_here": 0.036072144288577156
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 627,
+          "accuracy": 0.45614035087719296,
+          "majority_here": 0.34609250398724084
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 507,
+          "accuracy": 0.43984220907297833,
+          "majority_here": 0.358974358974359
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 735,
+          "accuracy": 0.4231292517006803,
+          "majority_here": 0.37551020408163266
+        },
+        {
+          "distance_min": 5,
+          "distance_max": 7,
+          "n": 585,
+          "accuracy": 0.37777777777777777,
+          "majority_here": 0.38803418803418804
+        },
+        {
+          "distance_min": 8,
+          "distance_max": null,
+          "n": 281,
+          "accuracy": 0.30604982206405695,
+          "majority_here": 0.37722419928825623
+        }
+      ]
+    },
+    "lips.color": {
+      "layer": 0,
+      "classes": [
+        "bare",
+        "brown",
+        "nude",
+        "pink",
+        "red"
+      ],
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 405,
+          "accuracy": 0.1654320987654321,
+          "majority_here": 0.044444444444444446
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 578,
+          "accuracy": 0.40484429065743943,
+          "majority_here": 0.3477508650519031
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 481,
+          "accuracy": 0.4386694386694387,
+          "majority_here": 0.3596673596673597
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 739,
+          "accuracy": 0.4140730717185386,
+          "majority_here": 0.36400541271989173
+        },
+        {
+          "distance_min": 5,
+          "distance_max": 7,
+          "n": 677,
+          "accuracy": 0.3308714918759232,
+          "majority_here": 0.3397341211225997
+        },
+        {
+          "distance_min": 8,
+          "distance_max": null,
+          "n": 354,
+          "accuracy": 0.20903954802259886,
+          "majority_here": 0.2768361581920904
+        }
+      ]
+    },
+    "lips.coverage": {
+      "layer": 0,
+      "classes": [
+        "bare",
+        "full",
+        "light"
+      ],
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 398,
+          "accuracy": 0.2889447236180904,
+          "majority_here": 0.04522613065326633
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 573,
+          "accuracy": 0.5026178010471204,
+          "majority_here": 0.3507853403141361
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 479,
+          "accuracy": 0.5490605427974948,
+          "majority_here": 0.36116910229645094
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 727,
+          "accuracy": 0.5295735900962861,
+          "majority_here": 0.3700137551581843
+        },
+        {
+          "distance_min": 5,
+          "distance_max": 7,
+          "n": 679,
+          "accuracy": 0.41973490427098675,
+          "majority_here": 0.3387334315169367
+        },
+        {
+          "distance_min": 8,
+          "distance_max": null,
+          "n": 378,
+          "accuracy": 0.3941798941798942,
+          "majority_here": 0.25925925925925924
+        }
+      ]
+    },
+    "lips.finish": {
+      "layer": 0,
+      "classes": [
+        "dewy",
+        "matte",
+        "none",
+        "satin"
+      ],
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 497,
+          "accuracy": 0.2193158953722334,
+          "majority_here": 0.03621730382293763
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 616,
+          "accuracy": 0.4074675324675325,
+          "majority_here": 0.3262987012987013
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 490,
+          "accuracy": 0.463265306122449,
+          "majority_here": 0.35306122448979593
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 721,
+          "accuracy": 0.435506241331484,
+          "majority_here": 0.37309292649098474
+        },
+        {
+          "distance_min": 5,
+          "distance_max": 7,
+          "n": 626,
+          "accuracy": 0.36741214057507987,
+          "majority_here": 0.36741214057507987
+        },
+        {
+          "distance_min": 8,
+          "distance_max": null,
+          "n": 284,
+          "accuracy": 0.28169014084507044,
+          "majority_here": 0.34507042253521125
+        }
+      ]
+    },
+    "skin.color": {
+      "layer": 0,
+      "classes": [
+        "bare",
+        "brown",
+        "nude",
+        "pink",
+        "red"
+      ],
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 405,
+          "accuracy": 0.17530864197530865,
+          "majority_here": 0.056790123456790124
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 565,
+          "accuracy": 0.4389380530973451,
+          "majority_here": 0.3752212389380531
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 480,
+          "accuracy": 0.4583333333333333,
+          "majority_here": 0.3729166666666667
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 739,
+          "accuracy": 0.4330175913396482,
+          "majority_here": 0.38430311231393777
+        },
+        {
+          "distance_min": 5,
+          "distance_max": 7,
+          "n": 679,
+          "accuracy": 0.3431516936671576,
+          "majority_here": 0.422680412371134
+        },
+        {
+          "distance_min": 8,
+          "distance_max": null,
+          "n": 366,
+          "accuracy": 0.18579234972677597,
+          "majority_here": 0.3633879781420765
+        }
+      ]
+    },
+    "skin.coverage": {
+      "layer": 10,
+      "classes": [
+        "bare",
+        "full",
+        "light"
+      ],
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 406,
+          "accuracy": 0.46551724137931033,
+          "majority_here": 0.4753694581280788
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 558,
+          "accuracy": 0.5806451612903226,
+          "majority_here": 0.3100358422939068
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 480,
+          "accuracy": 0.5270833333333333,
+          "majority_here": 0.30833333333333335
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 726,
+          "accuracy": 0.4724517906336088,
+          "majority_here": 0.2988980716253444
+        },
+        {
+          "distance_min": 5,
+          "distance_max": 7,
+          "n": 686,
+          "accuracy": 0.40524781341107874,
+          "majority_here": 0.2988338192419825
+        },
+        {
+          "distance_min": 8,
+          "distance_max": null,
+          "n": 378,
+          "accuracy": 0.35978835978835977,
+          "majority_here": 0.37037037037037035
+        }
+      ]
+    },
+    "skin.finish": {
+      "layer": 6,
+      "classes": [
+        "dewy",
+        "matte",
+        "none",
+        "satin"
+      ],
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 487,
+          "accuracy": 0.2464065708418891,
+          "majority_here": 0.04722792607802875
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 613,
+          "accuracy": 0.42251223491027734,
+          "majority_here": 0.3458401305057096
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 492,
+          "accuracy": 0.4186991869918699,
+          "majority_here": 0.3638211382113821
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 724,
+          "accuracy": 0.42679558011049723,
+          "majority_here": 0.39226519337016574
+        },
+        {
+          "distance_min": 5,
+          "distance_max": 7,
+          "n": 629,
+          "accuracy": 0.41971383147853736,
+          "majority_here": 0.4562798092209857
+        },
+        {
+          "distance_min": 8,
+          "distance_max": null,
+          "n": 289,
+          "accuracy": 0.33217993079584773,
+          "majority_here": 0.4602076124567474
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,488 @@
+{
+  "lips.color": {
+    "meta": {
+      "model": "EleutherAI/pythia-410m",
+      "dataset": "pilot",
+      "target": "lips.color",
+      "other": "eyes.color",
+      "edit_layer": 20,
+      "read_layer": 24,
+      "alphas": [
+        0.0,
+        0.5,
+        1.0,
+        2.0,
+        4.0,
+        8.0
+      ],
+      "n_trials": 120,
+      "mean_hidden_norm": 52.712730407714844,
+      "direction_norms": {
+        "nude->pink": 1.1723747253417969,
+        "nude->red": 1.3067817687988281,
+        "nude->brown": 1.3791927099227905,
+        "pink->nude": 1.1723747253417969,
+        "pink->red": 1.1293786764144897,
+        "pink->brown": 0.9535918831825256,
+        "red->nude": 1.3067817687988281,
+        "red->pink": 1.1293786764144897,
+        "red->brown": 1.2944108247756958,
+        "brown->nude": 1.3791927099227905,
+        "brown->pink": 0.9535918831825256,
+        "brown->red": 1.2944108247756958
+      }
+    },
+    "alphas": {
+      "0.0": {
+        "n": 120,
+        "delta_logodds_target": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "delta_logodds_other": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "target_minus_other_signed": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "p_one_sided_greater": 1.0,
+          "p_two_sided": 1.0
+        },
+        "specificity_ratio": Infinity,
+        "probe_flip_initially_correct": {
+          "n": 24,
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "0.5": {
+        "n": 120,
+        "delta_logodds_target": {
+          "mean": 0.06602428952852885,
+          "ci95": [
+            0.06165022457639376,
+            0.0704728804032008
+          ]
+        },
+        "delta_logodds_other": {
+          "mean": 0.0013500670591990152,
+          "ci95": [
+            -0.008545076598723729,
+            0.011028771102428434
+          ]
+        },
+        "target_minus_other_signed": {
+          "mean": 0.06467422246932983,
+          "ci95": [
+            0.05527719592054685,
+            0.07434724107384681
+          ],
+          "p_one_sided_greater": 0.0,
+          "p_two_sided": 0.0
+        },
+        "specificity_ratio": 48.904451877894545,
+        "probe_flip_initially_correct": {
+          "n": 24,
+          "mean": 0.2916666666666667,
+          "ci95": [
+            0.125,
+            0.4583333333333333
+          ]
+        }
+      },
+      "1.0": {
+        "n": 120,
+        "delta_logodds_target": {
+          "mean": 0.13180732329686481,
+          "ci95": [
+            0.12323014135162035,
+            0.14052414923906326
+          ]
+        },
+        "delta_logodds_other": {
+          "mean": 0.00199629267056783,
+          "ci95": [
+            -0.017640819400548936,
+            0.021200337211290995
+          ]
+        },
+        "target_minus_other_signed": {
+          "mean": 0.129811030626297,
+          "ci95": [
+            0.11120028913021088,
+            0.14875481848915417
+          ],
+          "p_one_sided_greater": 0.0,
+          "p_two_sided": 0.0
+        },
+        "specificity_ratio": 66.02605181101688,
+        "probe_flip_initially_correct": {
+          "n": 24,
+          "mean": 0.5833333333333334,
+          "ci95": [
+            0.375,
+            0.7916666666666666
+          ]
+        }
+      },
+      "2.0": {
+        "n": 120,
+        "delta_logodds_target": {
+          "mean": 0.2613783895969391,
+          "ci95": [
+            0.24519862885276475,
+            0.27803995882471405
+          ]
+        },
+        "delta_logodds_other": {
+          "mean": 0.0015247265497843425,
+          "ci95": [
+            -0.03738867620627085,
+            0.039620371460914613
+          ]
+        },
+        "target_minus_other_signed": {
+          "mean": 0.25985366304715474,
+          "ci95": [
+            0.22337632795174917,
+            0.2965985156099002
+          ],
+          "p_one_sided_greater": 0.0,
+          "p_two_sided": 0.0
+        },
+        "specificity_ratio": 171.4264040551458,
+        "probe_flip_initially_correct": {
+          "n": 24,
+          "mean": 0.7916666666666666,
+          "ci95": [
+            0.625,
+            0.9583333333333334
+          ]
+        }
+      },
+      "4.0": {
+        "n": 120,
+        "delta_logodds_target": {
+          "mean": 0.5150350014368693,
+          "ci95": [
+            0.48464653849601746,
+            0.5471224072575569
+          ]
+        },
+        "delta_logodds_other": {
+          "mean": -0.011771215995152792,
+          "ci95": [
+            -0.08889660000801086,
+            0.06462987293799717
+          ]
+        },
+        "target_minus_other_signed": {
+          "mean": 0.526806217432022,
+          "ci95": [
+            0.45520984306931495,
+            0.5983268803854783
+          ],
+          "p_one_sided_greater": 0.0,
+          "p_two_sided": 0.0
+        },
+        "specificity_ratio": 43.753763557558784,
+        "probe_flip_initially_correct": {
+          "n": 24,
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "8.0": {
+        "n": 120,
+        "delta_logodds_target": {
+          "mean": 0.9967849393685658,
+          "ci95": [
+            0.9386641173561414,
+            1.0582831929127374
+          ]
+        },
+        "delta_logodds_other": {
+          "mean": -0.06575237115224203,
+          "ci95": [
+            -0.22050382291277248,
+            0.08668232172727582
+          ]
+        },
+        "target_minus_other_signed": {
+          "mean": 1.0625373105208078,
+          "ci95": [
+            0.9150298896431923,
+            1.2103853766123454
+          ],
+          "p_one_sided_greater": 0.0,
+          "p_two_sided": 0.0
+        },
+        "specificity_ratio": 15.15968050886903,
+        "probe_flip_initially_correct": {
+          "n": 24,
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  "lips.finish": {
+    "meta": {
+      "model": "EleutherAI/pythia-410m",
+      "dataset": "pilot",
+      "target": "lips.finish",
+      "other": "eyes.finish",
+      "edit_layer": 24,
+      "read_layer": 24,
+      "alphas": [
+        0.0,
+        0.5,
+        1.0,
+        2.0,
+        4.0,
+        8.0
+      ],
+      "n_trials": 120,
+      "mean_hidden_norm": 105.65870666503906,
+      "direction_norms": {
+        "matte->dewy": 2.6807141304016113,
+        "matte->satin": 2.2703332901000977,
+        "dewy->matte": 2.6807141304016113,
+        "dewy->satin": 2.3101613521575928,
+        "satin->matte": 2.2703332901000977,
+        "satin->dewy": 2.3101613521575928
+      }
+    },
+    "alphas": {
+      "0.0": {
+        "n": 120,
+        "delta_logodds_target": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "delta_logodds_other": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "target_minus_other_signed": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "p_one_sided_greater": 1.0,
+          "p_two_sided": 1.0
+        },
+        "specificity_ratio": Infinity,
+        "probe_flip_initially_correct": {
+          "n": 43,
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "0.5": {
+        "n": 120,
+        "delta_logodds_target": {
+          "mean": 0.10565908749898274,
+          "ci95": [
+            0.09849326372146607,
+            0.1125223829348882
+          ]
+        },
+        "delta_logodds_other": {
+          "mean": -0.0032126585642496745,
+          "ci95": [
+            -0.022096379697322845,
+            0.015186151464780159
+          ]
+        },
+        "target_minus_other_signed": {
+          "mean": 0.10887174606323242,
+          "ci95": [
+            0.09083340416351954,
+            0.1274667456746101
+          ],
+          "p_one_sided_greater": 0.0,
+          "p_two_sided": 0.0
+        },
+        "specificity_ratio": 32.888365005466966,
+        "probe_flip_initially_correct": {
+          "n": 43,
+          "mean": 0.4883720930232558,
+          "ci95": [
+            0.3488372093023256,
+            0.627906976744186
+          ]
+        }
+      },
+      "1.0": {
+        "n": 120,
+        "delta_logodds_target": {
+          "mean": 0.20987630287806194,
+          "ci95": [
+            0.19548737039168676,
+            0.22376491665840148
+          ]
+        },
+        "delta_logodds_other": {
+          "mean": -0.007219262917836507,
+          "ci95": [
+            -0.044931775232156114,
+            0.02958777606487274
+          ]
+        },
+        "target_minus_other_signed": {
+          "mean": 0.21709556579589845,
+          "ci95": [
+            0.18061841984589894,
+            0.25507449905077617
+          ],
+          "p_one_sided_greater": 0.0,
+          "p_two_sided": 0.0
+        },
+        "specificity_ratio": 29.071707910723713,
+        "probe_flip_initially_correct": {
+          "n": 43,
+          "mean": 0.6976744186046512,
+          "ci95": [
+            0.5581395348837209,
+            0.8372093023255814
+          ]
+        }
+      },
+      "2.0": {
+        "n": 120,
+        "delta_logodds_target": {
+          "mean": 0.41247038046518963,
+          "ci95": [
+            0.3841325463851293,
+            0.4402466677625974
+          ]
+        },
+        "delta_logodds_other": {
+          "mean": -0.024884947141011558,
+          "ci95": [
+            -0.09905288259188334,
+            0.046738931536674494
+          ]
+        },
+        "target_minus_other_signed": {
+          "mean": 0.43735532760620116,
+          "ci95": [
+            0.36478301574786504,
+            0.5122287465135257
+          ],
+          "p_one_sided_greater": 0.0,
+          "p_two_sided": 0.0
+        },
+        "specificity_ratio": 16.575095704560255,
+        "probe_flip_initially_correct": {
+          "n": 43,
+          "mean": 0.9534883720930233,
+          "ci95": [
+            0.8837209302325582,
+            1.0
+          ]
+        }
+      },
+      "4.0": {
+        "n": 120,
+        "delta_logodds_target": {
+          "mean": 0.79167294104894,
+          "ci95": [
+            0.7356316008170446,
+            0.8457512712478638
+          ]
+        },
+        "delta_logodds_other": {
+          "mean": -0.08601982196172078,
+          "ci95": [
+            -0.23128281931082406,
+            0.05630248228708886
+          ]
+        },
+        "target_minus_other_signed": {
+          "mean": 0.8776927630106608,
+          "ci95": [
+            0.7342997351288796,
+            1.024651685555776
+          ],
+          "p_one_sided_greater": 0.0,
+          "p_two_sided": 0.0
+        },
+        "specificity_ratio": 9.20337804699524,
+        "probe_flip_initially_correct": {
+          "n": 43,
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "8.0": {
+        "n": 120,
+        "delta_logodds_target": {
+          "mean": 1.4384347955385843,
+          "ci95": [
+            1.3345386250317097,
+            1.5398606824874876
+          ]
+        },
+        "delta_logodds_other": {
+          "mean": -0.2881998320420583,
+          "ci95": [
+            -0.5598370351890724,
+            -0.020027083506186823
+          ]
+        },
+        "target_minus_other_signed": {
+          "mean": 1.7266346275806428,
+          "ci95": [
+            1.452978512297074,
+            2.0053844337165354
+          ],
+          "p_one_sided_greater": 0.0,
+          "p_two_sided": 0.0
+        },
+        "specificity_ratio": 4.991102129888358,
+        "probe_flip_initially_correct": {
+          "n": 43,
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        }
+      }
+    }
+  }
+}

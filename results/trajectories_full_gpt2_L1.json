@@ -1,0 +1,2274 @@
+[
+  {
+    "narrative_id": "test-natural-000000",
+    "coords": [
+      [
+        -32.11709976196289,
+        -3.984999895095825,
+        19.62339973449707
+      ],
+      [
+        -28.128700256347656,
+        7.953199863433838,
+        12.14009952545166
+      ],
+      [
+        -19.40410041809082,
+        11.55270004272461,
+        -2.8373000621795654
+      ],
+      [
+        -13.19219970703125,
+        -8.34000015258789,
+        -9.503800392150879
+      ],
+      [
+        -0.7233999967575073,
+        11.51259994506836,
+        -7.228799819946289
+      ],
+      [
+        6.133299827575684,
+        8.297699928283691,
+        -4.654200077056885
+      ],
+      [
+        9.8548002243042,
+        7.077199935913086,
+        -4.254199981689453
+      ],
+      [
+        11.140800476074219,
+        -7.926300048828125,
+        -1.405900001525879
+      ],
+      [
+        9.864800453186035,
+        -9.13379955291748,
+        5.945700168609619
+      ],
+      [
+        11.760899543762207,
+        4.383699893951416,
+        5.618100166320801
+      ],
+      [
+        11.460700035095215,
+        3.0852999687194824,
+        7.588500022888184
+      ],
+      [
+        9.777799606323242,
+        10.900699615478516,
+        9.202500343322754
+      ],
+      [
+        9.537199974060059,
+        -4.7170000076293945,
+        9.288900375366211
+      ],
+      [
+        7.664599895477295,
+        -8.791000366210938,
+        11.285599708557129
+      ],
+      [
+        6.8379998207092285,
+        -8.903499603271484,
+        10.954500198364258
+      ]
+    ],
+    "sentences": [
+      "A dark ruby colour stayed capped for the whole routine.",
+      "She laid a tobacco-toned shade over her upper cheek in a packed-on, solid layer; it came out with an understated silk-like surface.",
+      "With a few strokes she put a naked, undertoned neutral on the socket line as a light, skin-showing layer, ending in a still-damp-seeming shine.",
+      "A setting powder went over the outer cheek, leaving nothing that caught light.",
+      "With a few strokes she put a burnt-cinnamon colour on the broad planes of her face as a packed-on, solid layer, ending in a fully dried-down, non-wet look.",
+      "She laid a burnt-cinnamon colour over the socket line in maximum coverage; it came out with an understated silk-like surface.",
+      "She laid a shade that read like skin over the hooded part of her lid in maximum coverage; it came out with an understated silk-like surface.",
+      "A setting powder went over the socket line, leaving nothing that caught light.",
+      "A dark ruby colour stayed capped for the whole routine.",
+      "With a few strokes she put a tobacco-toned shade on the surface of her lips as a light, skin-showing layer, ending in a juicy liquid-looking gleam.",
+      "She laid a pale peony tone over her general complexion in maximum coverage; it came out with a juicy liquid-looking gleam.",
+      "With a few strokes she put a shade that read like skin on the socket line as a light, skin-showing layer, ending in a soft un-reflective finish.",
+      "A setting powder went over the soft skin of her lips, leaving nothing that caught light.",
+      "She wiped her hands on a towel.",
+      "Another heavy pass made the hooded part of her lid fully opaque."
+    ],
+    "labels": [
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "lips.coverage": "bare",
+        "eyes.color": "bare",
+        "eyes.finish": "none",
+        "eyes.coverage": "bare",
+        "cheeks.color": "bare",
+        "cheeks.finish": "none",
+        "cheeks.coverage": "bare",
+        "skin.color": "bare",
+        "skin.finish": "none",
+        "skin.coverage": "bare"
+      },
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "lips.coverage": "bare",
+        "eyes.color": "bare",
+        "eyes.finish": "none",
+        "eyes.coverage": "bare",
+        "cheeks.color": "brown",
+        "cheeks.finish": "satin",
+        "cheeks.coverage": "full",
+        "skin.color": "bare",
+        "skin.finish": "none",
+        "skin.coverage": "bare"
+      },
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "lips.coverage": "bare",
+        "eyes.color": "nude",
+        "eyes.finish": "dewy",
+        "eyes.coverage": "light",
+        "cheeks.color": "brown",
+        "cheeks.finish": "satin",
+        "cheeks.coverage": "full",
+        "skin.color": "bare",
+        "skin.finish": "none",
+        "skin.coverage": "bare"
+      },
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "lips.coverage": "bare",
+        "eyes.color": "nude",
+        "eyes.finish": "dewy",
+        "eyes.coverage": "light",
+        "cheeks.color": "brown",
+        "cheeks.finish": "matte",
+        "cheeks.coverage": "full",
+        "skin.color": "bare",
+        "skin.finish": "none",
+        "skin.coverage": "bare"
+      },
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "lips.coverage": "bare",
+        "eyes.color": "nude",
+        "eyes.finish": "dewy",
+        "eyes.coverage": "light",
+        "cheeks.color": "brown",
+        "cheeks.finish": "matte",
+        "cheeks.coverage": "full",
+        "skin.color": "brown",
+        "skin.finish": "matte",
+        "skin.coverage": "full"
+      },
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "lips.coverage": "bare",
+        "eyes.color": "brown",
+        "eyes.finish": "satin",
+        "eyes.coverage": "full",
+        "cheeks.color": "brown",
+        "cheeks.finish": "matte",
+        "cheeks.coverage": "full",
+        "skin.color": "brown",
+        "skin.finish": "matte",
+        "skin.coverage": "full"
+      },
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "lips.coverage": "bare",
+        "eyes.color": "nude",
+        "eyes.finish": "satin",
+        "eyes.coverage": "full",
+        "cheeks.color": "brown",
+        "cheeks.finish": "matte",
+        "cheeks.coverage": "full",
+        "skin.color": "brown",
+        "skin.finish": "matte",
+        "skin.coverage": "full"
+      },
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "lips.coverage": "bare",
+        "eyes.color": "nude",
+        "eyes.finish": "matte",
+        "eyes.coverage": "full",
+        "cheeks.color": "brown",
+        "cheeks.finish": "matte",
+        "cheeks.coverage": "full",
+        "skin.color": "brown",
+        "skin.finish": "matte",
+        "skin.coverage": "full"
+      },
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "lips.coverage": "bare",
+        "eyes.color": "nude",
+        "eyes.finish": "matte",
+        "eyes.coverage": "full",
+        "cheeks.color": "brown",
+        "cheeks.finish": "matte",
+        "cheeks.coverage": "full",
+        "skin.color": "brown",
+        "skin.finish": "matte",
+        "skin.coverage": "full"
+      },
+      {
+        "lips.color": "brown",
+        "lips.finish": "dewy",
+        "lips.coverage": "light",
+        "eyes.color": "nude",
+        "eyes.finish": "matte",
+        "eyes.coverage": "full",
+        "cheeks.color": "brown",
+        "cheeks.finish": "matte",
+        "cheeks.coverage": "full",
+        "skin.color": "brown",
+        "skin.finish": "matte",
+        "skin.coverage": "full"
+      },
+      {
+        "lips.color": "brown",
+        "lips.finish": "dewy",
+        "lips.coverage": "light",
+        "eyes.color": "nude",
+        "eyes.finish": "matte",
+        "eyes.coverage": "full",
+        "cheeks.color": "brown",
+        "cheeks.finish": "matte",
+        "cheeks.coverage": "full",
+        "skin.color": "pink",
+        "skin.finish": "dewy",
+        "skin.coverage": "full"
+      },
+      {
+        "lips.color": "brown",
+        "lips.finish": "dewy",
+        "lips.coverage": "light",
+        "eyes.color": "nude",
+        "eyes.finish": "matte",
+        "eyes.coverage": "light",
+        "cheeks.color": "brown",
+        "cheeks.finish": "matte",
+        "cheeks.coverage": "full",
+        "skin.color": "pink",
+        "skin.finish": "dewy",
+        "skin.coverage": "full"
+      },
+      {
+        "lips.color": "brown",
+        "lips.finish": "matte",
+        "lips.coverage": "light",
+        "eyes.color": "nude",
+        "eyes.finish": "matte",
+        "eyes.coverage": "light",
+        "cheeks.color": "brown",
+        "cheeks.finish": "matte",
+        "cheeks.coverage": "full",
+        "skin.color": "pink",
+        "skin.finish": "dewy",
+        "skin.coverage": "full"
+      },
+      {
+        "lips.color": "brown",
+        "lips.finish": "matte",
+        "lips.coverage": "light",
+        "eyes.color": "nude",
+        "eyes.finish": "matte",
+        "eyes.coverage": "light",
+        "cheeks.color": "brown",
+        "cheeks.finish": "matte",
+        "cheeks.coverage": "full",
+        "skin.color": "pink",
+        "skin.finish": "dewy",
+        "skin.coverage": "full"
+      },
+      {
+        "lips.color": "brown",
+        "lips.finish": "matte",
+        "lips.coverage": "light",
+        "eyes.color": "nude",
+        "eyes.finish": "matte",
+        "eyes.coverage": "full",
+        "cheeks.color": "brown",
+        "cheeks.finish": "matte",
+        "cheeks.coverage": "full",
+        "skin.color": "pink",
+        "skin.finish": "dewy",
+        "skin.coverage": "full"
+      }
+    ],
+    "action_kinds": [
+      "DISTRACTOR",
+      "APPLY",
+      "APPLY",
+      "BLOT",
+      "APPLY",
+      "APPLY",
+      "APPLY",
+      "BLOT",
+      "DISTRACTOR",
+      "APPLY",
+      "APPLY",
+      "APPLY",
+      "BLOT",
+      "NOOP",
+      "BUILD"
+    ]
+  },
+  {
+    "narrative_id": "test-natural-000001",
+    "coords": [
+      [
+        -30.535999298095703,
+        8.171799659729004,
+        17.24920082092285
+      ],
+      [
+        -29.840099334716797,
+        -12.227800369262695,
+        15.999199867248535
+      ],
+      [
+        -28.242399215698242,
+        -7.817500114440918,
+        7.928800106048584
+      ],
+      [
+        -26.54680061340332,
+        -12.589400291442871,
+        4.3125
+      ],
+      [
+        -15.886799812316895,
+        4.39300012588501,
+        -7.241799831390381
+      ],
+      [
+        -3.8875999450683594,
+        10.32699966430664,
+        -9.269200325012207
+      ],
+      [
+        3.75219988822937,
+        6.61870002746582,
+        -10.902700424194336
+      ],
+      [
+        6.66510009765625,
+        -13.849599838256836,
+        -9.037400245666504
+      ],
+      [
+        9.71310043334961,
+        4.600100040435791,
+        -0.6420999765396118
+      ],
+      [
+        9.643099784851074,
+        -1.1332999467849731,
+        0.10450000315904617
+      ],
+      [
+        11.793800354003906,
+        -11.771599769592285,
+        0.6899999976158142
+      ],
+      [
+        12.622099876403809,
+        -17.09830093383789,
+        8.740799903869629
+      ],
+      [
+        11.715800285339355,
+        -0.2069000005722046,
+        9.748299598693848
+      ]
+    ],
+    "sentences": [
+      "She laid a tobacco-toned shade over the soft skin of her lips in a transparent stain; it came out with a juicy liquid-looking gleam.",
+      "A moment passed with nothing done.",
+      "A naked, undertoned neutral stayed capped for the whole routine.",
+      "She wiped her hands on a towel.",
+      "With a few strokes she put a stop-sign bright tone on the outer cheek as maximum coverage, ending in a juicy liquid-looking gleam.",
+      "With a few strokes she put a burnt-cinnamon colour on the broad planes of her face as maximum coverage, ending in a still-damp-seeming shine.",
+      "She laid a sweet, girlish rose over the socket line in maximum coverage; it came out with an understated silk-like surface.",
+      "She almost went for a naked, undertoned neutral, then decided not to.",
+      "With a few strokes she put a dark ruby colour on the socket line as a transparent stain, ending in a juicy liquid-looking gleam.",
+      "She worked her upper cheek until it looked chalk-flat.",
+      "A setting powder went over the soft skin of her lips, leaving nothing that caught light.",
+      "She almost went for a burnt-cinnamon colour, then decided not to.",
+      "She worked the surface of her lips into a smooth semi-gloss."
+    ],
+    "labels": [
+      {
+        "lips.color": "brown",
+        "lips.finish": "dewy",
+        "lips.coverage": "light",
+        "eyes.color": "bare",
+        "eyes.finish": "none",
+        "eyes.coverage": "bare",
+        "cheeks.color": "bare",
+        "cheeks.finish": "none",
+        "cheeks.coverage": "bare",
+        "skin.color": "bare",
+        "skin.finish": "none",
+        "skin.coverage": "bare"
+      },
+      {
+        "lips.color": "brown",
+        "lips.finish": "dewy",
+        "lips.coverage": "light",
+        "eyes.color": "bare",
+        "eyes.finish": "none",
+        "eyes.coverage": "bare",
+        "cheeks.color": "bare",
+        "cheeks.finish": "none",
+        "cheeks.coverage": "bare",
+        "skin.color": "bare",
+        "skin.finish": "none",
+        "skin.coverage": "bare"
+      },
+      {
+        "lips.color": "brown",
+        "lips.finish": "dewy",
+        "lips.coverage": "light",
+        "eyes.color": "bare",
+        "eyes.finish": "none",
+        "eyes.coverage": "bare",
+        "cheeks.color": "bare",
+        "cheeks.finish": "none",
+        "cheeks.coverage": "bare",
+        "skin.color": "bare",
+        "skin.finish": "none",
+        "skin.coverage": "bare"
+      },
+      {
+        "lips.color": "brown",
+        "lips.finish": "dewy",
+        "lips.coverage": "light",
+        "eyes.color": "bare",
+        "eyes.finish": "none",
+        "eyes.coverage": "bare",
+        "cheeks.color": "bare",
+        "cheeks.finish": "none",
+        "cheeks.coverage": "bare",
+        "skin.color": "bare",
+        "skin.finish": "none",
+        "skin.coverage": "bare"
+      },
+      {
+        "lips.color": "brown",
+        "lips.finish": "dewy",
+        "lips.coverage": "light",
+        "eyes.color": "bare",
+        "eyes.finish": "none",
+        "eyes.coverage": "bare",
+        "cheeks.color": "red",
+        "cheeks.finish": "dewy",
+        "cheeks.coverage": "full",
+        "skin.color": "bare",
+        "skin.finish": "none",
+        "skin.coverage": "bare"
+      },
+      {
+        "lips.color": "brown",
+        "lips.finish": "dewy",
+        "lips.coverage": "light",
+        "eyes.color": "bare",
+        "eyes.finish": "none",
+        "eyes.coverage": "bare",
+        "cheeks.color": "red",
+        "cheeks.finish": "dewy",
+        "cheeks.coverage": "full",
+        "skin.color": "brown",
+        "skin.finish": "dewy",
+        "skin.coverage": "full"
+      },
+      {
+        "lips.color": "brown",
+        "lips.finish": "dewy",
+        "lips.coverage": "light",
+        "eyes.color": "pink",
+        "eyes.finish": "satin",
+        "eyes.coverage": "full",
+        "cheeks.color": "red",
+        "cheeks.finish": "dewy",
+        "cheeks.coverage": "full",
+        "skin.color": "brown",
+        "skin.finish": "dewy",
+        "skin.coverage": "full"
+      },
+      {
+        "lips.color": "brown",
+        "lips.finish": "dewy",
+        "lips.coverage": "light",
+        "eyes.color": "pink",
+        "eyes.finish": "satin",
+        "eyes.coverage": "full",
+        "cheeks.color": "red",
+        "cheeks.finish": "dewy",
+        "cheeks.coverage": "full",
+        "skin.color": "brown",
+        "skin.finish": "dewy",
+        "skin.coverage": "full"
+      },
+      {
+        "lips.color": "brown",
+        "lips.finish": "dewy",
+        "lips.coverage": "light",
+        "eyes.color": "red",
+        "eyes.finish": "dewy",
+        "eyes.coverage": "light",
+        "cheeks.color": "red",
+        "cheeks.finish": "dewy",
+        "cheeks.coverage": "full",
+        "skin.color": "brown",
+        "skin.finish": "dewy",
+        "skin.coverage": "full"
+      },
+      {
+        "lips.color": "brown",
+        "lips.finish": "dewy",
+        "lips.coverage": "light",
+        "eyes.color": "red",
+        "eyes.finish": "dewy",
+        "eyes.coverage": "light",
+        "cheeks.color": "red",
+        "cheeks.finish": "matte",
+        "cheeks.coverage": "full",
+        "skin.color": "brown",
+        "skin.finish": "dewy",
+        "skin.coverage": "full"
+      },
+      {
+        "lips.color": "brown",
+        "lips.finish": "matte",
+        "lips.coverage": "light",
+        "eyes.color": "red",
+        "eyes.finish": "dewy",
+        "eyes.coverage": "light",
+        "cheeks.color": "red",
+        "cheeks.finish": "matte",
+        "cheeks.coverage": "full",
+        "skin.color": "brown",
+        "skin.finish": "dewy",
+        "skin.coverage": "full"
+      },
+      {
+        "lips.color": "brown",
+        "lips.finish": "matte",
+        "lips.coverage": "light",
+        "eyes.color": "red",
+        "eyes.finish": "dewy",
+        "eyes.coverage": "light",
+        "cheeks.color": "red",
+        "cheeks.finish": "matte",
+        "cheeks.coverage": "full",
+        "skin.color": "brown",
+        "skin.finish": "dewy",
+        "skin.coverage": "full"
+      },
+      {
+        "lips.color": "brown",
+        "lips.finish": "satin",
+        "lips.coverage": "light",
+        "eyes.color": "red",
+        "eyes.finish": "dewy",
+        "eyes.coverage": "light",
+        "cheeks.color": "red",
+        "cheeks.finish": "matte",
+        "cheeks.coverage": "full",
+        "skin.color": "brown",
+        "skin.finish": "dewy",
+        "skin.coverage": "full"
+      }
+    ],
+    "action_kinds": [
+      "APPLY",
+      "NOOP",
+      "DISTRACTOR",
+      "NOOP",
+      "APPLY",
+      "APPLY",
+      "APPLY",
+      "DISTRACTOR",
+      "APPLY",
+      "BLOT",
+      "BLOT",
+      "DISTRACTOR",
+      "SOFTEN"
+    ]
+  },
+  {
+    "narrative_id": "test-natural-000002",
+    "coords": [
+      [
+        -29.942699432373047,
+        -16.325000762939453,
+        12.93019962310791
+      ],
+      [
+        -26.697200775146484,
+        7.470099925994873,
+        9.31879997253418
+      ],
+      [
+        -16.905500411987305,
+        8.76140022277832,
+        -5.710999965667725
+      ],
+      [
+        -3.64739990234375,
+        8.67240047454834,
+        -14.359299659729004
+      ],
+      [
+        4.5229997634887695,
+        9.026300430297852,
+        -12.7076997756958
+      ],
+      [
+        7.751100063323975,
+        10.493000030517578,
+        -4.141600131988525
+      ],
+      [
+        10.953499794006348,
+        8.512100219726562,
+        1.9874999523162842
+      ],
+      [
+        11.484600067138672,
+        -12.713899612426758,
+        2.752500057220459
+      ],
+      [
+        11.549400329589844,
+        2.547499895095825,
+        8.330699920654297
+      ],
+      [
+        10.694700241088867,
+        -5.842700004577637,
+        8.071999549865723
+      ],
+      [
+        10.531299591064453,
+        11.657299995422363,
+        13.147299766540527
+      ],
+      [
+        9.469599723815918,
+        9.262100219726562,
+        10.732600212097168
+      ],
+      [
+        8.639300346374512,
+        -10.11139965057373,
+        8.784000396728516
+      ]
+    ],
+    "sentences": [
+      "She almost went for a stop-sign bright tone, then decided not to.",
+      "She laid a dark ruby colour over the hooded part of her lid in a packed-on, solid layer; it came out with an understated silk-like surface.",
+      "With a few strokes she put a naked, undertoned neutral on her general complexion as a packed-on, solid layer, ending in a juicy liquid-looking gleam.",
+      "With a few strokes she put a stop-sign bright tone on the surface of her lips as a light, skin-showing layer, ending in an understated silk-like surface.",
+      "With a few strokes she put a shade that read like skin on the soft skin of her lips as maximum coverage, ending in an understated silk-like surface.",
+      "She laid a tobacco-toned shade over her general complexion in a packed-on, solid layer; it came out with a fully dried-down, non-wet look.",
+      "She laid a burnt-cinnamon colour over the surface of her lips in a light, skin-showing layer; it came out with a soft un-reflective finish.",
+      "She almost went for a stop-sign bright tone, then decided not to.",
+      "She laid a dark ruby colour over the outer cheek in a packed-on, solid layer; it came out with a juicy liquid-looking gleam.",
+      "Another heavy pass made the soft skin of her lips fully opaque.",
+      "With a few strokes she put a dark ruby colour on the socket line as a transparent stain, ending in a smooth semi-gloss surface.",
+      "With a few strokes she put a stop-sign bright tone on the broad planes of her face as a light, skin-showing layer, ending in a juicy liquid-looking gleam.",
+      "She feathered the outer cheek out until it was nearly transparent."
+    ],
+    "labels": [
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "lips.coverage": "bare",
+        "eyes.color": "bare",
+        "eyes.finish": "none",
+        "eyes.coverage": "bare",
+        "cheeks.color": "bare",
+        "cheeks.finish": "none",
+        "cheeks.coverage": "bare",
+        "skin.color": "bare",
+        "skin.finish": "none",
+        "skin.coverage": "bare"
+      },
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "lips.coverage": "bare",
+        "eyes.color": "red",
+        "eyes.finish": "satin",
+        "eyes.coverage": "full",
+        "cheeks.color": "bare",
+        "cheeks.finish": "none",
+        "cheeks.coverage": "bare",
+        "skin.color": "bare",
+        "skin.finish": "none",
+        "skin.coverage": "bare"
+      },
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "lips.coverage": "bare",
+        "eyes.color": "red",
+        "eyes.finish": "satin",
+        "eyes.coverage": "full",
+        "cheeks.color": "bare",
+        "cheeks.finish": "none",
+        "cheeks.coverage": "bare",
+        "skin.color": "nude",
+        "skin.finish": "dewy",
+        "skin.coverage": "full"
+      },
+      {
+        "lips.color": "red",
+        "lips.finish": "satin",
+        "lips.coverage": "light",
+        "eyes.color": "red",
+        "eyes.finish": "satin",
+        "eyes.coverage": "full",
+        "cheeks.color": "bare",
+        "cheeks.finish": "none",
+        "cheeks.coverage": "bare",
+        "skin.color": "nude",
+        "skin.finish": "dewy",
+        "skin.coverage": "full"
+      },
+      {
+        "lips.color": "nude",
+        "lips.finish": "satin",
+        "lips.coverage": "full",
+        "eyes.color": "red",
+        "eyes.finish": "satin",
+        "eyes.coverage": "full",
+        "cheeks.color": "bare",
+        "cheeks.finish": "none",
+        "cheeks.coverage": "bare",
+        "skin.color": "nude",
+        "skin.finish": "dewy",
+        "skin.coverage": "full"
+      },
+      {
+        "lips.color": "nude",
+        "lips.finish": "satin",
+        "lips.coverage": "full",
+        "eyes.color": "red",
+        "eyes.finish": "satin",
+        "eyes.coverage": "full",
+        "cheeks.color": "bare",
+        "cheeks.finish": "none",
+        "cheeks.coverage": "bare",
+        "skin.color": "brown",
+        "skin.finish": "matte",
+        "skin.coverage": "full"
+      },
+      {
+        "lips.color": "brown",
+        "lips.finish": "matte",
+        "lips.coverage": "light",
+        "eyes.color": "red",
+        "eyes.finish": "satin",
+        "eyes.coverage": "full",
+        "cheeks.color": "bare",
+        "cheeks.finish": "none",
+        "cheeks.coverage": "bare",
+        "skin.color": "brown",
+        "skin.finish": "matte",
+        "skin.coverage": "full"
+      },
+      {
+        "lips.color": "brown",
+        "lips.finish": "matte",
+        "lips.coverage": "light",
+        "eyes.color": "red",
+        "eyes.finish": "satin",
+        "eyes.coverage": "full",
+        "cheeks.color": "bare",
+        "cheeks.finish": "none",
+        "cheeks.coverage": "bare",
+        "skin.color": "brown",
+        "skin.finish": "matte",
+        "skin.coverage": "full"
+      },
+      {
+        "lips.color": "brown",
+        "lips.finish": "matte",
+        "lips.coverage": "light",
+        "eyes.color": "red",
+        "eyes.finish": "satin",
+        "eyes.coverage": "full",
+        "cheeks.color": "red",
+        "cheeks.finish": "dewy",
+        "cheeks.coverage": "full",
+        "skin.color": "brown",
+        "skin.finish": "matte",
+        "skin.coverage": "full"
+      },
+      {
+        "lips.color": "brown",
+        "lips.finish": "matte",
+        "lips.coverage": "full",
+        "eyes.color": "red",
+        "eyes.finish": "satin",
+        "eyes.coverage": "full",
+        "cheeks.color": "red",
+        "cheeks.finish": "dewy",
+        "cheeks.coverage": "full",
+        "skin.color": "brown",
+        "skin.finish": "matte",
+        "skin.coverage": "full"
+      },
+      {
+        "lips.color": "brown",
+        "lips.finish": "matte",
+        "lips.coverage": "full",
+        "eyes.color": "red",
+        "eyes.finish": "satin",
+        "eyes.coverage": "light",
+        "cheeks.color": "red",
+        "cheeks.finish": "dewy",
+        "cheeks.coverage": "full",
+        "skin.color": "brown",
+        "skin.finish": "matte",
+        "skin.coverage": "full"
+      },
+      {
+        "lips.color": "brown",
+        "lips.finish": "matte",
+        "lips.coverage": "full",
+        "eyes.color": "red",
+        "eyes.finish": "satin",
+        "eyes.coverage": "light",
+        "cheeks.color": "red",
+        "cheeks.finish": "dewy",
+        "cheeks.coverage": "full",
+        "skin.color": "red",
+        "skin.finish": "dewy",
+        "skin.coverage": "light"
+      },
+      {
+        "lips.color": "brown",
+        "lips.finish": "matte",
+        "lips.coverage": "full",
+        "eyes.color": "red",
+        "eyes.finish": "satin",
+        "eyes.coverage": "light",
+        "cheeks.color": "red",
+        "cheeks.finish": "dewy",
+        "cheeks.coverage": "light",
+        "skin.color": "red",
+        "skin.finish": "dewy",
+        "skin.coverage": "light"
+      }
+    ],
+    "action_kinds": [
+      "DISTRACTOR",
+      "APPLY",
+      "APPLY",
+      "APPLY",
+      "APPLY",
+      "APPLY",
+      "APPLY",
+      "DISTRACTOR",
+      "APPLY",
+      "BUILD",
+      "APPLY",
+      "APPLY",
+      "SHEER"
+    ]
+  },
+  {
+    "narrative_id": "test-natural-000003",
+    "coords": [
+      [
+        -31.17919921875,
+        -3.5552000999450684,
+        23.126100540161133
+      ],
+      [
+        -28.585500717163086,
+        6.51230001449585,
+        16.68939971923828
+      ],
+      [
+        -24.177600860595703,
+        -12.113300323486328,
+        5.88100004196167
+      ],
+      [
+        -18.451099395751953,
+        -15.403300285339355,
+        -1.3818999528884888
+      ],
+      [
+        -11.921099662780762,
+        -20.84779930114746,
+        -8.183099746704102
+      ],
+      [
+        -7.7270002365112305,
+        -21.360300064086914,
+        -11.220100402832031
+      ],
+      [
+        3.115000009536743,
+        4.317399978637695,
+        -13.033499717712402
+      ],
+      [
+        7.2829999923706055,
+        10.232600212097168,
+        -1.7417000532150269
+      ],
+      [
+        10.861700057983398,
+        -10.737899780273438,
+        -3.4554998874664307
+      ],
+      [
+        11.271599769592285,
+        -6.061299800872803,
+        -2.3415000438690186
+      ],
+      [
+        12.609199523925781,
+        6.1331000328063965,
+        0.44839999079704285
+      ],
+      [
+        11.402899742126465,
+        -3.373199939727783,
+        2.8940000534057617
+      ],
+      [
+        11.639100074768066,
+        9.855199813842773,
+        6.9882001876831055
+      ],
+      [
+        9.632100105285645,
+        8.51259994506836,
+        9.324299812316895
+      ],
+      [
+        8.075300216674805,
+        -9.449799537658691,
+        10.415599822998047
+      ],
+      [
+        5.850800037384033,
+        -15.555100440979004,
+        12.652799606323242
+      ]
+    ],
+    "sentences": [
+      "A burnt-cinnamon colour stayed capped for the whole routine.",
+      "She laid a dark ruby colour over her general complexion in a packed-on, solid layer; it came out with a juicy liquid-looking gleam.",
+      "She almost went for a tobacco-toned shade, then decided not to.",
+      "She almost went for a tobacco-toned shade, then decided not to.",
+      "The density on the broad planes of her face was reduced to almost nothing.",
+      "She almost went for a stop-sign bright tone, then decided not to.",
+      "With a few strokes she put a sweet, girlish rose on the hooded part of her lid as a light, skin-showing layer, ending in an understated silk-like surface.",
+      "She laid a burnt-cinnamon colour over the soft skin of her lips in a transparent stain; it came out with a fully dried-down, non-wet look.",
+      "A setting powder went over her general complexion, leaving nothing that caught light.",
+      "The surface of the broad planes of her face was softened to a subtle, powdery shine.",
+      "With a few strokes she put a tobacco-toned shade on her upper cheek as a packed-on, solid layer, ending in an understated silk-like surface.",
+      "The surface of the soft skin of her lips was softened to a subtle, powdery shine.",
+      "With a few strokes she put a stop-sign bright tone on the surface of her lips as a transparent stain, ending in a smooth semi-gloss surface.",
+      "With a few strokes she put a naked, undertoned neutral on her general complexion as a light, skin-showing layer, ending in a still-damp-seeming shine.",
+      "She reinforced the socket line until nothing underneath was visible.",
+      "A moment passed with nothing done."
+    ],
+    "labels": [
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "lips.coverage": "bare",
+        "eyes.color": "bare",
+        "eyes.finish": "none",
+        "eyes.coverage": "bare",
+        "cheeks.color": "bare",
+        "cheeks.finish": "none",
+        "cheeks.coverage": "bare",
+        "skin.color": "bare",
+        "skin.finish": "none",
+        "skin.coverage": "bare"
+      },
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "lips.coverage": "bare",
+        "eyes.color": "bare",
+        "eyes.finish": "none",
+        "eyes.coverage": "bare",
+        "cheeks.color": "bare",
+        "cheeks.finish": "none",
+        "cheeks.coverage": "bare",
+        "skin.color": "red",
+        "skin.finish": "dewy",
+        "skin.coverage": "full"
+      },
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "lips.coverage": "bare",
+        "eyes.color": "bare",
+        "eyes.finish": "none",
+        "eyes.coverage": "bare",
+        "cheeks.color": "bare",
+        "cheeks.finish": "none",
+        "cheeks.coverage": "bare",
+        "skin.color": "red",
+        "skin.finish": "dewy",
+        "skin.coverage": "full"
+      },
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "lips.coverage": "bare",
+        "eyes.color": "bare",
+        "eyes.finish": "none",
+        "eyes.coverage": "bare",
+        "cheeks.color": "bare",
+        "cheeks.finish": "none",
+        "cheeks.coverage": "bare",
+        "skin.color": "red",
+        "skin.finish": "dewy",
+        "skin.coverage": "full"
+      },
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "lips.coverage": "bare",
+        "eyes.color": "bare",
+        "eyes.finish": "none",
+        "eyes.coverage": "bare",
+        "cheeks.color": "bare",
+        "cheeks.finish": "none",
+        "cheeks.coverage": "bare",
+        "skin.color": "red",
+        "skin.finish": "dewy",
+        "skin.coverage": "light"
+      },
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "lips.coverage": "bare",
+        "eyes.color": "bare",
+        "eyes.finish": "none",
+        "eyes.coverage": "bare",
+        "cheeks.color": "bare",
+        "cheeks.finish": "none",
+        "cheeks.coverage": "bare",
+        "skin.color": "red",
+        "skin.finish": "dewy",
+        "skin.coverage": "light"
+      },
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "lips.coverage": "bare",
+        "eyes.color": "pink",
+        "eyes.finish": "satin",
+        "eyes.coverage": "light",
+        "cheeks.color": "bare",
+        "cheeks.finish": "none",
+        "cheeks.coverage": "bare",
+        "skin.color": "red",
+        "skin.finish": "dewy",
+        "skin.coverage": "light"
+      },
+      {
+        "lips.color": "brown",
+        "lips.finish": "matte",
+        "lips.coverage": "light",
+        "eyes.color": "pink",
+        "eyes.finish": "satin",
+        "eyes.coverage": "light",
+        "cheeks.color": "bare",
+        "cheeks.finish": "none",
+        "cheeks.coverage": "bare",
+        "skin.color": "red",
+        "skin.finish": "dewy",
+        "skin.coverage": "light"
+      },
+      {
+        "lips.color": "brown",
+        "lips.finish": "matte",
+        "lips.coverage": "light",
+        "eyes.color": "pink",
+        "eyes.finish": "satin",
+        "eyes.coverage": "light",
+        "cheeks.color": "bare",
+        "cheeks.finish": "none",
+        "cheeks.coverage": "bare",
+        "skin.color": "red",
+        "skin.finish": "matte",
+        "skin.coverage": "light"
+      },
+      {
+        "lips.color": "brown",
+        "lips.finish": "matte",
+        "lips.coverage": "light",
+        "eyes.color": "pink",
+        "eyes.finish": "satin",
+        "eyes.coverage": "light",
+        "cheeks.color": "bare",
+        "cheeks.finish": "none",
+        "cheeks.coverage": "bare",
+        "skin.color": "red",
+        "skin.finish": "satin",
+        "skin.coverage": "light"
+      },
+      {
+        "lips.color": "brown",
+        "lips.finish": "matte",
+        "lips.coverage": "light",
+        "eyes.color": "pink",
+        "eyes.finish": "satin",
+        "eyes.coverage": "light",
+        "cheeks.color": "brown",
+        "cheeks.finish": "satin",
+        "cheeks.coverage": "full",
+        "skin.color": "red",
+        "skin.finish": "satin",
+        "skin.coverage": "light"
+      },
+      {
+        "lips.color": "brown",
+        "lips.finish": "satin",
+        "lips.coverage": "light",
+        "eyes.color": "pink",
+        "eyes.finish": "satin",
+        "eyes.coverage": "light",
+        "cheeks.color": "brown",
+        "cheeks.finish": "satin",
+        "cheeks.coverage": "full",
+        "skin.color": "red",
+        "skin.finish": "satin",
+        "skin.coverage": "light"
+      },
+      {
+        "lips.color": "red",
+        "lips.finish": "satin",
+        "lips.coverage": "light",
+        "eyes.color": "pink",
+        "eyes.finish": "satin",
+        "eyes.coverage": "light",
+        "cheeks.color": "brown",
+        "cheeks.finish": "satin",
+        "cheeks.coverage": "full",
+        "skin.color": "red",
+        "skin.finish": "satin",
+        "skin.coverage": "light"
+      },
+      {
+        "lips.color": "red",
+        "lips.finish": "satin",
+        "lips.coverage": "light",
+        "eyes.color": "pink",
+        "eyes.finish": "satin",
+        "eyes.coverage": "light",
+        "cheeks.color": "brown",
+        "cheeks.finish": "satin",
+        "cheeks.coverage": "full",
+        "skin.color": "nude",
+        "skin.finish": "dewy",
+        "skin.coverage": "light"
+      },
+      {
+        "lips.color": "red",
+        "lips.finish": "satin",
+        "lips.coverage": "light",
+        "eyes.color": "pink",
+        "eyes.finish": "satin",
+        "eyes.coverage": "full",
+        "cheeks.color": "brown",
+        "cheeks.finish": "satin",
+        "cheeks.coverage": "full",
+        "skin.color": "nude",
+        "skin.finish": "dewy",
+        "skin.coverage": "light"
+      },
+      {
+        "lips.color": "red",
+        "lips.finish": "satin",
+        "lips.coverage": "light",
+        "eyes.color": "pink",
+        "eyes.finish": "satin",
+        "eyes.coverage": "full",
+        "cheeks.color": "brown",
+        "cheeks.finish": "satin",
+        "cheeks.coverage": "full",
+        "skin.color": "nude",
+        "skin.finish": "dewy",
+        "skin.coverage": "light"
+      }
+    ],
+    "action_kinds": [
+      "DISTRACTOR",
+      "APPLY",
+      "DISTRACTOR",
+      "DISTRACTOR",
+      "SHEER",
+      "DISTRACTOR",
+      "APPLY",
+      "APPLY",
+      "BLOT",
+      "SOFTEN",
+      "APPLY",
+      "SOFTEN",
+      "APPLY",
+      "APPLY",
+      "BUILD",
+      "NOOP"
+    ]
+  },
+  {
+    "narrative_id": "test-natural-000004",
+    "coords": [
+      [
+        -32.886199951171875,
+        -6.154699802398682,
+        14.013400077819824
+      ],
+      [
+        -30.950199127197266,
+        -15.581899642944336,
+        19.177000045776367
+      ],
+      [
+        -27.452800750732422,
+        6.472400188446045,
+        6.002799987792969
+      ],
+      [
+        -20.344600677490234,
+        -9.862899780273438,
+        -4.293799877166748
+      ],
+      [
+        -9.674799919128418,
+        2.82450008392334,
+        -8.241700172424316
+      ],
+      [
+        0.9006999731063843,
+        6.793000221252441,
+        -13.642000198364258
+      ],
+      [
+        4.005899906158447,
+        -5.850500106811523,
+        -11.576199531555176
+      ],
+      [
+        8.371600151062012,
+        -22.26409912109375,
+        -10.43019962310791
+      ],
+      [
+        10.293100357055664,
+        6.875699996948242,
+        -4.530600070953369
+      ],
+      [
+        11.523699760437012,
+        -15.447600364685059,
+        -3.2111001014709473
+      ]
+    ],
+    "sentences": [
+      "A pale peony tone stayed capped for the whole routine.",
+      "She wiped her hands on a towel.",
+      "She laid a sweet, girlish rose over the surface of her lips in a packed-on, solid layer; it came out with a soft un-reflective finish.",
+      "A clear shine went over the surface of her lips, and it began to gleam.",
+      "She laid a dark ruby colour over her general complexion in a light, skin-showing layer; it came out with a still-damp-seeming shine.",
+      "With a few strokes she put a pale peony tone on the hooded part of her lid as a transparent stain, ending in an understated silk-like surface.",
+      "The surface of her general complexion was softened to a subtle, powdery shine.",
+      "The density on the surface of her lips was reduced to almost nothing.",
+      "With a few strokes she put a sweet, girlish rose on her upper cheek as a transparent stain, ending in a smooth semi-gloss surface.",
+      "She almost went for a naked, undertoned neutral, then decided not to."
+    ],
+    "labels": [
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "lips.coverage": "bare",
+        "eyes.color": "bare",
+        "eyes.finish": "none",
+        "eyes.coverage": "bare",
+        "cheeks.color": "bare",
+        "cheeks.finish": "none",
+        "cheeks.coverage": "bare",
+        "skin.color": "bare",
+        "skin.finish": "none",
+        "skin.coverage": "bare"
+      },
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "lips.coverage": "bare",
+        "eyes.color": "bare",
+        "eyes.finish": "none",
+        "eyes.coverage": "bare",
+        "cheeks.color": "bare",
+        "cheeks.finish": "none",
+        "cheeks.coverage": "bare",
+        "skin.color": "bare",
+        "skin.finish": "none",
+        "skin.coverage": "bare"
+      },
+      {
+        "lips.color": "pink",
+        "lips.finish": "matte",
+        "lips.coverage": "full",
+        "eyes.color": "bare",
+        "eyes.finish": "none",
+        "eyes.coverage": "bare",
+        "cheeks.color": "bare",
+        "cheeks.finish": "none",
+        "cheeks.coverage": "bare",
+        "skin.color": "bare",
+        "skin.finish": "none",
+        "skin.coverage": "bare"
+      },
+      {
+        "lips.color": "pink",
+        "lips.finish": "dewy",
+        "lips.coverage": "full",
+        "eyes.color": "bare",
+        "eyes.finish": "none",
+        "eyes.coverage": "bare",
+        "cheeks.color": "bare",
+        "cheeks.finish": "none",
+        "cheeks.coverage": "bare",
+        "skin.color": "bare",
+        "skin.finish": "none",
+        "skin.coverage": "bare"
+      },
+      {
+        "lips.color": "pink",
+        "lips.finish": "dewy",
+        "lips.coverage": "full",
+        "eyes.color": "bare",
+        "eyes.finish": "none",
+        "eyes.coverage": "bare",
+        "cheeks.color": "bare",
+        "cheeks.finish": "none",
+        "cheeks.coverage": "bare",
+        "skin.color": "red",
+        "skin.finish": "dewy",
+        "skin.coverage": "light"
+      },
+      {
+        "lips.color": "pink",
+        "lips.finish": "dewy",
+        "lips.coverage": "full",
+        "eyes.color": "pink",
+        "eyes.finish": "satin",
+        "eyes.coverage": "light",
+        "cheeks.color": "bare",
+        "cheeks.finish": "none",
+        "cheeks.coverage": "bare",
+        "skin.color": "red",
+        "skin.finish": "dewy",
+        "skin.coverage": "light"
+      },
+      {
+        "lips.color": "pink",
+        "lips.finish": "dewy",
+        "lips.coverage": "full",
+        "eyes.color": "pink",
+        "eyes.finish": "satin",
+        "eyes.coverage": "light",
+        "cheeks.color": "bare",
+        "cheeks.finish": "none",
+        "cheeks.coverage": "bare",
+        "skin.color": "red",
+        "skin.finish": "satin",
+        "skin.coverage": "light"
+      },
+      {
+        "lips.color": "pink",
+        "lips.finish": "dewy",
+        "lips.coverage": "light",
+        "eyes.color": "pink",
+        "eyes.finish": "satin",
+        "eyes.coverage": "light",
+        "cheeks.color": "bare",
+        "cheeks.finish": "none",
+        "cheeks.coverage": "bare",
+        "skin.color": "red",
+        "skin.finish": "satin",
+        "skin.coverage": "light"
+      },
+      {
+        "lips.color": "pink",
+        "lips.finish": "dewy",
+        "lips.coverage": "light",
+        "eyes.color": "pink",
+        "eyes.finish": "satin",
+        "eyes.coverage": "light",
+        "cheeks.color": "pink",
+        "cheeks.finish": "satin",
+        "cheeks.coverage": "light",
+        "skin.color": "red",
+        "skin.finish": "satin",
+        "skin.coverage": "light"
+      },
+      {
+        "lips.color": "pink",
+        "lips.finish": "dewy",
+        "lips.coverage": "light",
+        "eyes.color": "pink",
+        "eyes.finish": "satin",
+        "eyes.coverage": "light",
+        "cheeks.color": "pink",
+        "cheeks.finish": "satin",
+        "cheeks.coverage": "light",
+        "skin.color": "red",
+        "skin.finish": "satin",
+        "skin.coverage": "light"
+      }
+    ],
+    "action_kinds": [
+      "DISTRACTOR",
+      "NOOP",
+      "APPLY",
+      "GLOSS",
+      "APPLY",
+      "APPLY",
+      "SOFTEN",
+      "SHEER",
+      "APPLY",
+      "DISTRACTOR"
+    ]
+  },
+  {
+    "narrative_id": "test-natural-000005",
+    "coords": [
+      [
+        -28.47170066833496,
+        -12.944100379943848,
+        25.817399978637695
+      ],
+      [
+        -27.281400680541992,
+        -17.010499954223633,
+        22.022600173950195
+      ],
+      [
+        -24.909799575805664,
+        -20.332399368286133,
+        12.721799850463867
+      ],
+      [
+        -16.98579978942871,
+        6.765900135040283,
+        -0.9474999904632568
+      ],
+      [
+        -5.953000068664551,
+        6.735199928283691,
+        -7.3414998054504395
+      ],
+      [
+        2.7400999069213867,
+        5.396299839019775,
+        -9.263099670410156
+      ],
+      [
+        7.363699913024902,
+        10.884099960327148,
+        -3.0964999198913574
+      ],
+      [
+        8.002300262451172,
+        -4.746699810028076,
+        -2.191699981689453
+      ],
+      [
+        10.39739990234375,
+        11.448399543762207,
+        6.935999870300293
+      ],
+      [
+        11.698699951171875,
+        12.203499794006348,
+        6.086699962615967
+      ],
+      [
+        10.525400161743164,
+        8.376999855041504,
+        7.7804999351501465
+      ],
+      [
+        9.5693998336792,
+        10.036800384521484,
+        12.498900413513184
+      ]
+    ],
+    "sentences": [
+      "She almost went for a burnt-cinnamon colour, then decided not to.",
+      "She almost went for a tobacco-toned shade, then decided not to.",
+      "She almost went for a sweet, girlish rose, then decided not to.",
+      "With a few strokes she put a dark ruby colour on the surface of her lips as a light, skin-showing layer, ending in a still-damp-seeming shine.",
+      "She laid a dark ruby colour over the broad planes of her face in a transparent stain; it came out with a still-damp-seeming shine.",
+      "She laid a pale peony tone over the outer cheek in a packed-on, solid layer; it came out with a still-damp-seeming shine.",
+      "With a few strokes she put a tobacco-toned shade on the surface of her lips as a light, skin-showing layer, ending in a fully dried-down, non-wet look.",
+      "A shade that read like skin stayed capped for the whole routine.",
+      "With a few strokes she put a burnt-cinnamon colour on the surface of her lips as maximum coverage, ending in a fully dried-down, non-wet look.",
+      "With a few strokes she put a sweet, girlish rose on the surface of her lips as maximum coverage, ending in a smooth semi-gloss surface.",
+      "She laid a pale peony tone over the outer cheek in a transparent stain; it came out with a soft un-reflective finish.",
+      "She laid a burnt-cinnamon colour over the socket line in a packed-on, solid layer; it came out with a soft un-reflective finish."
+    ],
+    "labels": [
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "lips.coverage": "bare",
+        "eyes.color": "bare",
+        "eyes.finish": "none",
+        "eyes.coverage": "bare",
+        "cheeks.color": "bare",
+        "cheeks.finish": "none",
+        "cheeks.coverage": "bare",
+        "skin.color": "bare",
+        "skin.finish": "none",
+        "skin.coverage": "bare"
+      },
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "lips.coverage": "bare",
+        "eyes.color": "bare",
+        "eyes.finish": "none",
+        "eyes.coverage": "bare",
+        "cheeks.color": "bare",
+        "cheeks.finish": "none",
+        "cheeks.coverage": "bare",
+        "skin.color": "bare",
+        "skin.finish": "none",
+        "skin.coverage": "bare"
+      },
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "lips.coverage": "bare",
+        "eyes.color": "bare",
+        "eyes.finish": "none",
+        "eyes.coverage": "bare",
+        "cheeks.color": "bare",
+        "cheeks.finish": "none",
+        "cheeks.coverage": "bare",
+        "skin.color": "bare",
+        "skin.finish": "none",
+        "skin.coverage": "bare"
+      },
+      {
+        "lips.color": "red",
+        "lips.finish": "dewy",
+        "lips.coverage": "light",
+        "eyes.color": "bare",
+        "eyes.finish": "none",
+        "eyes.coverage": "bare",
+        "cheeks.color": "bare",
+        "cheeks.finish": "none",
+        "cheeks.coverage": "bare",
+        "skin.color": "bare",
+        "skin.finish": "none",
+        "skin.coverage": "bare"
+      },
+      {
+        "lips.color": "red",
+        "lips.finish": "dewy",
+        "lips.coverage": "light",
+        "eyes.color": "bare",
+        "eyes.finish": "none",
+        "eyes.coverage": "bare",
+        "cheeks.color": "bare",
+        "cheeks.finish": "none",
+        "cheeks.coverage": "bare",
+        "skin.color": "red",
+        "skin.finish": "dewy",
+        "skin.coverage": "light"
+      },
+      {
+        "lips.color": "red",
+        "lips.finish": "dewy",
+        "lips.coverage": "light",
+        "eyes.color": "bare",
+        "eyes.finish": "none",
+        "eyes.coverage": "bare",
+        "cheeks.color": "pink",
+        "cheeks.finish": "dewy",
+        "cheeks.coverage": "full",
+        "skin.color": "red",
+        "skin.finish": "dewy",
+        "skin.coverage": "light"
+      },
+      {
+        "lips.color": "brown",
+        "lips.finish": "matte",
+        "lips.coverage": "light",
+        "eyes.color": "bare",
+        "eyes.finish": "none",
+        "eyes.coverage": "bare",
+        "cheeks.color": "pink",
+        "cheeks.finish": "dewy",
+        "cheeks.coverage": "full",
+        "skin.color": "red",
+        "skin.finish": "dewy",
+        "skin.coverage": "light"
+      },
+      {
+        "lips.color": "brown",
+        "lips.finish": "matte",
+        "lips.coverage": "light",
+        "eyes.color": "bare",
+        "eyes.finish": "none",
+        "eyes.coverage": "bare",
+        "cheeks.color": "pink",
+        "cheeks.finish": "dewy",
+        "cheeks.coverage": "full",
+        "skin.color": "red",
+        "skin.finish": "dewy",
+        "skin.coverage": "light"
+      },
+      {
+        "lips.color": "brown",
+        "lips.finish": "matte",
+        "lips.coverage": "full",
+        "eyes.color": "bare",
+        "eyes.finish": "none",
+        "eyes.coverage": "bare",
+        "cheeks.color": "pink",
+        "cheeks.finish": "dewy",
+        "cheeks.coverage": "full",
+        "skin.color": "red",
+        "skin.finish": "dewy",
+        "skin.coverage": "light"
+      },
+      {
+        "lips.color": "pink",
+        "lips.finish": "satin",
+        "lips.coverage": "full",
+        "eyes.color": "bare",
+        "eyes.finish": "none",
+        "eyes.coverage": "bare",
+        "cheeks.color": "pink",
+        "cheeks.finish": "dewy",
+        "cheeks.coverage": "full",
+        "skin.color": "red",
+        "skin.finish": "dewy",
+        "skin.coverage": "light"
+      },
+      {
+        "lips.color": "pink",
+        "lips.finish": "satin",
+        "lips.coverage": "full",
+        "eyes.color": "bare",
+        "eyes.finish": "none",
+        "eyes.coverage": "bare",
+        "cheeks.color": "pink",
+        "cheeks.finish": "matte",
+        "cheeks.coverage": "light",
+        "skin.color": "red",
+        "skin.finish": "dewy",
+        "skin.coverage": "light"
+      },
+      {
+        "lips.color": "pink",
+        "lips.finish": "satin",
+        "lips.coverage": "full",
+        "eyes.color": "brown",
+        "eyes.finish": "matte",
+        "eyes.coverage": "full",
+        "cheeks.color": "pink",
+        "cheeks.finish": "matte",
+        "cheeks.coverage": "light",
+        "skin.color": "red",
+        "skin.finish": "dewy",
+        "skin.coverage": "light"
+      }
+    ],
+    "action_kinds": [
+      "DISTRACTOR",
+      "DISTRACTOR",
+      "DISTRACTOR",
+      "APPLY",
+      "APPLY",
+      "APPLY",
+      "APPLY",
+      "DISTRACTOR",
+      "APPLY",
+      "APPLY",
+      "APPLY",
+      "APPLY"
+    ]
+  },
+  {
+    "narrative_id": "test-natural-000006",
+    "coords": [
+      [
+        -31.17919921875,
+        -3.5552000999450684,
+        23.126100540161133
+      ],
+      [
+        -27.992900848388672,
+        11.753700256347656,
+        12.024499893188477
+      ],
+      [
+        -21.888099670410156,
+        -1.3509000539779663,
+        -1.1950000524520874
+      ],
+      [
+        -11.697400093078613,
+        7.013199806213379,
+        -11.231200218200684
+      ],
+      [
+        -1.5953999757766724,
+        13.426400184631348,
+        -10.029999732971191
+      ],
+      [
+        5.79449987411499,
+        8.444100379943848,
+        -7.4842000007629395
+      ],
+      [
+        9.240300178527832,
+        10.365900039672852,
+        2.242799997329712
+      ],
+      [
+        10.629599571228027,
+        10.706600189208984,
+        2.159600019454956
+      ],
+      [
+        12.266500473022461,
+        -12.64210033416748,
+        3.6461000442504883
+      ],
+      [
+        10.526300430297852,
+        5.9720001220703125,
+        6.4679999351501465
+      ],
+      [
+        10.3016996383667,
+        7.438799858093262,
+        9.848400115966797
+      ]
+    ],
+    "sentences": [
+      "A burnt-cinnamon colour stayed capped for the whole routine.",
+      "She laid a naked, undertoned neutral over the surface of her lips in a light, skin-showing layer; it came out with a fully dried-down, non-wet look.",
+      "The surface of the surface of her lips was softened to a subtle, powdery shine.",
+      "She laid a pale peony tone over the outer cheek in a packed-on, solid layer; it came out with a soft un-reflective finish.",
+      "With a few strokes she put a stop-sign bright tone on the socket line as a transparent stain, ending in a fully dried-down, non-wet look.",
+      "With a few strokes she put a pale peony tone on the outer cheek as a packed-on, solid layer, ending in a still-damp-seeming shine.",
+      "She laid a burnt-cinnamon colour over her general complexion in a light, skin-showing layer; it came out with a fully dried-down, non-wet look.",
+      "With a few strokes she put a tobacco-toned shade on the broad planes of her face as a light, skin-showing layer, ending in a soft un-reflective finish.",
+      "The density on the outer cheek was reduced to almost nothing.",
+      "She laid a stop-sign bright tone over her upper cheek in a transparent stain; it came out with a soft un-reflective finish.",
+      "With a few strokes she put a tobacco-toned shade on the outer cheek as maximum coverage, ending in a juicy liquid-looking gleam."
+    ],
+    "labels": [
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "lips.coverage": "bare",
+        "eyes.color": "bare",
+        "eyes.finish": "none",
+        "eyes.coverage": "bare",
+        "cheeks.color": "bare",
+        "cheeks.finish": "none",
+        "cheeks.coverage": "bare",
+        "skin.color": "bare",
+        "skin.finish": "none",
+        "skin.coverage": "bare"
+      },
+      {
+        "lips.color": "nude",
+        "lips.finish": "matte",
+        "lips.coverage": "light",
+        "eyes.color": "bare",
+        "eyes.finish": "none",
+        "eyes.coverage": "bare",
+        "cheeks.color": "bare",
+        "cheeks.finish": "none",
+        "cheeks.coverage": "bare",
+        "skin.color": "bare",
+        "skin.finish": "none",
+        "skin.coverage": "bare"
+      },
+      {
+        "lips.color": "nude",
+        "lips.finish": "satin",
+        "lips.coverage": "light",
+        "eyes.color": "bare",
+        "eyes.finish": "none",
+        "eyes.coverage": "bare",
+        "cheeks.color": "bare",
+        "cheeks.finish": "none",
+        "cheeks.coverage": "bare",
+        "skin.color": "bare",
+        "skin.finish": "none",
+        "skin.coverage": "bare"
+      },
+      {
+        "lips.color": "nude",
+        "lips.finish": "satin",
+        "lips.coverage": "light",
+        "eyes.color": "bare",
+        "eyes.finish": "none",
+        "eyes.coverage": "bare",
+        "cheeks.color": "pink",
+        "cheeks.finish": "matte",
+        "cheeks.coverage": "full",
+        "skin.color": "bare",
+        "skin.finish": "none",
+        "skin.coverage": "bare"
+      },
+      {
+        "lips.color": "nude",
+        "lips.finish": "satin",
+        "lips.coverage": "light",
+        "eyes.color": "red",
+        "eyes.finish": "matte",
+        "eyes.coverage": "light",
+        "cheeks.color": "pink",
+        "cheeks.finish": "matte",
+        "cheeks.coverage": "full",
+        "skin.color": "bare",
+        "skin.finish": "none",
+        "skin.coverage": "bare"
+      },
+      {
+        "lips.color": "nude",
+        "lips.finish": "satin",
+        "lips.coverage": "light",
+        "eyes.color": "red",
+        "eyes.finish": "matte",
+        "eyes.coverage": "light",
+        "cheeks.color": "pink",
+        "cheeks.finish": "dewy",
+        "cheeks.coverage": "full",
+        "skin.color": "bare",
+        "skin.finish": "none",
+        "skin.coverage": "bare"
+      },
+      {
+        "lips.color": "nude",
+        "lips.finish": "satin",
+        "lips.coverage": "light",
+        "eyes.color": "red",
+        "eyes.finish": "matte",
+        "eyes.coverage": "light",
+        "cheeks.color": "pink",
+        "cheeks.finish": "dewy",
+        "cheeks.coverage": "full",
+        "skin.color": "brown",
+        "skin.finish": "matte",
+        "skin.coverage": "light"
+      },
+      {
+        "lips.color": "nude",
+        "lips.finish": "satin",
+        "lips.coverage": "light",
+        "eyes.color": "red",
+        "eyes.finish": "matte",
+        "eyes.coverage": "light",
+        "cheeks.color": "pink",
+        "cheeks.finish": "dewy",
+        "cheeks.coverage": "full",
+        "skin.color": "brown",
+        "skin.finish": "matte",
+        "skin.coverage": "light"
+      },
+      {
+        "lips.color": "nude",
+        "lips.finish": "satin",
+        "lips.coverage": "light",
+        "eyes.color": "red",
+        "eyes.finish": "matte",
+        "eyes.coverage": "light",
+        "cheeks.color": "pink",
+        "cheeks.finish": "dewy",
+        "cheeks.coverage": "light",
+        "skin.color": "brown",
+        "skin.finish": "matte",
+        "skin.coverage": "light"
+      },
+      {
+        "lips.color": "nude",
+        "lips.finish": "satin",
+        "lips.coverage": "light",
+        "eyes.color": "red",
+        "eyes.finish": "matte",
+        "eyes.coverage": "light",
+        "cheeks.color": "red",
+        "cheeks.finish": "matte",
+        "cheeks.coverage": "light",
+        "skin.color": "brown",
+        "skin.finish": "matte",
+        "skin.coverage": "light"
+      },
+      {
+        "lips.color": "nude",
+        "lips.finish": "satin",
+        "lips.coverage": "light",
+        "eyes.color": "red",
+        "eyes.finish": "matte",
+        "eyes.coverage": "light",
+        "cheeks.color": "brown",
+        "cheeks.finish": "dewy",
+        "cheeks.coverage": "full",
+        "skin.color": "brown",
+        "skin.finish": "matte",
+        "skin.coverage": "light"
+      }
+    ],
+    "action_kinds": [
+      "DISTRACTOR",
+      "APPLY",
+      "SOFTEN",
+      "APPLY",
+      "APPLY",
+      "APPLY",
+      "APPLY",
+      "APPLY",
+      "SHEER",
+      "APPLY",
+      "APPLY"
+    ]
+  },
+  {
+    "narrative_id": "test-natural-000007",
+    "coords": [
+      [
+        -30.61389923095703,
+        10.946499824523926,
+        17.292400360107422
+      ],
+      [
+        -23.46489906311035,
+        16.091999053955078,
+        4.248199939727783
+      ],
+      [
+        -12.752599716186523,
+        12.241399765014648,
+        -10.151599884033203
+      ],
+      [
+        -9.495400428771973,
+        -3.069700002670288,
+        -11.483799934387207
+      ],
+      [
+        -5.6732001304626465,
+        -8.080300331115723,
+        -11.084699630737305
+      ],
+      [
+        -4.288400173187256,
+        -17.191200256347656,
+        -9.047800064086914
+      ],
+      [
+        4.69890022277832,
+        0.6851000189781189,
+        -6.064899921417236
+      ],
+      [
+        9.730899810791016,
+        8.521599769592285,
+        -3.835700035095215
+      ],
+      [
+        11.02929973602295,
+        4.141300201416016,
+        0.17949999868869781
+      ],
+      [
+        11.228799819946289,
+        7.773900032043457,
+        3.416100025177002
+      ],
+      [
+        9.107600212097168,
+        -11.246399879455566,
+        6.253600120544434
+      ],
+      [
+        10.219099998474121,
+        11.81760025024414,
+        12.80679988861084
+      ],
+      [
+        9.12660026550293,
+        11.955699920654297,
+        9.579899787902832
+      ],
+      [
+        8.291600227355957,
+        1.0121999979019165,
+        9.12600040435791
+      ]
+    ],
+    "sentences": [
+      "With a few strokes she put a tobacco-toned shade on the socket line as a packed-on, solid layer, ending in a juicy liquid-looking gleam.",
+      "With a few strokes she put a dark ruby colour on her general complexion as a light, skin-showing layer, ending in a smooth semi-gloss surface.",
+      "With a few strokes she put a pale peony tone on her upper cheek as a packed-on, solid layer, ending in a soft un-reflective finish.",
+      "Another heavy pass made her general complexion fully opaque.",
+      "A stop-sign bright tone stayed capped for the whole routine.",
+      "A moment passed with nothing done.",
+      "She laid a dark ruby colour over the hooded part of her lid in maximum coverage; it came out with a juicy liquid-looking gleam.",
+      "She laid a sweet, girlish rose over the surface of her lips in a light, skin-showing layer; it came out with a smooth semi-gloss surface.",
+      "She laid a stop-sign bright tone over the socket line in maximum coverage; it came out with a juicy liquid-looking gleam.",
+      "With a few strokes she put a sweet, girlish rose on the surface of her lips as a packed-on, solid layer, ending in a still-damp-seeming shine.",
+      "A moment passed with nothing done.",
+      "With a few strokes she put a burnt-cinnamon colour on the broad planes of her face as a transparent stain, ending in a fully dried-down, non-wet look.",
+      "With a few strokes she put a naked, undertoned neutral on her upper cheek as maximum coverage, ending in a soft un-reflective finish.",
+      "The surface of the surface of her lips was softened to a subtle, powdery shine."
+    ],
+    "labels": [
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "lips.coverage": "bare",
+        "eyes.color": "brown",
+        "eyes.finish": "dewy",
+        "eyes.coverage": "full",
+        "cheeks.color": "bare",
+        "cheeks.finish": "none",
+        "cheeks.coverage": "bare",
+        "skin.color": "bare",
+        "skin.finish": "none",
+        "skin.coverage": "bare"
+      },
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "lips.coverage": "bare",
+        "eyes.color": "brown",
+        "eyes.finish": "dewy",
+        "eyes.coverage": "full",
+        "cheeks.color": "bare",
+        "cheeks.finish": "none",
+        "cheeks.coverage": "bare",
+        "skin.color": "red",
+        "skin.finish": "satin",
+        "skin.coverage": "light"
+      },
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "lips.coverage": "bare",
+        "eyes.color": "brown",
+        "eyes.finish": "dewy",
+        "eyes.coverage": "full",
+        "cheeks.color": "pink",
+        "cheeks.finish": "matte",
+        "cheeks.coverage": "full",
+        "skin.color": "red",
+        "skin.finish": "satin",
+        "skin.coverage": "light"
+      },
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "lips.coverage": "bare",
+        "eyes.color": "brown",
+        "eyes.finish": "dewy",
+        "eyes.coverage": "full",
+        "cheeks.color": "pink",
+        "cheeks.finish": "matte",
+        "cheeks.coverage": "full",
+        "skin.color": "red",
+        "skin.finish": "satin",
+        "skin.coverage": "full"
+      },
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "lips.coverage": "bare",
+        "eyes.color": "brown",
+        "eyes.finish": "dewy",
+        "eyes.coverage": "full",
+        "cheeks.color": "pink",
+        "cheeks.finish": "matte",
+        "cheeks.coverage": "full",
+        "skin.color": "red",
+        "skin.finish": "satin",
+        "skin.coverage": "full"
+      },
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "lips.coverage": "bare",
+        "eyes.color": "brown",
+        "eyes.finish": "dewy",
+        "eyes.coverage": "full",
+        "cheeks.color": "pink",
+        "cheeks.finish": "matte",
+        "cheeks.coverage": "full",
+        "skin.color": "red",
+        "skin.finish": "satin",
+        "skin.coverage": "full"
+      },
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "lips.coverage": "bare",
+        "eyes.color": "red",
+        "eyes.finish": "dewy",
+        "eyes.coverage": "full",
+        "cheeks.color": "pink",
+        "cheeks.finish": "matte",
+        "cheeks.coverage": "full",
+        "skin.color": "red",
+        "skin.finish": "satin",
+        "skin.coverage": "full"
+      },
+      {
+        "lips.color": "pink",
+        "lips.finish": "satin",
+        "lips.coverage": "light",
+        "eyes.color": "red",
+        "eyes.finish": "dewy",
+        "eyes.coverage": "full",
+        "cheeks.color": "pink",
+        "cheeks.finish": "matte",
+        "cheeks.coverage": "full",
+        "skin.color": "red",
+        "skin.finish": "satin",
+        "skin.coverage": "full"
+      },
+      {
+        "lips.color": "pink",
+        "lips.finish": "satin",
+        "lips.coverage": "light",
+        "eyes.color": "red",
+        "eyes.finish": "dewy",
+        "eyes.coverage": "full",
+        "cheeks.color": "pink",
+        "cheeks.finish": "matte",
+        "cheeks.coverage": "full",
+        "skin.color": "red",
+        "skin.finish": "satin",
+        "skin.coverage": "full"
+      },
+      {
+        "lips.color": "pink",
+        "lips.finish": "dewy",
+        "lips.coverage": "full",
+        "eyes.color": "red",
+        "eyes.finish": "dewy",
+        "eyes.coverage": "full",
+        "cheeks.color": "pink",
+        "cheeks.finish": "matte",
+        "cheeks.coverage": "full",
+        "skin.color": "red",
+        "skin.finish": "satin",
+        "skin.coverage": "full"
+      },
+      {
+        "lips.color": "pink",
+        "lips.finish": "dewy",
+        "lips.coverage": "full",
+        "eyes.color": "red",
+        "eyes.finish": "dewy",
+        "eyes.coverage": "full",
+        "cheeks.color": "pink",
+        "cheeks.finish": "matte",
+        "cheeks.coverage": "full",
+        "skin.color": "red",
+        "skin.finish": "satin",
+        "skin.coverage": "full"
+      },
+      {
+        "lips.color": "pink",
+        "lips.finish": "dewy",
+        "lips.coverage": "full",
+        "eyes.color": "red",
+        "eyes.finish": "dewy",
+        "eyes.coverage": "full",
+        "cheeks.color": "pink",
+        "cheeks.finish": "matte",
+        "cheeks.coverage": "full",
+        "skin.color": "brown",
+        "skin.finish": "matte",
+        "skin.coverage": "light"
+      },
+      {
+        "lips.color": "pink",
+        "lips.finish": "dewy",
+        "lips.coverage": "full",
+        "eyes.color": "red",
+        "eyes.finish": "dewy",
+        "eyes.coverage": "full",
+        "cheeks.color": "nude",
+        "cheeks.finish": "matte",
+        "cheeks.coverage": "full",
+        "skin.color": "brown",
+        "skin.finish": "matte",
+        "skin.coverage": "light"
+      },
+      {
+        "lips.color": "pink",
+        "lips.finish": "satin",
+        "lips.coverage": "full",
+        "eyes.color": "red",
+        "eyes.finish": "dewy",
+        "eyes.coverage": "full",
+        "cheeks.color": "nude",
+        "cheeks.finish": "matte",
+        "cheeks.coverage": "full",
+        "skin.color": "brown",
+        "skin.finish": "matte",
+        "skin.coverage": "light"
+      }
+    ],
+    "action_kinds": [
+      "APPLY",
+      "APPLY",
+      "APPLY",
+      "BUILD",
+      "DISTRACTOR",
+      "NOOP",
+      "APPLY",
+      "APPLY",
+      "APPLY",
+      "APPLY",
+      "NOOP",
+      "APPLY",
+      "APPLY",
+      "SOFTEN"
+    ]
+  }
+]

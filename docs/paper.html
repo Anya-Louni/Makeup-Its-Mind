@@ -1,0 +1,1019 @@
+<title>Values Without Bindings</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+:root{
+  --paper:#FBF9F9;
+  --panel:#F3EFEF;
+  --panel-2:#EDE8E9;
+  --ink:#1B1618;
+  --ink-2:#453C3F;
+  --muted:#6B6265;
+  --rule:#DFD7D9;
+  --rule-soft:#EAE3E5;
+
+  --crimson:#C01C3F;
+  --slate:#2F6F9F;
+  --cocoa:#79482A;
+
+  --ok:#2E7D5B;
+  --warn:#B0561F;
+
+  --sw-bare:#EFE7DE; --sw-nude:#DCB79C; --sw-pink:#E88FA6;
+  --sw-red:#C01C3F;  --sw-brown:#79482A;
+
+  --measure:70ch;
+  --f-display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --f-body:"Newsreader",Georgia,"Times New Roman",serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#141011; --panel:#1D1819; --panel-2:#241E20;
+    --ink:#F2EDEE; --ink-2:#D5CBCE; --muted:#9C9195;
+    --rule:#332B2E; --rule-soft:#2A2325;
+    --crimson:#F0637F; --slate:#79B4DC; --cocoa:#C08A64;
+    --ok:#5FBF8F; --warn:#E08A4D;
+    --sw-red:#E0455F; --sw-brown:#9C6440;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#141011; --panel:#1D1819; --panel-2:#241E20;
+  --ink:#F2EDEE; --ink-2:#D5CBCE; --muted:#9C9195;
+  --rule:#332B2E; --rule-soft:#2A2325;
+  --crimson:#F0637F; --slate:#79B4DC; --cocoa:#C08A64;
+  --ok:#5FBF8F; --warn:#E08A4D;
+  --sw-red:#E0455F; --sw-brown:#9C6440;
+}
+
+*{box-sizing:border-box}
+body{
+  background:var(--paper); color:var(--ink);
+  font-family:var(--f-body); font-size:19px; line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1140px;margin:0 auto;padding:0 28px 90px}
+.col{max-width:var(--measure)}
+p{margin:0 0 1.05em}
+a{color:var(--crimson)}
+strong{font-weight:500}
+code,.mono{font-family:var(--f-mono);font-size:.82em;letter-spacing:-.01em}
+
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0}
+h2{font-size:1.5rem;font-weight:700;letter-spacing:-.018em;line-height:1.18}
+h3{font-size:1.12rem;font-weight:600;letter-spacing:-.01em;line-height:1.3}
+
+.masthead{padding:56px 0 30px;border-bottom:1px solid var(--rule)}
+.masthead h1{
+  font-size:clamp(2.4rem,6vw,4.1rem);font-weight:700;
+  letter-spacing:-.035em;line-height:1;margin:0 0 .24em;
+}
+.masthead h1 .thin{font-weight:500;color:var(--muted)}
+.dek{font-size:1.2rem;line-height:1.5;color:var(--ink-2);max-width:56ch;margin:0}
+.byline{
+  display:flex;flex-wrap:wrap;gap:6px 26px;margin-top:26px;
+  font-family:var(--f-mono);font-size:.74rem;color:var(--muted);
+}
+.byline b{font-weight:400;color:var(--ink-2)}
+
+.thesis{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,400px);
+  gap:46px;align-items:center;padding:38px 0 44px;border-bottom:1px solid var(--rule);
+}
+@media(max-width:860px){.thesis{grid-template-columns:1fr;gap:26px}}
+.thesis p{font-size:1.24rem;line-height:1.45;max-width:44ch;margin:0}
+.thesis p b{font-weight:500;color:var(--crimson)}
+.vecbox{background:var(--panel);border:1px solid var(--rule-soft);padding:18px}
+.vec-caption{font-family:var(--f-mono);font-size:.7rem;color:var(--muted);
+  margin-top:10px;line-height:1.55}
+
+section{padding:44px 0;border-bottom:1px solid var(--rule-soft)}
+section:last-of-type{border-bottom:0}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:18px}
+.sec-num{font-family:var(--f-mono);font-size:.74rem;color:var(--muted);flex:none}
+
+.result{margin:40px 0 0;padding-top:18px;border-top:1px solid var(--rule)}
+.result:first-of-type{border-top:2px solid var(--ink)}
+.result-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+.result-num{font-family:var(--f-mono);font-size:.78rem;color:var(--muted);flex:none}
+.status{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.05em;
+  text-transform:uppercase;margin:0 0 14px}
+.s-repl{color:var(--ok)} .s-fail{color:var(--warn)}
+.s-diff{color:var(--slate)} .s-single{color:var(--muted)}
+
+figure{margin:28px 0 0;padding:0}
+.fig-frame{background:var(--panel);border:1px solid var(--rule-soft);
+  padding:22px 22px 16px;overflow-x:auto}
+figcaption{font-size:.87rem;line-height:1.55;color:var(--muted);
+  margin-top:12px;max-width:80ch}
+figcaption b{color:var(--ink-2);font-weight:500}
+svg{display:block;max-width:100%;height:auto}
+.chart-title{font-family:var(--f-display);font-size:.95rem;font-weight:600;margin-bottom:2px}
+.chart-sub{font-family:var(--f-mono);font-size:.7rem;color:var(--muted);margin-bottom:16px}
+
+.tbl-scroll{overflow-x:auto;margin:24px 0 0}
+table{border-collapse:collapse;width:100%;font-size:.85rem;
+  font-family:var(--f-display);font-variant-numeric:tabular-nums}
+th{font-family:var(--f-mono);font-size:.66rem;font-weight:500;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--muted);text-align:left;
+  padding:0 14px 9px 0;border-bottom:1px solid var(--rule);white-space:nowrap}
+td{padding:9px 14px 9px 0;border-bottom:1px solid var(--rule-soft)}
+td.num{font-family:var(--f-mono);font-size:.8rem;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+.pos{color:var(--ok)} .neg{color:var(--warn)} .nil{color:var(--muted)}
+
+.faces{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:700px){.faces{grid-template-columns:1fr}}
+.face-panel{text-align:center}
+.face-label{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.06em;
+  color:var(--muted);margin-bottom:8px}
+.face-read{font-family:var(--f-mono);font-size:.72rem;line-height:1.7;margin-top:6px}
+.controls{display:flex;align-items:center;gap:14px;margin-top:18px;flex-wrap:wrap}
+button{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.05em;
+  background:var(--ink);color:var(--paper);border:0;padding:8px 15px;cursor:pointer}
+button:hover{background:var(--crimson)}
+button:focus-visible,input:focus-visible{outline:2px solid var(--crimson);outline-offset:2px}
+input[type=range]{flex:1 1 180px;accent-color:var(--crimson)}
+.sentence{font-size:1rem;line-height:1.5;color:var(--ink-2);min-height:3em;
+  margin-top:16px;padding-left:14px;border-left:2px solid var(--rule)}
+.step{font-family:var(--f-mono);font-size:.72rem;color:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:14px;
+  font-family:var(--f-mono);font-size:.68rem;color:var(--muted)}
+.key{display:inline-flex;align-items:center;gap:7px}
+.dot{width:10px;height:10px;flex:none;border-radius:50%}
+
+.corr h3{margin-top:28px;margin-bottom:.3em;font-size:1.02rem}
+.corr p{margin-bottom:.9em}
+.foot{padding-top:38px;font-family:var(--f-mono);font-size:.72rem;
+  color:var(--muted);line-height:1.75}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@keyframes grow{from{transform:scaleX(.05)}to{transform:scaleX(1)}}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes pop{from{transform:scale(.2);opacity:0}to{transform:scale(1);opacity:1}}
+</style>
+
+<div class="wrap">
+
+<header class="masthead">
+  <h1>Values without<br><span class="thin">bindings</span></h1>
+  <p class="dek">Two small language models causally use what an attribute is.
+  They only represent whose it is.</p>
+  <div class="byline">
+    <span><b>Domain</b> makeup routine, 4 face regions × 3 attributes</span>
+    <span><b>Models</b> gpt2-124M, pythia-410m</span>
+    <span><b>Narratives</b> 7,400</span>
+    <span><b>Labelled positions</b> 83,655</span>
+  </div>
+</header>
+
+<div class="thesis">
+  <div>
+    <p>Steering a model with the <b>wrong region's</b> direction changes its answer as
+    much as steering with the right one. This held in every test we ran, across two
+    models and two attributes. The two directions turn out to be nearly the same
+    vector.</p>
+  </div>
+  <div class="vecbox">
+    <svg viewBox="0 0 380 240" role="img" aria-label="Two concept direction vectors drawn at their measured angular separation">
+      <defs>
+        <marker id="ah1" markerWidth="9" markerHeight="9" refX="7.4" refY="4.5" orient="auto">
+          <path d="M0,0 L9,4.5 L0,9 z" fill="var(--crimson)"/></marker>
+        <marker id="ah2" markerWidth="9" markerHeight="9" refX="7.4" refY="4.5" orient="auto">
+          <path d="M0,0 L9,4.5 L0,9 z" fill="var(--cocoa)"/></marker>
+      </defs>
+      <circle cx="60" cy="190" r="4" fill="var(--ink)"/>
+      <path id="sweepArc" d="" fill="none" stroke="var(--muted)" stroke-width="1"
+            stroke-dasharray="2 3" opacity=".55"/>
+      <line x1="60" y1="190" x2="330" y2="190" stroke="var(--rule)" stroke-width="1"/>
+      <g id="vecA"><line x1="60" y1="190" x2="322" y2="112" stroke="var(--crimson)"
+        stroke-width="2.4" marker-end="url(#ah1)"/></g>
+      <g id="vecB"><line x1="60" y1="190" x2="300" y2="62" stroke="var(--cocoa)"
+        stroke-width="2.4" marker-end="url(#ah2)" stroke-dasharray="7 4"/></g>
+      <text x="336" y="108" font-family="IBM Plex Mono,monospace" font-size="11"
+            fill="var(--crimson)" text-anchor="end">lips.finish = dewy</text>
+      <text x="312" y="52" font-family="IBM Plex Mono,monospace" font-size="11"
+            fill="var(--cocoa)" text-anchor="end">eyes.finish = dewy</text>
+      <text id="cosLabel" x="128" y="172" font-family="IBM Plex Mono,monospace"
+            font-size="12" fill="var(--muted)">cos = 0.81</text>
+    </svg>
+    <div class="vec-caption">Difference-of-means directions for the same finish value on
+    two different face regions. Measured cosine runs from 0.67 to 0.95 across value
+    pairs, and the sweep covers that range.</div>
+  </div>
+</div>
+
+<section>
+  <div class="sec-head"><div class="sec-num">0</div><h2>Abstract</h2></div>
+  <div class="col">
+    <p>Adding one face region's concept direction to a language model's residual stream
+    moves its read-out of a different region just as much, and sometimes more. We
+    observed this in four independent tests spanning two models and two attributes:
+    gpt2 finish (+0.149 for the wrong region against +0.148 for the correct one),
+    pythia finish (+0.195 against +0.147), and pythia colour (+0.069 against +0.032,
+    where the wrong direction is 2.2 times stronger). A random direction of matched
+    norm had no effect in any of them. The causal machinery is real, and it is
+    indifferent to which entity the value belongs to.</p>
+
+    <p>The short version of our conclusion is that values are used, bindings are only
+    present, and which specific findings hold depends on the model rather than the
+    task.</p>
+
+    <p>We tested this in a synthetic makeup-routine domain designed to separate binding
+    from state tracking. Four face regions each carry a colour, a finish and a coverage
+    level, updated by a state machine whose actions overwrite earlier values. Some
+    sentences mention a value without applying it, and the train and test splits share
+    no surface forms at all. A linear probe does recover which region an attribute
+    belongs to. The binding margin is +0.07 to +0.12 shortly after a value is set, it
+    holds in both models, and it survives Benjamini-Hochberg correction across 180
+    tests, leaving 33 of 36 region pairs significant at distance zero. That evidence is
+    correlational, and the intervention above indicates the model does not use it.
+    Binding also decays. Past roughly five sentences the within-region signal falls
+    below majority while the cross-region read rises above it, so the representation
+    still carries the fact that a value occurred somewhere after it has lost where.</p>
+
+    <p>Finally, the pattern of which state variables beat a lexical baseline does not
+    replicate across models. No target is significant in the same direction in both,
+    and our most robust gpt2 result (<code>eyes.finish</code>, two-sided p &lt; 0.0001)
+    gives p = 0.64 in pythia. We report per model rather than claiming a property of the
+    domain, and we regard this as the clearest methodological result of the study.</p>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><div class="sec-num">1</div><h2>Introduction</h2></div>
+  <div class="col">
+    <p>A language model that predicts the next word well might maintain a model of the
+    situation the words describe, or it might exploit surface regularities that
+    correlate with that situation. Probing studies routinely establish that some
+    variable is linearly recoverable from the activations. They establish far less often
+    that the model's own computation depends on it.</p>
+
+    <p>The gap matters most for relations. Recovering that red is present somewhere in a
+    scene is a weaker result than recovering that red is on the lips while brown is on
+    the eyes. Single-object domains such as a board position or a scalar quantity cannot
+    separate the two, since there is only one thing for a property to attach to.</p>
+
+    <p>We therefore built a domain in which several entities compete for the same
+    attribute values. A makeup routine is described one sentence at a time. Four face
+    regions each carry a colour, a finish and a coverage level, and actions overwrite,
+    blot, build up, sheer out or remove. The palette is shared across regions by design,
+    so the question of which region is red cannot be answered from the colour word
+    alone. Every sentence is generated from an explicit state machine, so the ground
+    truth at each position is exact.</p>
+
+    <p>Three design choices make the test difficult. Each attribute value has ten
+    realisations, most of which avoid the literal label word, so <em>matte</em> appears
+    as "a chalk-flat surface" or "a dead-flat look that caught no light". Phrase banks
+    and sentence skeletons are both partitioned across splits, so a test narrative
+    contains no wording the probe has seen. And 18 per cent of sentences mention a value
+    without applying it, as in "she held a deep crimson up to the light and shook her
+    head", which misleads a bag-of-words model.</p>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><div class="sec-num">2</div><h2>Related work</h2></div>
+  <div class="col">
+    <p>Li et al. (ICLR 2023) recovered Othello board state from a sequence model's
+    residual stream, and we follow their template. Nanda et al. (BlackboxNLP 2023) then
+    showed the representation is linear once the target is reframed in player-relative
+    terms, reaching above 99 per cent accuracy. We carry that as a warning: whether a
+    world model looks linear can depend on how the target is parameterised. Othello has
+    one board, though. A bag of move tokens cannot reconstruct a board, whereas a bag of
+    words goes a long way on the question of which colour was mentioned. That asymmetry
+    works against us and shows up directly in our baselines.</p>
+
+    <p>Feng, Russell and Steinhardt (ICLR 2025) decode lexical concepts, identify a
+    binding subspace, and compose propositions such as <code>WorksAs(Greg, nurse)</code>,
+    generalising from templates to short stories and to Spanish. Their setting is
+    largely static, in that properties are asserted and then read off. Ours is
+    sequential and destructive, which lets us ask a question their setup does not pose:
+    how long does a binding survive?</p>
+
+    <p>Kim and Schuster (ACL 2023) evaluate final-state inference on ProPara and
+    Recipes, and find that only models pretrained on large amounts of code exhibit the
+    ability. Their evaluation is behavioural where ours is representational and causal.
+    Their result also sets expectations for scale. At 124M and 410M parameters we sit
+    well below the regime where strong effects should be expected.</p>
+
+    <p>What is new here is binding decay over narrative distance, together with the
+    finding that presence outlives binding, measured two independent ways. The domain is
+    also new: multi-entity, order-destructive, with exact labels and no surface overlap
+    between splits. The cross-model comparison is new in this setting as well. Linear
+    probing of emergent state, binding as a probing question, activation patching,
+    control tasks and MDL are all standard, and we use them as they stand.</p>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><div class="sec-num">3</div><h2>Method</h2></div>
+  <div class="col">
+    <p><strong>Domain.</strong> Four entities (lips, eyes, cheeks, skin), each with a
+    colour drawn from bare, nude, pink, red and brown, a finish drawn from none, matte,
+    dewy and satin, and a coverage level drawn from bare, light and full. Nine action
+    kinds drive the state machine, two of which change nothing. Narratives run 5 to 16
+    sentences, and the label at position <em>i</em> is the state after executing actions
+    0 through <em>i</em>. About a quarter of positions are ones where the value was
+    overwritten earlier, so the first mention gives the wrong answer there.</p>
+
+    <p><strong>Model selection.</strong> Seven candidates were benchmarked on load time,
+    throughput, memory and a vocabulary check before any were used.
+    <code>meta-llama/Llama-3.2-1B</code> and <code>google/gemma-2-2b</code> are gated on
+    the Hub and are recorded as unevaluated. The vocabulary check scores each domain
+    term on three minimal pairs, for example "a matte finish reflects almost no ___"
+    with <em>light</em> against <em>sound</em>, because free-form definitions from a base
+    model are unreliable evidence in either direction. We selected gpt2 as the primary
+    model. pythia-410m serves as the replication check, chosen because it differs in
+    family, depth and training data rather than because it is the next size up.</p>
+
+    <p><strong>Probing.</strong> We take the residual stream at the last token of each
+    sentence, at every layer, and fit logistic-regression and MLP probes against four
+    baselines: majority class, the model's own embedding layer, a mean-pooled
+    non-contextual embedding, and TF-IDF over the raw prefix text. Both read-out
+    conventions, last token and mean-pooled, are stored from the same forward pass.</p>
+
+    <p><strong>Intervention.</strong> We add a concept direction to the residual stream
+    at a chosen layer and read out the model's own log-odds over the state words. Three
+    control arms run alongside, and the third of them decided the paper. The first is
+    the other region's read-out taken from the same forward pass. The second is a random
+    direction at matched norm. The third is the other region's concept direction at
+    matched norm.</p>
+
+    <p><strong>Conventions.</strong> All p-values are two-sided. Intervals over
+    narrative positions use a cluster bootstrap that resamples whole narratives, since
+    positions within a narrative share wordings and state. Causal claims use α = 2,
+    because at α = 8 even random directions of matched norm reach significance, which
+    indicates the edit is off-distribution. MDL is reported over a sweep of probe
+    regularisation, since a single arbitrary <code>C</code> yields compression anywhere
+    from 0.75× to 1.44× on identical data.</p>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><div class="sec-num">4</div><h2>Results</h2></div>
+  <div class="col">
+    <p>Results are ordered by how well supported they are, not by the order in which we
+    ran them. The first result replicated in every test. The last were run on one model
+    and are labelled accordingly.</p>
+  </div>
+
+  <figure>
+    <div class="fig-frame">
+      <div class="chart-title">Does the read-out beat a lexical baseline?</div>
+      <div class="chart-sub">accuracy gap over the static-embedding baseline, cluster bootstrap over narratives</div>
+      <div id="gapChart"></div>
+    </div>
+    <figcaption><b>Figure 1.</b> The same four state variables in both models. Solid bars
+    are significant at two-sided p &lt; 0.05 and faded bars are not. No target is
+    significant in the same direction in both models, which is why every claim on this
+    page is stated per model.</figcaption>
+  </figure>
+
+  <figure>
+    <div class="fig-frame">
+      <div class="chart-title">One narrative, read three ways</div>
+      <div class="chart-sub">true state, then what a linear probe recovers from each model</div>
+      <div class="faces">
+        <div class="face-panel"><div class="face-label">True state</div>
+          <div id="faceTrue"></div><div class="face-read" id="readTrue"></div></div>
+        <div class="face-panel"><div class="face-label" style="color:var(--crimson)">gpt2 read-out</div>
+          <div id="faceA"></div><div class="face-read" id="readA"></div></div>
+        <div class="face-panel"><div class="face-label" style="color:var(--slate)">pythia read-out</div>
+          <div id="faceB"></div><div class="face-read" id="readB"></div></div>
+      </div>
+      <div class="sentence" id="faceSentence"></div>
+      <div class="controls">
+        <button id="playBtn">Play</button>
+        <input type="range" id="faceRange" min="0" max="7" value="0" aria-label="Sentence position">
+        <span class="step" id="faceStep">1 / 8</span>
+      </div>
+      <div class="legend">
+        <span class="key"><span class="dot" style="background:var(--sw-bare);border:1px solid var(--rule)"></span>bare</span>
+        <span class="key"><span class="dot" style="background:var(--sw-nude)"></span>nude</span>
+        <span class="key"><span class="dot" style="background:var(--sw-pink)"></span>pink</span>
+        <span class="key"><span class="dot" style="background:var(--sw-red)"></span>red</span>
+        <span class="key"><span class="dot" style="background:var(--sw-brown)"></span>brown</span>
+        <span class="key"><svg width="18" height="12"><path d="M2,6 Q9,1 16,6" fill="none" stroke="var(--ok)" stroke-width="2"/></svg>matches truth</span>
+        <span class="key"><svg width="18" height="12"><path d="M2,6 Q9,1 16,6" fill="none" stroke="var(--warn)" stroke-width="2" stroke-dasharray="3 2"/></svg>mismatch</span>
+      </div>
+    </div>
+    <figcaption><b>Figure 3.</b> Eyeshadow and lip colour show the region's colour value.
+    The outline shows whether the probe agrees with the truth. Over this narrative gpt2
+    is correct on 56 per cent of region-attribute readings and pythia on 34 per cent,
+    while the two models agree with each other only 37.5 per cent of the time, less
+    often than gpt2 agrees with the truth.</figcaption>
+  </figure>
+
+  <div class="result">
+    <div class="result-head"><span class="result-num">4.1</span>
+      <h3>The causal effect is not specific to an entity</h3></div>
+    <div class="status s-fail">Fails in both models, 4 of 4 tests</div>
+    <div class="col">
+      <p>Injecting the other region's concept direction, at the same attribute, norm and
+      layer, moves the read-out as much as the correct region's direction in all four
+      tests. For pythia's colour it is 2.2 times stronger. A random direction at matched
+      norm has no effect anywhere, so the effect depends on the direction. It simply
+      does not depend on which entity the direction came from.</p>
+      <p>The geometry predicts this, and we should have checked it earlier.
+      Difference-of-means directions for the same value on two different regions have
+      cosine between 0.67 and 0.95. They are nearly the same vector, so they
+      interchange.</p>
+    </div>
+    <figure>
+      <div class="fig-frame">
+        <div class="chart-title">Three arms, four experiments</div>
+        <div class="chart-sub">paired change in log-odds of the steered value, α = 2, distance ≤ 1, 95 per cent bootstrap CI</div>
+        <div id="armChart"></div>
+      </div>
+      <figcaption><b>Figure 3.</b> If the model bound values to regions, the
+      wrong-region bar would sit near the random bar. It sits at or above the correct
+      one every time.</figcaption>
+    </figure>
+  </div>
+
+  <div class="result">
+    <div class="result-head"><span class="result-num">4.2</span>
+      <h3>There is a real causal effect on the attribute value</h3></div>
+    <div class="status s-repl">Replicates in both models</div>
+    <div class="col">
+      <p>This is what gives 4.1 its force. The concept direction shifts the model's own
+      log-odds of the steered value by +0.055 (95 per cent CI +0.041 to +0.070) in gpt2
+      and +0.147 (+0.123 to +0.171) in pythia, while a matched-norm random direction
+      gives +0.014 and −0.009 respectively, neither significant. The mechanism exists
+      and depends on the direction. It encodes what the value is, and carries no
+      information about whose it is.</p>
+    </div>
+  </div>
+
+  <div class="result">
+    <div class="result-head"><span class="result-num">4.3</span>
+      <h3>Binding is recoverable by a probe, and decays with distance</h3></div>
+    <div class="status s-repl">Replicates in both models, correlational evidence</div>
+    <div class="col">
+      <p>A probe trained on one region and read against another sits at that region's
+      majority rate, so it carries no information about the other region, while the
+      within-region probe sits well above majority. That is correct binding, with four
+      regions competing over a shared palette, and it holds in both models at +0.04 to
+      +0.12 shortly after a value is set.</p>
+      <p>It then decays. Past roughly five sentences the within-region signal drops below
+      majority while the cross-region read rises above it. The representation still
+      knows the value occurred somewhere and has lost which region it applied to.
+      Presence outlives binding. This evidence is correlational, and 4.1 is our reason
+      for not claiming the model uses it.</p>
+    </div>
+    <figure>
+      <div class="fig-frame">
+        <div class="chart-title">Binding margin by distance since the value last changed</div>
+        <div class="chart-sub">gpt2, 4 regions, 36 region pairs, 116,424 labelled positions</div>
+        <div id="decayChart"></div>
+      </div>
+      <figcaption><b>Figure 4.</b> Margin is (within-region minus its majority) less
+      (cross-region minus its majority). The sign change past distance 5 is the
+      substantive finding, and it comes from the best-powered bin in the study at 35,409
+      observations. Benjamini-Hochberg correction across all 180 tests leaves 33 of 36
+      pairs significant at distance 0 and 29 of 36 at distance 5 or more.</figcaption>
+    </figure>
+  </div>
+
+  <div class="result">
+    <div class="result-head"><span class="result-num">4.4</span>
+      <h3>Which attribute is causally load-bearing depends on the model</h3></div>
+    <div class="status s-diff">Diverges between models</div>
+    <div class="col">
+      <p>We registered a prediction in the script header before the run: colour should
+      show a causal effect at short distance and none at long distance, which would have
+      explained an earlier null as dilution. In gpt2 the prediction failed, with no
+      effect at either distance for any arm. In pythia the same experiment gives a clean
+      significant effect of +0.032 (+0.017 to +0.045) against a random arm of −0.010,
+      which is not significant.</p>
+      <p>Colour is inert in one model and load-bearing in the other. This is the second
+      instance of the same lesson as Figure 1.</p>
+    </div>
+  </div>
+
+  <div class="result">
+    <div class="result-head"><span class="result-num">4.5</span>
+      <h3>The baseline comparison does not replicate</h3></div>
+    <div class="status s-diff">Diverges between models</div>
+    <div class="col">
+      <p>Two of four targets clear the static-embedding baseline in gpt2 and one of four
+      in pythia, with no target significant in the same direction in both. Our most
+      robust gpt2 result is not significant in pythia. We report this as a
+      methodological finding: it is direct evidence that single-model probing results of
+      this kind should be treated as claims about a checkpoint.</p>
+    </div>
+    <div class="tbl-scroll">
+      <table>
+        <thead><tr><th>Target</th><th>gpt2 gap</th><th>95% CI</th><th>p</th>
+          <th>pythia gap</th><th>95% CI</th><th>p</th></tr></thead>
+        <tbody id="gapTable"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="result">
+    <div class="result-head"><span class="result-num">4.6</span>
+      <h3>Three findings established on gpt2 alone</h3></div>
+    <div class="status s-single">Single model, not generalised</div>
+    <div class="col">
+      <p><strong>The signal is linear.</strong> Accuracy is flat across a 64-fold range
+      of probe capacity, from linear to MLP-512, on every target tested. Selectivity does
+      not rise and MDL does not improve. Whatever is encoded is linearly available.</p>
+      <p><strong>Entity count rather than narrative length collapses the contextual
+      colour code.</strong> A control dataset with two entities held at the four-entity
+      narrative length keeps colour selectivity at +0.119, with the best layer at 2. Four
+      entities at the same length reduce it to +0.016, with the best layer at 0, which is
+      the embedding layer. Length on its own has no effect.</p>
+      <p><strong>Binding decay inverts past distance 5</strong>, as shown in Figure 4.
+      The four-entity dataset this needs was not extracted for pythia.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><div class="sec-num">5</div><h2>Discussion</h2></div>
+  <div class="col">
+    <p>Why do two models trained on similar objectives diverge this sharply? The
+    clearest structural difference is where each keeps its state code. gpt2 spreads
+    across the embedding layer and the middle of the network, and on the four-entity
+    dataset eight of twelve targets peak at layer 0, meaning the transformer contributes
+    nothing over a bag of embeddings for those variables. pythia sits almost entirely at
+    the output end, in layers 20 to 24 of 24.</p>
+  </div>
+
+  <figure>
+    <div class="fig-frame">
+      <div class="chart-title">Where each model keeps its state code</div>
+      <div class="chart-sub">best probing layer as a fraction of network depth</div>
+      <div id="depthChart"></div>
+    </div>
+    <figcaption><b>Figure 5.</b> Each mark is one state variable at its best layer. The
+    two models barely overlap, which is a plausible source of the divergence in Figure 1
+    and in section 4.4. A code read out at the output end and one read out at the
+    embeddings are different objects, even when both are linearly decodable.</figcaption>
+  </figure>
+
+  <div class="col">
+    <p>The agreement figure sharpens the point. Over a held-out narrative the two models
+    agree with each other on 37.5 per cent of region-attribute readings, which is less
+    often than gpt2 agrees with the ground truth at 56.2 per cent. They behave like two
+    different representations rather than two noisy measurements of one.</p>
+
+    <p>The implication for probing work is narrow and concrete. Every experiment here
+    was run identically on both models, on the same data with the same splits, and the
+    direction of the headline effect changed. A paper reporting which variables are
+    decodable, at which layers, above which baselines, is reporting a property of a
+    checkpoint until it shows otherwise. Showing otherwise cost us one extra model.</p>
+
+    <p>The finding that survived contact with a second model is the negative one.
+    Section 4.1 replicated across two models and two attributes, four times out of four.
+    Results of that shape travel further than positive ones, because they do not depend
+    on an effect being large enough to detect twice.</p>
+  </div>
+</section>
+
+<section class="corr">
+  <div class="sec-head"><div class="sec-num">6</div><h2>Corrections and robustness</h2></div>
+  <div class="col">
+    <p>Thirteen claims were revised during this work. Four were our own overclaims,
+    caught by controls we added after the fact, and three were errors in our own
+    statistics or tooling. We list them because the sequence is part of the evidence.
+    Several of the headline results exist in their current form because a first version
+    looked too clean and was checked again.</p>
+
+    <h3>The intervention demonstrates binding</h3>
+    <p>It does not. The design varied which region was queried and never varied which
+    region's direction was injected. Adding that arm reversed the interpretation and
+    produced the result now in section 4.1.</p>
+
+    <h3>Binding degrades with entity count</h3>
+    <p>Withdrawn. The aggregate was dominated by positions where the attribute was not
+    decodable at all, so both probes sat at majority and agreed for uninformative
+    reasons. Stratifying by distance recovered a stronger and correct version. A
+    length-controlled dataset later reinstated the entity-count claim for the contextual
+    code specifically.</p>
+
+    <h3>Colour is causally load-bearing</h3>
+    <p>Registered as a prediction and then falsified in gpt2, at every distance and
+    every arm. It was later found to hold in pythia, which is section 4.4.</p>
+
+    <h3>The shuffled-order control is weak</h3>
+    <p>A misreading of an average over a mixed population. Eight of twelve targets peak
+    at the embedding layer and have no temporal structure to destroy. Conditioned on
+    depth the control works, at −0.036 for contextual targets against −0.006 for
+    embedding-layer targets.</p>
+
+    <h3>A biased test statistic</h3>
+    <p>We used the target effect minus the absolute value of the other-region effect.
+    Since the expectation of an absolute value of noise is positive, this drove the
+    statistic negative at small effect sizes as an artifact. We replaced it with the
+    signed paired difference.</p>
+
+    <h3>MDL below the uniform code</h3>
+    <p>First explained as non-convergence, which was wrong. The cause is regularisation:
+    prequential coding punishes confident errors on the small early blocks. Swept over
+    C, every target compresses at 1.24× to 1.44×. MDL also cannot adjudicate our central
+    claim, because it runs on a pool where wordings are shared.</p>
+
+    <h3>A reversing intervention</h3>
+    <p><code>lips.coverage</code> moved the wrong way. The cause was not a sign error.
+    The null value <code>bare</code> occurs at mean narrative position 3.65 against 7.5
+    to 7.7 for the other values, so its difference-of-means direction encodes position in
+    the text. Our read-out specification excluded the analogous null value for finish and
+    included it for coverage. Fixed, and the earlier number is withdrawn.</p>
+
+    <h3>Unfair pooling explains the weak lip results</h3>
+    <p>Tested by storing both read-out conventions from the same forward pass. Pooling
+    raises the numbers and moves the best layer to 0, which is the embedding baseline
+    itself. The negative result was real.</p>
+
+    <h3>Checks that did not change a conclusion</h3>
+    <p>Probe regularisation swept, with validation selecting C = 0.01 and test accuracy
+    moving from 0.348 to 0.350. Multiple comparisons corrected with Benjamini-Hochberg
+    across 180 tests, leaving the headline count unchanged at 33 of 36. Training set
+    halved, after which <code>eyes.finish</code> survives at p = 0.0005 and
+    <code>eyes.color</code> does not at p = 0.178, so we report the latter as fragile.
+    Both p-value conventions computed and labelled throughout.</p>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><div class="sec-num">7</div><h2>Limitations</h2></div>
+  <div class="col">
+    <p><strong>Two small models.</strong> 124M and 410M parameters. Kim and Schuster find
+    that entity tracking in procedural text needs code-pretrained models of GPT-3.5
+    scale, so this study sits well below the regime where strong effects should be
+    expected. Two models is a minimum replication. It establishes that the pattern
+    varies, and says nothing about the range over which it varies.</p>
+    <p><strong>Synthetic text.</strong> The paraphrase-disjoint split makes this a real
+    generalisation test and the distractor sentences make it adversarial to
+    bag-of-words, but the text is generated from templates.</p>
+    <p><strong>A weak behavioural read-out.</strong> Without intervention the models
+    report the true state at roughly chance, 0.32 for <code>lips.finish</code> in gpt2.
+    Causal claims therefore rest on paired changes in log-odds and on a probe read-out
+    downstream of the edit, rather than on the model's own accuracy.</p>
+    <p><strong>Single-model rows.</strong> Linearity, distance decay and the entity-count
+    control were run on gpt2 alone. Given section 4.5 they should not be assumed to
+    transfer, which is the same point we make about other single-model results and it
+    applies to ours.</p>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><div class="sec-num">8</div><h2>Conclusion</h2></div>
+  <div class="col">
+    <p>In two small language models an attribute's value is linearly decodable, causally
+    load-bearing, and shared across entities. The binding of that value to a particular
+    entity is linearly decodable, decays with narrative distance, and shows no sign of
+    being used. Which specific variables clear a lexical baseline, at which layers, and
+    which attributes are causally effective are properties of the model rather than of
+    the task.</p>
+    <p>The most portable result is the negative one. Across four independent tests
+    spanning two models and two attributes, steering with the wrong region's direction
+    moved the model's answer as much as steering with the right one, while a
+    matched-norm random direction did nothing. Anyone reading a binding claim off a probe
+    should run that arm before believing it, ourselves included, since we did not until
+    the result had already been written down the other way.</p>
+  </div>
+</section>
+
+<div class="foot">
+  Code, data generators and all result files are released with this write-up: 21
+  analysis scripts, 8 modules, three orchestration chains, and a corrections log with all
+  thirteen entries.<br>
+  Conventions: two-sided p-values, cluster bootstrap over narratives, intervention at
+  α = 2, MDL over a regularisation sweep.
+</div>
+</div>
+
+<script>
+const D = {"gaps":[{"target":"eyes.color","gpt2":{"gap":0.06197854588796187,"ci95":[0.014490147012824533,0.10989108409321176],"p_two_sided":0.0075},"pythia":{"gap":0.03098927294398096,"ci95":[-0.02028452898035563,0.08175597898500615],"p_two_sided":0.2315}},{"target":"eyes.finish","gpt2":{"gap":0.09654350417163288,"ci95":[0.04807404076738609,0.14770011269156855],"p_two_sided":0.0},"pythia":{"gap":0.014302741358760418,"ci95":[-0.0459556969460793,0.07737432860194689],"p_two_sided":0.639}},{"target":"lips.color","gpt2":{"gap":-0.044100119189511344,"ci95":[-0.09881147360056505,0.011751573358579086],"p_two_sided":0.126},"pythia":{"gap":0.06436233611442188,"ci95":[0.009601557626617827,0.11981142135482226],"p_two_sided":0.028}},{"target":"lips.finish","gpt2":{"gap":-0.05840286054827176,"ci95":[-0.11138619431969814,-0.006009075598802374],"p_two_sided":0.0285},"pythia":{"gap":0.023837902264600697,"ci95":[-0.03360496144932702,0.08531058676696295],"p_two_sided":0.415}}],"binding":[{"bin":"0","margin":0.07882296679760303},{"bin":"1","margin":0.05952615303870276},{"bin":"2","margin":0.07091614449967149},{"bin":"3-4","margin":0.06189239550653339},{"bin":"5+","margin":-0.07936575416776813}],"binding_by_attr":{"color":[0.11250195018081129,0.051756517017950095,0.0663539677964101,0.046872105280990894,-0.12409177997606897],"finish":[0.2651518035287835,0.1006397080404949,0.06841096389890118,0.01982339145742611,-0.15470752747000716],"coverage":[-0.14118485331678565,0.026182234057663272,0.07798350180370317,0.11898168978118312,0.04070204494277171]},"interventions":[{"label":"gpt2 , finish","meta":{"edit_layer":1,"read_layer":12},"arms":[{"arm":"concept","mean":0.05523290038108826,"lo":0.04108725935220719,"hi":0.06981453314423561},{"arm":"random","mean":0.013702958822250366,"lo":-0.0025481295585632327,"hi":0.029899434000253675},{"arm":"other_entity_direction","mean":0.039519590139389035,"lo":0.026864720284938814,"hi":0.0524141526222229}]},{"label":"gpt2 , colour","meta":{"edit_layer":1,"read_layer":12},"arms":[{"arm":"concept","mean":0.00037364661693573,"lo":-0.006383999958634376,"hi":0.006952597424387931},{"arm":"random","mean":-0.003221726417541504,"lo":-0.012800909206271173,"hi":0.006482414379715918},{"arm":"other_entity_direction","mean":0.006546959280967712,"lo":-0.0001638460159301753,"hi":0.01383401423692703}]},{"label":"pythia , finish","meta":{"edit_layer":12,"read_layer":24},"arms":[{"arm":"concept","mean":0.14747295379638672,"lo":0.1229944360256195,"hi":0.17139145632584887},{"arm":"random","mean":-0.009377392133076985,"lo":-0.04120712717374166,"hi":0.021370245218276955},{"arm":"other_entity_direction","mean":0.19488303661346434,"lo":0.1672642163435618,"hi":0.22207864304383593}]},{"label":"pythia , colour","meta":{"edit_layer":12,"read_layer":24},"arms":[{"arm":"concept","mean":0.03161569635073344,"lo":0.0171452160179615,"hi":0.045495374550422026},{"arm":"random","mean":-0.010403194030125936,"lo":-0.028597306807835895,"hi":0.007081301361322399},{"arm":"other_entity_direction","mean":0.06852733492851257,"lo":0.05557447825868925,"hi":0.08154127523303031}]}],"depth":{"gpt2_pilot":[{"target":"eyes.color","layer":11,"frac":0.9166666666666666},{"target":"eyes.finish","layer":1,"frac":0.08333333333333333},{"target":"lips.color","layer":12,"frac":1.0},{"target":"lips.finish","layer":1,"frac":0.08333333333333333}],"pythia_pilot":[{"target":"eyes.color","layer":24,"frac":1.0},{"target":"eyes.finish","layer":24,"frac":1.0},{"target":"lips.color","layer":20,"frac":0.8333333333333334},{"target":"lips.finish","layer":24,"frac":1.0}],"gpt2_full":[{"target":"cheeks.color","layer":0,"frac":0.0},{"target":"cheeks.coverage","layer":0,"frac":0.0},{"target":"cheeks.finish","layer":0,"frac":0.0},{"target":"eyes.color","layer":0,"frac":0.0},{"target":"eyes.coverage","layer":12,"frac":1.0},{"target":"eyes.finish","layer":2,"frac":0.16666666666666666},{"target":"lips.color","layer":0,"frac":0.0},{"target":"lips.coverage","layer":0,"frac":0.0},{"target":"lips.finish","layer":0,"frac":0.0},{"target":"skin.color","layer":0,"frac":0.0},{"target":"skin.coverage","layer":10,"frac":0.8333333333333334},{"target":"skin.finish","layer":6,"frac":0.5}]},"facemap":{"targets":["eyes.color","eyes.finish","lips.color","lips.finish"],"frames":[{"sentence":"She laid a dark ruby colour over the surface of her lips in maximum coverage; it came out with a soft un-reflective finish.","true":{"eyes.color":"bare","eyes.finish":"none","lips.color":"red","lips.finish":"matte"},"gpt2":{"eyes.color":"bare","eyes.finish":"none","lips.color":"nude","lips.finish":"dewy"},"pythia":{"eyes.color":"red","eyes.finish":"satin","lips.color":"red","lips.finish":"matte"}},{"sentence":"She laid a naked, undertoned neutral over the surface of her lips in a packed-on, solid layer; it came out with a smooth semi-gloss surface.","true":{"eyes.color":"bare","eyes.finish":"none","lips.color":"nude","lips.finish":"satin"},"gpt2":{"eyes.color":"bare","eyes.finish":"satin","lips.color":"nude","lips.finish":"dewy"},"pythia":{"eyes.color":"nude","eyes.finish":"satin","lips.color":"nude","lips.finish":"matte"}},{"sentence":"She almost went for a tobacco-toned shade, then decided not to.","true":{"eyes.color":"bare","eyes.finish":"none","lips.color":"nude","lips.finish":"satin"},"gpt2":{"eyes.color":"bare","eyes.finish":"none","lips.color":"nude","lips.finish":"matte"},"pythia":{"eyes.color":"bare","eyes.finish":"satin","lips.color":"red","lips.finish":"matte"}},{"sentence":"With a few strokes she put a naked, undertoned neutral on the socket line as a packed-on, solid layer, ending in a juicy liquid-looking gleam.","true":{"eyes.color":"nude","eyes.finish":"dewy","lips.color":"nude","lips.finish":"satin"},"gpt2":{"eyes.color":"brown","eyes.finish":"dewy","lips.color":"nude","lips.finish":"dewy"},"pythia":{"eyes.color":"bare","eyes.finish":"satin","lips.color":"red","lips.finish":"dewy"}},{"sentence":"A setting powder went over the soft skin of her lips, leaving nothing that caught light.","true":{"eyes.color":"nude","eyes.finish":"dewy","lips.color":"nude","lips.finish":"matte"},"gpt2":{"eyes.color":"brown","eyes.finish":"none","lips.color":"nude","lips.finish":"matte"},"pythia":{"eyes.color":"red","eyes.finish":"satin","lips.color":"nude","lips.finish":"matte"}},{"sentence":"She almost went for a pale peony tone, then decided not to.","true":{"eyes.color":"nude","eyes.finish":"dewy","lips.color":"nude","lips.finish":"matte"},"gpt2":{"eyes.color":"brown","eyes.finish":"matte","lips.color":"nude","lips.finish":"matte"},"pythia":{"eyes.color":"red","eyes.finish":"satin","lips.color":"nude","lips.finish":"matte"}},{"sentence":"With a few strokes she put a naked, undertoned neutral on the hooded part of her lid as maximum coverage, ending in a smooth semi-gloss surface.","true":{"eyes.color":"nude","eyes.finish":"satin","lips.color":"nude","lips.finish":"matte"},"gpt2":{"eyes.color":"brown","eyes.finish":"satin","lips.color":"nude","lips.finish":"satin"},"pythia":{"eyes.color":"nude","eyes.finish":"satin","lips.color":"nude","lips.finish":"satin"}},{"sentence":"She laid a burnt-cinnamon colour over the hooded part of her lid in maximum coverage; it came out with a still-damp-seeming shine.","true":{"eyes.color":"brown","eyes.finish":"dewy","lips.color":"nude","lips.finish":"matte"},"gpt2":{"eyes.color":"brown","eyes.finish":"dewy","lips.color":"nude","lips.finish":"dewy"},"pythia":{"eyes.color":"nude","eyes.finish":"satin","lips.color":"red","lips.finish":"satin"}}],"agree":{"gpt2":0.5625,"pythia":0.34375,"between":0.375}}};
+const RM = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const NS = "http://www.w3.org/2000/svg";
+const el = (n, a = {}) => { const e = document.createElementNS(NS, n);
+  for (const k in a) e.setAttribute(k, a[k]); return e; };
+const txt = (x, y, s, a = {}) => { const t = el("text", Object.assign(
+  {x, y, "font-family": "IBM Plex Mono, monospace", "font-size": 11,
+   fill: "var(--muted)"}, a)); t.textContent = s; return t; };
+
+/* hero vector sweep */
+(function () {
+  const g = document.getElementById("vecB"), lbl = document.getElementById("cosLabel");
+  const arc = document.getElementById("sweepArc");
+  const ox = 60, oy = 190, L = 265, baseDeg = 16.2;
+  function place(cosv) {
+    const sep = Math.acos(cosv) * 180 / Math.PI, a = (baseDeg + sep) * Math.PI / 180;
+    const line = g.firstElementChild;
+    line.setAttribute("x2", ox + L * Math.cos(a));
+    line.setAttribute("y2", oy - L * Math.sin(a));
+    lbl.textContent = "cos = " + cosv.toFixed(2);
+    const r = 92, a0 = baseDeg * Math.PI / 180;
+    arc.setAttribute("d", `M ${ox + r * Math.cos(a0)} ${oy - r * Math.sin(a0)}
+      A ${r} ${r} 0 0 0 ${ox + r * Math.cos(a)} ${oy - r * Math.sin(a)}`);
+  }
+  place(0.81);
+  if (RM) return;
+  let t = 0;
+  setInterval(() => { t += 0.012; place(0.81 + 0.14 * Math.sin(t)); }, 40);
+})();
+
+/* Figure 1 */
+(function () {
+  const W = 760, H = 320, L = 74, R = 26, T = 26, B = 64;
+  const lo = -0.13, hi = 0.17;
+  const x = i => L + (i + 0.5) * (W - L - R) / D.gaps.length;
+  const y = v => T + (hi - v) / (hi - lo) * (H - T - B);
+  const svg = el("svg", {viewBox: `0 0 ${W} ${H}`, role: "img",
+    "aria-label": "Accuracy gap over the static-embedding baseline for four targets in two models"});
+  for (let v = -0.10; v <= 0.155; v += 0.05) {
+    const yy = y(v);
+    svg.appendChild(el("line", {x1: L, y1: yy, x2: W - R, y2: yy,
+      stroke: Math.abs(v) < 1e-9 ? "var(--ink)" : "var(--rule)",
+      "stroke-width": Math.abs(v) < 1e-9 ? 1.4 : 1}));
+    svg.appendChild(txt(L - 10, yy + 4, (v > 0 ? "+" : "") + v.toFixed(2),
+      {"text-anchor": "end", "font-size": 10}));
+  }
+  const bw = 26;
+  D.gaps.forEach((g, i) => {
+    [["gpt2", "var(--crimson)", -1], ["pythia", "var(--slate)", 1]].forEach(([k, c, side]) => {
+      const d = g[k], px = x(i) + side * (bw / 2 + 2) - bw / 2;
+      const sig = d.p_two_sided < 0.05;
+      const top = d.gap >= 0 ? y(d.gap) : y(0), h = Math.abs(y(d.gap) - y(0));
+      const bar = el("rect", {x: px, y: top, width: bw, height: Math.max(h, 1),
+        fill: c, opacity: sig ? 1 : 0.34, stroke: "var(--ink)", "stroke-width": 0.6});
+      if (!RM) { bar.style.transformOrigin = `${px}px ${y(0)}px`;
+        bar.style.animation = `grow .8s cubic-bezier(.22,.9,.3,1) ${0.05 * i}s 1`; }
+      svg.appendChild(bar);
+      const cx = px + bw / 2;
+      svg.appendChild(el("line", {x1: cx, y1: y(d.ci95[0]), x2: cx, y2: y(d.ci95[1]),
+        stroke: "var(--ink)", "stroke-width": 1.2}));
+      [d.ci95[0], d.ci95[1]].forEach(v => svg.appendChild(el("line",
+        {x1: cx - 4, y1: y(v), x2: cx + 4, y2: y(v), stroke: "var(--ink)", "stroke-width": 1.2})));
+      if (sig) svg.appendChild(txt(cx, y(Math.max(d.ci95[1], d.gap)) - 7, "*",
+        {"text-anchor": "middle", fill: "var(--ink)", "font-size": 14}));
+    });
+    const nm = g.target.split(".");
+    svg.appendChild(txt(x(i), H - B + 22, nm[0], {"text-anchor": "middle",
+      "font-size": 11, fill: "var(--ink-2)"}));
+    svg.appendChild(txt(x(i), H - B + 36, nm[1], {"text-anchor": "middle", "font-size": 11}));
+  });
+  svg.appendChild(txt(L, T - 10, "gpt2", {fill: "var(--crimson)", "font-size": 11}));
+  svg.appendChild(txt(L + 46, T - 10, "pythia-410m", {fill: "var(--slate)", "font-size": 11}));
+  document.getElementById("gapChart").appendChild(svg);
+
+  const tb = document.getElementById("gapTable");
+  D.gaps.forEach(g => {
+    const cls = d => d.p_two_sided < 0.05 ? (d.gap > 0 ? "num pos" : "num neg") : "num nil";
+    const ci = d => `[${d.ci95[0] >= 0 ? "+" : ""}${d.ci95[0].toFixed(3)}, ${d.ci95[1] >= 0 ? "+" : ""}${d.ci95[1].toFixed(3)}]`;
+    const p = v => v < 0.0001 ? "<0.0001" : v.toFixed(4);
+    tb.insertAdjacentHTML("beforeend",
+      `<tr><td><code>${g.target}</code></td>
+       <td class="${cls(g.gpt2)}">${g.gpt2.gap >= 0 ? "+" : ""}${g.gpt2.gap.toFixed(3)}</td>
+       <td class="num">${ci(g.gpt2)}</td><td class="${cls(g.gpt2)}">${p(g.gpt2.p_two_sided)}</td>
+       <td class="${cls(g.pythia)}">${g.pythia.gap >= 0 ? "+" : ""}${g.pythia.gap.toFixed(3)}</td>
+       <td class="num">${ci(g.pythia)}</td><td class="${cls(g.pythia)}">${p(g.pythia.p_two_sided)}</td></tr>`);
+  });
+})();
+
+/* Figure 3, intervention arms */
+(function () {
+  const rows = D.interventions;
+  const W = 760, rowH = 96, T = 34, B = 46, L = 132, R = 96;
+  const H = T + rows.length * rowH + B;
+  const lo = -0.05, hi = 0.235;
+  const x = v => L + (v - lo) / (hi - lo) * (W - L - R);
+  const svg = el("svg", {viewBox: `0 0 ${W} ${H}`, role: "img",
+    "aria-label": "Change in log-odds for concept, wrong-region and random directions"});
+  const arms = [["concept", "var(--crimson)", "correct region"],
+                ["other_entity_direction", "var(--cocoa)", "wrong region"],
+                ["random", "var(--muted)", "random, matched norm"]];
+  for (let v = -0.05; v <= 0.2001; v += 0.05) {
+    svg.appendChild(el("line", {x1: x(v), y1: T - 8, x2: x(v), y2: H - B + 4,
+      stroke: Math.abs(v) < 1e-9 ? "var(--ink)" : "var(--rule)",
+      "stroke-width": Math.abs(v) < 1e-9 ? 1.4 : 1}));
+    svg.appendChild(txt(x(v), H - B + 20, (v > 0 ? "+" : "") + v.toFixed(2),
+      {"text-anchor": "middle", "font-size": 10}));
+  }
+  svg.appendChild(txt((L + W - R) / 2, H - B + 38,
+    "paired change in log-odds of the steered value",
+    {"text-anchor": "middle", "font-size": 10}));
+  rows.forEach((r, ri) => {
+    const y0 = T + ri * rowH;
+    svg.appendChild(txt(L - 14, y0 + 26, r.label,
+      {"text-anchor": "end", "font-size": 11.5, fill: "var(--ink-2)"}));
+    svg.appendChild(txt(L - 14, y0 + 42, `edit L${r.meta.edit_layer}, read L${r.meta.read_layer}`,
+      {"text-anchor": "end", "font-size": 9.5}));
+    arms.forEach(([key, colour], ai) => {
+      const a = r.arms.find(v => v.arm === key);
+      if (!a) return;
+      const yy = y0 + 12 + ai * 20, h = 11;
+      const x0 = x(Math.min(0, a.mean)), x1 = x(Math.max(0, a.mean));
+      const ns = (a.lo <= 0 && a.hi >= 0);
+      const bar = el("rect", {x: x0, y: yy, width: Math.max(x1 - x0, 1.2), height: h,
+        fill: colour, opacity: ns ? 0.3 : 0.95});
+      if (!RM) { bar.style.transformOrigin = `${x(0)}px ${yy}px`;
+        bar.style.animation = `grow .75s cubic-bezier(.22,.9,.3,1) ${0.06 * (ri * 3 + ai)}s 1`; }
+      svg.appendChild(bar);
+      svg.appendChild(el("line", {x1: x(a.lo), y1: yy + h / 2, x2: x(a.hi), y2: yy + h / 2,
+        stroke: "var(--ink)", "stroke-width": 1}));
+      [a.lo, a.hi].forEach(v => svg.appendChild(el("line", {x1: x(v), y1: yy + 1,
+        x2: x(v), y2: yy + h - 1, stroke: "var(--ink)", "stroke-width": 1})));
+      svg.appendChild(txt(W - R + 8, yy + h - 1.5,
+        `${a.mean >= 0 ? "+" : ""}${a.mean.toFixed(3)}`,
+        {"font-size": 10, fill: ns ? "var(--muted)" : "var(--ink-2)"}));
+    });
+  });
+  arms.forEach(([, colour, label], ai) => {
+    const lx = L + ai * 190;
+    svg.appendChild(el("rect", {x: lx, y: T - 24, width: 10, height: 10, fill: colour}));
+    svg.appendChild(txt(lx + 15, T - 15, label, {"font-size": 10, fill: "var(--ink-2)"}));
+  });
+  document.getElementById("armChart").appendChild(svg);
+})();
+
+/* Figure 4, decay */
+(function () {
+  const W = 760, H = 300, L = 66, R = 130, T = 26, B = 56;
+  const bins = D.binding.map(b => b.bin);
+  const lo = -0.18, hi = 0.30;
+  const x = i => L + i * (W - L - R) / (bins.length - 1);
+  const y = v => T + (hi - v) / (hi - lo) * (H - T - B);
+  const svg = el("svg", {viewBox: `0 0 ${W} ${H}`, role: "img",
+    "aria-label": "Binding margin against distance since the value last changed"});
+  for (let v = -0.15; v <= 0.301; v += 0.05) {
+    const yy = y(v); if (yy < T - 1 || yy > H - B + 1) continue;
+    svg.appendChild(el("line", {x1: L, y1: yy, x2: W - R, y2: yy,
+      stroke: Math.abs(v) < 1e-9 ? "var(--ink)" : "var(--rule)",
+      "stroke-width": Math.abs(v) < 1e-9 ? 1.4 : 1}));
+    svg.appendChild(txt(L - 10, yy + 4, (v > 0 ? "+" : "") + v.toFixed(2),
+      {"text-anchor": "end", "font-size": 10}));
+  }
+  bins.forEach((b, i) => svg.appendChild(txt(x(i), H - B + 20, b,
+    {"text-anchor": "middle", "font-size": 11, fill: "var(--ink-2)"})));
+  svg.appendChild(txt((L + W - R) / 2, H - B + 40,
+    "sentences since this value last changed", {"text-anchor": "middle", "font-size": 10}));
+  [["finish", "var(--crimson)"], ["color", "var(--sw-brown)"],
+   ["coverage", "var(--slate)"]].forEach(([k, c], si) => {
+    const vals = D.binding_by_attr[k];
+    const d = vals.map((v, i) => `${i ? "L" : "M"} ${x(i)} ${y(v)}`).join(" ");
+    const path = el("path", {d, fill: "none", stroke: c, "stroke-width": 2.2,
+      "stroke-linejoin": "round"});
+    svg.appendChild(path);
+    if (!RM) { const len = Math.ceil(path.getTotalLength()) + 2;
+      path.style.strokeDasharray = len; path.style.strokeDashoffset = len;
+      path.style.animation = `draw 1.3s ease-out ${0.15 * si}s forwards`; }
+    vals.forEach((v, i) => svg.appendChild(el("circle", {cx: x(i), cy: y(v), r: 3.6,
+      fill: "var(--paper)", stroke: c, "stroke-width": 2})));
+    svg.appendChild(txt(W - R + 10, y(vals[vals.length - 1]) + 4, k,
+      {"font-size": 11, fill: c}));
+  });
+  svg.appendChild(txt(L + 4, T + 12, "binds to the correct region",
+    {"font-size": 10, fill: "var(--ok)"}));
+  svg.appendChild(txt(L + 4, H - B - 8, "reads the wrong region",
+    {"font-size": 10, fill: "var(--warn)"}));
+  document.getElementById("decayChart").appendChild(svg);
+})();
+
+/* Figure 5, depth */
+(function () {
+  const W = 760, H = 232, L = 168, R = 34, T = 42, B = 52;
+  const x = f => L + f * (W - L - R);
+  const rows = [["gpt2, 2 entities", D.depth.gpt2_pilot, "var(--crimson)", 12],
+                ["gpt2, 4 entities", D.depth.gpt2_full, "var(--muted)", 12],
+                ["pythia-410m, 2 entities", D.depth.pythia_pilot, "var(--slate)", 24]];
+  const y = i => T + i * (H - T - B) / (rows.length - 1);
+  const svg = el("svg", {viewBox: `0 0 ${W} ${H}`, role: "img",
+    "aria-label": "Best probing layer as a fraction of network depth"});
+  [[0, "embeddings"], [0.5, "middle"], [1, "output"]].forEach(([f, lab]) => {
+    svg.appendChild(el("line", {x1: x(f), y1: T - 18, x2: x(f), y2: H - B + 6,
+      stroke: "var(--rule)", "stroke-width": 1, "stroke-dasharray": "3 3"}));
+    svg.appendChild(txt(x(f), T - 24, lab, {"text-anchor": "middle", "font-size": 10}));
+  });
+  rows.forEach(([label, data, colour, nl], ri) => {
+    const yy = y(ri);
+    svg.appendChild(el("line", {x1: L, y1: yy, x2: W - R, y2: yy,
+      stroke: "var(--rule-soft)", "stroke-width": 1}));
+    svg.appendChild(txt(L - 14, yy + 4, label, {"text-anchor": "end",
+      "font-size": 11, fill: "var(--ink-2)"}));
+    const seen = {};
+    data.forEach((d, di) => {
+      const k = d.frac.toFixed(3); seen[k] = (seen[k] || 0) + 1;
+      const off = (seen[k] - 1) * 9 - 4;
+      const c = el("circle", {cx: x(d.frac), cy: yy + off, r: 5,
+        fill: colour, stroke: "var(--paper)", "stroke-width": 1.4});
+      c.appendChild(el("title")).textContent = `${d.target}, layer ${d.layer} of ${nl}`;
+      if (!RM) { c.style.animation = `pop .5s cubic-bezier(.2,1.3,.4,1) ${0.03 * di}s 1`; }
+      svg.appendChild(c);
+    });
+  });
+  svg.appendChild(txt((L + W - R) / 2, H - B + 30, "best layer divided by network depth",
+    {"text-anchor": "middle", "font-size": 10}));
+  document.getElementById("depthChart").appendChild(svg);
+})();
+
+/* Figure 2, face map */
+(function () {
+  const F = D.facemap, TG = F.targets, N = F.frames.length;
+  const SW = {bare: "var(--sw-bare)", nude: "var(--sw-nude)", pink: "var(--sw-pink)",
+              red: "var(--sw-red)", brown: "var(--sw-brown)"};
+  const COV = {bare: 0.30, light: 0.72, full: 1, none: 0.30};
+
+  function lidPath(cx, cy, r) {
+    return `M ${cx - r * 1.25} ${cy - 1}
+            Q ${cx} ${cy - r * 1.95} ${cx + r * 1.25} ${cy - 1}
+            Q ${cx} ${cy - r * 0.5} ${cx - r * 1.25} ${cy - 1} Z`;
+  }
+  function eyePath(cx, cy, r) {
+    return `M ${cx - r} ${cy} Q ${cx} ${cy - r * 0.82} ${cx + r} ${cy}
+            Q ${cx} ${cy + r * 0.72} ${cx - r} ${cy} Z`;
+  }
+  function lipPath(cx, cy, w, hu, hl) {
+    return `M ${cx - w} ${cy}
+            C ${cx - w * 0.58} ${cy - hu * 1.55} ${cx - w * 0.22} ${cy - hu * 0.95} ${cx} ${cy - hu * 0.34}
+            C ${cx + w * 0.22} ${cy - hu * 0.95} ${cx + w * 0.58} ${cy - hu * 1.55} ${cx + w} ${cy}
+            C ${cx + w * 0.52} ${cy + hl * 1.7} ${cx - w * 0.52} ${cy + hl * 1.7} ${cx - w} ${cy} Z`;
+  }
+
+  function face(state, truth, showRing) {
+    const svg = el("svg", {viewBox: "0 0 190 216", role: "img"});
+    const EY = 96, ER = 13, LX = 71, RX = 119;
+    // head, neck and hair suggestion
+    svg.appendChild(el("path", {d: "M40,86 Q42,26 95,26 Q148,26 150,86",
+      fill: "var(--panel-2)", stroke: "none"}));
+    svg.appendChild(el("ellipse", {cx: 95, cy: 108, rx: 55, ry: 74,
+      fill: "var(--panel-2)", stroke: "var(--rule)", "stroke-width": 1}));
+    // brows
+    [LX, RX].forEach(ex => svg.appendChild(el("path", {
+      d: `M ${ex - ER * 1.15} ${EY - ER * 1.9} Q ${ex} ${EY - ER * 2.65} ${ex + ER * 1.05} ${EY - ER * 1.95}`,
+      fill: "none", stroke: "var(--ink-2)", "stroke-width": 2.4,
+      "stroke-linecap": "round", opacity: .75})));
+
+    const ec = state["eyes.color"], ef = state["eyes.finish"];
+    const eok = truth ? (ec === truth["eyes.color"] && ef === truth["eyes.finish"]) : true;
+    const lc = state["lips.color"], lf = state["lips.finish"];
+    const lok = truth ? (lc === truth["lips.color"] && lf === truth["lips.finish"]) : true;
+    const eStroke = showRing ? (eok ? "var(--ok)" : "var(--warn)") : "var(--ink-2)";
+    const lStroke = showRing ? (lok ? "var(--ok)" : "var(--warn)") : "var(--ink-2)";
+    const eOp = COV[state["eyes.coverage"] || (ec === "bare" ? "bare" : "light")] || 0.72;
+    const lOp = COV[state["lips.coverage"] || (lc === "bare" ? "bare" : "light")] || 0.72;
+
+    // eyeshadow on the lid, then the eye itself
+    [LX, RX].forEach(ex => {
+      svg.appendChild(el("path", {d: lidPath(ex, EY, ER), fill: SW[ec] || "var(--sw-bare)",
+        opacity: eOp, stroke: eStroke, "stroke-width": showRing ? 2 : 1.1,
+        "stroke-dasharray": showRing && !eok ? "4 3" : "none", "stroke-linejoin": "round"}));
+      svg.appendChild(el("path", {d: eyePath(ex, EY + 5, ER * 0.92), fill: "var(--paper)",
+        stroke: "var(--ink-2)", "stroke-width": 1.3}));
+      svg.appendChild(el("circle", {cx: ex, cy: EY + 5, r: 4.4, fill: "var(--ink-2)"}));
+      svg.appendChild(el("circle", {cx: ex + 1.4, cy: EY + 3.4, r: 1.4, fill: "var(--paper)"}));
+    });
+    // nose
+    svg.appendChild(el("path", {d: "M95,104 Q92,126 99,129", fill: "none",
+      stroke: "var(--ink-2)", "stroke-width": 1.5, "stroke-linecap": "round", opacity: .55}));
+    // lips
+    svg.appendChild(el("path", {d: lipPath(95, 156, 25, 11, 12),
+      fill: SW[lc] || "var(--sw-bare)", opacity: lOp, stroke: lStroke,
+      "stroke-width": showRing ? 2 : 1.1,
+      "stroke-dasharray": showRing && !lok ? "4 3" : "none", "stroke-linejoin": "round"}));
+    svg.appendChild(el("path", {d: "M72,156 Q95,150 118,156", fill: "none",
+      stroke: "var(--ink)", "stroke-width": .9, opacity: .35}));
+    return svg;
+  }
+
+  const mount = (id, node) => { const t = document.getElementById(id);
+    t.innerHTML = ""; t.appendChild(node); };
+  const word = v => v === "none" ? "bare" : v;
+
+  function render(i) {
+    const f = F.frames[i];
+    mount("faceTrue", face(f.true, null, false));
+    mount("faceA", face(f.gpt2, f.true, true));
+    mount("faceB", face(f.pythia, f.true, true));
+    const lines = (m, cmp) => TG.map(t => {
+      const ok = !cmp || f[m][t] === f.true[t];
+      const c = cmp ? (ok ? "var(--ok)" : "var(--warn)") : "var(--muted)";
+      return `<div style="color:${c}">${t.replace(".", " ")} ${word(f[m][t])}</div>`;
+    }).join("");
+    document.getElementById("readTrue").innerHTML = lines("true", false);
+    document.getElementById("readA").innerHTML = lines("gpt2", true);
+    document.getElementById("readB").innerHTML = lines("pythia", true);
+    document.getElementById("faceSentence").textContent = f.sentence;
+    document.getElementById("faceStep").textContent = `${i + 1} / ${N}`;
+    document.getElementById("faceRange").value = i;
+  }
+  let idx = 0, timer = null;
+  const btn = document.getElementById("playBtn"), rng = document.getElementById("faceRange");
+  rng.max = N - 1;
+  function stop() { clearInterval(timer); timer = null; btn.textContent = "Play"; }
+  btn.addEventListener("click", () => {
+    if (timer) return stop();
+    btn.textContent = "Pause";
+    timer = setInterval(() => { idx = (idx + 1) % N; render(idx); }, 2200);
+  });
+  rng.addEventListener("input", e => { stop(); idx = +e.target.value; render(idx); });
+  render(0);
+})();
+</script>

@@ -1,0 +1,3068 @@
+{
+  "meta": {
+    "dataset": "full",
+    "model": "gpt2"
+  },
+  "pairs": {
+    "cheeks.color -> eyes.color": {
+      "layer": 0,
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 392,
+          "n_narratives": 250,
+          "within_acc": 0.1760204081632653,
+          "within_majority": 0.04846938775510204,
+          "cross_acc": 0.3596938775510204,
+          "cross_majority": 0.34183673469387754,
+          "binding_margin": 0.10969387755102042,
+          "binding_margin_ci95": [
+            0.04936922783966488,
+            0.16759243058453005
+          ],
+          "p_two_sided": 0.002
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 563,
+          "n_narratives": 270,
+          "within_acc": 0.43161634103019536,
+          "within_majority": 0.36767317939609234,
+          "cross_acc": 0.4706927175843694,
+          "cross_majority": 0.458259325044405,
+          "binding_margin": 0.05150976909413857,
+          "binding_margin_ci95": [
+            0.0156740543841374,
+            0.08813076180706472
+          ],
+          "p_two_sided": 0.002
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 469,
+          "n_narratives": 270,
+          "within_acc": 0.42217484008528783,
+          "within_majority": 0.3773987206823028,
+          "cross_acc": 0.44349680170575695,
+          "cross_majority": 0.42217484008528783,
+          "binding_margin": 0.023454157782515916,
+          "binding_margin_ci95": [
+            -0.023404255319148914,
+            0.071448108783995
+          ],
+          "p_two_sided": 0.298
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 752,
+          "n_narratives": 270,
+          "within_acc": 0.4148936170212766,
+          "within_majority": 0.36569148936170215,
+          "cross_acc": 0.3523936170212766,
+          "cross_majority": 0.33643617021276595,
+          "binding_margin": 0.0332446808510638,
+          "binding_margin_ci95": [
+            -0.007995608240612724,
+            0.07994991690248393
+          ],
+          "p_two_sided": 0.112
+        },
+        {
+          "distance_min": 5,
+          "distance_max": null,
+          "n": 1058,
+          "n_narratives": 249,
+          "within_acc": 0.29678638941398866,
+          "within_majority": 0.31852551984877125,
+          "cross_acc": 0.23062381852551986,
+          "cross_majority": 0.17296786389413987,
+          "binding_margin": -0.07939508506616258,
+          "binding_margin_ci95": [
+            -0.15371115849053518,
+            -0.0038781156325709367
+          ],
+          "p_two_sided": 0.044
+        }
+      ]
+    },
+    "cheeks.color -> lips.color": {
+      "layer": 0,
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 392,
+          "n_narratives": 250,
+          "within_acc": 0.1760204081632653,
+          "within_majority": 0.04846938775510204,
+          "cross_acc": 0.3596938775510204,
+          "cross_majority": 0.3596938775510204,
+          "binding_margin": 0.12755102040816327,
+          "binding_margin_ci95": [
+            0.06360118359164162,
+            0.19512485481997674
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 563,
+          "n_narratives": 270,
+          "within_acc": 0.43161634103019536,
+          "within_majority": 0.36767317939609234,
+          "cross_acc": 0.4724689165186501,
+          "cross_majority": 0.4635879218472469,
+          "binding_margin": 0.05506216696269983,
+          "binding_margin_ci95": [
+            0.012477718360071386,
+            0.10037239814540785
+          ],
+          "p_two_sided": 0.01
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 469,
+          "n_narratives": 270,
+          "within_acc": 0.42217484008528783,
+          "within_majority": 0.3773987206823028,
+          "cross_acc": 0.4093816631130064,
+          "cross_majority": 0.39658848614072495,
+          "binding_margin": 0.0319829424307036,
+          "binding_margin_ci95": [
+            -0.01568339413517504,
+            0.07941211390980092
+          ],
+          "p_two_sided": 0.156
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 752,
+          "n_narratives": 270,
+          "within_acc": 0.4148936170212766,
+          "within_majority": 0.36569148936170215,
+          "cross_acc": 0.3257978723404255,
+          "cross_majority": 0.31648936170212766,
+          "binding_margin": 0.039893617021276584,
+          "binding_margin_ci95": [
+            -0.0025910109024179172,
+            0.08287967660713474
+          ],
+          "p_two_sided": 0.07
+        },
+        {
+          "distance_min": 5,
+          "distance_max": null,
+          "n": 1058,
+          "n_narratives": 249,
+          "within_acc": 0.29678638941398866,
+          "within_majority": 0.31852551984877125,
+          "cross_acc": 0.2523629489603025,
+          "cross_majority": 0.15406427221172023,
+          "binding_margin": -0.12003780718336485,
+          "binding_margin_ci95": [
+            -0.19135126188618776,
+            -0.05416066735629614
+          ],
+          "p_two_sided": 0.002
+        }
+      ]
+    },
+    "cheeks.color -> skin.color": {
+      "layer": 0,
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 392,
+          "n_narratives": 250,
+          "within_acc": 0.1760204081632653,
+          "within_majority": 0.04846938775510204,
+          "cross_acc": 0.3903061224489796,
+          "cross_majority": 0.4107142857142857,
+          "binding_margin": 0.14795918367346936,
+          "binding_margin_ci95": [
+            0.07653380653380647,
+            0.21763301859498693
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 563,
+          "n_narratives": 270,
+          "within_acc": 0.43161634103019536,
+          "within_majority": 0.36767317939609234,
+          "cross_acc": 0.4706927175843694,
+          "cross_majority": 0.4849023090586146,
+          "binding_margin": 0.07815275310834818,
+          "binding_margin_ci95": [
+            0.03804004473395077,
+            0.11949458394717453
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 469,
+          "n_narratives": 270,
+          "within_acc": 0.42217484008528783,
+          "within_majority": 0.3773987206823028,
+          "cross_acc": 0.42857142857142855,
+          "cross_majority": 0.42430703624733473,
+          "binding_margin": 0.040511727078891224,
+          "binding_margin_ci95": [
+            -0.008758238302294368,
+            0.09015623965574308
+          ],
+          "p_two_sided": 0.118
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 752,
+          "n_narratives": 270,
+          "within_acc": 0.4148936170212766,
+          "within_majority": 0.36569148936170215,
+          "cross_acc": 0.3484042553191489,
+          "cross_majority": 0.3523936170212766,
+          "binding_margin": 0.05319148936170209,
+          "binding_margin_ci95": [
+            0.010394994884038273,
+            0.09672778159065175
+          ],
+          "p_two_sided": 0.02
+        },
+        {
+          "distance_min": 5,
+          "distance_max": null,
+          "n": 1058,
+          "n_narratives": 249,
+          "within_acc": 0.29678638941398866,
+          "within_majority": 0.31852551984877125,
+          "cross_acc": 0.24574669187145556,
+          "cross_majority": 0.20793950850661624,
+          "binding_margin": -0.059546313799621914,
+          "binding_margin_ci95": [
+            -0.1326453475394712,
+            0.015390985332454732
+          ],
+          "p_two_sided": 0.128
+        }
+      ]
+    },
+    "eyes.color -> cheeks.color": {
+      "layer": 0,
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 411,
+          "n_narratives": 260,
+          "within_acc": 0.15815085158150852,
+          "within_majority": 0.043795620437956206,
+          "cross_acc": 0.39172749391727496,
+          "cross_majority": 0.39902676399026765,
+          "binding_margin": 0.121654501216545,
+          "binding_margin_ci95": [
+            0.05755395683453238,
+            0.1890632066938037
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 583,
+          "n_narratives": 270,
+          "within_acc": 0.4219554030874786,
+          "within_majority": 0.37221269296740994,
+          "cross_acc": 0.4751286449399657,
+          "cross_majority": 0.4631217838765009,
+          "binding_margin": 0.03773584905660382,
+          "binding_margin_ci95": [
+            -4.159733777037891e-05,
+            0.07732625311055812
+          ],
+          "p_two_sided": 0.056
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 493,
+          "n_narratives": 270,
+          "within_acc": 0.4665314401622718,
+          "within_majority": 0.3691683569979716,
+          "cross_acc": 0.41379310344827586,
+          "cross_majority": 0.3995943204868154,
+          "binding_margin": 0.08316430020283977,
+          "binding_margin_ci95": [
+            0.0365093084560363,
+            0.1293302237668435
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 753,
+          "n_narratives": 270,
+          "within_acc": 0.44754316069057104,
+          "within_majority": 0.3665338645418327,
+          "cross_acc": 0.350597609561753,
+          "cross_majority": 0.2908366533864542,
+          "binding_margin": 0.021248339973439556,
+          "binding_margin_ci95": [
+            -0.023212796357570592,
+            0.06574185248713554
+          ],
+          "p_two_sided": 0.394
+        },
+        {
+          "distance_min": 5,
+          "distance_max": null,
+          "n": 994,
+          "n_narratives": 243,
+          "within_acc": 0.2766599597585513,
+          "within_majority": 0.335010060362173,
+          "cross_acc": 0.25553319919517103,
+          "cross_majority": 0.1659959758551308,
+          "binding_margin": -0.14788732394366197,
+          "binding_margin_ci95": [
+            -0.23906483891025493,
+            -0.06528153278422916
+          ],
+          "p_two_sided": 0.0
+        }
+      ]
+    },
+    "eyes.color -> lips.color": {
+      "layer": 0,
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 411,
+          "n_narratives": 260,
+          "within_acc": 0.15815085158150852,
+          "within_majority": 0.043795620437956206,
+          "cross_acc": 0.40875912408759124,
+          "cross_majority": 0.39172749391727496,
+          "binding_margin": 0.09732360097323603,
+          "binding_margin_ci95": [
+            0.024565530053334925,
+            0.16624087819458602
+          ],
+          "p_two_sided": 0.008
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 583,
+          "n_narratives": 270,
+          "within_acc": 0.4219554030874786,
+          "within_majority": 0.37221269296740994,
+          "cross_acc": 0.46826758147512865,
+          "cross_majority": 0.4614065180102916,
+          "binding_margin": 0.04288164665523159,
+          "binding_margin_ci95": [
+            0.0034588812977841667,
+            0.08435115674923802
+          ],
+          "p_two_sided": 0.022
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 493,
+          "n_narratives": 270,
+          "within_acc": 0.4665314401622718,
+          "within_majority": 0.3691683569979716,
+          "cross_acc": 0.3935091277890467,
+          "cross_majority": 0.3793103448275862,
+          "binding_margin": 0.08316430020283971,
+          "binding_margin_ci95": [
+            0.03726323877825448,
+            0.1321138211382114
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 753,
+          "n_narratives": 270,
+          "within_acc": 0.44754316069057104,
+          "within_majority": 0.3665338645418327,
+          "cross_acc": 0.2855245683930943,
+          "cross_majority": 0.2921646746347942,
+          "binding_margin": 0.08764940239043822,
+          "binding_margin_ci95": [
+            0.04132827763496144,
+            0.13666538401802342
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 5,
+          "distance_max": null,
+          "n": 994,
+          "n_narratives": 243,
+          "within_acc": 0.2766599597585513,
+          "within_majority": 0.335010060362173,
+          "cross_acc": 0.24647887323943662,
+          "cross_majority": 0.1529175050301811,
+          "binding_margin": -0.15191146881287726,
+          "binding_margin_ci95": [
+            -0.233970692701408,
+            -0.07702039708886622
+          ],
+          "p_two_sided": 0.0
+        }
+      ]
+    },
+    "eyes.color -> skin.color": {
+      "layer": 0,
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 411,
+          "n_narratives": 260,
+          "within_acc": 0.15815085158150852,
+          "within_majority": 0.043795620437956206,
+          "cross_acc": 0.36739659367396593,
+          "cross_majority": 0.40875912408759124,
+          "binding_margin": 0.15571776155717762,
+          "binding_margin_ci95": [
+            0.09263657957244659,
+            0.2132733762186445
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 583,
+          "n_narratives": 270,
+          "within_acc": 0.4219554030874786,
+          "within_majority": 0.37221269296740994,
+          "cross_acc": 0.4922813036020583,
+          "cross_majority": 0.5060034305317325,
+          "binding_margin": 0.06346483704974282,
+          "binding_margin_ci95": [
+            0.027538726333907027,
+            0.10221465076660985
+          ],
+          "p_two_sided": 0.002
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 493,
+          "n_narratives": 270,
+          "within_acc": 0.4665314401622718,
+          "within_majority": 0.3691683569979716,
+          "cross_acc": 0.3975659229208925,
+          "cross_majority": 0.4158215010141988,
+          "binding_margin": 0.1156186612576065,
+          "binding_margin_ci95": [
+            0.06826729598807597,
+            0.16122774209285307
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 753,
+          "n_narratives": 270,
+          "within_acc": 0.44754316069057104,
+          "within_majority": 0.3665338645418327,
+          "cross_acc": 0.3386454183266932,
+          "cross_majority": 0.34130146082337315,
+          "binding_margin": 0.08366533864541831,
+          "binding_margin_ci95": [
+            0.037884596096014175,
+            0.1298072666833162
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 5,
+          "distance_max": null,
+          "n": 994,
+          "n_narratives": 243,
+          "within_acc": 0.2766599597585513,
+          "within_majority": 0.335010060362173,
+          "cross_acc": 0.23742454728370221,
+          "cross_majority": 0.19416498993963782,
+          "binding_margin": -0.10160965794768612,
+          "binding_margin_ci95": [
+            -0.19408534952236403,
+            -0.021001865476481092
+          ],
+          "p_two_sided": 0.02
+        }
+      ]
+    },
+    "lips.color -> cheeks.color": {
+      "layer": 0,
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 405,
+          "n_narratives": 261,
+          "within_acc": 0.1654320987654321,
+          "within_majority": 0.044444444444444446,
+          "cross_acc": 0.3950617283950617,
+          "cross_majority": 0.3950617283950617,
+          "binding_margin": 0.12098765432098765,
+          "binding_margin_ci95": [
+            0.06614523093530729,
+            0.18228401898734178
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 578,
+          "n_narratives": 270,
+          "within_acc": 0.40484429065743943,
+          "within_majority": 0.3477508650519031,
+          "cross_acc": 0.4809688581314879,
+          "cross_majority": 0.45674740484429066,
+          "binding_margin": 0.032871972318339104,
+          "binding_margin_ci95": [
+            -0.005199306759098745,
+            0.07306130211052275
+          ],
+          "p_two_sided": 0.09
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 481,
+          "n_narratives": 270,
+          "within_acc": 0.4386694386694387,
+          "within_majority": 0.3596673596673597,
+          "cross_acc": 0.43243243243243246,
+          "cross_majority": 0.40540540540540543,
+          "binding_margin": 0.05197505197505198,
+          "binding_margin_ci95": [
+            0.0020741562790222044,
+            0.10208559782608698
+          ],
+          "p_two_sided": 0.046
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 739,
+          "n_narratives": 269,
+          "within_acc": 0.4140730717185386,
+          "within_majority": 0.36400541271989173,
+          "cross_acc": 0.3125845737483085,
+          "cross_majority": 0.30581867388362655,
+          "binding_margin": 0.04330175913396489,
+          "binding_margin_ci95": [
+            -0.008131747301079555,
+            0.09068758685336412
+          ],
+          "p_two_sided": 0.1
+        },
+        {
+          "distance_min": 5,
+          "distance_max": null,
+          "n": 1031,
+          "n_narratives": 248,
+          "within_acc": 0.2890397672162949,
+          "within_majority": 0.3181377303588749,
+          "cross_acc": 0.25315227934044615,
+          "cross_majority": 0.16488845780795344,
+          "binding_margin": -0.11736178467507272,
+          "binding_margin_ci95": [
+            -0.18297313182356748,
+            -0.038634238599175474
+          ],
+          "p_two_sided": 0.002
+        }
+      ]
+    },
+    "lips.color -> eyes.color": {
+      "layer": 0,
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 405,
+          "n_narratives": 261,
+          "within_acc": 0.1654320987654321,
+          "within_majority": 0.044444444444444446,
+          "cross_acc": 0.40987654320987654,
+          "cross_majority": 0.4024691358024691,
+          "binding_margin": 0.11358024691358024,
+          "binding_margin_ci95": [
+            0.05262531328320802,
+            0.17706130244010232
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 578,
+          "n_narratives": 270,
+          "within_acc": 0.40484429065743943,
+          "within_majority": 0.3477508650519031,
+          "cross_acc": 0.5051903114186851,
+          "cross_majority": 0.4844290657439446,
+          "binding_margin": 0.03633217993079585,
+          "binding_margin_ci95": [
+            -0.0017424659208998508,
+            0.07505602847564874
+          ],
+          "p_two_sided": 0.072
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 481,
+          "n_narratives": 270,
+          "within_acc": 0.4386694386694387,
+          "within_majority": 0.3596673596673597,
+          "cross_acc": 0.4490644490644491,
+          "cross_majority": 0.3991683991683992,
+          "binding_margin": 0.029106029106029108,
+          "binding_margin_ci95": [
+            -0.020747966287385358,
+            0.08043478260869563
+          ],
+          "p_two_sided": 0.238
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 739,
+          "n_narratives": 269,
+          "within_acc": 0.4140730717185386,
+          "within_majority": 0.36400541271989173,
+          "cross_acc": 0.34100135317997293,
+          "cross_majority": 0.31799729364005414,
+          "binding_margin": 0.02706359945872805,
+          "binding_margin_ci95": [
+            -0.01738201512276466,
+            0.07278194218588728
+          ],
+          "p_two_sided": 0.24
+        },
+        {
+          "distance_min": 5,
+          "distance_max": null,
+          "n": 1031,
+          "n_narratives": 248,
+          "within_acc": 0.2890397672162949,
+          "within_majority": 0.3181377303588749,
+          "cross_acc": 0.2289039767216295,
+          "cross_majority": 0.1513094083414161,
+          "binding_margin": -0.1066925315227934,
+          "binding_margin_ci95": [
+            -0.18224595259681386,
+            -0.03288498792392073
+          ],
+          "p_two_sided": 0.002
+        }
+      ]
+    },
+    "lips.color -> skin.color": {
+      "layer": 0,
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 405,
+          "n_narratives": 261,
+          "within_acc": 0.1654320987654321,
+          "within_majority": 0.044444444444444446,
+          "cross_acc": 0.4419753086419753,
+          "cross_majority": 0.43209876543209874,
+          "binding_margin": 0.11111111111111108,
+          "binding_margin_ci95": [
+            0.05444873920889625,
+            0.1733094083358623
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 578,
+          "n_narratives": 270,
+          "within_acc": 0.40484429065743943,
+          "within_majority": 0.3477508650519031,
+          "cross_acc": 0.486159169550173,
+          "cross_majority": 0.5034602076124568,
+          "binding_margin": 0.0743944636678201,
+          "binding_margin_ci95": [
+            0.034421929248658875,
+            0.11307575307909183
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 481,
+          "n_narratives": 270,
+          "within_acc": 0.4386694386694387,
+          "within_majority": 0.3596673596673597,
+          "cross_acc": 0.4074844074844075,
+          "cross_majority": 0.4386694386694387,
+          "binding_margin": 0.1101871101871102,
+          "binding_margin_ci95": [
+            0.06719619823489478,
+            0.15627156316348192
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 739,
+          "n_narratives": 269,
+          "within_acc": 0.4140730717185386,
+          "within_majority": 0.36400541271989173,
+          "cross_acc": 0.3071718538565629,
+          "cross_majority": 0.33694181326116374,
+          "binding_margin": 0.07983761840324766,
+          "binding_margin_ci95": [
+            0.032564450474898254,
+            0.12185912812222974
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 5,
+          "distance_max": null,
+          "n": 1031,
+          "n_narratives": 248,
+          "within_acc": 0.2890397672162949,
+          "within_majority": 0.3181377303588749,
+          "cross_acc": 0.2192046556741028,
+          "cross_majority": 0.18622696411251213,
+          "binding_margin": -0.062075654704170674,
+          "binding_margin_ci95": [
+            -0.1496351286734305,
+            0.020377750687671926
+          ],
+          "p_two_sided": 0.142
+        }
+      ]
+    },
+    "skin.color -> cheeks.color": {
+      "layer": 0,
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 405,
+          "n_narratives": 256,
+          "within_acc": 0.17530864197530865,
+          "within_majority": 0.056790123456790124,
+          "cross_acc": 0.3802469135802469,
+          "cross_majority": 0.37037037037037035,
+          "binding_margin": 0.10864197530864195,
+          "binding_margin_ci95": [
+            0.04883694172874242,
+            0.15947297297297294
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 565,
+          "n_narratives": 270,
+          "within_acc": 0.4389380530973451,
+          "within_majority": 0.3752212389380531,
+          "cross_acc": 0.49380530973451325,
+          "cross_majority": 0.4849557522123894,
+          "binding_margin": 0.05486725663716818,
+          "binding_margin_ci95": [
+            0.019243242284383632,
+            0.0924665005139974
+          ],
+          "p_two_sided": 0.004
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 480,
+          "n_narratives": 270,
+          "within_acc": 0.4583333333333333,
+          "within_majority": 0.3729166666666667,
+          "cross_acc": 0.41875,
+          "cross_majority": 0.41041666666666665,
+          "binding_margin": 0.07708333333333328,
+          "binding_margin_ci95": [
+            0.028394148513978278,
+            0.12627291242362526
+          ],
+          "p_two_sided": 0.002
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 739,
+          "n_narratives": 269,
+          "within_acc": 0.4330175913396482,
+          "within_majority": 0.38430311231393777,
+          "cross_acc": 0.3274695534506089,
+          "cross_majority": 0.29905277401894453,
+          "binding_margin": 0.020297699594046037,
+          "binding_margin_ci95": [
+            -0.026106059178288694,
+            0.06500141322781232
+          ],
+          "p_two_sided": 0.428
+        },
+        {
+          "distance_min": 5,
+          "distance_max": null,
+          "n": 1045,
+          "n_narratives": 248,
+          "within_acc": 0.2880382775119617,
+          "within_majority": 0.4019138755980861,
+          "cross_acc": 0.24976076555023924,
+          "cross_majority": 0.16555023923444975,
+          "binding_margin": -0.1980861244019139,
+          "binding_margin_ci95": [
+            -0.2705876579449639,
+            -0.11623711200738832
+          ],
+          "p_two_sided": 0.0
+        }
+      ]
+    },
+    "skin.color -> eyes.color": {
+      "layer": 0,
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 405,
+          "n_narratives": 256,
+          "within_acc": 0.17530864197530865,
+          "within_majority": 0.056790123456790124,
+          "cross_acc": 0.41975308641975306,
+          "cross_majority": 0.3802469135802469,
+          "binding_margin": 0.07901234567901239,
+          "binding_margin_ci95": [
+            0.019277108433734952,
+            0.14527845036319614
+          ],
+          "p_two_sided": 0.008
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 565,
+          "n_narratives": 270,
+          "within_acc": 0.4389380530973451,
+          "within_majority": 0.3752212389380531,
+          "cross_acc": 0.5008849557522124,
+          "cross_majority": 0.48672566371681414,
+          "binding_margin": 0.049557522123893805,
+          "binding_margin_ci95": [
+            0.010553102881246912,
+            0.08979666426118547
+          ],
+          "p_two_sided": 0.016
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 480,
+          "n_narratives": 270,
+          "within_acc": 0.4583333333333333,
+          "within_majority": 0.3729166666666667,
+          "cross_acc": 0.40625,
+          "cross_majority": 0.39375,
+          "binding_margin": 0.07291666666666663,
+          "binding_margin_ci95": [
+            0.024238773274917844,
+            0.12247886139271326
+          ],
+          "p_two_sided": 0.006
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 739,
+          "n_narratives": 269,
+          "within_acc": 0.4330175913396482,
+          "within_majority": 0.38430311231393777,
+          "cross_acc": 0.33288227334235454,
+          "cross_majority": 0.31799729364005414,
+          "binding_margin": 0.033829499323410006,
+          "binding_margin_ci95": [
+            -0.014422534916310839,
+            0.08120318915459233
+          ],
+          "p_two_sided": 0.208
+        },
+        {
+          "distance_min": 5,
+          "distance_max": null,
+          "n": 1045,
+          "n_narratives": 248,
+          "within_acc": 0.2880382775119617,
+          "within_majority": 0.4019138755980861,
+          "cross_acc": 0.22296650717703348,
+          "cross_majority": 0.16555023923444975,
+          "binding_margin": -0.17129186602870813,
+          "binding_margin_ci95": [
+            -0.25361440917901396,
+            -0.08550155751943452
+          ],
+          "p_two_sided": 0.0
+        }
+      ]
+    },
+    "skin.color -> lips.color": {
+      "layer": 0,
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 405,
+          "n_narratives": 256,
+          "within_acc": 0.17530864197530865,
+          "within_majority": 0.056790123456790124,
+          "cross_acc": 0.41975308641975306,
+          "cross_majority": 0.35802469135802467,
+          "binding_margin": 0.05679012345679013,
+          "binding_margin_ci95": [
+            -0.002431609021035544,
+            0.11001381909547739
+          ],
+          "p_two_sided": 0.064
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 565,
+          "n_narratives": 270,
+          "within_acc": 0.4389380530973451,
+          "within_majority": 0.3752212389380531,
+          "cross_acc": 0.47079646017699117,
+          "cross_majority": 0.45132743362831856,
+          "binding_margin": 0.04424778761061943,
+          "binding_margin_ci95": [
+            0.005581577284535117,
+            0.07946113989637307
+          ],
+          "p_two_sided": 0.018
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 480,
+          "n_narratives": 270,
+          "within_acc": 0.4583333333333333,
+          "within_majority": 0.3729166666666667,
+          "cross_acc": 0.38958333333333334,
+          "cross_majority": 0.38125,
+          "binding_margin": 0.07708333333333328,
+          "binding_margin_ci95": [
+            0.028508468334154165,
+            0.12525678068186205
+          ],
+          "p_two_sided": 0.002
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 739,
+          "n_narratives": 269,
+          "within_acc": 0.4330175913396482,
+          "within_majority": 0.38430311231393777,
+          "cross_acc": 0.31393775372124494,
+          "cross_majority": 0.3044654939106901,
+          "binding_margin": 0.03924221921515558,
+          "binding_margin_ci95": [
+            -0.009552429787834575,
+            0.08707916723736475
+          ],
+          "p_two_sided": 0.108
+        },
+        {
+          "distance_min": 5,
+          "distance_max": null,
+          "n": 1045,
+          "n_narratives": 248,
+          "within_acc": 0.2880382775119617,
+          "within_majority": 0.4019138755980861,
+          "cross_acc": 0.23253588516746412,
+          "cross_majority": 0.17320574162679425,
+          "binding_margin": -0.17320574162679428,
+          "binding_margin_ci95": [
+            -0.25514841082216966,
+            -0.09584019513015689
+          ],
+          "p_two_sided": 0.0
+        }
+      ]
+    },
+    "cheeks.finish -> eyes.finish": {
+      "layer": 0,
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 479,
+          "n_narratives": 258,
+          "within_acc": 0.20876826722338204,
+          "within_majority": 0.03966597077244259,
+          "cross_acc": 0.4551148225469729,
+          "cross_majority": 0.3862212943632568,
+          "binding_margin": 0.10020876826722336,
+          "binding_margin_ci95": [
+            0.038302180153089116,
+            0.16490595235500538
+          ],
+          "p_two_sided": 0.002
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 626,
+          "n_narratives": 270,
+          "within_acc": 0.43929712460063897,
+          "within_majority": 0.3306709265175719,
+          "cross_acc": 0.4904153354632588,
+          "cross_majority": 0.4472843450479233,
+          "binding_margin": 0.06549520766773159,
+          "binding_margin_ci95": [
+            0.02160468192444935,
+            0.1141227943796965
+          ],
+          "p_two_sided": 0.004
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 501,
+          "n_narratives": 270,
+          "within_acc": 0.46107784431137727,
+          "within_majority": 0.3532934131736527,
+          "cross_acc": 0.4550898203592814,
+          "cross_majority": 0.3972055888223553,
+          "binding_margin": 0.049900199600798445,
+          "binding_margin_ci95": [
+            0.0019451497077956153,
+            0.10233070371959256
+          ],
+          "p_two_sided": 0.044
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 741,
+          "n_narratives": 270,
+          "within_acc": 0.48313090418353577,
+          "within_majority": 0.37112010796221323,
+          "cross_acc": 0.3900134952766532,
+          "cross_majority": 0.30634278002699056,
+          "binding_margin": 0.02834008097165991,
+          "binding_margin_ci95": [
+            -0.01764391659361259,
+            0.07705290030450278
+          ],
+          "p_two_sided": 0.244
+        },
+        {
+          "distance_min": 5,
+          "distance_max": null,
+          "n": 887,
+          "n_narratives": 229,
+          "within_acc": 0.34949267192784667,
+          "within_majority": 0.37993235625704624,
+          "cross_acc": 0.3134160090191657,
+          "cross_majority": 0.15219842164599776,
+          "binding_margin": -0.19165727170236754,
+          "binding_margin_ci95": [
+            -0.28280872824291703,
+            -0.1031223082168603
+          ],
+          "p_two_sided": 0.0
+        }
+      ]
+    },
+    "cheeks.finish -> lips.finish": {
+      "layer": 0,
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 479,
+          "n_narratives": 258,
+          "within_acc": 0.20876826722338204,
+          "within_majority": 0.03966597077244259,
+          "cross_acc": 0.40083507306889354,
+          "cross_majority": 0.35490605427974947,
+          "binding_margin": 0.12317327766179537,
+          "binding_margin_ci95": [
+            0.062747690453876,
+            0.18613900380393708
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 626,
+          "n_narratives": 270,
+          "within_acc": 0.43929712460063897,
+          "within_majority": 0.3306709265175719,
+          "cross_acc": 0.4952076677316294,
+          "cross_majority": 0.43610223642172524,
+          "binding_margin": 0.049520766773162916,
+          "binding_margin_ci95": [
+            0.0015897620309385046,
+            0.09713869501744846
+          ],
+          "p_two_sided": 0.042
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 501,
+          "n_narratives": 270,
+          "within_acc": 0.46107784431137727,
+          "within_majority": 0.3532934131736527,
+          "cross_acc": 0.437125748502994,
+          "cross_majority": 0.3872255489021956,
+          "binding_margin": 0.05788423153692618,
+          "binding_margin_ci95": [
+            0.014021166104310796,
+            0.10505843725525635
+          ],
+          "p_two_sided": 0.008
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 741,
+          "n_narratives": 270,
+          "within_acc": 0.48313090418353577,
+          "within_majority": 0.37112010796221323,
+          "cross_acc": 0.32118758434547906,
+          "cross_majority": 0.29554655870445345,
+          "binding_margin": 0.08636977058029693,
+          "binding_margin_ci95": [
+            0.04209992887624468,
+            0.13469580284944166
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 5,
+          "distance_max": null,
+          "n": 887,
+          "n_narratives": 229,
+          "within_acc": 0.34949267192784667,
+          "within_majority": 0.37993235625704624,
+          "cross_acc": 0.2965050732807215,
+          "cross_majority": 0.14994363021420518,
+          "binding_margin": -0.1770011273957159,
+          "binding_margin_ci95": [
+            -0.26938405487231243,
+            -0.08648883357436872
+          ],
+          "p_two_sided": 0.0
+        }
+      ]
+    },
+    "cheeks.finish -> skin.finish": {
+      "layer": 0,
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 479,
+          "n_narratives": 258,
+          "within_acc": 0.20876826722338204,
+          "within_majority": 0.03966597077244259,
+          "cross_acc": 0.407098121085595,
+          "cross_majority": 0.40083507306889354,
+          "binding_margin": 0.16283924843423797,
+          "binding_margin_ci95": [
+            0.09883476646472546,
+            0.2243845733041575
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 626,
+          "n_narratives": 270,
+          "within_acc": 0.43929712460063897,
+          "within_majority": 0.3306709265175719,
+          "cross_acc": 0.4792332268370607,
+          "cross_majority": 0.45686900958466453,
+          "binding_margin": 0.08626198083067088,
+          "binding_margin_ci95": [
+            0.035245253164557004,
+            0.13376814690422015
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 501,
+          "n_narratives": 270,
+          "within_acc": 0.46107784431137727,
+          "within_majority": 0.3532934131736527,
+          "cross_acc": 0.4351297405189621,
+          "cross_majority": 0.39520958083832336,
+          "binding_margin": 0.06786427145708585,
+          "binding_margin_ci95": [
+            0.01945430848853461,
+            0.11819291806981098
+          ],
+          "p_two_sided": 0.008
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 741,
+          "n_narratives": 270,
+          "within_acc": 0.48313090418353577,
+          "within_majority": 0.37112010796221323,
+          "cross_acc": 0.38191632928475033,
+          "cross_majority": 0.3441295546558704,
+          "binding_margin": 0.07422402159244262,
+          "binding_margin_ci95": [
+            0.022680738174028835,
+            0.12383092216270417
+          ],
+          "p_two_sided": 0.002
+        },
+        {
+          "distance_min": 5,
+          "distance_max": null,
+          "n": 887,
+          "n_narratives": 229,
+          "within_acc": 0.34949267192784667,
+          "within_majority": 0.37993235625704624,
+          "cross_acc": 0.3032694475760992,
+          "cross_majority": 0.21082299887260428,
+          "binding_margin": -0.1228861330326945,
+          "binding_margin_ci95": [
+            -0.21759253672052178,
+            -0.026127942951519652
+          ],
+          "p_two_sided": 0.006
+        }
+      ]
+    },
+    "eyes.finish -> cheeks.finish": {
+      "layer": 2,
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 499,
+          "n_narratives": 263,
+          "within_acc": 0.44889779559118237,
+          "within_majority": 0.036072144288577156,
+          "cross_acc": 0.2905811623246493,
+          "cross_majority": 0.3807615230460922,
+          "binding_margin": 0.503006012024048,
+          "binding_margin_ci95": [
+            0.42082359986244683,
+            0.588235294117647
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 627,
+          "n_narratives": 270,
+          "within_acc": 0.45614035087719296,
+          "within_majority": 0.34609250398724084,
+          "cross_acc": 0.42424242424242425,
+          "cross_majority": 0.43221690590111644,
+          "binding_margin": 0.1180223285486443,
+          "binding_margin_ci95": [
+            0.0662346422048812,
+            0.17049982328793192
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 507,
+          "n_narratives": 270,
+          "within_acc": 0.43984220907297833,
+          "within_majority": 0.358974358974359,
+          "cross_acc": 0.39250493096646943,
+          "cross_majority": 0.3826429980276134,
+          "binding_margin": 0.07100591715976334,
+          "binding_margin_ci95": [
+            0.007934945631796054,
+            0.13458140145219138
+          ],
+          "p_two_sided": 0.038
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 735,
+          "n_narratives": 269,
+          "within_acc": 0.4231292517006803,
+          "within_majority": 0.37551020408163266,
+          "cross_acc": 0.33877551020408164,
+          "cross_majority": 0.2925170068027211,
+          "binding_margin": 0.0013605442176870541,
+          "binding_margin_ci95": [
+            -0.04982371228841442,
+            0.058550647787204674
+          ],
+          "p_two_sided": 0.99
+        },
+        {
+          "distance_min": 5,
+          "distance_max": null,
+          "n": 866,
+          "n_narratives": 234,
+          "within_acc": 0.35450346420323325,
+          "within_majority": 0.384526558891455,
+          "cross_acc": 0.31524249422632794,
+          "cross_majority": 0.1674364896073903,
+          "binding_margin": -0.17782909930715937,
+          "binding_margin_ci95": [
+            -0.2591932699688835,
+            -0.0991592784772871
+          ],
+          "p_two_sided": 0.0
+        }
+      ]
+    },
+    "eyes.finish -> lips.finish": {
+      "layer": 2,
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 499,
+          "n_narratives": 263,
+          "within_acc": 0.44889779559118237,
+          "within_majority": 0.036072144288577156,
+          "cross_acc": 0.3066132264529058,
+          "cross_majority": 0.3807615230460922,
+          "binding_margin": 0.4869739478957916,
+          "binding_margin_ci95": [
+            0.4043792913452573,
+            0.5808828017870571
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 627,
+          "n_narratives": 270,
+          "within_acc": 0.45614035087719296,
+          "within_majority": 0.34609250398724084,
+          "cross_acc": 0.4370015948963317,
+          "cross_majority": 0.4449760765550239,
+          "binding_margin": 0.1180223285486443,
+          "binding_margin_ci95": [
+            0.05231264959146053,
+            0.17553087009608748
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 507,
+          "n_narratives": 270,
+          "within_acc": 0.43984220907297833,
+          "within_majority": 0.358974358974359,
+          "cross_acc": 0.40433925049309666,
+          "cross_majority": 0.36489151873767256,
+          "binding_margin": 0.041420118343195256,
+          "binding_margin_ci95": [
+            -0.01943203883495145,
+            0.1040082677165354
+          ],
+          "p_two_sided": 0.174
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 735,
+          "n_narratives": 269,
+          "within_acc": 0.4231292517006803,
+          "within_majority": 0.37551020408163266,
+          "cross_acc": 0.3469387755102041,
+          "cross_majority": 0.27346938775510204,
+          "binding_margin": -0.025850340136054417,
+          "binding_margin_ci95": [
+            -0.08314688010638975,
+            0.03609924343569197
+          ],
+          "p_two_sided": 0.382
+        },
+        {
+          "distance_min": 5,
+          "distance_max": null,
+          "n": 866,
+          "n_narratives": 234,
+          "within_acc": 0.35450346420323325,
+          "within_majority": 0.384526558891455,
+          "cross_acc": 0.30484988452655887,
+          "cross_majority": 0.15473441108545036,
+          "binding_margin": -0.18013856812933024,
+          "binding_margin_ci95": [
+            -0.25360957920436594,
+            -0.10311595683580377
+          ],
+          "p_two_sided": 0.0
+        }
+      ]
+    },
+    "eyes.finish -> skin.finish": {
+      "layer": 2,
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 499,
+          "n_narratives": 263,
+          "within_acc": 0.44889779559118237,
+          "within_majority": 0.036072144288577156,
+          "cross_acc": 0.3106212424849699,
+          "cross_majority": 0.42084168336673344,
+          "binding_margin": 0.5230460921843687,
+          "binding_margin_ci95": [
+            0.4402353820287689,
+            0.6115923211914246
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 627,
+          "n_narratives": 270,
+          "within_acc": 0.45614035087719296,
+          "within_majority": 0.34609250398724084,
+          "cross_acc": 0.43381180223285487,
+          "cross_majority": 0.49122807017543857,
+          "binding_margin": 0.16746411483253582,
+          "binding_margin_ci95": [
+            0.10914855877570442,
+            0.2281337955298014
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 507,
+          "n_narratives": 270,
+          "within_acc": 0.43984220907297833,
+          "within_majority": 0.358974358974359,
+          "cross_acc": 0.3865877712031558,
+          "cross_majority": 0.388560157790927,
+          "binding_margin": 0.08284023668639057,
+          "binding_margin_ci95": [
+            0.01960688384943017,
+            0.1477323157611619
+          ],
+          "p_two_sided": 0.01
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 735,
+          "n_narratives": 269,
+          "within_acc": 0.4231292517006803,
+          "within_majority": 0.37551020408163266,
+          "cross_acc": 0.36054421768707484,
+          "cross_majority": 0.3142857142857143,
+          "binding_margin": 0.0013605442176870541,
+          "binding_margin_ci95": [
+            -0.062071108782625325,
+            0.06233973631230795
+          ],
+          "p_two_sided": 0.992
+        },
+        {
+          "distance_min": 5,
+          "distance_max": null,
+          "n": 866,
+          "n_narratives": 234,
+          "within_acc": 0.35450346420323325,
+          "within_majority": 0.384526558891455,
+          "cross_acc": 0.32217090069284066,
+          "cross_majority": 0.19861431870669746,
+          "binding_margin": -0.15357967667436492,
+          "binding_margin_ci95": [
+            -0.23504150850882163,
+            -0.07708981380065724
+          ],
+          "p_two_sided": 0.0
+        }
+      ]
+    },
+    "lips.finish -> cheeks.finish": {
+      "layer": 0,
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 497,
+          "n_narratives": 264,
+          "within_acc": 0.2193158953722334,
+          "within_majority": 0.03621730382293763,
+          "cross_acc": 0.4346076458752515,
+          "cross_majority": 0.3822937625754527,
+          "binding_margin": 0.13078470824949695,
+          "binding_margin_ci95": [
+            0.07112150698602791,
+            0.19085992177019184
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 616,
+          "n_narratives": 270,
+          "within_acc": 0.4074675324675325,
+          "within_majority": 0.3262987012987013,
+          "cross_acc": 0.4837662337662338,
+          "cross_majority": 0.4318181818181818,
+          "binding_margin": 0.029220779220779203,
+          "binding_margin_ci95": [
+            -0.015959404537232148,
+            0.07237564591187859
+          ],
+          "p_two_sided": 0.2
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 490,
+          "n_narratives": 270,
+          "within_acc": 0.463265306122449,
+          "within_majority": 0.35306122448979593,
+          "cross_acc": 0.4204081632653061,
+          "cross_majority": 0.3816326530612245,
+          "binding_margin": 0.07142857142857145,
+          "binding_margin_ci95": [
+            0.01882165811154733,
+            0.11993979950392729
+          ],
+          "p_two_sided": 0.014
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 721,
+          "n_narratives": 268,
+          "within_acc": 0.435506241331484,
+          "within_majority": 0.37309292649098474,
+          "cross_acc": 0.3522884882108183,
+          "cross_majority": 0.3065187239944521,
+          "binding_margin": 0.016643550624133086,
+          "binding_margin_ci95": [
+            -0.03375712988814857,
+            0.06592328920608428
+          ],
+          "p_two_sided": 0.552
+        },
+        {
+          "distance_min": 5,
+          "distance_max": null,
+          "n": 910,
+          "n_narratives": 240,
+          "within_acc": 0.34065934065934067,
+          "within_majority": 0.36043956043956044,
+          "cross_acc": 0.3098901098901099,
+          "cross_majority": 0.16593406593406593,
+          "binding_margin": -0.16373626373626374,
+          "binding_margin_ci95": [
+            -0.2432756992800661,
+            -0.0851673062883857
+          ],
+          "p_two_sided": 0.0
+        }
+      ]
+    },
+    "lips.finish -> eyes.finish": {
+      "layer": 0,
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 497,
+          "n_narratives": 264,
+          "within_acc": 0.2193158953722334,
+          "within_majority": 0.03621730382293763,
+          "cross_acc": 0.45271629778672035,
+          "cross_majority": 0.39235412474849096,
+          "binding_margin": 0.12273641851106637,
+          "binding_margin_ci95": [
+            0.06786427145708587,
+            0.181822829522216
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 616,
+          "n_narratives": 270,
+          "within_acc": 0.4074675324675325,
+          "within_majority": 0.3262987012987013,
+          "cross_acc": 0.4967532467532468,
+          "cross_majority": 0.4512987012987013,
+          "binding_margin": 0.0357142857142857,
+          "binding_margin_ci95": [
+            -0.008277835948447141,
+            0.07895061996011447
+          ],
+          "p_two_sided": 0.102
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 490,
+          "n_narratives": 270,
+          "within_acc": 0.463265306122449,
+          "within_majority": 0.35306122448979593,
+          "cross_acc": 0.42857142857142855,
+          "cross_majority": 0.373469387755102,
+          "binding_margin": 0.055102040816326525,
+          "binding_margin_ci95": [
+            0.010327416090403125,
+            0.10484119872560729
+          ],
+          "p_two_sided": 0.022
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 721,
+          "n_narratives": 268,
+          "within_acc": 0.435506241331484,
+          "within_majority": 0.37309292649098474,
+          "cross_acc": 0.3578363384188627,
+          "cross_majority": 0.3106796116504854,
+          "binding_margin": 0.01525658807212199,
+          "binding_margin_ci95": [
+            -0.03582644628099171,
+            0.06286244000314736
+          ],
+          "p_two_sided": 0.546
+        },
+        {
+          "distance_min": 5,
+          "distance_max": null,
+          "n": 910,
+          "n_narratives": 240,
+          "within_acc": 0.34065934065934067,
+          "within_majority": 0.36043956043956044,
+          "cross_acc": 0.27362637362637365,
+          "cross_majority": 0.16043956043956045,
+          "binding_margin": -0.13296703296703297,
+          "binding_margin_ci95": [
+            -0.21960734444736152,
+            -0.04600948462504523
+          ],
+          "p_two_sided": 0.004
+        }
+      ]
+    },
+    "lips.finish -> skin.finish": {
+      "layer": 0,
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 497,
+          "n_narratives": 264,
+          "within_acc": 0.2193158953722334,
+          "within_majority": 0.03621730382293763,
+          "cross_acc": 0.43259557344064387,
+          "cross_majority": 0.4346076458752515,
+          "binding_margin": 0.1851106639839034,
+          "binding_margin_ci95": [
+            0.12426005857869585,
+            0.24631879086718833
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 616,
+          "n_narratives": 270,
+          "within_acc": 0.4074675324675325,
+          "within_majority": 0.3262987012987013,
+          "cross_acc": 0.4772727272727273,
+          "cross_majority": 0.474025974025974,
+          "binding_margin": 0.07792207792207789,
+          "binding_margin_ci95": [
+            0.03215434083601293,
+            0.12375751982499313
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 490,
+          "n_narratives": 270,
+          "within_acc": 0.463265306122449,
+          "within_majority": 0.35306122448979593,
+          "cross_acc": 0.44693877551020406,
+          "cross_majority": 0.4142857142857143,
+          "binding_margin": 0.07755102040816331,
+          "binding_margin_ci95": [
+            0.030848532117430577,
+            0.13294642857142855
+          ],
+          "p_two_sided": 0.002
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 721,
+          "n_narratives": 268,
+          "within_acc": 0.435506241331484,
+          "within_majority": 0.37309292649098474,
+          "cross_acc": 0.3536754507628294,
+          "cross_majority": 0.32038834951456313,
+          "binding_margin": 0.029126213592232997,
+          "binding_margin_ci95": [
+            -0.021741354766000344,
+            0.0734766246924302
+          ],
+          "p_two_sided": 0.292
+        },
+        {
+          "distance_min": 5,
+          "distance_max": null,
+          "n": 910,
+          "n_narratives": 240,
+          "within_acc": 0.34065934065934067,
+          "within_majority": 0.36043956043956044,
+          "cross_acc": 0.30439560439560437,
+          "cross_majority": 0.1934065934065934,
+          "binding_margin": -0.13076923076923072,
+          "binding_margin_ci95": [
+            -0.22164927894579564,
+            -0.034891577285934686
+          ],
+          "p_two_sided": 0.004
+        }
+      ]
+    },
+    "skin.finish -> cheeks.finish": {
+      "layer": 6,
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 487,
+          "n_narratives": 263,
+          "within_acc": 0.2464065708418891,
+          "within_majority": 0.04722792607802875,
+          "cross_acc": 0.3326488706365503,
+          "cross_majority": 0.4004106776180698,
+          "binding_margin": 0.26694045174537984,
+          "binding_margin_ci95": [
+            0.2024705468612625,
+            0.34025635879668736
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 613,
+          "n_narratives": 270,
+          "within_acc": 0.42251223491027734,
+          "within_majority": 0.3458401305057096,
+          "cross_acc": 0.39477977161500816,
+          "cross_majority": 0.4796084828711256,
+          "binding_margin": 0.1615008156606852,
+          "binding_margin_ci95": [
+            0.10330112641299156,
+            0.21973249615072601
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 492,
+          "n_narratives": 270,
+          "within_acc": 0.4186991869918699,
+          "within_majority": 0.3638211382113821,
+          "cross_acc": 0.35772357723577236,
+          "cross_majority": 0.3780487804878049,
+          "binding_margin": 0.07520325203252032,
+          "binding_margin_ci95": [
+            0.01417004048582998,
+            0.13536969696969695
+          ],
+          "p_two_sided": 0.02
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 724,
+          "n_narratives": 268,
+          "within_acc": 0.42679558011049723,
+          "within_majority": 0.39226519337016574,
+          "cross_acc": 0.31215469613259667,
+          "cross_majority": 0.27348066298342544,
+          "binding_margin": -0.004143646408839741,
+          "binding_margin_ci95": [
+            -0.06236133991255085,
+            0.05472331529989735
+          ],
+          "p_two_sided": 0.85
+        },
+        {
+          "distance_min": 5,
+          "distance_max": null,
+          "n": 918,
+          "n_narratives": 231,
+          "within_acc": 0.39215686274509803,
+          "within_majority": 0.45751633986928103,
+          "cross_acc": 0.23093681917211328,
+          "cross_majority": 0.15468409586056645,
+          "binding_margin": -0.14161220043572983,
+          "binding_margin_ci95": [
+            -0.21007792819546564,
+            -0.07632898045750645
+          ],
+          "p_two_sided": 0.0
+        }
+      ]
+    },
+    "skin.finish -> eyes.finish": {
+      "layer": 6,
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 487,
+          "n_narratives": 263,
+          "within_acc": 0.2464065708418891,
+          "within_majority": 0.04722792607802875,
+          "cross_acc": 0.2915811088295688,
+          "cross_majority": 0.4004106776180698,
+          "binding_margin": 0.3080082135523614,
+          "binding_margin_ci95": [
+            0.23858192813631152,
+            0.38236071384156195
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 613,
+          "n_narratives": 270,
+          "within_acc": 0.42251223491027734,
+          "within_majority": 0.3458401305057096,
+          "cross_acc": 0.3817292006525285,
+          "cross_majority": 0.47145187601957583,
+          "binding_margin": 0.16639477977161504,
+          "binding_margin_ci95": [
+            0.10482140608379488,
+            0.2281561542972568
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 492,
+          "n_narratives": 270,
+          "within_acc": 0.4186991869918699,
+          "within_majority": 0.3638211382113821,
+          "cross_acc": 0.34146341463414637,
+          "cross_majority": 0.37398373983739835,
+          "binding_margin": 0.08739837398373979,
+          "binding_margin_ci95": [
+            0.031155405405405408,
+            0.1445587454490291
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 724,
+          "n_narratives": 268,
+          "within_acc": 0.42679558011049723,
+          "within_majority": 0.39226519337016574,
+          "cross_acc": 0.319060773480663,
+          "cross_majority": 0.292817679558011,
+          "binding_margin": 0.008287292817679537,
+          "binding_margin_ci95": [
+            -0.04197292069632492,
+            0.06034033281325389
+          ],
+          "p_two_sided": 0.844
+        },
+        {
+          "distance_min": 5,
+          "distance_max": null,
+          "n": 918,
+          "n_narratives": 231,
+          "within_acc": 0.39215686274509803,
+          "within_majority": 0.45751633986928103,
+          "cross_acc": 0.22875816993464052,
+          "cross_majority": 0.15904139433551198,
+          "binding_margin": -0.13507625272331153,
+          "binding_margin_ci95": [
+            -0.2068767821391737,
+            -0.062204974582425604
+          ],
+          "p_two_sided": 0.0
+        }
+      ]
+    },
+    "skin.finish -> lips.finish": {
+      "layer": 6,
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 487,
+          "n_narratives": 263,
+          "within_acc": 0.2464065708418891,
+          "within_majority": 0.04722792607802875,
+          "cross_acc": 0.30390143737166325,
+          "cross_majority": 0.3737166324435318,
+          "binding_margin": 0.2689938398357289,
+          "binding_margin_ci95": [
+            0.1956076757774773,
+            0.33967604071512464
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 613,
+          "n_narratives": 270,
+          "within_acc": 0.42251223491027734,
+          "within_majority": 0.3458401305057096,
+          "cross_acc": 0.3817292006525285,
+          "cross_majority": 0.4371941272430669,
+          "binding_margin": 0.1321370309951061,
+          "binding_margin_ci95": [
+            0.07555966875351615,
+            0.1906629536471434
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 492,
+          "n_narratives": 270,
+          "within_acc": 0.4186991869918699,
+          "within_majority": 0.3638211382113821,
+          "cross_acc": 0.34552845528455284,
+          "cross_majority": 0.37398373983739835,
+          "binding_margin": 0.08333333333333331,
+          "binding_margin_ci95": [
+            0.0182537340955191,
+            0.1463427206437013
+          ],
+          "p_two_sided": 0.004
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 724,
+          "n_narratives": 268,
+          "within_acc": 0.42679558011049723,
+          "within_majority": 0.39226519337016574,
+          "cross_acc": 0.30386740331491713,
+          "cross_majority": 0.27624309392265195,
+          "binding_margin": 0.0069060773480663085,
+          "binding_margin_ci95": [
+            -0.0549029451137885,
+            0.06603403190152941
+          ],
+          "p_two_sided": 0.848
+        },
+        {
+          "distance_min": 5,
+          "distance_max": null,
+          "n": 918,
+          "n_narratives": 231,
+          "within_acc": 0.39215686274509803,
+          "within_majority": 0.45751633986928103,
+          "cross_acc": 0.25272331154684097,
+          "cross_majority": 0.16884531590413943,
+          "binding_margin": -0.14923747276688454,
+          "binding_margin_ci95": [
+            -0.2189966965046888,
+            -0.07515470205656051
+          ],
+          "p_two_sided": 0.0
+        }
+      ]
+    },
+    "cheeks.coverage -> eyes.coverage": {
+      "layer": 0,
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 419,
+          "n_narratives": 260,
+          "within_acc": 0.3126491646778043,
+          "within_majority": 0.5035799522673031,
+          "cross_acc": 0.513126491646778,
+          "cross_majority": 0.35083532219570407,
+          "binding_margin": -0.3532219570405728,
+          "binding_margin_ci95": [
+            -0.4503631961259079,
+            -0.2574916663308251
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 582,
+          "n_narratives": 270,
+          "within_acc": 0.570446735395189,
+          "within_majority": 0.33676975945017185,
+          "cross_acc": 0.5463917525773195,
+          "cross_majority": 0.30584192439862545,
+          "binding_margin": -0.0068728522336769515,
+          "binding_margin_ci95": [
+            -0.08718750000000003,
+            0.06838071348940918
+          ],
+          "p_two_sided": 0.9
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 484,
+          "n_narratives": 270,
+          "within_acc": 0.6012396694214877,
+          "within_majority": 0.3181818181818182,
+          "cross_acc": 0.5144628099173554,
+          "cross_majority": 0.3181818181818182,
+          "binding_margin": 0.08677685950413228,
+          "binding_margin_ci95": [
+            0.006235085187857314,
+            0.16805742574257423
+          ],
+          "p_two_sided": 0.034
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 741,
+          "n_narratives": 269,
+          "within_acc": 0.5236167341430499,
+          "within_majority": 0.31713900134952766,
+          "cross_acc": 0.4318488529014845,
+          "cross_majority": 0.3535762483130904,
+          "binding_margin": 0.12820512820512814,
+          "binding_margin_ci95": [
+            0.03897131397036851,
+            0.21448976139038345
+          ],
+          "p_two_sided": 0.004
+        },
+        {
+          "distance_min": 5,
+          "distance_max": null,
+          "n": 1008,
+          "n_narratives": 246,
+          "within_acc": 0.39087301587301587,
+          "within_majority": 0.3333333333333333,
+          "cross_acc": 0.4642857142857143,
+          "cross_majority": 0.48908730158730157,
+          "binding_margin": 0.08234126984126983,
+          "binding_margin_ci95": [
+            -0.0020916809231327133,
+            0.16406362464011517
+          ],
+          "p_two_sided": 0.062
+        }
+      ]
+    },
+    "cheeks.coverage -> lips.coverage": {
+      "layer": 0,
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 419,
+          "n_narratives": 260,
+          "within_acc": 0.3126491646778043,
+          "within_majority": 0.5035799522673031,
+          "cross_acc": 0.4988066825775656,
+          "cross_majority": 0.2911694510739857,
+          "binding_margin": -0.39856801909307876,
+          "binding_margin_ci95": [
+            -0.4987961636756818,
+            -0.29256715746880974
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 582,
+          "n_narratives": 270,
+          "within_acc": 0.570446735395189,
+          "within_majority": 0.33676975945017185,
+          "cross_acc": 0.5292096219931272,
+          "cross_majority": 0.27835051546391754,
+          "binding_margin": -0.01718213058419249,
+          "binding_margin_ci95": [
+            -0.09732583131288283,
+            0.0673074330139422
+          ],
+          "p_two_sided": 0.716
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 484,
+          "n_narratives": 270,
+          "within_acc": 0.6012396694214877,
+          "within_majority": 0.3181818181818182,
+          "cross_acc": 0.4731404958677686,
+          "cross_majority": 0.2975206611570248,
+          "binding_margin": 0.1074380165289257,
+          "binding_margin_ci95": [
+            0.0126784236996573,
+            0.20044535540699404
+          ],
+          "p_two_sided": 0.024
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 741,
+          "n_narratives": 269,
+          "within_acc": 0.5236167341430499,
+          "within_majority": 0.31713900134952766,
+          "cross_acc": 0.39946018893387314,
+          "cross_majority": 0.3427800269905533,
+          "binding_margin": 0.1497975708502024,
+          "binding_margin_ci95": [
+            0.0661572782021151,
+            0.2341979289322226
+          ],
+          "p_two_sided": 0.002
+        },
+        {
+          "distance_min": 5,
+          "distance_max": null,
+          "n": 1008,
+          "n_narratives": 246,
+          "within_acc": 0.39087301587301587,
+          "within_majority": 0.3333333333333333,
+          "cross_acc": 0.4255952380952381,
+          "cross_majority": 0.39285714285714285,
+          "binding_margin": 0.024801587301587324,
+          "binding_margin_ci95": [
+            -0.061958306906566105,
+            0.10936643553314254
+          ],
+          "p_two_sided": 0.574
+        }
+      ]
+    },
+    "cheeks.coverage -> skin.coverage": {
+      "layer": 0,
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 419,
+          "n_narratives": 260,
+          "within_acc": 0.3126491646778043,
+          "within_majority": 0.5035799522673031,
+          "cross_acc": 0.4677804295942721,
+          "cross_majority": 0.2863961813842482,
+          "binding_margin": -0.3723150357995227,
+          "binding_margin_ci95": [
+            -0.4660326584410354,
+            -0.2733590775354794
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 582,
+          "n_narratives": 270,
+          "within_acc": 0.570446735395189,
+          "within_majority": 0.33676975945017185,
+          "cross_acc": 0.5292096219931272,
+          "cross_majority": 0.24914089347079038,
+          "binding_margin": -0.046391752577319645,
+          "binding_margin_ci95": [
+            -0.12264757195584894,
+            0.040936617989937335
+          ],
+          "p_two_sided": 0.272
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 484,
+          "n_narratives": 270,
+          "within_acc": 0.6012396694214877,
+          "within_majority": 0.3181818181818182,
+          "cross_acc": 0.49586776859504134,
+          "cross_majority": 0.2871900826446281,
+          "binding_margin": 0.07438016528925623,
+          "binding_margin_ci95": [
+            -0.016781385807217875,
+            0.17143733567046449
+          ],
+          "p_two_sided": 0.12
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 741,
+          "n_narratives": 269,
+          "within_acc": 0.5236167341430499,
+          "within_majority": 0.31713900134952766,
+          "cross_acc": 0.44534412955465585,
+          "cross_majority": 0.340080971659919,
+          "binding_margin": 0.10121457489878538,
+          "binding_margin_ci95": [
+            0.020007465249401737,
+            0.18080705698553934
+          ],
+          "p_two_sided": 0.024
+        },
+        {
+          "distance_min": 5,
+          "distance_max": null,
+          "n": 1008,
+          "n_narratives": 246,
+          "within_acc": 0.39087301587301587,
+          "within_majority": 0.3333333333333333,
+          "cross_acc": 0.39285714285714285,
+          "cross_majority": 0.4166666666666667,
+          "binding_margin": 0.0813492063492064,
+          "binding_margin_ci95": [
+            0.004088430025860503,
+            0.1668513449280699
+          ],
+          "p_two_sided": 0.042
+        }
+      ]
+    },
+    "eyes.coverage -> cheeks.coverage": {
+      "layer": 12,
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 423,
+          "n_narratives": 262,
+          "within_acc": 0.3475177304964539,
+          "within_majority": 0.5035460992907801,
+          "cross_acc": 0.3735224586288416,
+          "cross_majority": 0.29550827423167847,
+          "binding_margin": -0.2340425531914893,
+          "binding_margin_ci95": [
+            -0.3227383863080685,
+            -0.14856956702841448
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 593,
+          "n_narratives": 270,
+          "within_acc": 0.5362563237774031,
+          "within_majority": 0.3372681281618887,
+          "cross_acc": 0.4502529510961214,
+          "cross_majority": 0.2765598650927487,
+          "binding_margin": 0.025295109612141653,
+          "binding_margin_ci95": [
+            -0.049590888532543946,
+            0.09787664242888121
+          ],
+          "p_two_sided": 0.56
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 498,
+          "n_narratives": 270,
+          "within_acc": 0.5040160642570282,
+          "within_majority": 0.3393574297188755,
+          "cross_acc": 0.43373493975903615,
+          "cross_majority": 0.30120481927710846,
+          "binding_margin": 0.032128514056224966,
+          "binding_margin_ci95": [
+            -0.05088672917692163,
+            0.11753584834216851
+          ],
+          "p_two_sided": 0.52
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 755,
+          "n_narratives": 270,
+          "within_acc": 0.5602649006622517,
+          "within_majority": 0.3536423841059603,
+          "cross_acc": 0.40397350993377484,
+          "cross_majority": 0.3536423841059603,
+          "binding_margin": 0.1562913907284768,
+          "binding_margin_ci95": [
+            0.07180137734253914,
+            0.23940557835619392
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 5,
+          "distance_max": null,
+          "n": 965,
+          "n_narratives": 238,
+          "within_acc": 0.48911917098445595,
+          "within_majority": 0.39896373056994816,
+          "cross_acc": 0.36476683937823834,
+          "cross_majority": 0.44145077720207254,
+          "binding_margin": 0.166839378238342,
+          "binding_margin_ci95": [
+            0.06693625534369807,
+            0.2658934104752718
+          ],
+          "p_two_sided": 0.0
+        }
+      ]
+    },
+    "eyes.coverage -> lips.coverage": {
+      "layer": 12,
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 423,
+          "n_narratives": 262,
+          "within_acc": 0.3475177304964539,
+          "within_majority": 0.5035460992907801,
+          "cross_acc": 0.39243498817966904,
+          "cross_majority": 0.2907801418439716,
+          "binding_margin": -0.2576832151300236,
+          "binding_margin_ci95": [
+            -0.3443095838587642,
+            -0.17101836055141992
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 593,
+          "n_narratives": 270,
+          "within_acc": 0.5362563237774031,
+          "within_majority": 0.3372681281618887,
+          "cross_acc": 0.5278246205733558,
+          "cross_majority": 0.24620573355817876,
+          "binding_margin": -0.08263069139966267,
+          "binding_margin_ci95": [
+            -0.15464582926699436,
+            -0.003400785990071762
+          ],
+          "p_two_sided": 0.042
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 498,
+          "n_narratives": 270,
+          "within_acc": 0.5040160642570282,
+          "within_majority": 0.3393574297188755,
+          "cross_acc": 0.44176706827309237,
+          "cross_majority": 0.26104417670682734,
+          "binding_margin": -0.016064257028112372,
+          "binding_margin_ci95": [
+            -0.09572651326155462,
+            0.060856219354426505
+          ],
+          "p_two_sided": 0.7
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 755,
+          "n_narratives": 270,
+          "within_acc": 0.5602649006622517,
+          "within_majority": 0.3536423841059603,
+          "cross_acc": 0.4105960264900662,
+          "cross_majority": 0.33642384105960266,
+          "binding_margin": 0.13245033112582782,
+          "binding_margin_ci95": [
+            0.04286762454539347,
+            0.21542761333351365
+          ],
+          "p_two_sided": 0.01
+        },
+        {
+          "distance_min": 5,
+          "distance_max": null,
+          "n": 965,
+          "n_narratives": 238,
+          "within_acc": 0.48911917098445595,
+          "within_majority": 0.39896373056994816,
+          "cross_acc": 0.36476683937823834,
+          "cross_majority": 0.44041450777202074,
+          "binding_margin": 0.1658031088082902,
+          "binding_margin_ci95": [
+            0.07472972757177988,
+            0.2646659574576643
+          ],
+          "p_two_sided": 0.0
+        }
+      ]
+    },
+    "eyes.coverage -> skin.coverage": {
+      "layer": 12,
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 423,
+          "n_narratives": 262,
+          "within_acc": 0.3475177304964539,
+          "within_majority": 0.5035460992907801,
+          "cross_acc": 0.37115839243498816,
+          "cross_majority": 0.2907801418439716,
+          "binding_margin": -0.23640661938534274,
+          "binding_margin_ci95": [
+            -0.3240444828330814,
+            -0.15289671682626543
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 593,
+          "n_narratives": 270,
+          "within_acc": 0.5362563237774031,
+          "within_majority": 0.3372681281618887,
+          "cross_acc": 0.45699831365935917,
+          "cross_majority": 0.24451939291736932,
+          "binding_margin": -0.013490725126475506,
+          "binding_margin_ci95": [
+            -0.08938790885342876,
+            0.06579218330009536
+          ],
+          "p_two_sided": 0.75
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 498,
+          "n_narratives": 270,
+          "within_acc": 0.5040160642570282,
+          "within_majority": 0.3393574297188755,
+          "cross_acc": 0.41566265060240964,
+          "cross_majority": 0.29116465863453816,
+          "binding_margin": 0.04016064257028118,
+          "binding_margin_ci95": [
+            -0.0578556356602778,
+            0.13351992440913962
+          ],
+          "p_two_sided": 0.414
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 755,
+          "n_narratives": 270,
+          "within_acc": 0.5602649006622517,
+          "within_majority": 0.3536423841059603,
+          "cross_acc": 0.39072847682119205,
+          "cross_majority": 0.3629139072847682,
+          "binding_margin": 0.17880794701986752,
+          "binding_margin_ci95": [
+            0.09545528680924374,
+            0.26522327469553447
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 5,
+          "distance_max": null,
+          "n": 965,
+          "n_narratives": 238,
+          "within_acc": 0.48911917098445595,
+          "within_majority": 0.39896373056994816,
+          "cross_acc": 0.3378238341968912,
+          "cross_majority": 0.40310880829015544,
+          "binding_margin": 0.15544041450777202,
+          "binding_margin_ci95": [
+            0.06719314778159458,
+            0.256664510735122
+          ],
+          "p_two_sided": 0.0
+        }
+      ]
+    },
+    "lips.coverage -> cheeks.coverage": {
+      "layer": 0,
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 398,
+          "n_narratives": 256,
+          "within_acc": 0.2889447236180904,
+          "within_majority": 0.04522613065326633,
+          "cross_acc": 0.5100502512562815,
+          "cross_majority": 0.40954773869346733,
+          "binding_margin": 0.14321608040200998,
+          "binding_margin_ci95": [
+            0.06940619511822647,
+            0.21761099880203655
+          ],
+          "p_two_sided": 0.002
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 573,
+          "n_narratives": 270,
+          "within_acc": 0.5026178010471204,
+          "within_majority": 0.3507853403141361,
+          "cross_acc": 0.537521815008726,
+          "cross_majority": 0.4607329842931937,
+          "binding_margin": 0.07504363001745201,
+          "binding_margin_ci95": [
+            0.022095690794303305,
+            0.12959719789842383
+          ],
+          "p_two_sided": 0.002
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 479,
+          "n_narratives": 270,
+          "within_acc": 0.5490605427974948,
+          "within_majority": 0.36116910229645094,
+          "cross_acc": 0.5093945720250522,
+          "cross_majority": 0.4133611691022965,
+          "binding_margin": 0.09185803757828814,
+          "binding_margin_ci95": [
+            0.03346414061349489,
+            0.15369627192982457
+          ],
+          "p_two_sided": 0.006
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 727,
+          "n_narratives": 270,
+          "within_acc": 0.5295735900962861,
+          "within_majority": 0.3700137551581843,
+          "cross_acc": 0.42090784044016505,
+          "cross_majority": 0.3218707015130674,
+          "binding_margin": 0.060522696011004185,
+          "binding_margin_ci95": [
+            -0.010811543250567643,
+            0.1284564869889881
+          ],
+          "p_two_sided": 0.102
+        },
+        {
+          "distance_min": 5,
+          "distance_max": null,
+          "n": 1057,
+          "n_narratives": 249,
+          "within_acc": 0.4105960264900662,
+          "within_majority": 0.31031220435193946,
+          "cross_acc": 0.4380321665089877,
+          "cross_majority": 0.14758751182592242,
+          "binding_margin": -0.19016083254493849,
+          "binding_margin_ci95": [
+            -0.2926886148525664,
+            -0.09814891165821256
+          ],
+          "p_two_sided": 0.0
+        }
+      ]
+    },
+    "lips.coverage -> eyes.coverage": {
+      "layer": 0,
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 398,
+          "n_narratives": 256,
+          "within_acc": 0.2889447236180904,
+          "within_majority": 0.04522613065326633,
+          "cross_acc": 0.5276381909547738,
+          "cross_majority": 0.38944723618090454,
+          "binding_margin": 0.10552763819095481,
+          "binding_margin_ci95": [
+            0.03249595771144276,
+            0.17626287457610013
+          ],
+          "p_two_sided": 0.004
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 573,
+          "n_narratives": 270,
+          "within_acc": 0.5026178010471204,
+          "within_majority": 0.3507853403141361,
+          "cross_acc": 0.5968586387434555,
+          "cross_majority": 0.4816753926701571,
+          "binding_margin": 0.0366492146596859,
+          "binding_margin_ci95": [
+            -0.01086233495309356,
+            0.08338414634146335
+          ],
+          "p_two_sided": 0.138
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 479,
+          "n_narratives": 270,
+          "within_acc": 0.5490605427974948,
+          "within_majority": 0.36116910229645094,
+          "cross_acc": 0.524008350730689,
+          "cross_majority": 0.40501043841336115,
+          "binding_margin": 0.06889352818371608,
+          "binding_margin_ci95": [
+            0.010893246187363922,
+            0.12842629395064428
+          ],
+          "p_two_sided": 0.014
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 727,
+          "n_narratives": 270,
+          "within_acc": 0.5295735900962861,
+          "within_majority": 0.3700137551581843,
+          "cross_acc": 0.45667125171939477,
+          "cross_majority": 0.31636863823933975,
+          "binding_margin": 0.019257221458046814,
+          "binding_margin_ci95": [
+            -0.04301383930939879,
+            0.08540031715165408
+          ],
+          "p_two_sided": 0.54
+        },
+        {
+          "distance_min": 5,
+          "distance_max": null,
+          "n": 1057,
+          "n_narratives": 249,
+          "within_acc": 0.4105960264900662,
+          "within_majority": 0.31031220435193946,
+          "cross_acc": 0.41154210028382215,
+          "cross_majority": 0.16177861873226113,
+          "binding_margin": -0.14947965941343427,
+          "binding_margin_ci95": [
+            -0.24980406235588073,
+            -0.0490755371211623
+          ],
+          "p_two_sided": 0.002
+        }
+      ]
+    },
+    "lips.coverage -> skin.coverage": {
+      "layer": 0,
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 398,
+          "n_narratives": 256,
+          "within_acc": 0.2889447236180904,
+          "within_majority": 0.04522613065326633,
+          "cross_acc": 0.5201005025125628,
+          "cross_majority": 0.4221105527638191,
+          "binding_margin": 0.1457286432160804,
+          "binding_margin_ci95": [
+            0.07611827792832335,
+            0.21481528843421419
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 573,
+          "n_narratives": 270,
+          "within_acc": 0.5026178010471204,
+          "within_majority": 0.3507853403141361,
+          "cross_acc": 0.568935427574171,
+          "cross_majority": 0.4956369982547993,
+          "binding_margin": 0.07853403141361254,
+          "binding_margin_ci95": [
+            0.026934669273378883,
+            0.12522598949277394
+          ],
+          "p_two_sided": 0.002
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 479,
+          "n_narratives": 270,
+          "within_acc": 0.5490605427974948,
+          "within_majority": 0.36116910229645094,
+          "cross_acc": 0.5073068893528184,
+          "cross_majority": 0.430062630480167,
+          "binding_margin": 0.11064718162839249,
+          "binding_margin_ci95": [
+            0.053497942386831254,
+            0.166320184790334
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 727,
+          "n_narratives": 270,
+          "within_acc": 0.5295735900962861,
+          "within_majority": 0.3700137551581843,
+          "cross_acc": 0.4126547455295736,
+          "cross_majority": 0.3576341127922971,
+          "binding_margin": 0.10453920220082535,
+          "binding_margin_ci95": [
+            0.03191629841384818,
+            0.16958977857261376
+          ],
+          "p_two_sided": 0.004
+        },
+        {
+          "distance_min": 5,
+          "distance_max": null,
+          "n": 1057,
+          "n_narratives": 249,
+          "within_acc": 0.4105960264900662,
+          "within_majority": 0.31031220435193946,
+          "cross_acc": 0.40586565752128667,
+          "cross_majority": 0.1892147587511826,
+          "binding_margin": -0.11636707663197732,
+          "binding_margin_ci95": [
+            -0.23270833333333335,
+            -0.007565432742440053
+          ],
+          "p_two_sided": 0.038
+        }
+      ]
+    },
+    "skin.coverage -> cheeks.coverage": {
+      "layer": 10,
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 406,
+          "n_narratives": 253,
+          "within_acc": 0.46551724137931033,
+          "within_majority": 0.4753694581280788,
+          "cross_acc": 0.3522167487684729,
+          "cross_majority": 0.30049261083743845,
+          "binding_margin": -0.061576354679802936,
+          "binding_margin_ci95": [
+            -0.13217502932974895,
+            0.007249492575579615
+          ],
+          "p_two_sided": 0.082
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 558,
+          "n_narratives": 270,
+          "within_acc": 0.5806451612903226,
+          "within_majority": 0.3100358422939068,
+          "cross_acc": 0.41935483870967744,
+          "cross_majority": 0.27060931899641577,
+          "binding_margin": 0.12186379928315416,
+          "binding_margin_ci95": [
+            0.05224522910006788,
+            0.18984027248549692
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 480,
+          "n_narratives": 270,
+          "within_acc": 0.5270833333333333,
+          "within_majority": 0.30833333333333335,
+          "cross_acc": 0.42291666666666666,
+          "cross_majority": 0.31666666666666665,
+          "binding_margin": 0.11249999999999999,
+          "binding_margin_ci95": [
+            0.04374320652173919,
+            0.1799173875469535
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 726,
+          "n_narratives": 270,
+          "within_acc": 0.4724517906336088,
+          "within_majority": 0.2988980716253444,
+          "cross_acc": 0.39944903581267216,
+          "cross_majority": 0.3347107438016529,
+          "binding_margin": 0.10881542699724517,
+          "binding_margin_ci95": [
+            0.04666723192365947,
+            0.16829715343670443
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 5,
+          "distance_max": null,
+          "n": 1064,
+          "n_narratives": 249,
+          "within_acc": 0.3890977443609023,
+          "within_majority": 0.3242481203007519,
+          "cross_acc": 0.4107142857142857,
+          "cross_majority": 0.43609022556390975,
+          "binding_margin": 0.09022556390977443,
+          "binding_margin_ci95": [
+            0.03162902478205378,
+            0.1517635894210234
+          ],
+          "p_two_sided": 0.004
+        }
+      ]
+    },
+    "skin.coverage -> eyes.coverage": {
+      "layer": 10,
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 406,
+          "n_narratives": 253,
+          "within_acc": 0.46551724137931033,
+          "within_majority": 0.4753694581280788,
+          "cross_acc": 0.3817733990147783,
+          "cross_majority": 0.3374384236453202,
+          "binding_margin": -0.05418719211822659,
+          "binding_margin_ci95": [
+            -0.12802707302523075,
+            0.020597530386602392
+          ],
+          "p_two_sided": 0.134
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 558,
+          "n_narratives": 270,
+          "within_acc": 0.5806451612903226,
+          "within_majority": 0.3100358422939068,
+          "cross_acc": 0.4946236559139785,
+          "cross_majority": 0.2885304659498208,
+          "binding_margin": 0.06451612903225812,
+          "binding_margin_ci95": [
+            0.0035706384323641372,
+            0.13225293823936085
+          ],
+          "p_two_sided": 0.042
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 480,
+          "n_narratives": 270,
+          "within_acc": 0.5270833333333333,
+          "within_majority": 0.30833333333333335,
+          "cross_acc": 0.43125,
+          "cross_majority": 0.33541666666666664,
+          "binding_margin": 0.12291666666666662,
+          "binding_margin_ci95": [
+            0.05436817506207421,
+            0.19410308561029782
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 726,
+          "n_narratives": 270,
+          "within_acc": 0.4724517906336088,
+          "within_majority": 0.2988980716253444,
+          "cross_acc": 0.3953168044077135,
+          "cross_majority": 0.39118457300275483,
+          "binding_margin": 0.16942148760330578,
+          "binding_margin_ci95": [
+            0.10487687205324951,
+            0.23204478168636503
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 5,
+          "distance_max": null,
+          "n": 1064,
+          "n_narratives": 249,
+          "within_acc": 0.3890977443609023,
+          "within_majority": 0.3242481203007519,
+          "cross_acc": 0.4182330827067669,
+          "cross_majority": 0.46146616541353386,
+          "binding_margin": 0.10808270676691734,
+          "binding_margin_ci95": [
+            0.054325746548412775,
+            0.16464112891773286
+          ],
+          "p_two_sided": 0.0
+        }
+      ]
+    },
+    "skin.coverage -> lips.coverage": {
+      "layer": 10,
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 406,
+          "n_narratives": 253,
+          "within_acc": 0.46551724137931033,
+          "within_majority": 0.4753694581280788,
+          "cross_acc": 0.3891625615763547,
+          "cross_majority": 0.27832512315270935,
+          "binding_margin": -0.12068965517241381,
+          "binding_margin_ci95": [
+            -0.19538917629348018,
+            -0.046496180204471396
+          ],
+          "p_two_sided": 0.002
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 558,
+          "n_narratives": 270,
+          "within_acc": 0.5806451612903226,
+          "within_majority": 0.3100358422939068,
+          "cross_acc": 0.4444444444444444,
+          "cross_majority": 0.25268817204301075,
+          "binding_margin": 0.07885304659498216,
+          "binding_margin_ci95": [
+            0.016070712375859487,
+            0.15398559127208192
+          ],
+          "p_two_sided": 0.018
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 480,
+          "n_narratives": 270,
+          "within_acc": 0.5270833333333333,
+          "within_majority": 0.30833333333333335,
+          "cross_acc": 0.39375,
+          "cross_majority": 0.2791666666666667,
+          "binding_margin": 0.10416666666666669,
+          "binding_margin_ci95": [
+            0.03244621487980319,
+            0.18005060860244743
+          ],
+          "p_two_sided": 0.008
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 726,
+          "n_narratives": 270,
+          "within_acc": 0.4724517906336088,
+          "within_majority": 0.2988980716253444,
+          "cross_acc": 0.3884297520661157,
+          "cross_majority": 0.3333333333333333,
+          "binding_margin": 0.11845730027548207,
+          "binding_margin_ci95": [
+            0.05297159171639669,
+            0.1854385148849797
+          ],
+          "p_two_sided": 0.0
+        },
+        {
+          "distance_min": 5,
+          "distance_max": null,
+          "n": 1064,
+          "n_narratives": 249,
+          "within_acc": 0.3890977443609023,
+          "within_majority": 0.3242481203007519,
+          "cross_acc": 0.41635338345864664,
+          "cross_majority": 0.42105263157894735,
+          "binding_margin": 0.06954887218045108,
+          "binding_margin_ci95": [
+            0.015207326855905425,
+            0.12526291098963857
+          ],
+          "p_two_sided": 0.014
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,195 @@
+{
+  "meta": {
+    "model": "EleutherAI/pythia-410m",
+    "dataset": "pilot",
+    "pooling": "last"
+  },
+  "targets": {
+    "eyes.color": {
+      "layer": 24,
+      "classes": [
+        "bare",
+        "brown",
+        "nude",
+        "pink",
+        "red"
+      ],
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 198,
+          "accuracy": 0.2878787878787879,
+          "majority_here": 0.2222222222222222
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 253,
+          "accuracy": 0.42292490118577075,
+          "majority_here": 0.15019762845849802
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 169,
+          "accuracy": 0.33136094674556216,
+          "majority_here": 0.17159763313609466
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 166,
+          "accuracy": 0.27710843373493976,
+          "majority_here": 0.19879518072289157
+        },
+        {
+          "distance_min": 5,
+          "distance_max": 7,
+          "n": 53,
+          "accuracy": 0.2641509433962264,
+          "majority_here": 0.11320754716981132
+        }
+      ]
+    },
+    "eyes.finish": {
+      "layer": 24,
+      "classes": [
+        "dewy",
+        "matte",
+        "none",
+        "satin"
+      ],
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 243,
+          "accuracy": 0.3292181069958848,
+          "majority_here": 0.32098765432098764
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 275,
+          "accuracy": 0.4109090909090909,
+          "majority_here": 0.23272727272727273
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 163,
+          "accuracy": 0.4171779141104294,
+          "majority_here": 0.25153374233128833
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 130,
+          "accuracy": 0.46153846153846156,
+          "majority_here": 0.26153846153846155
+        },
+        {
+          "distance_min": 5,
+          "distance_max": 7,
+          "n": 28,
+          "accuracy": 0.07142857142857142,
+          "majority_here": 0.07142857142857142
+        }
+      ]
+    },
+    "lips.color": {
+      "layer": 20,
+      "classes": [
+        "bare",
+        "brown",
+        "nude",
+        "pink",
+        "red"
+      ],
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 230,
+          "accuracy": 0.29130434782608694,
+          "majority_here": 0.07391304347826087
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 250,
+          "accuracy": 0.372,
+          "majority_here": 0.264
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 164,
+          "accuracy": 0.31097560975609756,
+          "majority_here": 0.23780487804878048
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 152,
+          "accuracy": 0.29605263157894735,
+          "majority_here": 0.23684210526315788
+        },
+        {
+          "distance_min": 5,
+          "distance_max": 7,
+          "n": 43,
+          "accuracy": 0.2558139534883721,
+          "majority_here": 0.2558139534883721
+        }
+      ]
+    },
+    "lips.finish": {
+      "layer": 24,
+      "classes": [
+        "dewy",
+        "matte",
+        "none",
+        "satin"
+      ],
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 269,
+          "accuracy": 0.3903345724907063,
+          "majority_here": 0.31970260223048325
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 246,
+          "accuracy": 0.4024390243902439,
+          "majority_here": 0.25609756097560976
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 156,
+          "accuracy": 0.3269230769230769,
+          "majority_here": 0.2564102564102564
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 138,
+          "accuracy": 0.34057971014492755,
+          "majority_here": 0.2246376811594203
+        },
+        {
+          "distance_min": 5,
+          "distance_max": 7,
+          "n": 30,
+          "accuracy": 0.26666666666666666,
+          "majority_here": 0.13333333333333333
+        }
+      ]
+    }
+  }
+}

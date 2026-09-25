@@ -1,0 +1,21 @@
+# Extracted activations. Several GB, and fully regenerable with
+# scripts/03_extract.py from the committed dataset generators.
+activations/
+
+# Generated narrative datasets. Regenerable with scripts/02_generate_dataset.py,
+# which is deterministic given --seed.
+data/*/natural.jsonl
+data/*/shuffled.jsonl
+
+# Large arrays
+*.npy
+*.npz
+
+# Run logs
+results/*.log
+
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db

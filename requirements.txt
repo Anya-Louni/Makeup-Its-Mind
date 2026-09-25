@@ -1,0 +1,7 @@
+torch>=2.4
+transformers>=4.44
+scikit-learn>=1.4
+numpy>=1.26
+matplotlib>=3.8
+plotly>=5.20
+umap-learn>=0.5

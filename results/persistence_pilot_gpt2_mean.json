@@ -1,0 +1,195 @@
+{
+  "meta": {
+    "model": "gpt2",
+    "dataset": "pilot",
+    "pooling": "mean"
+  },
+  "targets": {
+    "eyes.color": {
+      "layer": 11,
+      "classes": [
+        "bare",
+        "brown",
+        "nude",
+        "pink",
+        "red"
+      ],
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 198,
+          "accuracy": 0.2222222222222222,
+          "majority_here": 0.2222222222222222
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 253,
+          "accuracy": 0.42292490118577075,
+          "majority_here": 0.15019762845849802
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 169,
+          "accuracy": 0.3905325443786982,
+          "majority_here": 0.17159763313609466
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 166,
+          "accuracy": 0.3614457831325301,
+          "majority_here": 0.19879518072289157
+        },
+        {
+          "distance_min": 5,
+          "distance_max": 7,
+          "n": 53,
+          "accuracy": 0.2830188679245283,
+          "majority_here": 0.11320754716981132
+        }
+      ]
+    },
+    "eyes.finish": {
+      "layer": 1,
+      "classes": [
+        "dewy",
+        "matte",
+        "none",
+        "satin"
+      ],
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 243,
+          "accuracy": 0.3333333333333333,
+          "majority_here": 0.32098765432098764
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 275,
+          "accuracy": 0.33090909090909093,
+          "majority_here": 0.23272727272727273
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 163,
+          "accuracy": 0.3312883435582822,
+          "majority_here": 0.25153374233128833
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 130,
+          "accuracy": 0.2846153846153846,
+          "majority_here": 0.26153846153846155
+        },
+        {
+          "distance_min": 5,
+          "distance_max": 7,
+          "n": 28,
+          "accuracy": 0.5357142857142857,
+          "majority_here": 0.07142857142857142
+        }
+      ]
+    },
+    "lips.color": {
+      "layer": 12,
+      "classes": [
+        "bare",
+        "brown",
+        "nude",
+        "pink",
+        "red"
+      ],
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 230,
+          "accuracy": 0.2782608695652174,
+          "majority_here": 0.07391304347826087
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 250,
+          "accuracy": 0.32,
+          "majority_here": 0.264
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 164,
+          "accuracy": 0.2926829268292683,
+          "majority_here": 0.23780487804878048
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 152,
+          "accuracy": 0.23026315789473684,
+          "majority_here": 0.23684210526315788
+        },
+        {
+          "distance_min": 5,
+          "distance_max": 7,
+          "n": 43,
+          "accuracy": 0.16279069767441862,
+          "majority_here": 0.2558139534883721
+        }
+      ]
+    },
+    "lips.finish": {
+      "layer": 1,
+      "classes": [
+        "dewy",
+        "matte",
+        "none",
+        "satin"
+      ],
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 269,
+          "accuracy": 0.3048327137546468,
+          "majority_here": 0.31970260223048325
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 246,
+          "accuracy": 0.3617886178861789,
+          "majority_here": 0.25609756097560976
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 156,
+          "accuracy": 0.3269230769230769,
+          "majority_here": 0.2564102564102564
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 138,
+          "accuracy": 0.26811594202898553,
+          "majority_here": 0.2246376811594203
+        },
+        {
+          "distance_min": 5,
+          "distance_max": 7,
+          "n": 30,
+          "accuracy": 0.16666666666666666,
+          "majority_here": 0.13333333333333333
+        }
+      ]
+    }
+  }
+}

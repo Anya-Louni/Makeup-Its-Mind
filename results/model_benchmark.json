@@ -1,0 +1,1692 @@
+[
+  {
+    "model": "gpt2",
+    "status": "ok",
+    "params_m": 124.4,
+    "n_layers": 12,
+    "hidden_size": 768,
+    "load_seconds": 5.0,
+    "rss_delta_mb": 0.0,
+    "forward_seconds": 0.194,
+    "tokens_per_sec": 355.4,
+    "hidden_states_ok": true,
+    "hidden_shape": [
+      4,
+      13,
+      768
+    ],
+    "extract_seconds_per_narrative": 0.211,
+    "vocab_accuracy": 0.759,
+    "vocab_by_term": {
+      "matte": 1.0,
+      "dewy": 0.667,
+      "satin": 1.0,
+      "nude": 1.0,
+      "pink": 1.0,
+      "red": 1.0,
+      "brown": 1.0,
+      "crimson": 1.0,
+      "beige": 0.0,
+      "sheer": 1.0,
+      "opaque": 1.0,
+      "coverage": 1.0,
+      "blot": 0.0,
+      "blend": 1.0,
+      "blush": 1.0,
+      "concealer": 1.0,
+      "eyeshadow": 1.0,
+      "lipstick": 0.0,
+      "bronzer": 1.0,
+      "primer": 1.0,
+      "lids": 0.0,
+      "cheekbones": 0.0,
+      "complexion": 0.0
+    },
+    "vocab_details": [
+      {
+        "term": "matte",
+        "prefix": "A matte lipstick finish reflects almost no",
+        "good": " light",
+        "bad": " sound",
+        "logp_good": -1.719,
+        "logp_bad": -9.413,
+        "correct": true,
+        "margin": 7.694
+      },
+      {
+        "term": "matte",
+        "prefix": "Her lipstick was completely matte, so it looked",
+        "good": " flat",
+        "bad": " wet",
+        "logp_good": -7.026,
+        "logp_bad": -8.109,
+        "correct": true,
+        "margin": 1.083
+      },
+      {
+        "term": "matte",
+        "prefix": "To make her skin matte she blotted away the",
+        "good": " shine",
+        "bad": " colour",
+        "logp_good": -5.06,
+        "logp_bad": -5.47,
+        "correct": true,
+        "margin": 0.41
+      },
+      {
+        "term": "dewy",
+        "prefix": "Her skin looked dewy, as though it were slightly",
+        "good": " damp",
+        "bad": " dusty",
+        "logp_good": -3.904,
+        "logp_bad": -7.263,
+        "correct": true,
+        "margin": 3.359
+      },
+      {
+        "term": "dewy",
+        "prefix": "A dewy finish catches the",
+        "good": " light",
+        "bad": " dust",
+        "logp_good": -5.905,
+        "logp_bad": -8.585,
+        "correct": true,
+        "margin": 2.68
+      },
+      {
+        "term": "dewy",
+        "prefix": "She wanted a dewy glow, so she avoided heavy",
+        "good": " powder",
+        "bad": " water",
+        "logp_good": -7.345,
+        "logp_bad": -5.806,
+        "correct": false,
+        "margin": -1.539
+      },
+      {
+        "term": "satin",
+        "prefix": "A satin finish sits between matte and",
+        "good": " glossy",
+        "bad": " purple",
+        "logp_good": -4.219,
+        "logp_bad": -7.869,
+        "correct": true,
+        "margin": 3.65
+      },
+      {
+        "term": "satin",
+        "prefix": "Satin lipstick has a soft",
+        "good": " sheen",
+        "bad": " smell",
+        "logp_good": -1.806,
+        "logp_bad": -7.744,
+        "correct": true,
+        "margin": 5.939
+      },
+      {
+        "term": "nude",
+        "prefix": "A nude lipstick is close to the colour of her own",
+        "good": " skin",
+        "bad": " hair",
+        "logp_good": -1.867,
+        "logp_bad": -2.895,
+        "correct": true,
+        "margin": 1.028
+      },
+      {
+        "term": "nude",
+        "prefix": "She chose a nude shade because she wanted something",
+        "good": " subtle",
+        "bad": " loud",
+        "logp_good": -7.446,
+        "logp_bad": -11.468,
+        "correct": true,
+        "margin": 4.022
+      },
+      {
+        "term": "pink",
+        "prefix": "The blush was a soft pink, a little like a",
+        "good": " rose",
+        "bad": " lemon",
+        "logp_good": -4.358,
+        "logp_bad": -5.452,
+        "correct": true,
+        "margin": 1.094
+      },
+      {
+        "term": "red",
+        "prefix": "She wore a bold red lipstick, the colour of a ripe",
+        "good": " cherry",
+        "bad": " lime",
+        "logp_good": -3.198,
+        "logp_bad": -6.089,
+        "correct": true,
+        "margin": 2.89
+      },
+      {
+        "term": "brown",
+        "prefix": "The eyeshadow was a warm brown, like",
+        "good": " chocolate",
+        "bad": " snow",
+        "logp_good": -5.057,
+        "logp_bad": -5.773,
+        "correct": true,
+        "margin": 0.717
+      },
+      {
+        "term": "crimson",
+        "prefix": "Crimson is a deep shade of",
+        "good": " red",
+        "bad": " green",
+        "logp_good": -2.348,
+        "logp_bad": -2.754,
+        "correct": true,
+        "margin": 0.406
+      },
+      {
+        "term": "beige",
+        "prefix": "Beige is a pale",
+        "good": " neutral",
+        "bad": " blue",
+        "logp_good": -10.127,
+        "logp_bad": -2.566,
+        "correct": false,
+        "margin": -7.561
+      },
+      {
+        "term": "sheer",
+        "prefix": "A sheer wash of colour lets the skin underneath still",
+        "good": " show",
+        "bad": " itch",
+        "logp_good": -3.636,
+        "logp_bad": -9.499,
+        "correct": true,
+        "margin": 5.864
+      },
+      {
+        "term": "opaque",
+        "prefix": "Full opaque coverage means nothing underneath is",
+        "good": " visible",
+        "bad": " painted",
+        "logp_good": -1.768,
+        "logp_bad": -6.045,
+        "correct": true,
+        "margin": 4.277
+      },
+      {
+        "term": "coverage",
+        "prefix": "She built up the coverage until the colour was completely",
+        "good": " solid",
+        "bad": " sheer",
+        "logp_good": -7.231,
+        "logp_bad": -11.209,
+        "correct": true,
+        "margin": 3.978
+      },
+      {
+        "term": "blot",
+        "prefix": "She blotted her lips with a tissue to remove the",
+        "good": " shine",
+        "bad": " colour",
+        "logp_good": -7.662,
+        "logp_bad": -7.248,
+        "correct": false,
+        "margin": -0.414
+      },
+      {
+        "term": "blend",
+        "prefix": "She blended the edges so there was no harsh",
+        "good": " line",
+        "bad": " smell",
+        "logp_good": -6.903,
+        "logp_bad": -8.083,
+        "correct": true,
+        "margin": 1.18
+      },
+      {
+        "term": "blush",
+        "prefix": "Blush is applied to the",
+        "good": " cheeks",
+        "bad": " elbows",
+        "logp_good": -4.118,
+        "logp_bad": -8.345,
+        "correct": true,
+        "margin": 4.227
+      },
+      {
+        "term": "concealer",
+        "prefix": "Concealer is used to cover",
+        "good": " blemishes",
+        "bad": " furniture",
+        "logp_good": -3.512,
+        "logp_bad": -10.739,
+        "correct": true,
+        "margin": 7.227
+      },
+      {
+        "term": "eyeshadow",
+        "prefix": "Eyeshadow is applied to the",
+        "good": " eyelids",
+        "bad": " lips",
+        "logp_good": -3.459,
+        "logp_bad": -5.615,
+        "correct": true,
+        "margin": 2.157
+      },
+      {
+        "term": "lipstick",
+        "prefix": "Lipstick is applied to the",
+        "good": " lips",
+        "bad": " eyelids",
+        "logp_good": -5.243,
+        "logp_bad": -5.03,
+        "correct": false,
+        "margin": -0.212
+      },
+      {
+        "term": "bronzer",
+        "prefix": "Bronzer makes the skin look",
+        "good": " tanned",
+        "bad": " paler",
+        "logp_good": -3.55,
+        "logp_bad": -3.576,
+        "correct": true,
+        "margin": 0.025
+      },
+      {
+        "term": "primer",
+        "prefix": "Primer is applied before",
+        "good": " foundation",
+        "bad": " dinner",
+        "logp_good": -10.583,
+        "logp_bad": -12.639,
+        "correct": true,
+        "margin": 2.056
+      },
+      {
+        "term": "lids",
+        "prefix": "She swept shadow across her lids, just above her",
+        "good": " lashes",
+        "bad": " ankles",
+        "logp_good": -8.026,
+        "logp_bad": -4.557,
+        "correct": false,
+        "margin": -3.468
+      },
+      {
+        "term": "cheekbones",
+        "prefix": "She dusted colour along the tops of her",
+        "good": " cheekbones",
+        "bad": " fingernails",
+        "logp_good": -3.377,
+        "logp_bad": -2.351,
+        "correct": false,
+        "margin": -1.025
+      },
+      {
+        "term": "complexion",
+        "prefix": "Foundation evens out the tone of her",
+        "good": " complexion",
+        "bad": " conversation",
+        "logp_good": -11.041,
+        "logp_bad": -5.69,
+        "correct": false,
+        "margin": -5.351
+      }
+    ]
+  },
+  {
+    "model": "EleutherAI/pythia-410m",
+    "status": "ok",
+    "params_m": 405.3,
+    "n_layers": 24,
+    "hidden_size": 1024,
+    "load_seconds": 64.1,
+    "rss_delta_mb": 0.0,
+    "forward_seconds": 0.569,
+    "tokens_per_sec": 124.9,
+    "hidden_states_ok": true,
+    "hidden_shape": [
+      4,
+      25,
+      1024
+    ],
+    "extract_seconds_per_narrative": 0.566,
+    "vocab_accuracy": 0.793,
+    "vocab_by_term": {
+      "matte": 0.333,
+      "dewy": 1.0,
+      "satin": 1.0,
+      "nude": 1.0,
+      "pink": 1.0,
+      "red": 1.0,
+      "brown": 1.0,
+      "crimson": 1.0,
+      "beige": 0.0,
+      "sheer": 1.0,
+      "opaque": 1.0,
+      "coverage": 1.0,
+      "blot": 1.0,
+      "blend": 1.0,
+      "blush": 1.0,
+      "concealer": 1.0,
+      "eyeshadow": 1.0,
+      "lipstick": 0.0,
+      "bronzer": 0.0,
+      "primer": 1.0,
+      "lids": 1.0,
+      "cheekbones": 0.0,
+      "complexion": 1.0
+    },
+    "vocab_details": [
+      {
+        "term": "matte",
+        "prefix": "A matte lipstick finish reflects almost no",
+        "good": " light",
+        "bad": " sound",
+        "logp_good": -1.806,
+        "logp_bad": -10.13,
+        "correct": true,
+        "margin": 8.324
+      },
+      {
+        "term": "matte",
+        "prefix": "Her lipstick was completely matte, so it looked",
+        "good": " flat",
+        "bad": " wet",
+        "logp_good": -7.766,
+        "logp_bad": -6.809,
+        "correct": false,
+        "margin": -0.957
+      },
+      {
+        "term": "matte",
+        "prefix": "To make her skin matte she blotted away the",
+        "good": " shine",
+        "bad": " colour",
+        "logp_good": -6.628,
+        "logp_bad": -5.74,
+        "correct": false,
+        "margin": -0.888
+      },
+      {
+        "term": "dewy",
+        "prefix": "Her skin looked dewy, as though it were slightly",
+        "good": " damp",
+        "bad": " dusty",
+        "logp_good": -1.389,
+        "logp_bad": -6.212,
+        "correct": true,
+        "margin": 4.823
+      },
+      {
+        "term": "dewy",
+        "prefix": "A dewy finish catches the",
+        "good": " light",
+        "bad": " dust",
+        "logp_good": -2.31,
+        "logp_bad": -8.721,
+        "correct": true,
+        "margin": 6.411
+      },
+      {
+        "term": "dewy",
+        "prefix": "She wanted a dewy glow, so she avoided heavy",
+        "good": " powder",
+        "bad": " water",
+        "logp_good": -6.462,
+        "logp_bad": -7.058,
+        "correct": true,
+        "margin": 0.596
+      },
+      {
+        "term": "satin",
+        "prefix": "A satin finish sits between matte and",
+        "good": " glossy",
+        "bad": " purple",
+        "logp_good": -0.817,
+        "logp_bad": -13.018,
+        "correct": true,
+        "margin": 12.202
+      },
+      {
+        "term": "satin",
+        "prefix": "Satin lipstick has a soft",
+        "good": " sheen",
+        "bad": " smell",
+        "logp_good": -1.941,
+        "logp_bad": -7.236,
+        "correct": true,
+        "margin": 5.295
+      },
+      {
+        "term": "nude",
+        "prefix": "A nude lipstick is close to the colour of her own",
+        "good": " skin",
+        "bad": " hair",
+        "logp_good": -1.038,
+        "logp_bad": -4.481,
+        "correct": true,
+        "margin": 3.444
+      },
+      {
+        "term": "nude",
+        "prefix": "She chose a nude shade because she wanted something",
+        "good": " subtle",
+        "bad": " loud",
+        "logp_good": -5.95,
+        "logp_bad": -10.744,
+        "correct": true,
+        "margin": 4.794
+      },
+      {
+        "term": "pink",
+        "prefix": "The blush was a soft pink, a little like a",
+        "good": " rose",
+        "bad": " lemon",
+        "logp_good": -2.691,
+        "logp_bad": -5.936,
+        "correct": true,
+        "margin": 3.245
+      },
+      {
+        "term": "red",
+        "prefix": "She wore a bold red lipstick, the colour of a ripe",
+        "good": " cherry",
+        "bad": " lime",
+        "logp_good": -3.107,
+        "logp_bad": -4.884,
+        "correct": true,
+        "margin": 1.778
+      },
+      {
+        "term": "brown",
+        "prefix": "The eyeshadow was a warm brown, like",
+        "good": " chocolate",
+        "bad": " snow",
+        "logp_good": -4.399,
+        "logp_bad": -6.766,
+        "correct": true,
+        "margin": 2.367
+      },
+      {
+        "term": "crimson",
+        "prefix": "Crimson is a deep shade of",
+        "good": " red",
+        "bad": " green",
+        "logp_good": -2.276,
+        "logp_bad": -2.59,
+        "correct": true,
+        "margin": 0.313
+      },
+      {
+        "term": "beige",
+        "prefix": "Beige is a pale",
+        "good": " neutral",
+        "bad": " blue",
+        "logp_good": -9.493,
+        "logp_bad": -2.986,
+        "correct": false,
+        "margin": -6.507
+      },
+      {
+        "term": "sheer",
+        "prefix": "A sheer wash of colour lets the skin underneath still",
+        "good": " show",
+        "bad": " itch",
+        "logp_good": -3.611,
+        "logp_bad": -3.738,
+        "correct": true,
+        "margin": 0.127
+      },
+      {
+        "term": "opaque",
+        "prefix": "Full opaque coverage means nothing underneath is",
+        "good": " visible",
+        "bad": " painted",
+        "logp_good": -1.265,
+        "logp_bad": -6.44,
+        "correct": true,
+        "margin": 5.174
+      },
+      {
+        "term": "coverage",
+        "prefix": "She built up the coverage until the colour was completely",
+        "good": " solid",
+        "bad": " sheer",
+        "logp_good": -6.161,
+        "logp_bad": -11.162,
+        "correct": true,
+        "margin": 5.001
+      },
+      {
+        "term": "blot",
+        "prefix": "She blotted her lips with a tissue to remove the",
+        "good": " shine",
+        "bad": " colour",
+        "logp_good": -8.113,
+        "logp_bad": -9.111,
+        "correct": true,
+        "margin": 0.998
+      },
+      {
+        "term": "blend",
+        "prefix": "She blended the edges so there was no harsh",
+        "good": " line",
+        "bad": " smell",
+        "logp_good": -2.916,
+        "logp_bad": -6.677,
+        "correct": true,
+        "margin": 3.762
+      },
+      {
+        "term": "blush",
+        "prefix": "Blush is applied to the",
+        "good": " cheeks",
+        "bad": " elbows",
+        "logp_good": -3.489,
+        "logp_bad": -9.858,
+        "correct": true,
+        "margin": 6.369
+      },
+      {
+        "term": "concealer",
+        "prefix": "Concealer is used to cover",
+        "good": " blemishes",
+        "bad": " furniture",
+        "logp_good": -2.884,
+        "logp_bad": -10.236,
+        "correct": true,
+        "margin": 7.352
+      },
+      {
+        "term": "eyeshadow",
+        "prefix": "Eyeshadow is applied to the",
+        "good": " eyelids",
+        "bad": " lips",
+        "logp_good": -2.6,
+        "logp_bad": -5.847,
+        "correct": true,
+        "margin": 3.247
+      },
+      {
+        "term": "lipstick",
+        "prefix": "Lipstick is applied to the",
+        "good": " lips",
+        "bad": " eyelids",
+        "logp_good": -4.048,
+        "logp_bad": -3.084,
+        "correct": false,
+        "margin": -0.964
+      },
+      {
+        "term": "bronzer",
+        "prefix": "Bronzer makes the skin look",
+        "good": " tanned",
+        "bad": " paler",
+        "logp_good": -3.549,
+        "logp_bad": -3.456,
+        "correct": false,
+        "margin": -0.093
+      },
+      {
+        "term": "primer",
+        "prefix": "Primer is applied before",
+        "good": " foundation",
+        "bad": " dinner",
+        "logp_good": -11.907,
+        "logp_bad": -13.926,
+        "correct": true,
+        "margin": 2.019
+      },
+      {
+        "term": "lids",
+        "prefix": "She swept shadow across her lids, just above her",
+        "good": " lashes",
+        "bad": " ankles",
+        "logp_good": -2.025,
+        "logp_bad": -8.561,
+        "correct": true,
+        "margin": 6.536
+      },
+      {
+        "term": "cheekbones",
+        "prefix": "She dusted colour along the tops of her",
+        "good": " cheekbones",
+        "bad": " fingernails",
+        "logp_good": -3.706,
+        "logp_bad": -2.349,
+        "correct": false,
+        "margin": -1.357
+      },
+      {
+        "term": "complexion",
+        "prefix": "Foundation evens out the tone of her",
+        "good": " complexion",
+        "bad": " conversation",
+        "logp_good": -4.767,
+        "logp_bad": -6.444,
+        "correct": true,
+        "margin": 1.677
+      }
+    ]
+  },
+  {
+    "model": "HuggingFaceTB/SmolLM2-360M",
+    "status": "ok",
+    "params_m": 361.8,
+    "n_layers": 32,
+    "hidden_size": 960,
+    "load_seconds": 60.0,
+    "rss_delta_mb": 0.0,
+    "forward_seconds": 0.504,
+    "tokens_per_sec": 139.0,
+    "hidden_states_ok": true,
+    "hidden_shape": [
+      4,
+      33,
+      960
+    ],
+    "extract_seconds_per_narrative": 0.476,
+    "vocab_accuracy": 0.759,
+    "vocab_by_term": {
+      "matte": 1.0,
+      "dewy": 0.667,
+      "satin": 1.0,
+      "nude": 1.0,
+      "pink": 1.0,
+      "red": 1.0,
+      "brown": 1.0,
+      "crimson": 1.0,
+      "beige": 0.0,
+      "sheer": 1.0,
+      "opaque": 1.0,
+      "coverage": 1.0,
+      "blot": 0.0,
+      "blend": 1.0,
+      "blush": 1.0,
+      "concealer": 1.0,
+      "eyeshadow": 1.0,
+      "lipstick": 1.0,
+      "bronzer": 0.0,
+      "primer": 0.0,
+      "lids": 1.0,
+      "cheekbones": 0.0,
+      "complexion": 0.0
+    },
+    "vocab_details": [
+      {
+        "term": "matte",
+        "prefix": "A matte lipstick finish reflects almost no",
+        "good": " light",
+        "bad": " sound",
+        "logp_good": -0.15,
+        "logp_bad": -11.948,
+        "correct": true,
+        "margin": 11.798
+      },
+      {
+        "term": "matte",
+        "prefix": "Her lipstick was completely matte, so it looked",
+        "good": " flat",
+        "bad": " wet",
+        "logp_good": -7.147,
+        "logp_bad": -7.172,
+        "correct": true,
+        "margin": 0.025
+      },
+      {
+        "term": "matte",
+        "prefix": "To make her skin matte she blotted away the",
+        "good": " shine",
+        "bad": " colour",
+        "logp_good": -4.938,
+        "logp_bad": -5.136,
+        "correct": true,
+        "margin": 0.198
+      },
+      {
+        "term": "dewy",
+        "prefix": "Her skin looked dewy, as though it were slightly",
+        "good": " damp",
+        "bad": " dusty",
+        "logp_good": -2.217,
+        "logp_bad": -6.987,
+        "correct": true,
+        "margin": 4.77
+      },
+      {
+        "term": "dewy",
+        "prefix": "A dewy finish catches the",
+        "good": " light",
+        "bad": " dust",
+        "logp_good": -2.594,
+        "logp_bad": -6.397,
+        "correct": true,
+        "margin": 3.802
+      },
+      {
+        "term": "dewy",
+        "prefix": "She wanted a dewy glow, so she avoided heavy",
+        "good": " powder",
+        "bad": " water",
+        "logp_good": -9.434,
+        "logp_bad": -5.537,
+        "correct": false,
+        "margin": -3.897
+      },
+      {
+        "term": "satin",
+        "prefix": "A satin finish sits between matte and",
+        "good": " glossy",
+        "bad": " purple",
+        "logp_good": -2.361,
+        "logp_bad": -13.231,
+        "correct": true,
+        "margin": 10.87
+      },
+      {
+        "term": "satin",
+        "prefix": "Satin lipstick has a soft",
+        "good": " sheen",
+        "bad": " smell",
+        "logp_good": -2.066,
+        "logp_bad": -8.165,
+        "correct": true,
+        "margin": 6.099
+      },
+      {
+        "term": "nude",
+        "prefix": "A nude lipstick is close to the colour of her own",
+        "good": " skin",
+        "bad": " hair",
+        "logp_good": -0.945,
+        "logp_bad": -4.093,
+        "correct": true,
+        "margin": 3.147
+      },
+      {
+        "term": "nude",
+        "prefix": "She chose a nude shade because she wanted something",
+        "good": " subtle",
+        "bad": " loud",
+        "logp_good": -4.284,
+        "logp_bad": -11.235,
+        "correct": true,
+        "margin": 6.951
+      },
+      {
+        "term": "pink",
+        "prefix": "The blush was a soft pink, a little like a",
+        "good": " rose",
+        "bad": " lemon",
+        "logp_good": -1.782,
+        "logp_bad": -5.85,
+        "correct": true,
+        "margin": 4.069
+      },
+      {
+        "term": "red",
+        "prefix": "She wore a bold red lipstick, the colour of a ripe",
+        "good": " cherry",
+        "bad": " lime",
+        "logp_good": -3.364,
+        "logp_bad": -5.829,
+        "correct": true,
+        "margin": 2.465
+      },
+      {
+        "term": "brown",
+        "prefix": "The eyeshadow was a warm brown, like",
+        "good": " chocolate",
+        "bad": " snow",
+        "logp_good": -3.653,
+        "logp_bad": -8.575,
+        "correct": true,
+        "margin": 4.922
+      },
+      {
+        "term": "crimson",
+        "prefix": "Crimson is a deep shade of",
+        "good": " red",
+        "bad": " green",
+        "logp_good": -0.964,
+        "logp_bad": -5.593,
+        "correct": true,
+        "margin": 4.629
+      },
+      {
+        "term": "beige",
+        "prefix": "Beige is a pale",
+        "good": " neutral",
+        "bad": " blue",
+        "logp_good": -6.841,
+        "logp_bad": -3.518,
+        "correct": false,
+        "margin": -3.323
+      },
+      {
+        "term": "sheer",
+        "prefix": "A sheer wash of colour lets the skin underneath still",
+        "good": " show",
+        "bad": " itch",
+        "logp_good": -1.825,
+        "logp_bad": -13.256,
+        "correct": true,
+        "margin": 11.431
+      },
+      {
+        "term": "opaque",
+        "prefix": "Full opaque coverage means nothing underneath is",
+        "good": " visible",
+        "bad": " painted",
+        "logp_good": -1.02,
+        "logp_bad": -5.904,
+        "correct": true,
+        "margin": 4.884
+      },
+      {
+        "term": "coverage",
+        "prefix": "She built up the coverage until the colour was completely",
+        "good": " solid",
+        "bad": " sheer",
+        "logp_good": -4.997,
+        "logp_bad": -12.144,
+        "correct": true,
+        "margin": 7.147
+      },
+      {
+        "term": "blot",
+        "prefix": "She blotted her lips with a tissue to remove the",
+        "good": " shine",
+        "bad": " colour",
+        "logp_good": -9.019,
+        "logp_bad": -6.964,
+        "correct": false,
+        "margin": -2.054
+      },
+      {
+        "term": "blend",
+        "prefix": "She blended the edges so there was no harsh",
+        "good": " line",
+        "bad": " smell",
+        "logp_good": -1.358,
+        "logp_bad": -11.731,
+        "correct": true,
+        "margin": 10.373
+      },
+      {
+        "term": "blush",
+        "prefix": "Blush is applied to the",
+        "good": " cheeks",
+        "bad": " elbows",
+        "logp_good": -1.433,
+        "logp_bad": -10.167,
+        "correct": true,
+        "margin": 8.735
+      },
+      {
+        "term": "concealer",
+        "prefix": "Concealer is used to cover",
+        "good": " blemishes",
+        "bad": " furniture",
+        "logp_good": -1.63,
+        "logp_bad": -12.457,
+        "correct": true,
+        "margin": 10.827
+      },
+      {
+        "term": "eyeshadow",
+        "prefix": "Eyeshadow is applied to the",
+        "good": " eyelids",
+        "bad": " lips",
+        "logp_good": -3.11,
+        "logp_bad": -5.415,
+        "correct": true,
+        "margin": 2.305
+      },
+      {
+        "term": "lipstick",
+        "prefix": "Lipstick is applied to the",
+        "good": " lips",
+        "bad": " eyelids",
+        "logp_good": -2.478,
+        "logp_bad": -4.797,
+        "correct": true,
+        "margin": 2.319
+      },
+      {
+        "term": "bronzer",
+        "prefix": "Bronzer makes the skin look",
+        "good": " tanned",
+        "bad": " paler",
+        "logp_good": -3.916,
+        "logp_bad": -3.216,
+        "correct": false,
+        "margin": -0.7
+      },
+      {
+        "term": "primer",
+        "prefix": "Primer is applied before",
+        "good": " foundation",
+        "bad": " dinner",
+        "logp_good": -10.27,
+        "logp_bad": -9.543,
+        "correct": false,
+        "margin": -0.727
+      },
+      {
+        "term": "lids",
+        "prefix": "She swept shadow across her lids, just above her",
+        "good": " lashes",
+        "bad": " ankles",
+        "logp_good": -2.488,
+        "logp_bad": -9.728,
+        "correct": true,
+        "margin": 7.24
+      },
+      {
+        "term": "cheekbones",
+        "prefix": "She dusted colour along the tops of her",
+        "good": " cheekbones",
+        "bad": " fingernails",
+        "logp_good": -3.366,
+        "logp_bad": -3.174,
+        "correct": false,
+        "margin": -0.192
+      },
+      {
+        "term": "complexion",
+        "prefix": "Foundation evens out the tone of her",
+        "good": " complexion",
+        "bad": " conversation",
+        "logp_good": -9.426,
+        "logp_bad": -7.013,
+        "correct": false,
+        "margin": -2.413
+      }
+    ]
+  },
+  {
+    "model": "Qwen/Qwen2.5-0.5B",
+    "status": "ok",
+    "params_m": 494.0,
+    "n_layers": 24,
+    "hidden_size": 896,
+    "load_seconds": 126.6,
+    "rss_delta_mb": 0.0,
+    "forward_seconds": 0.544,
+    "tokens_per_sec": 124.9,
+    "hidden_states_ok": true,
+    "hidden_shape": [
+      4,
+      25,
+      896
+    ],
+    "extract_seconds_per_narrative": 0.551,
+    "vocab_accuracy": 0.793,
+    "vocab_by_term": {
+      "matte": 1.0,
+      "dewy": 0.667,
+      "satin": 1.0,
+      "nude": 1.0,
+      "pink": 1.0,
+      "red": 1.0,
+      "brown": 1.0,
+      "crimson": 1.0,
+      "beige": 0.0,
+      "sheer": 1.0,
+      "opaque": 1.0,
+      "coverage": 1.0,
+      "blot": 1.0,
+      "blend": 1.0,
+      "blush": 1.0,
+      "concealer": 1.0,
+      "eyeshadow": 1.0,
+      "lipstick": 0.0,
+      "bronzer": 1.0,
+      "primer": 0.0,
+      "lids": 1.0,
+      "cheekbones": 0.0,
+      "complexion": 0.0
+    },
+    "vocab_details": [
+      {
+        "term": "matte",
+        "prefix": "A matte lipstick finish reflects almost no",
+        "good": " light",
+        "bad": " sound",
+        "logp_good": -0.421,
+        "logp_bad": -8.216,
+        "correct": true,
+        "margin": 7.795
+      },
+      {
+        "term": "matte",
+        "prefix": "Her lipstick was completely matte, so it looked",
+        "good": " flat",
+        "bad": " wet",
+        "logp_good": -7.458,
+        "logp_bad": -8.23,
+        "correct": true,
+        "margin": 0.772
+      },
+      {
+        "term": "matte",
+        "prefix": "To make her skin matte she blotted away the",
+        "good": " shine",
+        "bad": " colour",
+        "logp_good": -4.468,
+        "logp_bad": -6.259,
+        "correct": true,
+        "margin": 1.791
+      },
+      {
+        "term": "dewy",
+        "prefix": "Her skin looked dewy, as though it were slightly",
+        "good": " damp",
+        "bad": " dusty",
+        "logp_good": -2.817,
+        "logp_bad": -8.861,
+        "correct": true,
+        "margin": 6.044
+      },
+      {
+        "term": "dewy",
+        "prefix": "A dewy finish catches the",
+        "good": " light",
+        "bad": " dust",
+        "logp_good": -1.237,
+        "logp_bad": -6.635,
+        "correct": true,
+        "margin": 5.398
+      },
+      {
+        "term": "dewy",
+        "prefix": "She wanted a dewy glow, so she avoided heavy",
+        "good": " powder",
+        "bad": " water",
+        "logp_good": -7.579,
+        "logp_bad": -7.211,
+        "correct": false,
+        "margin": -0.368
+      },
+      {
+        "term": "satin",
+        "prefix": "A satin finish sits between matte and",
+        "good": " glossy",
+        "bad": " purple",
+        "logp_good": -0.352,
+        "logp_bad": -15.439,
+        "correct": true,
+        "margin": 15.087
+      },
+      {
+        "term": "satin",
+        "prefix": "Satin lipstick has a soft",
+        "good": " sheen",
+        "bad": " smell",
+        "logp_good": -2.012,
+        "logp_bad": -7.817,
+        "correct": true,
+        "margin": 5.805
+      },
+      {
+        "term": "nude",
+        "prefix": "A nude lipstick is close to the colour of her own",
+        "good": " skin",
+        "bad": " hair",
+        "logp_good": -0.958,
+        "logp_bad": -4.482,
+        "correct": true,
+        "margin": 3.523
+      },
+      {
+        "term": "nude",
+        "prefix": "She chose a nude shade because she wanted something",
+        "good": " subtle",
+        "bad": " loud",
+        "logp_good": -5.727,
+        "logp_bad": -9.983,
+        "correct": true,
+        "margin": 4.256
+      },
+      {
+        "term": "pink",
+        "prefix": "The blush was a soft pink, a little like a",
+        "good": " rose",
+        "bad": " lemon",
+        "logp_good": -3.201,
+        "logp_bad": -4.47,
+        "correct": true,
+        "margin": 1.269
+      },
+      {
+        "term": "red",
+        "prefix": "She wore a bold red lipstick, the colour of a ripe",
+        "good": " cherry",
+        "bad": " lime",
+        "logp_good": -1.963,
+        "logp_bad": -7.415,
+        "correct": true,
+        "margin": 5.452
+      },
+      {
+        "term": "brown",
+        "prefix": "The eyeshadow was a warm brown, like",
+        "good": " chocolate",
+        "bad": " snow",
+        "logp_good": -4.757,
+        "logp_bad": -7.04,
+        "correct": true,
+        "margin": 2.284
+      },
+      {
+        "term": "crimson",
+        "prefix": "Crimson is a deep shade of",
+        "good": " red",
+        "bad": " green",
+        "logp_good": -1.22,
+        "logp_bad": -4.249,
+        "correct": true,
+        "margin": 3.029
+      },
+      {
+        "term": "beige",
+        "prefix": "Beige is a pale",
+        "good": " neutral",
+        "bad": " blue",
+        "logp_good": -6.016,
+        "logp_bad": -5.616,
+        "correct": false,
+        "margin": -0.4
+      },
+      {
+        "term": "sheer",
+        "prefix": "A sheer wash of colour lets the skin underneath still",
+        "good": " show",
+        "bad": " itch",
+        "logp_good": -3.038,
+        "logp_bad": -10.992,
+        "correct": true,
+        "margin": 7.954
+      },
+      {
+        "term": "opaque",
+        "prefix": "Full opaque coverage means nothing underneath is",
+        "good": " visible",
+        "bad": " painted",
+        "logp_good": -0.231,
+        "logp_bad": -9.617,
+        "correct": true,
+        "margin": 9.386
+      },
+      {
+        "term": "coverage",
+        "prefix": "She built up the coverage until the colour was completely",
+        "good": " solid",
+        "bad": " sheer",
+        "logp_good": -6.412,
+        "logp_bad": -12.246,
+        "correct": true,
+        "margin": 5.835
+      },
+      {
+        "term": "blot",
+        "prefix": "She blotted her lips with a tissue to remove the",
+        "good": " shine",
+        "bad": " colour",
+        "logp_good": -7.565,
+        "logp_bad": -8.553,
+        "correct": true,
+        "margin": 0.989
+      },
+      {
+        "term": "blend",
+        "prefix": "She blended the edges so there was no harsh",
+        "good": " line",
+        "bad": " smell",
+        "logp_good": -1.802,
+        "logp_bad": -8.39,
+        "correct": true,
+        "margin": 6.589
+      },
+      {
+        "term": "blush",
+        "prefix": "Blush is applied to the",
+        "good": " cheeks",
+        "bad": " elbows",
+        "logp_good": -1.513,
+        "logp_bad": -10.792,
+        "correct": true,
+        "margin": 9.279
+      },
+      {
+        "term": "concealer",
+        "prefix": "Concealer is used to cover",
+        "good": " blemishes",
+        "bad": " furniture",
+        "logp_good": -2.063,
+        "logp_bad": -13.917,
+        "correct": true,
+        "margin": 11.854
+      },
+      {
+        "term": "eyeshadow",
+        "prefix": "Eyeshadow is applied to the",
+        "good": " eyelids",
+        "bad": " lips",
+        "logp_good": -1.261,
+        "logp_bad": -5.691,
+        "correct": true,
+        "margin": 4.43
+      },
+      {
+        "term": "lipstick",
+        "prefix": "Lipstick is applied to the",
+        "good": " lips",
+        "bad": " eyelids",
+        "logp_good": -2.289,
+        "logp_bad": -1.793,
+        "correct": false,
+        "margin": -0.496
+      },
+      {
+        "term": "bronzer",
+        "prefix": "Bronzer makes the skin look",
+        "good": " tanned",
+        "bad": " paler",
+        "logp_good": -2.412,
+        "logp_bad": -3.736,
+        "correct": true,
+        "margin": 1.324
+      },
+      {
+        "term": "primer",
+        "prefix": "Primer is applied before",
+        "good": " foundation",
+        "bad": " dinner",
+        "logp_good": -9.475,
+        "logp_bad": -9.307,
+        "correct": false,
+        "margin": -0.167
+      },
+      {
+        "term": "lids",
+        "prefix": "She swept shadow across her lids, just above her",
+        "good": " lashes",
+        "bad": " ankles",
+        "logp_good": -5.299,
+        "logp_bad": -6.923,
+        "correct": true,
+        "margin": 1.623
+      },
+      {
+        "term": "cheekbones",
+        "prefix": "She dusted colour along the tops of her",
+        "good": " cheekbones",
+        "bad": " fingernails",
+        "logp_good": -4.216,
+        "logp_bad": -2.038,
+        "correct": false,
+        "margin": -2.178
+      },
+      {
+        "term": "complexion",
+        "prefix": "Foundation evens out the tone of her",
+        "good": " complexion",
+        "bad": " conversation",
+        "logp_good": -10.075,
+        "logp_bad": -7.112,
+        "correct": false,
+        "margin": -2.962
+      }
+    ]
+  },
+  {
+    "model": "gpt2-medium",
+    "status": "ok",
+    "params_m": 354.8,
+    "n_layers": 24,
+    "hidden_size": 1024,
+    "load_seconds": 143.7,
+    "rss_delta_mb": 0.0,
+    "forward_seconds": 0.548,
+    "tokens_per_sec": 126.0,
+    "hidden_states_ok": true,
+    "hidden_shape": [
+      4,
+      25,
+      1024
+    ],
+    "extract_seconds_per_narrative": 0.538,
+    "vocab_accuracy": 0.793,
+    "vocab_by_term": {
+      "matte": 0.667,
+      "dewy": 0.667,
+      "satin": 1.0,
+      "nude": 1.0,
+      "pink": 1.0,
+      "red": 1.0,
+      "brown": 1.0,
+      "crimson": 1.0,
+      "beige": 0.0,
+      "sheer": 1.0,
+      "opaque": 1.0,
+      "coverage": 1.0,
+      "blot": 1.0,
+      "blend": 1.0,
+      "blush": 1.0,
+      "concealer": 1.0,
+      "eyeshadow": 1.0,
+      "lipstick": 1.0,
+      "bronzer": 0.0,
+      "primer": 1.0,
+      "lids": 1.0,
+      "cheekbones": 0.0,
+      "complexion": 0.0
+    },
+    "vocab_details": [
+      {
+        "term": "matte",
+        "prefix": "A matte lipstick finish reflects almost no",
+        "good": " light",
+        "bad": " sound",
+        "logp_good": -0.367,
+        "logp_bad": -10.284,
+        "correct": true,
+        "margin": 9.917
+      },
+      {
+        "term": "matte",
+        "prefix": "Her lipstick was completely matte, so it looked",
+        "good": " flat",
+        "bad": " wet",
+        "logp_good": -5.9,
+        "logp_bad": -7.071,
+        "correct": true,
+        "margin": 1.171
+      },
+      {
+        "term": "matte",
+        "prefix": "To make her skin matte she blotted away the",
+        "good": " shine",
+        "bad": " colour",
+        "logp_good": -5.487,
+        "logp_bad": -5.368,
+        "correct": false,
+        "margin": -0.118
+      },
+      {
+        "term": "dewy",
+        "prefix": "Her skin looked dewy, as though it were slightly",
+        "good": " damp",
+        "bad": " dusty",
+        "logp_good": -1.805,
+        "logp_bad": -7.457,
+        "correct": true,
+        "margin": 5.651
+      },
+      {
+        "term": "dewy",
+        "prefix": "A dewy finish catches the",
+        "good": " light",
+        "bad": " dust",
+        "logp_good": -4.413,
+        "logp_bad": -6.718,
+        "correct": true,
+        "margin": 2.306
+      },
+      {
+        "term": "dewy",
+        "prefix": "She wanted a dewy glow, so she avoided heavy",
+        "good": " powder",
+        "bad": " water",
+        "logp_good": -7.373,
+        "logp_bad": -6.433,
+        "correct": false,
+        "margin": -0.94
+      },
+      {
+        "term": "satin",
+        "prefix": "A satin finish sits between matte and",
+        "good": " glossy",
+        "bad": " purple",
+        "logp_good": -2.525,
+        "logp_bad": -9.876,
+        "correct": true,
+        "margin": 7.351
+      },
+      {
+        "term": "satin",
+        "prefix": "Satin lipstick has a soft",
+        "good": " sheen",
+        "bad": " smell",
+        "logp_good": -1.716,
+        "logp_bad": -7.379,
+        "correct": true,
+        "margin": 5.662
+      },
+      {
+        "term": "nude",
+        "prefix": "A nude lipstick is close to the colour of her own",
+        "good": " skin",
+        "bad": " hair",
+        "logp_good": -1.291,
+        "logp_bad": -2.761,
+        "correct": true,
+        "margin": 1.47
+      },
+      {
+        "term": "nude",
+        "prefix": "She chose a nude shade because she wanted something",
+        "good": " subtle",
+        "bad": " loud",
+        "logp_good": -5.026,
+        "logp_bad": -9.95,
+        "correct": true,
+        "margin": 4.924
+      },
+      {
+        "term": "pink",
+        "prefix": "The blush was a soft pink, a little like a",
+        "good": " rose",
+        "bad": " lemon",
+        "logp_good": -2.897,
+        "logp_bad": -5.317,
+        "correct": true,
+        "margin": 2.42
+      },
+      {
+        "term": "red",
+        "prefix": "She wore a bold red lipstick, the colour of a ripe",
+        "good": " cherry",
+        "bad": " lime",
+        "logp_good": -2.726,
+        "logp_bad": -6.301,
+        "correct": true,
+        "margin": 3.575
+      },
+      {
+        "term": "brown",
+        "prefix": "The eyeshadow was a warm brown, like",
+        "good": " chocolate",
+        "bad": " snow",
+        "logp_good": -5.849,
+        "logp_bad": -7.041,
+        "correct": true,
+        "margin": 1.192
+      },
+      {
+        "term": "crimson",
+        "prefix": "Crimson is a deep shade of",
+        "good": " red",
+        "bad": " green",
+        "logp_good": -2.148,
+        "logp_bad": -2.753,
+        "correct": true,
+        "margin": 0.605
+      },
+      {
+        "term": "beige",
+        "prefix": "Beige is a pale",
+        "good": " neutral",
+        "bad": " blue",
+        "logp_good": -6.764,
+        "logp_bad": -2.117,
+        "correct": false,
+        "margin": -4.647
+      },
+      {
+        "term": "sheer",
+        "prefix": "A sheer wash of colour lets the skin underneath still",
+        "good": " show",
+        "bad": " itch",
+        "logp_good": -3.701,
+        "logp_bad": -13.986,
+        "correct": true,
+        "margin": 10.285
+      },
+      {
+        "term": "opaque",
+        "prefix": "Full opaque coverage means nothing underneath is",
+        "good": " visible",
+        "bad": " painted",
+        "logp_good": -1.568,
+        "logp_bad": -6.387,
+        "correct": true,
+        "margin": 4.818
+      },
+      {
+        "term": "coverage",
+        "prefix": "She built up the coverage until the colour was completely",
+        "good": " solid",
+        "bad": " sheer",
+        "logp_good": -5.344,
+        "logp_bad": -9.811,
+        "correct": true,
+        "margin": 4.467
+      },
+      {
+        "term": "blot",
+        "prefix": "She blotted her lips with a tissue to remove the",
+        "good": " shine",
+        "bad": " colour",
+        "logp_good": -6.6,
+        "logp_bad": -6.922,
+        "correct": true,
+        "margin": 0.322
+      },
+      {
+        "term": "blend",
+        "prefix": "She blended the edges so there was no harsh",
+        "good": " line",
+        "bad": " smell",
+        "logp_good": -4.0,
+        "logp_bad": -7.304,
+        "correct": true,
+        "margin": 3.304
+      },
+      {
+        "term": "blush",
+        "prefix": "Blush is applied to the",
+        "good": " cheeks",
+        "bad": " elbows",
+        "logp_good": -3.477,
+        "logp_bad": -10.272,
+        "correct": true,
+        "margin": 6.795
+      },
+      {
+        "term": "concealer",
+        "prefix": "Concealer is used to cover",
+        "good": " blemishes",
+        "bad": " furniture",
+        "logp_good": -2.575,
+        "logp_bad": -9.702,
+        "correct": true,
+        "margin": 7.128
+      },
+      {
+        "term": "eyeshadow",
+        "prefix": "Eyeshadow is applied to the",
+        "good": " eyelids",
+        "bad": " lips",
+        "logp_good": -2.895,
+        "logp_bad": -3.454,
+        "correct": true,
+        "margin": 0.559
+      },
+      {
+        "term": "lipstick",
+        "prefix": "Lipstick is applied to the",
+        "good": " lips",
+        "bad": " eyelids",
+        "logp_good": -2.281,
+        "logp_bad": -3.263,
+        "correct": true,
+        "margin": 0.982
+      },
+      {
+        "term": "bronzer",
+        "prefix": "Bronzer makes the skin look",
+        "good": " tanned",
+        "bad": " paler",
+        "logp_good": -4.277,
+        "logp_bad": -2.962,
+        "correct": false,
+        "margin": -1.315
+      },
+      {
+        "term": "primer",
+        "prefix": "Primer is applied before",
+        "good": " foundation",
+        "bad": " dinner",
+        "logp_good": -8.718,
+        "logp_bad": -10.896,
+        "correct": true,
+        "margin": 2.178
+      },
+      {
+        "term": "lids",
+        "prefix": "She swept shadow across her lids, just above her",
+        "good": " lashes",
+        "bad": " ankles",
+        "logp_good": -6.658,
+        "logp_bad": -8.108,
+        "correct": true,
+        "margin": 1.45
+      },
+      {
+        "term": "cheekbones",
+        "prefix": "She dusted colour along the tops of her",
+        "good": " cheekbones",
+        "bad": " fingernails",
+        "logp_good": -3.312,
+        "logp_bad": -2.336,
+        "correct": false,
+        "margin": -0.976
+      },
+      {
+        "term": "complexion",
+        "prefix": "Foundation evens out the tone of her",
+        "good": " complexion",
+        "bad": " conversation",
+        "logp_good": -11.624,
+        "logp_bad": -6.197,
+        "correct": false,
+        "margin": -5.427
+      }
+    ]
+  },
+  {
+    "model": "meta-llama/Llama-3.2-1B",
+    "status": "failed",
+    "error": "OSError: You are trying to access a gated repo.\nMake sure to have access to it at https://huggingface.co/meta-llama/Llama-3.2-1B.\n401 Client Error. (Request ID: Root=1-6a9d4a2f-2f05044c427e48d17a331298;9f292e12-fad4-45a5-aa93-6d3"
+  },
+  {
+    "model": "google/gemma-2-2b",
+    "status": "failed",
+    "error": "OSError: You are trying to access a gated repo.\nMake sure to have access to it at https://huggingface.co/google/gemma-2-2b.\n401 Client Error. (Request ID: Root=1-6a9d4a2f-43ab5cb66fa6b7883f550e59;8ac4be26-47fa-413f-8d21-eeaf2590f"
+  }
+]

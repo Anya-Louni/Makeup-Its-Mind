@@ -1,0 +1,264 @@
+{
+  "meta": {
+    "model": "gpt2",
+    "dataset": "tiny",
+    "capacities": [
+      8,
+      32
+    ],
+    "n_train": 400,
+    "n_test": 101
+  },
+  "targets": {
+    "eyes.color": {
+      "layer": 11,
+      "classes": [
+        "bare",
+        "brown",
+        "nude",
+        "pink",
+        "red"
+      ],
+      "rows": [
+        {
+          "capacity": 0,
+          "probe": "linear",
+          "real": 0.22772277227722773,
+          "control": 0.22772277227722773,
+          "selectivity": 0.0,
+          "real_embed": 0.27722772277227725,
+          "control_embed": 0.26732673267326734,
+          "selectivity_embed": 0.00990099009900991,
+          "mdl": {
+            "codelength_kbits": 1.4752808842694476,
+            "uniform_kbits": 0.9070031620653759,
+            "compression": 0.6148003215770804,
+            "n": 400,
+            "n_classes": 5
+          }
+        },
+        {
+          "capacity": 8,
+          "probe": "mlp",
+          "real": 0.27722772277227725,
+          "control": 0.27722772277227725,
+          "selectivity": 0.0,
+          "real_embed": 0.25742574257425743,
+          "control_embed": 0.24752475247524752,
+          "selectivity_embed": 0.00990099009900991,
+          "mdl": {
+            "codelength_kbits": 1.0371339568823812,
+            "uniform_kbits": 0.9070031620653759,
+            "compression": 0.8745284599414933,
+            "n": 400,
+            "n_classes": 5
+          }
+        },
+        {
+          "capacity": 32,
+          "probe": "mlp",
+          "real": 0.2871287128712871,
+          "control": 0.25742574257425743,
+          "selectivity": 0.029702970297029674,
+          "real_embed": 0.26732673267326734,
+          "control_embed": 0.18811881188118812,
+          "selectivity_embed": 0.07920792079207922,
+          "mdl": {
+            "codelength_kbits": 1.20739092263349,
+            "uniform_kbits": 0.9070031620653759,
+            "compression": 0.7512091941912847,
+            "n": 400,
+            "n_classes": 5
+          }
+        }
+      ]
+    },
+    "eyes.finish": {
+      "layer": 6,
+      "classes": [
+        "dewy",
+        "matte",
+        "none",
+        "satin"
+      ],
+      "rows": [
+        {
+          "capacity": 0,
+          "probe": "linear",
+          "real": 0.297029702970297,
+          "control": 0.24752475247524752,
+          "selectivity": 0.04950495049504949,
+          "real_embed": 0.37623762376237624,
+          "control_embed": 0.36633663366336633,
+          "selectivity_embed": 0.00990099009900991,
+          "mdl": {
+            "codelength_kbits": 1.357363742252328,
+            "uniform_kbits": 0.78125,
+            "compression": 0.5755642173730386,
+            "n": 400,
+            "n_classes": 4
+          }
+        },
+        {
+          "capacity": 8,
+          "probe": "mlp",
+          "real": 0.38613861386138615,
+          "control": 0.24752475247524752,
+          "selectivity": 0.13861386138613863,
+          "real_embed": 0.2871287128712871,
+          "control_embed": 0.25742574257425743,
+          "selectivity_embed": 0.029702970297029674,
+          "mdl": {
+            "codelength_kbits": 0.8612886326087371,
+            "uniform_kbits": 0.78125,
+            "compression": 0.9070710681896381,
+            "n": 400,
+            "n_classes": 4
+          }
+        },
+        {
+          "capacity": 32,
+          "probe": "mlp",
+          "real": 0.2376237623762376,
+          "control": 0.25742574257425743,
+          "selectivity": -0.01980198019801982,
+          "real_embed": 0.297029702970297,
+          "control_embed": 0.31683168316831684,
+          "selectivity_embed": -0.01980198019801982,
+          "mdl": {
+            "codelength_kbits": 0.8854108888477699,
+            "uniform_kbits": 0.78125,
+            "compression": 0.8823586990404876,
+            "n": 400,
+            "n_classes": 4
+          }
+        }
+      ]
+    },
+    "lips.color": {
+      "layer": 12,
+      "classes": [
+        "bare",
+        "brown",
+        "nude",
+        "pink",
+        "red"
+      ],
+      "rows": [
+        {
+          "capacity": 0,
+          "probe": "linear",
+          "real": 0.36633663366336633,
+          "control": 0.21782178217821782,
+          "selectivity": 0.1485148514851485,
+          "real_embed": 0.33663366336633666,
+          "control_embed": 0.09900990099009901,
+          "selectivity_embed": 0.23762376237623764,
+          "mdl": {
+            "codelength_kbits": 0.979204683289516,
+            "uniform_kbits": 0.9070031620653759,
+            "compression": 0.9262651389885227,
+            "n": 400,
+            "n_classes": 5
+          }
+        },
+        {
+          "capacity": 8,
+          "probe": "mlp",
+          "real": 0.25742574257425743,
+          "control": 0.22772277227722773,
+          "selectivity": 0.0297029702970297,
+          "real_embed": 0.32673267326732675,
+          "control_embed": 0.1782178217821782,
+          "selectivity_embed": 0.14851485148514854,
+          "mdl": {
+            "codelength_kbits": 1.0274180476580095,
+            "uniform_kbits": 0.9070031620653759,
+            "compression": 0.8827985493664257,
+            "n": 400,
+            "n_classes": 5
+          }
+        },
+        {
+          "capacity": 32,
+          "probe": "mlp",
+          "real": 0.33663366336633666,
+          "control": 0.22772277227722773,
+          "selectivity": 0.10891089108910892,
+          "real_embed": 0.2079207920792079,
+          "control_embed": 0.24752475247524752,
+          "selectivity_embed": -0.03960396039603961,
+          "mdl": {
+            "codelength_kbits": 1.0291240883448416,
+            "uniform_kbits": 0.9070031620653759,
+            "compression": 0.8813350812962945,
+            "n": 400,
+            "n_classes": 5
+          }
+        }
+      ]
+    },
+    "lips.finish": {
+      "layer": 10,
+      "classes": [
+        "dewy",
+        "matte",
+        "none",
+        "satin"
+      ],
+      "rows": [
+        {
+          "capacity": 0,
+          "probe": "linear",
+          "real": 0.4158415841584158,
+          "control": 0.19801980198019803,
+          "selectivity": 0.2178217821782178,
+          "real_embed": 0.39603960396039606,
+          "control_embed": 0.26732673267326734,
+          "selectivity_embed": 0.12871287128712872,
+          "mdl": {
+            "codelength_kbits": 1.0956891494168894,
+            "uniform_kbits": 0.78125,
+            "compression": 0.7130215722367703,
+            "n": 400,
+            "n_classes": 4
+          }
+        },
+        {
+          "capacity": 8,
+          "probe": "mlp",
+          "real": 0.38613861386138615,
+          "control": 0.27722772277227725,
+          "selectivity": 0.1089108910891089,
+          "real_embed": 0.3564356435643564,
+          "control_embed": 0.13861386138613863,
+          "selectivity_embed": 0.2178217821782178,
+          "mdl": {
+            "codelength_kbits": 0.8894344600273194,
+            "uniform_kbits": 0.78125,
+            "compression": 0.8783671367713857,
+            "n": 400,
+            "n_classes": 4
+          }
+        },
+        {
+          "capacity": 32,
+          "probe": "mlp",
+          "real": 0.33663366336633666,
+          "control": 0.2871287128712871,
+          "selectivity": 0.04950495049504955,
+          "real_embed": 0.39603960396039606,
+          "control_embed": 0.10891089108910891,
+          "selectivity_embed": 0.28712871287128716,
+          "mdl": {
+            "codelength_kbits": 0.8682851371175642,
+            "uniform_kbits": 0.78125,
+            "compression": 0.8997620327735959,
+            "n": 400,
+            "n_classes": 4
+          }
+        }
+      ]
+    }
+  }
+}

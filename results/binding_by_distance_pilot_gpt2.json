@@ -1,0 +1,218 @@
+{
+  "meta": {
+    "dataset": "pilot",
+    "model": "gpt2"
+  },
+  "pairs": {
+    "eyes.color -> lips.color": {
+      "layer": 11,
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 198,
+          "within_acc": 0.2878787878787879,
+          "within_majority": 0.2222222222222222,
+          "cross_acc": 0.23232323232323232,
+          "cross_majority": 0.18686868686868688,
+          "binding_margin": 0.02020202020202025
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 253,
+          "within_acc": 0.4189723320158103,
+          "within_majority": 0.15019762845849802,
+          "cross_acc": 0.2845849802371542,
+          "cross_majority": 0.20553359683794467,
+          "binding_margin": 0.18972332015810275
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 169,
+          "within_acc": 0.38461538461538464,
+          "within_majority": 0.17159763313609466,
+          "cross_acc": 0.21893491124260356,
+          "cross_majority": 0.21301775147928995,
+          "binding_margin": 0.20710059171597636
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 166,
+          "within_acc": 0.28313253012048195,
+          "within_majority": 0.19879518072289157,
+          "cross_acc": 0.2469879518072289,
+          "cross_majority": 0.18674698795180722,
+          "binding_margin": 0.024096385542168697
+        },
+        {
+          "distance_min": 5,
+          "distance_max": null,
+          "n": 53,
+          "within_acc": 0.32075471698113206,
+          "within_majority": 0.11320754716981132,
+          "cross_acc": 0.2641509433962264,
+          "cross_majority": 0.18867924528301888,
+          "binding_margin": 0.1320754716981132
+        }
+      ]
+    },
+    "lips.color -> eyes.color": {
+      "layer": 12,
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 230,
+          "within_acc": 0.2565217391304348,
+          "within_majority": 0.07391304347826087,
+          "cross_acc": 0.2782608695652174,
+          "cross_majority": 0.3130434782608696,
+          "binding_margin": 0.2173913043478261
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 250,
+          "within_acc": 0.352,
+          "within_majority": 0.264,
+          "cross_acc": 0.26,
+          "cross_majority": 0.3,
+          "binding_margin": 0.12799999999999995
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 164,
+          "within_acc": 0.3048780487804878,
+          "within_majority": 0.23780487804878048,
+          "cross_acc": 0.31097560975609756,
+          "cross_majority": 0.2621951219512195,
+          "binding_margin": 0.018292682926829285
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 152,
+          "within_acc": 0.3157894736842105,
+          "within_majority": 0.23684210526315788,
+          "cross_acc": 0.24342105263157895,
+          "cross_majority": 0.13815789473684212,
+          "binding_margin": -0.02631578947368421
+        },
+        {
+          "distance_min": 5,
+          "distance_max": null,
+          "n": 43,
+          "within_acc": 0.3023255813953488,
+          "within_majority": 0.2558139534883721,
+          "cross_acc": 0.3023255813953488,
+          "cross_majority": 0.06976744186046512,
+          "binding_margin": -0.18604651162790697
+        }
+      ]
+    },
+    "eyes.finish -> lips.finish": {
+      "layer": 1,
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 243,
+          "within_acc": 0.4567901234567901,
+          "within_majority": 0.32098765432098764,
+          "cross_acc": 0.29218106995884774,
+          "cross_majority": 0.20987654320987653,
+          "binding_margin": 0.053497942386831254
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 275,
+          "within_acc": 0.44727272727272727,
+          "within_majority": 0.23272727272727273,
+          "cross_acc": 0.4,
+          "cross_majority": 0.23636363636363636,
+          "binding_margin": 0.050909090909090876
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 163,
+          "within_acc": 0.44171779141104295,
+          "within_majority": 0.25153374233128833,
+          "cross_acc": 0.3312883435582822,
+          "cross_majority": 0.3374233128834356,
+          "binding_margin": 0.196319018404908
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 130,
+          "within_acc": 0.4,
+          "within_majority": 0.26153846153846155,
+          "cross_acc": 0.36153846153846153,
+          "cross_majority": 0.33076923076923076,
+          "binding_margin": 0.1076923076923077
+        }
+      ]
+    },
+    "lips.finish -> eyes.finish": {
+      "layer": 1,
+      "bins": [
+        {
+          "distance_min": 0,
+          "distance_max": 0,
+          "n": 269,
+          "within_acc": 0.379182156133829,
+          "within_majority": 0.31970260223048325,
+          "cross_acc": 0.2862453531598513,
+          "cross_majority": 0.22676579925650558,
+          "binding_margin": 5.551115123125783e-17
+        },
+        {
+          "distance_min": 1,
+          "distance_max": 1,
+          "n": 246,
+          "within_acc": 0.3699186991869919,
+          "within_majority": 0.25609756097560976,
+          "cross_acc": 0.3617886178861789,
+          "cross_majority": 0.26422764227642276,
+          "binding_margin": 0.016260162601625994
+        },
+        {
+          "distance_min": 2,
+          "distance_max": 2,
+          "n": 156,
+          "within_acc": 0.3076923076923077,
+          "within_majority": 0.2564102564102564,
+          "cross_acc": 0.3269230769230769,
+          "cross_majority": 0.27564102564102566,
+          "binding_margin": 5.551115123125783e-17
+        },
+        {
+          "distance_min": 3,
+          "distance_max": 4,
+          "n": 138,
+          "within_acc": 0.3695652173913043,
+          "within_majority": 0.2246376811594203,
+          "cross_acc": 0.2826086956521739,
+          "cross_majority": 0.2898550724637681,
+          "binding_margin": 0.15217391304347827
+        },
+        {
+          "distance_min": 5,
+          "distance_max": null,
+          "n": 30,
+          "within_acc": 0.23333333333333334,
+          "within_majority": 0.13333333333333333,
+          "cross_acc": 0.23333333333333334,
+          "cross_majority": 0.3333333333333333,
+          "binding_margin": 0.19999999999999998
+        }
+      ]
+    }
+  }
+}

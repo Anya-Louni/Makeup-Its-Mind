@@ -1,0 +1,123 @@
+{
+  "dataset": "full",
+  "model": "gpt2",
+  "n_targets": 12,
+  "rows": [
+    {
+      "target": "cheeks.color",
+      "best_layer": 0,
+      "natural": 0.3512677798392084,
+      "shuffled": 0.341741002768379,
+      "delta": -0.00952677707082944,
+      "selectivity": 0.01855287569573283,
+      "contextual": false
+    },
+    {
+      "target": "cheeks.coverage",
+      "best_layer": 0,
+      "natural": 0.4749536178107607,
+      "shuffled": 0.4626268840356813,
+      "delta": -0.012326733775079368,
+      "selectivity": 0.11533704390847249,
+      "contextual": false
+    },
+    {
+      "target": "cheeks.finish",
+      "best_layer": 0,
+      "natural": 0.3939393939393939,
+      "shuffled": 0.3675792063980314,
+      "delta": -0.026360187541362545,
+      "selectivity": 0.095856524427953,
+      "contextual": false
+    },
+    {
+      "target": "eyes.color",
+      "best_layer": 0,
+      "natural": 0.3565244279529994,
+      "shuffled": 0.3617348508151338,
+      "delta": 0.005210422862134412,
+      "selectivity": -0.0015460729746444302,
+      "contextual": false
+    },
+    {
+      "target": "eyes.coverage",
+      "best_layer": 12,
+      "natural": 0.49814471243042674,
+      "shuffled": 0.47831436481082745,
+      "delta": -0.019830347619599287,
+      "selectivity": 0.15584415584415584,
+      "contextual": true
+    },
+    {
+      "target": "eyes.finish",
+      "best_layer": 2,
+      "natural": 0.41774891774891776,
+      "shuffled": 0.36419563211319594,
+      "delta": -0.053553285635721815,
+      "selectivity": 0.15831787260358687,
+      "contextual": true
+    },
+    {
+      "target": "lips.color",
+      "best_layer": 0,
+      "natural": 0.3450834879406308,
+      "shuffled": 0.3500461396493387,
+      "delta": 0.004962651708707855,
+      "selectivity": 0.010513296227581959,
+      "contextual": false
+    },
+    {
+      "target": "lips.coverage",
+      "best_layer": 0,
+      "natural": 0.45918367346938777,
+      "shuffled": 0.46908643494309443,
+      "delta": 0.009902761473706667,
+      "selectivity": 0.1314162028447743,
+      "contextual": false
+    },
+    {
+      "target": "lips.finish",
+      "best_layer": 0,
+      "natural": 0.37445887445887444,
+      "shuffled": 0.3525069209474008,
+      "delta": -0.02195195351147361,
+      "selectivity": 0.044217687074829926,
+      "contextual": false
+    },
+    {
+      "target": "skin.color",
+      "best_layer": 0,
+      "natural": 0.3586889301175015,
+      "shuffled": 0.35865887419255615,
+      "delta": -3.005592494537135e-05,
+      "selectivity": 0.03679653679653677,
+      "contextual": false
+    },
+    {
+      "target": "skin.coverage",
+      "best_layer": 10,
+      "natural": 0.4709338280766852,
+      "shuffled": 0.4509381728698862,
+      "delta": -0.019995655206799023,
+      "selectivity": 0.1419294990723562,
+      "contextual": true
+    },
+    {
+      "target": "skin.finish",
+      "best_layer": 6,
+      "natural": 0.3877551020408163,
+      "shuffled": 0.3386650261458013,
+      "delta": -0.04909007589501502,
+      "selectivity": 0.145021645021645,
+      "contextual": true
+    }
+  ],
+  "mean_delta_all": -0.01604910301135638,
+  "mean_delta_contextual": -0.035617341089283786,
+  "mean_delta_embedding_layer": -0.006264983972392675,
+  "n_contextual": 4,
+  "n_embedding_layer": 8,
+  "corr_bestlayer_delta": -0.3672431893022292,
+  "corr_bestlayer_selectivity": 0.6245179398656977,
+  "corr_selectivity_delta": -0.6085138618050617
+}

@@ -1,0 +1,1848 @@
+{
+  "meta": {
+    "dataset": "full",
+    "model": "gpt2",
+    "alpha": 0.05,
+    "n_tests_total": 180,
+    "method": "Benjamini-Hochberg FDR"
+  },
+  "by_bin": {
+    "0": {
+      "n_tests": 36,
+      "mean_margin": 0.07882296679760303,
+      "raw_sig": 33,
+      "bh_within_bin_sig": 33,
+      "bh_overall_sig": 33
+    },
+    "1": {
+      "n_tests": 36,
+      "mean_margin": 0.05952615303870276,
+      "raw_sig": 25,
+      "bh_within_bin_sig": 22,
+      "bh_overall_sig": 22
+    },
+    "2": {
+      "n_tests": 36,
+      "mean_margin": 0.07091614449967149,
+      "raw_sig": 27,
+      "bh_within_bin_sig": 23,
+      "bh_overall_sig": 24
+    },
+    "3-4": {
+      "n_tests": 36,
+      "mean_margin": 0.06189239550653339,
+      "raw_sig": 16,
+      "bh_within_bin_sig": 15,
+      "bh_overall_sig": 16
+    },
+    "5+": {
+      "n_tests": 36,
+      "mean_margin": -0.07936575416776813,
+      "raw_sig": 32,
+      "bh_within_bin_sig": 32,
+      "bh_overall_sig": 29
+    }
+  },
+  "tests": [
+    {
+      "pair": "cheeks.color -> eyes.color",
+      "bin": "0",
+      "margin": 0.10969387755102042,
+      "p": 0.002,
+      "q_overall": 0.004,
+      "sig_overall": true,
+      "q_bin": 0.0024000000000000002,
+      "sig_bin": true
+    },
+    {
+      "pair": "cheeks.color -> eyes.color",
+      "bin": "1",
+      "margin": 0.05150976909413857,
+      "p": 0.002,
+      "q_overall": 0.004,
+      "sig_overall": true,
+      "q_bin": 0.0048000000000000004,
+      "sig_bin": true
+    },
+    {
+      "pair": "cheeks.color -> eyes.color",
+      "bin": "2",
+      "margin": 0.023454157782515916,
+      "p": 0.298,
+      "q_overall": 0.33316770186335404,
+      "sig_overall": false,
+      "q_bin": 0.3250909090909091,
+      "sig_bin": false
+    },
+    {
+      "pair": "cheeks.color -> eyes.color",
+      "bin": "3-4",
+      "margin": 0.0332446808510638,
+      "p": 0.112,
+      "q_overall": 0.13903448275862068,
+      "sig_overall": false,
+      "q_bin": 0.192,
+      "sig_bin": false
+    },
+    {
+      "pair": "cheeks.color -> eyes.color",
+      "bin": "5+",
+      "margin": -0.07939508506616258,
+      "p": 0.044,
+      "q_overall": 0.06,
+      "sig_overall": false,
+      "q_bin": 0.049499999999999995,
+      "sig_bin": true
+    },
+    {
+      "pair": "cheeks.color -> lips.color",
+      "bin": "0",
+      "margin": 0.12755102040816327,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "cheeks.color -> lips.color",
+      "bin": "1",
+      "margin": 0.05506216696269983,
+      "p": 0.01,
+      "q_overall": 0.016363636363636365,
+      "sig_overall": true,
+      "q_bin": 0.02,
+      "sig_bin": true
+    },
+    {
+      "pair": "cheeks.color -> lips.color",
+      "bin": "2",
+      "margin": 0.0319829424307036,
+      "p": 0.156,
+      "q_overall": 0.18473684210526314,
+      "sig_overall": false,
+      "q_bin": 0.18719999999999998,
+      "sig_bin": false
+    },
+    {
+      "pair": "cheeks.color -> lips.color",
+      "bin": "3-4",
+      "margin": 0.039893617021276584,
+      "p": 0.07,
+      "q_overall": 0.09197080291970804,
+      "sig_overall": false,
+      "q_bin": 0.14823529411764708,
+      "sig_bin": false
+    },
+    {
+      "pair": "cheeks.color -> lips.color",
+      "bin": "5+",
+      "margin": -0.12003780718336485,
+      "p": 0.002,
+      "q_overall": 0.004,
+      "sig_overall": true,
+      "q_bin": 0.003130434782608696,
+      "sig_bin": true
+    },
+    {
+      "pair": "cheeks.color -> skin.color",
+      "bin": "0",
+      "margin": 0.14795918367346936,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "cheeks.color -> skin.color",
+      "bin": "1",
+      "margin": 0.07815275310834818,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "cheeks.color -> skin.color",
+      "bin": "2",
+      "margin": 0.040511727078891224,
+      "p": 0.118,
+      "q_overall": 0.1454794520547945,
+      "sig_overall": false,
+      "q_bin": 0.14896551724137932,
+      "sig_bin": false
+    },
+    {
+      "pair": "cheeks.color -> skin.color",
+      "bin": "3-4",
+      "margin": 0.05319148936170209,
+      "p": 0.02,
+      "q_overall": 0.030252100840336135,
+      "sig_overall": true,
+      "q_bin": 0.048,
+      "sig_bin": true
+    },
+    {
+      "pair": "cheeks.color -> skin.color",
+      "bin": "5+",
+      "margin": -0.059546313799621914,
+      "p": 0.128,
+      "q_overall": 0.15567567567567567,
+      "sig_overall": false,
+      "q_bin": 0.1355294117647059,
+      "sig_bin": false
+    },
+    {
+      "pair": "eyes.color -> cheeks.color",
+      "bin": "0",
+      "margin": 0.121654501216545,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "eyes.color -> cheeks.color",
+      "bin": "1",
+      "margin": 0.03773584905660382,
+      "p": 0.056,
+      "q_overall": 0.07522388059701493,
+      "sig_overall": false,
+      "q_bin": 0.07753846153846154,
+      "sig_bin": false
+    },
+    {
+      "pair": "eyes.color -> cheeks.color",
+      "bin": "2",
+      "margin": 0.08316430020283977,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "eyes.color -> cheeks.color",
+      "bin": "3-4",
+      "margin": 0.021248339973439556,
+      "p": 0.394,
+      "q_overall": 0.43509202453987733,
+      "sig_overall": false,
+      "q_bin": 0.5253333333333333,
+      "sig_bin": false
+    },
+    {
+      "pair": "eyes.color -> cheeks.color",
+      "bin": "5+",
+      "margin": -0.14788732394366197,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "eyes.color -> lips.color",
+      "bin": "0",
+      "margin": 0.09732360097323603,
+      "p": 0.008,
+      "q_overall": 0.013457943925233645,
+      "sig_overall": true,
+      "q_bin": 0.008727272727272728,
+      "sig_bin": true
+    },
+    {
+      "pair": "eyes.color -> lips.color",
+      "bin": "1",
+      "margin": 0.04288164665523159,
+      "p": 0.022,
+      "q_overall": 0.03272727272727273,
+      "sig_overall": true,
+      "q_bin": 0.036,
+      "sig_bin": true
+    },
+    {
+      "pair": "eyes.color -> lips.color",
+      "bin": "2",
+      "margin": 0.08316430020283971,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "eyes.color -> lips.color",
+      "bin": "3-4",
+      "margin": 0.08764940239043822,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "eyes.color -> lips.color",
+      "bin": "5+",
+      "margin": -0.15191146881287726,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "eyes.color -> skin.color",
+      "bin": "0",
+      "margin": 0.15571776155717762,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "eyes.color -> skin.color",
+      "bin": "1",
+      "margin": 0.06346483704974282,
+      "p": 0.002,
+      "q_overall": 0.004,
+      "sig_overall": true,
+      "q_bin": 0.0048000000000000004,
+      "sig_bin": true
+    },
+    {
+      "pair": "eyes.color -> skin.color",
+      "bin": "2",
+      "margin": 0.1156186612576065,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "eyes.color -> skin.color",
+      "bin": "3-4",
+      "margin": 0.08366533864541831,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "eyes.color -> skin.color",
+      "bin": "5+",
+      "margin": -0.10160965794768612,
+      "p": 0.02,
+      "q_overall": 0.030252100840336135,
+      "sig_overall": true,
+      "q_bin": 0.02482758620689655,
+      "sig_bin": true
+    },
+    {
+      "pair": "lips.color -> cheeks.color",
+      "bin": "0",
+      "margin": 0.12098765432098765,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "lips.color -> cheeks.color",
+      "bin": "1",
+      "margin": 0.032871972318339104,
+      "p": 0.09,
+      "q_overall": 0.11571428571428571,
+      "sig_overall": false,
+      "q_bin": 0.1157142857142857,
+      "sig_bin": false
+    },
+    {
+      "pair": "lips.color -> cheeks.color",
+      "bin": "2",
+      "margin": 0.05197505197505198,
+      "p": 0.046,
+      "q_overall": 0.062255639097744356,
+      "sig_overall": false,
+      "q_bin": 0.06133333333333333,
+      "sig_bin": false
+    },
+    {
+      "pair": "lips.color -> cheeks.color",
+      "bin": "3-4",
+      "margin": 0.04330175913396489,
+      "p": 0.1,
+      "q_overall": 0.1276595744680851,
+      "sig_overall": false,
+      "q_bin": 0.192,
+      "sig_bin": false
+    },
+    {
+      "pair": "lips.color -> cheeks.color",
+      "bin": "5+",
+      "margin": -0.11736178467507272,
+      "p": 0.002,
+      "q_overall": 0.004,
+      "sig_overall": true,
+      "q_bin": 0.003130434782608696,
+      "sig_bin": true
+    },
+    {
+      "pair": "lips.color -> eyes.color",
+      "bin": "0",
+      "margin": 0.11358024691358024,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "lips.color -> eyes.color",
+      "bin": "1",
+      "margin": 0.03633217993079585,
+      "p": 0.072,
+      "q_overall": 0.09391304347826086,
+      "sig_overall": false,
+      "q_bin": 0.09599999999999999,
+      "sig_bin": false
+    },
+    {
+      "pair": "lips.color -> eyes.color",
+      "bin": "2",
+      "margin": 0.029106029106029108,
+      "p": 0.238,
+      "q_overall": 0.2746153846153846,
+      "sig_overall": false,
+      "q_bin": 0.26775,
+      "sig_bin": false
+    },
+    {
+      "pair": "lips.color -> eyes.color",
+      "bin": "3-4",
+      "margin": 0.02706359945872805,
+      "p": 0.24,
+      "q_overall": 0.2751592356687898,
+      "sig_overall": false,
+      "q_bin": 0.36599999999999994,
+      "sig_bin": false
+    },
+    {
+      "pair": "lips.color -> eyes.color",
+      "bin": "5+",
+      "margin": -0.1066925315227934,
+      "p": 0.002,
+      "q_overall": 0.004,
+      "sig_overall": true,
+      "q_bin": 0.003130434782608696,
+      "sig_bin": true
+    },
+    {
+      "pair": "lips.color -> skin.color",
+      "bin": "0",
+      "margin": 0.11111111111111108,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "lips.color -> skin.color",
+      "bin": "1",
+      "margin": 0.0743944636678201,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "lips.color -> skin.color",
+      "bin": "2",
+      "margin": 0.1101871101871102,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "lips.color -> skin.color",
+      "bin": "3-4",
+      "margin": 0.07983761840324766,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "lips.color -> skin.color",
+      "bin": "5+",
+      "margin": -0.062075654704170674,
+      "p": 0.142,
+      "q_overall": 0.16927152317880795,
+      "sig_overall": false,
+      "q_bin": 0.14605714285714283,
+      "sig_bin": false
+    },
+    {
+      "pair": "skin.color -> cheeks.color",
+      "bin": "0",
+      "margin": 0.10864197530864195,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "skin.color -> cheeks.color",
+      "bin": "1",
+      "margin": 0.05486725663716818,
+      "p": 0.004,
+      "q_overall": 0.007272727272727273,
+      "sig_overall": true,
+      "q_bin": 0.008470588235294119,
+      "sig_bin": true
+    },
+    {
+      "pair": "skin.color -> cheeks.color",
+      "bin": "2",
+      "margin": 0.07708333333333328,
+      "p": 0.002,
+      "q_overall": 0.004,
+      "sig_overall": true,
+      "q_bin": 0.006545454545454546,
+      "sig_bin": true
+    },
+    {
+      "pair": "skin.color -> cheeks.color",
+      "bin": "3-4",
+      "margin": 0.020297699594046037,
+      "p": 0.428,
+      "q_overall": 0.4669090909090909,
+      "sig_overall": false,
+      "q_bin": 0.5502857142857143,
+      "sig_bin": false
+    },
+    {
+      "pair": "skin.color -> cheeks.color",
+      "bin": "5+",
+      "margin": -0.1980861244019139,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "skin.color -> eyes.color",
+      "bin": "0",
+      "margin": 0.07901234567901239,
+      "p": 0.008,
+      "q_overall": 0.013457943925233645,
+      "sig_overall": true,
+      "q_bin": 0.008727272727272728,
+      "sig_bin": true
+    },
+    {
+      "pair": "skin.color -> eyes.color",
+      "bin": "1",
+      "margin": 0.049557522123893805,
+      "p": 0.016,
+      "q_overall": 0.02526315789473684,
+      "sig_overall": true,
+      "q_bin": 0.030315789473684213,
+      "sig_bin": true
+    },
+    {
+      "pair": "skin.color -> eyes.color",
+      "bin": "2",
+      "margin": 0.07291666666666663,
+      "p": 0.006,
+      "q_overall": 0.010588235294117648,
+      "sig_overall": true,
+      "q_bin": 0.015428571428571429,
+      "sig_bin": true
+    },
+    {
+      "pair": "skin.color -> eyes.color",
+      "bin": "3-4",
+      "margin": 0.033829499323410006,
+      "p": 0.208,
+      "q_overall": 0.24154838709677418,
+      "sig_overall": false,
+      "q_bin": 0.34036363636363637,
+      "sig_bin": false
+    },
+    {
+      "pair": "skin.color -> eyes.color",
+      "bin": "5+",
+      "margin": -0.17129186602870813,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "skin.color -> lips.color",
+      "bin": "0",
+      "margin": 0.05679012345679013,
+      "p": 0.064,
+      "q_overall": 0.08470588235294117,
+      "sig_overall": false,
+      "q_bin": 0.06776470588235295,
+      "sig_bin": false
+    },
+    {
+      "pair": "skin.color -> lips.color",
+      "bin": "1",
+      "margin": 0.04424778761061943,
+      "p": 0.018,
+      "q_overall": 0.027931034482758618,
+      "sig_overall": true,
+      "q_bin": 0.030857142857142854,
+      "sig_bin": true
+    },
+    {
+      "pair": "skin.color -> lips.color",
+      "bin": "2",
+      "margin": 0.07708333333333328,
+      "p": 0.002,
+      "q_overall": 0.004,
+      "sig_overall": true,
+      "q_bin": 0.006545454545454546,
+      "sig_bin": true
+    },
+    {
+      "pair": "skin.color -> lips.color",
+      "bin": "3-4",
+      "margin": 0.03924221921515558,
+      "p": 0.108,
+      "q_overall": 0.135,
+      "sig_overall": false,
+      "q_bin": 0.192,
+      "sig_bin": false
+    },
+    {
+      "pair": "skin.color -> lips.color",
+      "bin": "5+",
+      "margin": -0.17320574162679428,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "cheeks.finish -> eyes.finish",
+      "bin": "0",
+      "margin": 0.10020876826722336,
+      "p": 0.002,
+      "q_overall": 0.004,
+      "sig_overall": true,
+      "q_bin": 0.0024000000000000002,
+      "sig_bin": true
+    },
+    {
+      "pair": "cheeks.finish -> eyes.finish",
+      "bin": "1",
+      "margin": 0.06549520766773159,
+      "p": 0.004,
+      "q_overall": 0.007272727272727273,
+      "sig_overall": true,
+      "q_bin": 0.008470588235294119,
+      "sig_bin": true
+    },
+    {
+      "pair": "cheeks.finish -> eyes.finish",
+      "bin": "2",
+      "margin": 0.049900199600798445,
+      "p": 0.044,
+      "q_overall": 0.06,
+      "sig_overall": false,
+      "q_bin": 0.06092307692307692,
+      "sig_bin": false
+    },
+    {
+      "pair": "cheeks.finish -> eyes.finish",
+      "bin": "3-4",
+      "margin": 0.02834008097165991,
+      "p": 0.244,
+      "q_overall": 0.2779746835443038,
+      "sig_overall": false,
+      "q_bin": 0.36599999999999994,
+      "sig_bin": false
+    },
+    {
+      "pair": "cheeks.finish -> eyes.finish",
+      "bin": "5+",
+      "margin": -0.19165727170236754,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "cheeks.finish -> lips.finish",
+      "bin": "0",
+      "margin": 0.12317327766179537,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "cheeks.finish -> lips.finish",
+      "bin": "1",
+      "margin": 0.049520766773162916,
+      "p": 0.042,
+      "q_overall": 0.05815384615384616,
+      "sig_overall": false,
+      "q_bin": 0.06048,
+      "sig_bin": false
+    },
+    {
+      "pair": "cheeks.finish -> lips.finish",
+      "bin": "2",
+      "margin": 0.05788423153692618,
+      "p": 0.008,
+      "q_overall": 0.013457943925233645,
+      "sig_overall": true,
+      "q_bin": 0.016941176470588237,
+      "sig_bin": true
+    },
+    {
+      "pair": "cheeks.finish -> lips.finish",
+      "bin": "3-4",
+      "margin": 0.08636977058029693,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "cheeks.finish -> lips.finish",
+      "bin": "5+",
+      "margin": -0.1770011273957159,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "cheeks.finish -> skin.finish",
+      "bin": "0",
+      "margin": 0.16283924843423797,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "cheeks.finish -> skin.finish",
+      "bin": "1",
+      "margin": 0.08626198083067088,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "cheeks.finish -> skin.finish",
+      "bin": "2",
+      "margin": 0.06786427145708585,
+      "p": 0.008,
+      "q_overall": 0.013457943925233645,
+      "sig_overall": true,
+      "q_bin": 0.016941176470588237,
+      "sig_bin": true
+    },
+    {
+      "pair": "cheeks.finish -> skin.finish",
+      "bin": "3-4",
+      "margin": 0.07422402159244262,
+      "p": 0.002,
+      "q_overall": 0.004,
+      "sig_overall": true,
+      "q_bin": 0.006545454545454546,
+      "sig_bin": true
+    },
+    {
+      "pair": "cheeks.finish -> skin.finish",
+      "bin": "5+",
+      "margin": -0.1228861330326945,
+      "p": 0.006,
+      "q_overall": 0.010588235294117648,
+      "sig_overall": true,
+      "q_bin": 0.008,
+      "sig_bin": true
+    },
+    {
+      "pair": "eyes.finish -> cheeks.finish",
+      "bin": "0",
+      "margin": 0.503006012024048,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "eyes.finish -> cheeks.finish",
+      "bin": "1",
+      "margin": 0.1180223285486443,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "eyes.finish -> cheeks.finish",
+      "bin": "2",
+      "margin": 0.07100591715976334,
+      "p": 0.038,
+      "q_overall": 0.054285714285714284,
+      "sig_overall": false,
+      "q_bin": 0.05472,
+      "sig_bin": false
+    },
+    {
+      "pair": "eyes.finish -> cheeks.finish",
+      "bin": "3-4",
+      "margin": 0.0013605442176870541,
+      "p": 0.99,
+      "q_overall": 0.992,
+      "sig_overall": false,
+      "q_bin": 0.9920000000000001,
+      "sig_bin": false
+    },
+    {
+      "pair": "eyes.finish -> cheeks.finish",
+      "bin": "5+",
+      "margin": -0.17782909930715937,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "eyes.finish -> lips.finish",
+      "bin": "0",
+      "margin": 0.4869739478957916,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "eyes.finish -> lips.finish",
+      "bin": "1",
+      "margin": 0.1180223285486443,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "eyes.finish -> lips.finish",
+      "bin": "2",
+      "margin": 0.041420118343195256,
+      "p": 0.174,
+      "q_overall": 0.20470588235294115,
+      "sig_overall": false,
+      "q_bin": 0.20206451612903223,
+      "sig_bin": false
+    },
+    {
+      "pair": "eyes.finish -> lips.finish",
+      "bin": "3-4",
+      "margin": -0.025850340136054417,
+      "p": 0.382,
+      "q_overall": 0.42444444444444446,
+      "sig_overall": false,
+      "q_bin": 0.5253333333333333,
+      "sig_bin": false
+    },
+    {
+      "pair": "eyes.finish -> lips.finish",
+      "bin": "5+",
+      "margin": -0.18013856812933024,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "eyes.finish -> skin.finish",
+      "bin": "0",
+      "margin": 0.5230460921843687,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "eyes.finish -> skin.finish",
+      "bin": "1",
+      "margin": 0.16746411483253582,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "eyes.finish -> skin.finish",
+      "bin": "2",
+      "margin": 0.08284023668639057,
+      "p": 0.01,
+      "q_overall": 0.016363636363636365,
+      "sig_overall": true,
+      "q_bin": 0.02,
+      "sig_bin": true
+    },
+    {
+      "pair": "eyes.finish -> skin.finish",
+      "bin": "3-4",
+      "margin": 0.0013605442176870541,
+      "p": 0.992,
+      "q_overall": 0.992,
+      "sig_overall": false,
+      "q_bin": 0.9920000000000001,
+      "sig_bin": false
+    },
+    {
+      "pair": "eyes.finish -> skin.finish",
+      "bin": "5+",
+      "margin": -0.15357967667436492,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "lips.finish -> cheeks.finish",
+      "bin": "0",
+      "margin": 0.13078470824949695,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "lips.finish -> cheeks.finish",
+      "bin": "1",
+      "margin": 0.029220779220779203,
+      "p": 0.2,
+      "q_overall": 0.23376623376623376,
+      "sig_overall": false,
+      "q_bin": 0.23225806451612904,
+      "sig_bin": false
+    },
+    {
+      "pair": "lips.finish -> cheeks.finish",
+      "bin": "2",
+      "margin": 0.07142857142857145,
+      "p": 0.014,
+      "q_overall": 0.022300884955752213,
+      "sig_overall": true,
+      "q_bin": 0.0252,
+      "sig_bin": true
+    },
+    {
+      "pair": "lips.finish -> cheeks.finish",
+      "bin": "3-4",
+      "margin": 0.016643550624133086,
+      "p": 0.552,
+      "q_overall": 0.5879289940828403,
+      "sig_overall": false,
+      "q_bin": 0.6410322580645161,
+      "sig_bin": false
+    },
+    {
+      "pair": "lips.finish -> cheeks.finish",
+      "bin": "5+",
+      "margin": -0.16373626373626374,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "lips.finish -> eyes.finish",
+      "bin": "0",
+      "margin": 0.12273641851106637,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "lips.finish -> eyes.finish",
+      "bin": "1",
+      "margin": 0.0357142857142857,
+      "p": 0.102,
+      "q_overall": 0.12839160839160838,
+      "sig_overall": false,
+      "q_bin": 0.1266206896551724,
+      "sig_bin": false
+    },
+    {
+      "pair": "lips.finish -> eyes.finish",
+      "bin": "2",
+      "margin": 0.055102040816326525,
+      "p": 0.022,
+      "q_overall": 0.03272727272727273,
+      "sig_overall": true,
+      "q_bin": 0.036,
+      "sig_bin": true
+    },
+    {
+      "pair": "lips.finish -> eyes.finish",
+      "bin": "3-4",
+      "margin": 0.01525658807212199,
+      "p": 0.546,
+      "q_overall": 0.585,
+      "sig_overall": false,
+      "q_bin": 0.6410322580645161,
+      "sig_bin": false
+    },
+    {
+      "pair": "lips.finish -> eyes.finish",
+      "bin": "5+",
+      "margin": -0.13296703296703297,
+      "p": 0.004,
+      "q_overall": 0.007272727272727273,
+      "sig_overall": true,
+      "q_bin": 0.005538461538461539,
+      "sig_bin": true
+    },
+    {
+      "pair": "lips.finish -> skin.finish",
+      "bin": "0",
+      "margin": 0.1851106639839034,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "lips.finish -> skin.finish",
+      "bin": "1",
+      "margin": 0.07792207792207789,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "lips.finish -> skin.finish",
+      "bin": "2",
+      "margin": 0.07755102040816331,
+      "p": 0.002,
+      "q_overall": 0.004,
+      "sig_overall": true,
+      "q_bin": 0.006545454545454546,
+      "sig_bin": true
+    },
+    {
+      "pair": "lips.finish -> skin.finish",
+      "bin": "3-4",
+      "margin": 0.029126213592232997,
+      "p": 0.292,
+      "q_overall": 0.32849999999999996,
+      "sig_overall": false,
+      "q_bin": 0.42047999999999996,
+      "sig_bin": false
+    },
+    {
+      "pair": "lips.finish -> skin.finish",
+      "bin": "5+",
+      "margin": -0.13076923076923072,
+      "p": 0.004,
+      "q_overall": 0.007272727272727273,
+      "sig_overall": true,
+      "q_bin": 0.005538461538461539,
+      "sig_bin": true
+    },
+    {
+      "pair": "skin.finish -> cheeks.finish",
+      "bin": "0",
+      "margin": 0.26694045174537984,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "skin.finish -> cheeks.finish",
+      "bin": "1",
+      "margin": 0.1615008156606852,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "skin.finish -> cheeks.finish",
+      "bin": "2",
+      "margin": 0.07520325203252032,
+      "p": 0.02,
+      "q_overall": 0.030252100840336135,
+      "sig_overall": true,
+      "q_bin": 0.03428571428571429,
+      "sig_bin": true
+    },
+    {
+      "pair": "skin.finish -> cheeks.finish",
+      "bin": "3-4",
+      "margin": -0.004143646408839741,
+      "p": 0.85,
+      "q_overall": 0.864406779661017,
+      "sig_overall": false,
+      "q_bin": 0.8999999999999999,
+      "sig_bin": false
+    },
+    {
+      "pair": "skin.finish -> cheeks.finish",
+      "bin": "5+",
+      "margin": -0.14161220043572983,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "skin.finish -> eyes.finish",
+      "bin": "0",
+      "margin": 0.3080082135523614,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "skin.finish -> eyes.finish",
+      "bin": "1",
+      "margin": 0.16639477977161504,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "skin.finish -> eyes.finish",
+      "bin": "2",
+      "margin": 0.08739837398373979,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "skin.finish -> eyes.finish",
+      "bin": "3-4",
+      "margin": 0.008287292817679537,
+      "p": 0.844,
+      "q_overall": 0.864406779661017,
+      "sig_overall": false,
+      "q_bin": 0.8999999999999999,
+      "sig_bin": false
+    },
+    {
+      "pair": "skin.finish -> eyes.finish",
+      "bin": "5+",
+      "margin": -0.13507625272331153,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "skin.finish -> lips.finish",
+      "bin": "0",
+      "margin": 0.2689938398357289,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "skin.finish -> lips.finish",
+      "bin": "1",
+      "margin": 0.1321370309951061,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "skin.finish -> lips.finish",
+      "bin": "2",
+      "margin": 0.08333333333333331,
+      "p": 0.004,
+      "q_overall": 0.007272727272727273,
+      "sig_overall": true,
+      "q_bin": 0.012000000000000002,
+      "sig_bin": true
+    },
+    {
+      "pair": "skin.finish -> lips.finish",
+      "bin": "3-4",
+      "margin": 0.0069060773480663085,
+      "p": 0.848,
+      "q_overall": 0.864406779661017,
+      "sig_overall": false,
+      "q_bin": 0.8999999999999999,
+      "sig_bin": false
+    },
+    {
+      "pair": "skin.finish -> lips.finish",
+      "bin": "5+",
+      "margin": -0.14923747276688454,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "cheeks.coverage -> eyes.coverage",
+      "bin": "0",
+      "margin": -0.3532219570405728,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "cheeks.coverage -> eyes.coverage",
+      "bin": "1",
+      "margin": -0.0068728522336769515,
+      "p": 0.9,
+      "q_overall": 0.9101123595505618,
+      "sig_overall": false,
+      "q_bin": 0.8999999999999999,
+      "sig_bin": false
+    },
+    {
+      "pair": "cheeks.coverage -> eyes.coverage",
+      "bin": "2",
+      "margin": 0.08677685950413228,
+      "p": 0.034,
+      "q_overall": 0.04935483870967742,
+      "sig_overall": true,
+      "q_bin": 0.05100000000000001,
+      "sig_bin": false
+    },
+    {
+      "pair": "cheeks.coverage -> eyes.coverage",
+      "bin": "3-4",
+      "margin": 0.12820512820512814,
+      "p": 0.004,
+      "q_overall": 0.007272727272727273,
+      "sig_overall": true,
+      "q_bin": 0.011076923076923078,
+      "sig_bin": true
+    },
+    {
+      "pair": "cheeks.coverage -> eyes.coverage",
+      "bin": "5+",
+      "margin": 0.08234126984126983,
+      "p": 0.062,
+      "q_overall": 0.08266666666666667,
+      "sig_overall": false,
+      "q_bin": 0.06763636363636365,
+      "sig_bin": false
+    },
+    {
+      "pair": "cheeks.coverage -> lips.coverage",
+      "bin": "0",
+      "margin": -0.39856801909307876,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "cheeks.coverage -> lips.coverage",
+      "bin": "1",
+      "margin": -0.01718213058419249,
+      "p": 0.716,
+      "q_overall": 0.7449710982658959,
+      "sig_overall": false,
+      "q_bin": 0.7581176470588236,
+      "sig_bin": false
+    },
+    {
+      "pair": "cheeks.coverage -> lips.coverage",
+      "bin": "2",
+      "margin": 0.1074380165289257,
+      "p": 0.024,
+      "q_overall": 0.0351219512195122,
+      "sig_overall": true,
+      "q_bin": 0.03756521739130435,
+      "sig_bin": true
+    },
+    {
+      "pair": "cheeks.coverage -> lips.coverage",
+      "bin": "3-4",
+      "margin": 0.1497975708502024,
+      "p": 0.002,
+      "q_overall": 0.004,
+      "sig_overall": true,
+      "q_bin": 0.006545454545454546,
+      "sig_bin": true
+    },
+    {
+      "pair": "cheeks.coverage -> lips.coverage",
+      "bin": "5+",
+      "margin": 0.024801587301587324,
+      "p": 0.574,
+      "q_overall": 0.6042105263157894,
+      "sig_overall": false,
+      "q_bin": 0.574,
+      "sig_bin": false
+    },
+    {
+      "pair": "cheeks.coverage -> skin.coverage",
+      "bin": "0",
+      "margin": -0.3723150357995227,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "cheeks.coverage -> skin.coverage",
+      "bin": "1",
+      "margin": -0.046391752577319645,
+      "p": 0.272,
+      "q_overall": 0.3079245283018868,
+      "sig_overall": false,
+      "q_bin": 0.30600000000000005,
+      "sig_bin": false
+    },
+    {
+      "pair": "cheeks.coverage -> skin.coverage",
+      "bin": "2",
+      "margin": 0.07438016528925623,
+      "p": 0.12,
+      "q_overall": 0.14693877551020407,
+      "sig_overall": false,
+      "q_bin": 0.14896551724137932,
+      "sig_bin": false
+    },
+    {
+      "pair": "cheeks.coverage -> skin.coverage",
+      "bin": "3-4",
+      "margin": 0.10121457489878538,
+      "p": 0.024,
+      "q_overall": 0.0351219512195122,
+      "sig_overall": true,
+      "q_bin": 0.054,
+      "sig_bin": false
+    },
+    {
+      "pair": "cheeks.coverage -> skin.coverage",
+      "bin": "5+",
+      "margin": 0.0813492063492064,
+      "p": 0.042,
+      "q_overall": 0.05815384615384616,
+      "sig_overall": false,
+      "q_bin": 0.0487741935483871,
+      "sig_bin": true
+    },
+    {
+      "pair": "eyes.coverage -> cheeks.coverage",
+      "bin": "0",
+      "margin": -0.2340425531914893,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "eyes.coverage -> cheeks.coverage",
+      "bin": "1",
+      "margin": 0.025295109612141653,
+      "p": 0.56,
+      "q_overall": 0.5929411764705883,
+      "sig_overall": false,
+      "q_bin": 0.6109090909090911,
+      "sig_bin": false
+    },
+    {
+      "pair": "eyes.coverage -> cheeks.coverage",
+      "bin": "2",
+      "margin": 0.032128514056224966,
+      "p": 0.52,
+      "q_overall": 0.5638554216867471,
+      "sig_overall": false,
+      "q_bin": 0.5348571428571428,
+      "sig_bin": false
+    },
+    {
+      "pair": "eyes.coverage -> cheeks.coverage",
+      "bin": "3-4",
+      "margin": 0.1562913907284768,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "eyes.coverage -> cheeks.coverage",
+      "bin": "5+",
+      "margin": 0.166839378238342,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "eyes.coverage -> lips.coverage",
+      "bin": "0",
+      "margin": -0.2576832151300236,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "eyes.coverage -> lips.coverage",
+      "bin": "1",
+      "margin": -0.08263069139966267,
+      "p": 0.042,
+      "q_overall": 0.05815384615384616,
+      "sig_overall": false,
+      "q_bin": 0.06048,
+      "sig_bin": false
+    },
+    {
+      "pair": "eyes.coverage -> lips.coverage",
+      "bin": "2",
+      "margin": -0.016064257028112372,
+      "p": 0.7,
+      "q_overall": 0.7325581395348837,
+      "sig_overall": false,
+      "q_bin": 0.7,
+      "sig_bin": false
+    },
+    {
+      "pair": "eyes.coverage -> lips.coverage",
+      "bin": "3-4",
+      "margin": 0.13245033112582782,
+      "p": 0.01,
+      "q_overall": 0.016363636363636365,
+      "sig_overall": true,
+      "q_bin": 0.025714285714285714,
+      "sig_bin": true
+    },
+    {
+      "pair": "eyes.coverage -> lips.coverage",
+      "bin": "5+",
+      "margin": 0.1658031088082902,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "eyes.coverage -> skin.coverage",
+      "bin": "0",
+      "margin": -0.23640661938534274,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "eyes.coverage -> skin.coverage",
+      "bin": "1",
+      "margin": -0.013490725126475506,
+      "p": 0.75,
+      "q_overall": 0.7758620689655172,
+      "sig_overall": false,
+      "q_bin": 0.7714285714285715,
+      "sig_bin": false
+    },
+    {
+      "pair": "eyes.coverage -> skin.coverage",
+      "bin": "2",
+      "margin": 0.04016064257028118,
+      "p": 0.414,
+      "q_overall": 0.454390243902439,
+      "sig_overall": false,
+      "q_bin": 0.4383529411764706,
+      "sig_bin": false
+    },
+    {
+      "pair": "eyes.coverage -> skin.coverage",
+      "bin": "3-4",
+      "margin": 0.17880794701986752,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "eyes.coverage -> skin.coverage",
+      "bin": "5+",
+      "margin": 0.15544041450777202,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "lips.coverage -> cheeks.coverage",
+      "bin": "0",
+      "margin": 0.14321608040200998,
+      "p": 0.002,
+      "q_overall": 0.004,
+      "sig_overall": true,
+      "q_bin": 0.0024000000000000002,
+      "sig_bin": true
+    },
+    {
+      "pair": "lips.coverage -> cheeks.coverage",
+      "bin": "1",
+      "margin": 0.07504363001745201,
+      "p": 0.002,
+      "q_overall": 0.004,
+      "sig_overall": true,
+      "q_bin": 0.0048000000000000004,
+      "sig_bin": true
+    },
+    {
+      "pair": "lips.coverage -> cheeks.coverage",
+      "bin": "2",
+      "margin": 0.09185803757828814,
+      "p": 0.006,
+      "q_overall": 0.010588235294117648,
+      "sig_overall": true,
+      "q_bin": 0.015428571428571429,
+      "sig_bin": true
+    },
+    {
+      "pair": "lips.coverage -> cheeks.coverage",
+      "bin": "3-4",
+      "margin": 0.060522696011004185,
+      "p": 0.102,
+      "q_overall": 0.12839160839160838,
+      "sig_overall": false,
+      "q_bin": 0.192,
+      "sig_bin": false
+    },
+    {
+      "pair": "lips.coverage -> cheeks.coverage",
+      "bin": "5+",
+      "margin": -0.19016083254493849,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "lips.coverage -> eyes.coverage",
+      "bin": "0",
+      "margin": 0.10552763819095481,
+      "p": 0.004,
+      "q_overall": 0.007272727272727273,
+      "sig_overall": true,
+      "q_bin": 0.004645161290322581,
+      "sig_bin": true
+    },
+    {
+      "pair": "lips.coverage -> eyes.coverage",
+      "bin": "1",
+      "margin": 0.0366492146596859,
+      "p": 0.138,
+      "q_overall": 0.16560000000000002,
+      "sig_overall": false,
+      "q_bin": 0.1656,
+      "sig_bin": false
+    },
+    {
+      "pair": "lips.coverage -> eyes.coverage",
+      "bin": "2",
+      "margin": 0.06889352818371608,
+      "p": 0.014,
+      "q_overall": 0.022300884955752213,
+      "sig_overall": true,
+      "q_bin": 0.0252,
+      "sig_bin": true
+    },
+    {
+      "pair": "lips.coverage -> eyes.coverage",
+      "bin": "3-4",
+      "margin": 0.019257221458046814,
+      "p": 0.54,
+      "q_overall": 0.5820359281437126,
+      "sig_overall": false,
+      "q_bin": 0.6410322580645161,
+      "sig_bin": false
+    },
+    {
+      "pair": "lips.coverage -> eyes.coverage",
+      "bin": "5+",
+      "margin": -0.14947965941343427,
+      "p": 0.002,
+      "q_overall": 0.004,
+      "sig_overall": true,
+      "q_bin": 0.003130434782608696,
+      "sig_bin": true
+    },
+    {
+      "pair": "lips.coverage -> skin.coverage",
+      "bin": "0",
+      "margin": 0.1457286432160804,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "lips.coverage -> skin.coverage",
+      "bin": "1",
+      "margin": 0.07853403141361254,
+      "p": 0.002,
+      "q_overall": 0.004,
+      "sig_overall": true,
+      "q_bin": 0.0048000000000000004,
+      "sig_bin": true
+    },
+    {
+      "pair": "lips.coverage -> skin.coverage",
+      "bin": "2",
+      "margin": 0.11064718162839249,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "lips.coverage -> skin.coverage",
+      "bin": "3-4",
+      "margin": 0.10453920220082535,
+      "p": 0.004,
+      "q_overall": 0.007272727272727273,
+      "sig_overall": true,
+      "q_bin": 0.011076923076923078,
+      "sig_bin": true
+    },
+    {
+      "pair": "lips.coverage -> skin.coverage",
+      "bin": "5+",
+      "margin": -0.11636707663197732,
+      "p": 0.038,
+      "q_overall": 0.054285714285714284,
+      "sig_overall": false,
+      "q_bin": 0.045599999999999995,
+      "sig_bin": true
+    },
+    {
+      "pair": "skin.coverage -> cheeks.coverage",
+      "bin": "0",
+      "margin": -0.061576354679802936,
+      "p": 0.082,
+      "q_overall": 0.10618705035971222,
+      "sig_overall": false,
+      "q_bin": 0.08434285714285714,
+      "sig_bin": false
+    },
+    {
+      "pair": "skin.coverage -> cheeks.coverage",
+      "bin": "1",
+      "margin": 0.12186379928315416,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "skin.coverage -> cheeks.coverage",
+      "bin": "2",
+      "margin": 0.11249999999999999,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "skin.coverage -> cheeks.coverage",
+      "bin": "3-4",
+      "margin": 0.10881542699724517,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "skin.coverage -> cheeks.coverage",
+      "bin": "5+",
+      "margin": 0.09022556390977443,
+      "p": 0.004,
+      "q_overall": 0.007272727272727273,
+      "sig_overall": true,
+      "q_bin": 0.005538461538461539,
+      "sig_bin": true
+    },
+    {
+      "pair": "skin.coverage -> eyes.coverage",
+      "bin": "0",
+      "margin": -0.05418719211822659,
+      "p": 0.134,
+      "q_overall": 0.1618791946308725,
+      "sig_overall": false,
+      "q_bin": 0.134,
+      "sig_bin": false
+    },
+    {
+      "pair": "skin.coverage -> eyes.coverage",
+      "bin": "1",
+      "margin": 0.06451612903225812,
+      "p": 0.042,
+      "q_overall": 0.05815384615384616,
+      "sig_overall": false,
+      "q_bin": 0.06048,
+      "sig_bin": false
+    },
+    {
+      "pair": "skin.coverage -> eyes.coverage",
+      "bin": "2",
+      "margin": 0.12291666666666662,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "skin.coverage -> eyes.coverage",
+      "bin": "3-4",
+      "margin": 0.16942148760330578,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "skin.coverage -> eyes.coverage",
+      "bin": "5+",
+      "margin": 0.10808270676691734,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "skin.coverage -> lips.coverage",
+      "bin": "0",
+      "margin": -0.12068965517241381,
+      "p": 0.002,
+      "q_overall": 0.004,
+      "sig_overall": true,
+      "q_bin": 0.0024000000000000002,
+      "sig_bin": true
+    },
+    {
+      "pair": "skin.coverage -> lips.coverage",
+      "bin": "1",
+      "margin": 0.07885304659498216,
+      "p": 0.018,
+      "q_overall": 0.027931034482758618,
+      "sig_overall": true,
+      "q_bin": 0.030857142857142854,
+      "sig_bin": true
+    },
+    {
+      "pair": "skin.coverage -> lips.coverage",
+      "bin": "2",
+      "margin": 0.10416666666666669,
+      "p": 0.008,
+      "q_overall": 0.013457943925233645,
+      "sig_overall": true,
+      "q_bin": 0.016941176470588237,
+      "sig_bin": true
+    },
+    {
+      "pair": "skin.coverage -> lips.coverage",
+      "bin": "3-4",
+      "margin": 0.11845730027548207,
+      "p": 0.0,
+      "q_overall": 0.0,
+      "sig_overall": true,
+      "q_bin": 0.0,
+      "sig_bin": true
+    },
+    {
+      "pair": "skin.coverage -> lips.coverage",
+      "bin": "5+",
+      "margin": 0.06954887218045108,
+      "p": 0.014,
+      "q_overall": 0.022300884955752213,
+      "sig_overall": true,
+      "q_bin": 0.018,
+      "sig_bin": true
+    }
+  ]
+}

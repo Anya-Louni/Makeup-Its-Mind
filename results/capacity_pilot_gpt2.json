@@ -1,0 +1,402 @@
+{
+  "meta": {
+    "model": "gpt2",
+    "dataset": "pilot",
+    "capacities": [
+      8,
+      32,
+      128,
+      512
+    ],
+    "n_train": 3879,
+    "n_test": 839
+  },
+  "targets": {
+    "eyes.color": {
+      "layer": 11,
+      "classes": [
+        "bare",
+        "brown",
+        "nude",
+        "pink",
+        "red"
+      ],
+      "rows": [
+        {
+          "capacity": 0,
+          "probe": "linear",
+          "real": 0.34803337306317045,
+          "control": 0.15613825983313467,
+          "selectivity": 0.19189511323003577,
+          "real_embed": 0.2872467222884386,
+          "control_embed": 0.1871275327771156,
+          "selectivity_embed": 0.10011918951132301,
+          "mdl": {
+            "codelength_kbits": 11.668309723896101,
+            "uniform_kbits": 8.795663164128982,
+            "compression": 0.7538078241200534,
+            "n": 3879,
+            "n_classes": 5
+          }
+        },
+        {
+          "capacity": 8,
+          "probe": "mlp",
+          "real": 0.31585220500595945,
+          "control": 0.15494636471990464,
+          "selectivity": 0.1609058402860548,
+          "real_embed": 0.33253873659118,
+          "control_embed": 0.18831942789034564,
+          "selectivity_embed": 0.14421930870083435,
+          "mdl": {
+            "codelength_kbits": 8.145847157490575,
+            "uniform_kbits": 8.795663164128982,
+            "compression": 1.0797726736182207,
+            "n": 3879,
+            "n_classes": 5
+          }
+        },
+        {
+          "capacity": 32,
+          "probe": "mlp",
+          "real": 0.3170441001191895,
+          "control": 0.18831942789034564,
+          "selectivity": 0.12872467222884384,
+          "real_embed": 0.31227651966626935,
+          "control_embed": 0.14898688915375446,
+          "selectivity_embed": 0.16328963051251488,
+          "mdl": {
+            "codelength_kbits": 8.387279422087929,
+            "uniform_kbits": 8.795663164128982,
+            "compression": 1.0486908473521908,
+            "n": 3879,
+            "n_classes": 5
+          }
+        },
+        {
+          "capacity": 128,
+          "probe": "mlp",
+          "real": 0.33849821215733017,
+          "control": 0.19547079856972585,
+          "selectivity": 0.14302741358760432,
+          "real_embed": 0.3468414779499404,
+          "control_embed": 0.15971394517282478,
+          "selectivity_embed": 0.18712753277711563,
+          "mdl": {
+            "codelength_kbits": 8.04695914573903,
+            "uniform_kbits": 8.795663164128982,
+            "compression": 1.0930418565361302,
+            "n": 3879,
+            "n_classes": 5
+          }
+        },
+        {
+          "capacity": 512,
+          "probe": "mlp",
+          "real": 0.36114421930870083,
+          "control": 0.1728247914183552,
+          "selectivity": 0.18831942789034564,
+          "real_embed": 0.3432657926102503,
+          "control_embed": 0.20858164481525626,
+          "selectivity_embed": 0.13468414779499405,
+          "mdl": {
+            "codelength_kbits": 9.124197824376044,
+            "uniform_kbits": 8.795663164128982,
+            "compression": 0.963993036256913,
+            "n": 3879,
+            "n_classes": 5
+          }
+        }
+      ]
+    },
+    "eyes.finish": {
+      "layer": 1,
+      "classes": [
+        "dewy",
+        "matte",
+        "none",
+        "satin"
+      ],
+      "rows": [
+        {
+          "capacity": 0,
+          "probe": "linear",
+          "real": 0.43504171632896305,
+          "control": 0.25148986889153757,
+          "selectivity": 0.18355184743742547,
+          "real_embed": 0.3361144219308701,
+          "control_embed": 0.28486293206197855,
+          "selectivity_embed": 0.05125148986889155,
+          "mdl": {
+            "codelength_kbits": 7.15092796500124,
+            "uniform_kbits": 7.576171875,
+            "compression": 1.0594669547896483,
+            "n": 3879,
+            "n_classes": 4
+          }
+        },
+        {
+          "capacity": 8,
+          "probe": "mlp",
+          "real": 0.4505363528009535,
+          "control": 0.25148986889153757,
+          "selectivity": 0.19904648390941593,
+          "real_embed": 0.41835518474374256,
+          "control_embed": 0.21930870083432658,
+          "selectivity_embed": 0.19904648390941598,
+          "mdl": {
+            "codelength_kbits": 6.084615900612809,
+            "uniform_kbits": 7.576171875,
+            "compression": 1.2451356007923147,
+            "n": 3879,
+            "n_classes": 4
+          }
+        },
+        {
+          "capacity": 32,
+          "probe": "mlp",
+          "real": 0.4135876042908224,
+          "control": 0.24553039332538737,
+          "selectivity": 0.16805721096543505,
+          "real_embed": 0.33849821215733017,
+          "control_embed": 0.3110846245530393,
+          "selectivity_embed": 0.027413587604290857,
+          "mdl": {
+            "codelength_kbits": 6.685249435512283,
+            "uniform_kbits": 7.576171875,
+            "compression": 1.133266895735424,
+            "n": 3879,
+            "n_classes": 4
+          }
+        },
+        {
+          "capacity": 128,
+          "probe": "mlp",
+          "real": 0.4064362336114422,
+          "control": 0.21215733015494637,
+          "selectivity": 0.19427890345649584,
+          "real_embed": 0.3742550655542312,
+          "control_embed": 0.2586412395709178,
+          "selectivity_embed": 0.11561382598331343,
+          "mdl": {
+            "codelength_kbits": 6.523616852961533,
+            "uniform_kbits": 7.576171875,
+            "compression": 1.1613453159133094,
+            "n": 3879,
+            "n_classes": 4
+          }
+        },
+        {
+          "capacity": 512,
+          "probe": "mlp",
+          "real": 0.4231227651966627,
+          "control": 0.2026221692491061,
+          "selectivity": 0.2205005959475566,
+          "real_embed": 0.3873659117997616,
+          "control_embed": 0.3075089392133492,
+          "selectivity_embed": 0.07985697258641239,
+          "mdl": {
+            "codelength_kbits": 6.775627836357987,
+            "uniform_kbits": 7.576171875,
+            "compression": 1.1181505327589418,
+            "n": 3879,
+            "n_classes": 4
+          }
+        }
+      ]
+    },
+    "lips.color": {
+      "layer": 12,
+      "classes": [
+        "bare",
+        "brown",
+        "nude",
+        "pink",
+        "red"
+      ],
+      "rows": [
+        {
+          "capacity": 0,
+          "probe": "linear",
+          "real": 0.3075089392133492,
+          "control": 0.17759237187127533,
+          "selectivity": 0.12991656734207388,
+          "real_embed": 0.3492252681764005,
+          "control_embed": 0.18593563766388557,
+          "selectivity_embed": 0.1632896305125149,
+          "mdl": {
+            "codelength_kbits": 11.416429003473535,
+            "uniform_kbits": 8.795663164128982,
+            "compression": 0.7704390892680044,
+            "n": 3879,
+            "n_classes": 5
+          }
+        },
+        {
+          "capacity": 8,
+          "probe": "mlp",
+          "real": 0.29797377830750893,
+          "control": 0.2586412395709178,
+          "selectivity": 0.03933253873659115,
+          "real_embed": 0.34088200238379024,
+          "control_embed": 0.21811680572109654,
+          "selectivity_embed": 0.1227651966626937,
+          "mdl": {
+            "codelength_kbits": 7.6556473986241205,
+            "uniform_kbits": 8.795663164128982,
+            "compression": 1.1489117387655217,
+            "n": 3879,
+            "n_classes": 5
+          }
+        },
+        {
+          "capacity": 32,
+          "probe": "mlp",
+          "real": 0.2908224076281287,
+          "control": 0.22526817640047675,
+          "selectivity": 0.06555423122765197,
+          "real_embed": 0.3039332538736591,
+          "control_embed": 0.25148986889153757,
+          "selectivity_embed": 0.05244338498212153,
+          "mdl": {
+            "codelength_kbits": 7.431890895531996,
+            "uniform_kbits": 8.795663164128982,
+            "compression": 1.183502730027546,
+            "n": 3879,
+            "n_classes": 5
+          }
+        },
+        {
+          "capacity": 128,
+          "probe": "mlp",
+          "real": 0.30512514898688914,
+          "control": 0.21811680572109654,
+          "selectivity": 0.0870083432657926,
+          "real_embed": 0.3432657926102503,
+          "control_embed": 0.20143027413587605,
+          "selectivity_embed": 0.14183551847437426,
+          "mdl": {
+            "codelength_kbits": 7.567927942575265,
+            "uniform_kbits": 8.795663164128982,
+            "compression": 1.1622287145001455,
+            "n": 3879,
+            "n_classes": 5
+          }
+        },
+        {
+          "capacity": 512,
+          "probe": "mlp",
+          "real": 0.3110846245530393,
+          "control": 0.21573301549463647,
+          "selectivity": 0.09535160905840284,
+          "real_embed": 0.32777115613825986,
+          "control_embed": 0.19785458879618595,
+          "selectivity_embed": 0.1299165673420739,
+          "mdl": {
+            "codelength_kbits": 7.9625674756372415,
+            "uniform_kbits": 8.795663164128982,
+            "compression": 1.1046265153847337,
+            "n": 3879,
+            "n_classes": 5
+          }
+        }
+      ]
+    },
+    "lips.finish": {
+      "layer": 1,
+      "classes": [
+        "dewy",
+        "matte",
+        "none",
+        "satin"
+      ],
+      "rows": [
+        {
+          "capacity": 0,
+          "probe": "linear",
+          "real": 0.35876042908224076,
+          "control": 0.28128724672228844,
+          "selectivity": 0.07747318235995232,
+          "real_embed": 0.4135876042908224,
+          "control_embed": 0.27771156138259834,
+          "selectivity_embed": 0.13587604290822408,
+          "mdl": {
+            "codelength_kbits": 7.027430351097648,
+            "uniform_kbits": 7.576171875,
+            "compression": 1.0780856581263223,
+            "n": 3879,
+            "n_classes": 4
+          }
+        },
+        {
+          "capacity": 8,
+          "probe": "mlp",
+          "real": 0.38617401668653156,
+          "control": 0.2824791418355185,
+          "selectivity": 0.10369487485101309,
+          "real_embed": 0.4100119189511323,
+          "control_embed": 0.30154946364719903,
+          "selectivity_embed": 0.10846245530393328,
+          "mdl": {
+            "codelength_kbits": 6.14953612674395,
+            "uniform_kbits": 7.576171875,
+            "compression": 1.2319907906633316,
+            "n": 3879,
+            "n_classes": 4
+          }
+        },
+        {
+          "capacity": 32,
+          "probe": "mlp",
+          "real": 0.40047675804529204,
+          "control": 0.25744934445768775,
+          "selectivity": 0.1430274135876043,
+          "real_embed": 0.3528009535160906,
+          "control_embed": 0.24910607866507747,
+          "selectivity_embed": 0.10369487485101311,
+          "mdl": {
+            "codelength_kbits": 5.9588449370714525,
+            "uniform_kbits": 7.576171875,
+            "compression": 1.271416181325135,
+            "n": 3879,
+            "n_classes": 4
+          }
+        },
+        {
+          "capacity": 128,
+          "probe": "mlp",
+          "real": 0.3730631704410012,
+          "control": 0.2634088200238379,
+          "selectivity": 0.10965435041716326,
+          "real_embed": 0.36233611442193087,
+          "control_embed": 0.2431466030989273,
+          "selectivity_embed": 0.11918951132300357,
+          "mdl": {
+            "codelength_kbits": 6.2738709613381225,
+            "uniform_kbits": 7.576171875,
+            "compression": 1.2075753425097726,
+            "n": 3879,
+            "n_classes": 4
+          }
+        },
+        {
+          "capacity": 512,
+          "probe": "mlp",
+          "real": 0.433849821215733,
+          "control": 0.27532777115613827,
+          "selectivity": 0.15852205005959474,
+          "real_embed": 0.38855780691299163,
+          "control_embed": 0.2395709177592372,
+          "selectivity_embed": 0.14898688915375444,
+          "mdl": {
+            "codelength_kbits": 7.08442859234623,
+            "uniform_kbits": 7.576171875,
+            "compression": 1.0694118482872468,
+            "n": 3879,
+            "n_classes": 4
+          }
+        }
+      ]
+    }
+  }
+}

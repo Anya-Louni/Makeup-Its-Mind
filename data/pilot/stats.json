@@ -1,0 +1,56 @@
+{
+  "n_narratives": 2000,
+  "n_positions": 13097,
+  "sentences_per_narrative": 6.55,
+  "action_kind_distribution": {
+    "APPLY": 7439,
+    "DISTRACTOR": 2364,
+    "NOOP": 1131,
+    "SOFTEN": 412,
+    "BLOT": 405,
+    "GLOSS": 380,
+    "BUILD": 379,
+    "REMOVE": 297,
+    "SHEER": 290
+  },
+  "label_distribution": {
+    "lips.color": {
+      "bare": 3777,
+      "red": 2349,
+      "pink": 2348,
+      "brown": 2324,
+      "nude": 2299
+    },
+    "lips.finish": {
+      "none": 3541,
+      "satin": 3277,
+      "dewy": 3257,
+      "matte": 3022
+    },
+    "eyes.color": {
+      "bare": 3792,
+      "brown": 2423,
+      "red": 2347,
+      "pink": 2276,
+      "nude": 2259
+    },
+    "eyes.finish": {
+      "none": 3574,
+      "satin": 3298,
+      "dewy": 3129,
+      "matte": 3096
+    }
+  },
+  "order_sensitive_positions": {
+    "eyes.color": 3009,
+    "eyes.finish": 3508,
+    "lips.color": 2961,
+    "lips.finish": 3578
+  },
+  "order_sensitive_rate": {
+    "eyes.color": 0.23,
+    "eyes.finish": 0.268,
+    "lips.color": 0.226,
+    "lips.finish": 0.273
+  }
+}

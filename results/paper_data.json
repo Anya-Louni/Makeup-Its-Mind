@@ -1,0 +1,662 @@
+{
+ "gaps": [
+  {
+   "target": "eyes.color",
+   "gpt2": {
+    "gap": 0.06197854588796187,
+    "ci95": [
+     0.014490147012824533,
+     0.10989108409321176
+    ],
+    "n_narratives": 150,
+    "p_one_sided_greater": 0.00375,
+    "p_two_sided": 0.0075
+   },
+   "pythia": {
+    "gap": 0.03098927294398096,
+    "ci95": [
+     -0.02028452898035563,
+     0.08175597898500615
+    ],
+    "n_narratives": 150,
+    "p_one_sided_greater": 0.11575,
+    "p_two_sided": 0.2315
+   }
+  },
+  {
+   "target": "eyes.finish",
+   "gpt2": {
+    "gap": 0.09654350417163288,
+    "ci95": [
+     0.04807404076738609,
+     0.14770011269156855
+    ],
+    "n_narratives": 150,
+    "p_one_sided_greater": 0.0,
+    "p_two_sided": 0.0
+   },
+   "pythia": {
+    "gap": 0.014302741358760418,
+    "ci95": [
+     -0.0459556969460793,
+     0.07737432860194689
+    ],
+    "n_narratives": 150,
+    "p_one_sided_greater": 0.3195,
+    "p_two_sided": 0.639
+   }
+  },
+  {
+   "target": "lips.color",
+   "gpt2": {
+    "gap": -0.044100119189511344,
+    "ci95": [
+     -0.09881147360056505,
+     0.011751573358579086
+    ],
+    "n_narratives": 150,
+    "p_one_sided_greater": 0.941,
+    "p_two_sided": 0.126
+   },
+   "pythia": {
+    "gap": 0.06436233611442188,
+    "ci95": [
+     0.009601557626617827,
+     0.11981142135482226
+    ],
+    "n_narratives": 150,
+    "p_one_sided_greater": 0.014,
+    "p_two_sided": 0.028
+   }
+  },
+  {
+   "target": "lips.finish",
+   "gpt2": {
+    "gap": -0.05840286054827176,
+    "ci95": [
+     -0.11138619431969814,
+     -0.006009075598802374
+    ],
+    "n_narratives": 150,
+    "p_one_sided_greater": 0.988,
+    "p_two_sided": 0.0285
+   },
+   "pythia": {
+    "gap": 0.023837902264600697,
+    "ci95": [
+     -0.03360496144932702,
+     0.08531058676696295
+    ],
+    "n_narratives": 150,
+    "p_one_sided_greater": 0.2075,
+    "p_two_sided": 0.415
+   }
+  }
+ ],
+ "depth": {
+  "gpt2_pilot": [
+   {
+    "target": "eyes.color",
+    "layer": 11,
+    "frac": 0.9166666666666666
+   },
+   {
+    "target": "eyes.finish",
+    "layer": 1,
+    "frac": 0.08333333333333333
+   },
+   {
+    "target": "lips.color",
+    "layer": 12,
+    "frac": 1.0
+   },
+   {
+    "target": "lips.finish",
+    "layer": 1,
+    "frac": 0.08333333333333333
+   }
+  ],
+  "pythia_pilot": [
+   {
+    "target": "eyes.color",
+    "layer": 24,
+    "frac": 1.0
+   },
+   {
+    "target": "eyes.finish",
+    "layer": 24,
+    "frac": 1.0
+   },
+   {
+    "target": "lips.color",
+    "layer": 20,
+    "frac": 0.8333333333333334
+   },
+   {
+    "target": "lips.finish",
+    "layer": 24,
+    "frac": 1.0
+   }
+  ],
+  "gpt2_full": [
+   {
+    "target": "cheeks.color",
+    "layer": 0,
+    "frac": 0.0
+   },
+   {
+    "target": "cheeks.coverage",
+    "layer": 0,
+    "frac": 0.0
+   },
+   {
+    "target": "cheeks.finish",
+    "layer": 0,
+    "frac": 0.0
+   },
+   {
+    "target": "eyes.color",
+    "layer": 0,
+    "frac": 0.0
+   },
+   {
+    "target": "eyes.coverage",
+    "layer": 12,
+    "frac": 1.0
+   },
+   {
+    "target": "eyes.finish",
+    "layer": 2,
+    "frac": 0.16666666666666666
+   },
+   {
+    "target": "lips.color",
+    "layer": 0,
+    "frac": 0.0
+   },
+   {
+    "target": "lips.coverage",
+    "layer": 0,
+    "frac": 0.0
+   },
+   {
+    "target": "lips.finish",
+    "layer": 0,
+    "frac": 0.0
+   },
+   {
+    "target": "skin.color",
+    "layer": 0,
+    "frac": 0.0
+   },
+   {
+    "target": "skin.coverage",
+    "layer": 10,
+    "frac": 0.8333333333333334
+   },
+   {
+    "target": "skin.finish",
+    "layer": 6,
+    "frac": 0.5
+   }
+  ]
+ },
+ "binding": [
+  {
+   "bin": "0",
+   "margin": 0.07882296679760303,
+   "within": 0.11104373569084608,
+   "cross": 0.03222076889324307,
+   "n": 15663
+  },
+  {
+   "bin": "1",
+   "margin": 0.05952615303870276,
+   "within": 0.12217650361294578,
+   "cross": 0.06265035057424304,
+   "n": 21231
+  },
+  {
+   "bin": "2",
+   "margin": 0.07091614449967149,
+   "within": 0.12622085718036516,
+   "cross": 0.05530471268069365,
+   "n": 17562
+  },
+  {
+   "bin": "3-4",
+   "margin": 0.06189239550653339,
+   "within": 0.10264840921250425,
+   "cross": 0.040756013705970866,
+   "n": 26559
+  },
+  {
+   "bin": "5+",
+   "margin": -0.07936575416776813,
+   "within": -0.004653058253038776,
+   "cross": 0.07471269591472937,
+   "n": 35409
+  }
+ ],
+ "binding_by_attr": {
+  "color": [
+   0.11250195018081129,
+   0.051756517017950095,
+   0.0663539677964101,
+   0.046872105280990894,
+   -0.12409177997606897
+  ],
+  "finish": [
+   0.2651518035287835,
+   0.1006397080404949,
+   0.06841096389890118,
+   0.01982339145742611,
+   -0.15470752747000716
+  ],
+  "coverage": [
+   -0.14118485331678565,
+   0.026182234057663272,
+   0.07798350180370317,
+   0.11898168978118312,
+   0.04070204494277171
+  ]
+ },
+ "bh": {
+  "0": {
+   "n_tests": 36,
+   "mean_margin": 0.07882296679760303,
+   "raw_sig": 33,
+   "bh_within_bin_sig": 33,
+   "bh_overall_sig": 33
+  },
+  "1": {
+   "n_tests": 36,
+   "mean_margin": 0.05952615303870276,
+   "raw_sig": 25,
+   "bh_within_bin_sig": 22,
+   "bh_overall_sig": 22
+  },
+  "2": {
+   "n_tests": 36,
+   "mean_margin": 0.07091614449967149,
+   "raw_sig": 27,
+   "bh_within_bin_sig": 23,
+   "bh_overall_sig": 24
+  },
+  "3-4": {
+   "n_tests": 36,
+   "mean_margin": 0.06189239550653339,
+   "raw_sig": 16,
+   "bh_within_bin_sig": 15,
+   "bh_overall_sig": 16
+  },
+  "5+": {
+   "n_tests": 36,
+   "mean_margin": -0.07936575416776813,
+   "raw_sig": 32,
+   "bh_within_bin_sig": 32,
+   "bh_overall_sig": 29
+  }
+ },
+ "interventions": [
+  {
+   "label": "gpt2 \u00b7 finish",
+   "meta": {
+    "model": "gpt2",
+    "dataset": "full",
+    "target": "lips.finish",
+    "other": "eyes.finish",
+    "edit_layer": 1,
+    "read_layer": 12,
+    "alphas": [
+     0.0,
+     2.0,
+     8.0
+    ],
+    "trials_per_bin": 80
+   },
+   "arms": [
+    {
+     "arm": "concept",
+     "mean": 0.05523290038108826,
+     "lo": 0.04108725935220719,
+     "hi": 0.06981453314423561,
+     "n": 80
+    },
+    {
+     "arm": "random",
+     "mean": 0.013702958822250366,
+     "lo": -0.0025481295585632327,
+     "hi": 0.029899434000253675,
+     "n": 80
+    },
+    {
+     "arm": "other_entity_direction",
+     "mean": 0.039519590139389035,
+     "lo": 0.026864720284938814,
+     "hi": 0.0524141526222229,
+     "n": 80
+    }
+   ]
+  },
+  {
+   "label": "gpt2 \u00b7 colour",
+   "meta": {
+    "model": "gpt2",
+    "dataset": "full",
+    "target": "lips.color",
+    "other": "eyes.color",
+    "edit_layer": 1,
+    "read_layer": 12,
+    "alphas": [
+     0.0,
+     2.0,
+     8.0
+    ],
+    "trials_per_bin": 80
+   },
+   "arms": [
+    {
+     "arm": "concept",
+     "mean": 0.00037364661693573,
+     "lo": -0.006383999958634376,
+     "hi": 0.006952597424387931,
+     "n": 80
+    },
+    {
+     "arm": "random",
+     "mean": -0.003221726417541504,
+     "lo": -0.012800909206271173,
+     "hi": 0.006482414379715918,
+     "n": 80
+    },
+    {
+     "arm": "other_entity_direction",
+     "mean": 0.006546959280967712,
+     "lo": -0.0001638460159301753,
+     "hi": 0.01383401423692703,
+     "n": 80
+    }
+   ]
+  },
+  {
+   "label": "pythia \u00b7 finish",
+   "meta": {
+    "model": "EleutherAI/pythia-410m",
+    "dataset": "pilot",
+    "target": "lips.finish",
+    "other": "eyes.finish",
+    "edit_layer": 12,
+    "read_layer": 24,
+    "alphas": [
+     0.0,
+     2.0,
+     8.0
+    ],
+    "trials_per_bin": 60
+   },
+   "arms": [
+    {
+     "arm": "concept",
+     "mean": 0.14747295379638672,
+     "lo": 0.1229944360256195,
+     "hi": 0.17139145632584887,
+     "n": 60
+    },
+    {
+     "arm": "random",
+     "mean": -0.009377392133076985,
+     "lo": -0.04120712717374166,
+     "hi": 0.021370245218276955,
+     "n": 60
+    },
+    {
+     "arm": "other_entity_direction",
+     "mean": 0.19488303661346434,
+     "lo": 0.1672642163435618,
+     "hi": 0.22207864304383593,
+     "n": 60
+    }
+   ]
+  },
+  {
+   "label": "pythia \u00b7 colour",
+   "meta": {
+    "model": "EleutherAI/pythia-410m",
+    "dataset": "pilot",
+    "target": "lips.color",
+    "other": "eyes.color",
+    "edit_layer": 12,
+    "read_layer": 24,
+    "alphas": [
+     0.0,
+     2.0,
+     8.0
+    ],
+    "trials_per_bin": 60
+   },
+   "arms": [
+    {
+     "arm": "concept",
+     "mean": 0.03161569635073344,
+     "lo": 0.0171452160179615,
+     "hi": 0.045495374550422026,
+     "n": 60
+    },
+    {
+     "arm": "random",
+     "mean": -0.010403194030125936,
+     "lo": -0.028597306807835895,
+     "hi": 0.007081301361322399,
+     "n": 60
+    },
+    {
+     "arm": "other_entity_direction",
+     "mean": 0.06852733492851257,
+     "lo": 0.05557447825868925,
+     "hi": 0.08154127523303031,
+     "n": 60
+    }
+   ]
+  }
+ ],
+ "binding_xmodel": {
+  "gpt2": [
+   0.07277281673416942,
+   0.09622314341720489,
+   0.10542807326192842,
+   0.06441170420106762,
+   0.048676320023402074
+  ],
+  "pythia": [
+   0.036411242307117196,
+   0.10424390243902436,
+   0.11479089618009843,
+   0.10385045285878595,
+   0.04488810881965775
+  ]
+ },
+ "facemap": {
+  "targets": [
+   "eyes.color",
+   "eyes.finish",
+   "lips.color",
+   "lips.finish"
+  ],
+  "frames": [
+   {
+    "sentence": "She laid a dark ruby colour over the surface of her lips in maximum coverage; it came out with a soft un-reflective finish.",
+    "true": {
+     "eyes.color": "bare",
+     "eyes.finish": "none",
+     "lips.color": "red",
+     "lips.finish": "matte"
+    },
+    "gpt2": {
+     "eyes.color": "bare",
+     "eyes.finish": "none",
+     "lips.color": "nude",
+     "lips.finish": "dewy"
+    },
+    "pythia": {
+     "eyes.color": "red",
+     "eyes.finish": "satin",
+     "lips.color": "red",
+     "lips.finish": "matte"
+    }
+   },
+   {
+    "sentence": "She laid a naked, undertoned neutral over the surface of her lips in a packed-on, solid layer; it came out with a smooth semi-gloss surface.",
+    "true": {
+     "eyes.color": "bare",
+     "eyes.finish": "none",
+     "lips.color": "nude",
+     "lips.finish": "satin"
+    },
+    "gpt2": {
+     "eyes.color": "bare",
+     "eyes.finish": "satin",
+     "lips.color": "nude",
+     "lips.finish": "dewy"
+    },
+    "pythia": {
+     "eyes.color": "nude",
+     "eyes.finish": "satin",
+     "lips.color": "nude",
+     "lips.finish": "matte"
+    }
+   },
+   {
+    "sentence": "She almost went for a tobacco-toned shade, then decided not to.",
+    "true": {
+     "eyes.color": "bare",
+     "eyes.finish": "none",
+     "lips.color": "nude",
+     "lips.finish": "satin"
+    },
+    "gpt2": {
+     "eyes.color": "bare",
+     "eyes.finish": "none",
+     "lips.color": "nude",
+     "lips.finish": "matte"
+    },
+    "pythia": {
+     "eyes.color": "bare",
+     "eyes.finish": "satin",
+     "lips.color": "red",
+     "lips.finish": "matte"
+    }
+   },
+   {
+    "sentence": "With a few strokes she put a naked, undertoned neutral on the socket line as a packed-on, solid layer, ending in a juicy liquid-looking gleam.",
+    "true": {
+     "eyes.color": "nude",
+     "eyes.finish": "dewy",
+     "lips.color": "nude",
+     "lips.finish": "satin"
+    },
+    "gpt2": {
+     "eyes.color": "brown",
+     "eyes.finish": "dewy",
+     "lips.color": "nude",
+     "lips.finish": "dewy"
+    },
+    "pythia": {
+     "eyes.color": "bare",
+     "eyes.finish": "satin",
+     "lips.color": "red",
+     "lips.finish": "dewy"
+    }
+   },
+   {
+    "sentence": "A setting powder went over the soft skin of her lips, leaving nothing that caught light.",
+    "true": {
+     "eyes.color": "nude",
+     "eyes.finish": "dewy",
+     "lips.color": "nude",
+     "lips.finish": "matte"
+    },
+    "gpt2": {
+     "eyes.color": "brown",
+     "eyes.finish": "none",
+     "lips.color": "nude",
+     "lips.finish": "matte"
+    },
+    "pythia": {
+     "eyes.color": "red",
+     "eyes.finish": "satin",
+     "lips.color": "nude",
+     "lips.finish": "matte"
+    }
+   },
+   {
+    "sentence": "She almost went for a pale peony tone, then decided not to.",
+    "true": {
+     "eyes.color": "nude",
+     "eyes.finish": "dewy",
+     "lips.color": "nude",
+     "lips.finish": "matte"
+    },
+    "gpt2": {
+     "eyes.color": "brown",
+     "eyes.finish": "matte",
+     "lips.color": "nude",
+     "lips.finish": "matte"
+    },
+    "pythia": {
+     "eyes.color": "red",
+     "eyes.finish": "satin",
+     "lips.color": "nude",
+     "lips.finish": "matte"
+    }
+   },
+   {
+    "sentence": "With a few strokes she put a naked, undertoned neutral on the hooded part of her lid as maximum coverage, ending in a smooth semi-gloss surface.",
+    "true": {
+     "eyes.color": "nude",
+     "eyes.finish": "satin",
+     "lips.color": "nude",
+     "lips.finish": "matte"
+    },
+    "gpt2": {
+     "eyes.color": "brown",
+     "eyes.finish": "satin",
+     "lips.color": "nude",
+     "lips.finish": "satin"
+    },
+    "pythia": {
+     "eyes.color": "nude",
+     "eyes.finish": "satin",
+     "lips.color": "nude",
+     "lips.finish": "satin"
+    }
+   },
+   {
+    "sentence": "She laid a burnt-cinnamon colour over the hooded part of her lid in maximum coverage; it came out with a still-damp-seeming shine.",
+    "true": {
+     "eyes.color": "brown",
+     "eyes.finish": "dewy",
+     "lips.color": "nude",
+     "lips.finish": "matte"
+    },
+    "gpt2": {
+     "eyes.color": "brown",
+     "eyes.finish": "dewy",
+     "lips.color": "nude",
+     "lips.finish": "dewy"
+    },
+    "pythia": {
+     "eyes.color": "nude",
+     "eyes.finish": "satin",
+     "lips.color": "red",
+     "lips.finish": "satin"
+    }
+   }
+  ],
+  "agree": {
+   "gpt2": 0.5625,
+   "pythia": 0.34375,
+   "between": 0.375
+  }
+ }
+}

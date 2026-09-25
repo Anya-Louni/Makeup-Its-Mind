@@ -1,0 +1,118 @@
+{
+  "n_narratives": 3600,
+  "n_positions": 47040,
+  "sentences_per_narrative": 13.07,
+  "action_kind_distribution": {
+    "APPLY": 25498,
+    "DISTRACTOR": 7704,
+    "NOOP": 3648,
+    "BLOT": 1948,
+    "SOFTEN": 1888,
+    "BUILD": 1839,
+    "GLOSS": 1839,
+    "SHEER": 1466,
+    "REMOVE": 1210
+  },
+  "label_distribution": {
+    "lips.color": {
+      "bare": 16933,
+      "red": 7735,
+      "nude": 7653,
+      "pink": 7421,
+      "brown": 7298
+    },
+    "lips.finish": {
+      "none": 16067,
+      "satin": 10365,
+      "dewy": 10359,
+      "matte": 10249
+    },
+    "lips.coverage": {
+      "bare": 16279,
+      "full": 15545,
+      "light": 15216
+    },
+    "eyes.color": {
+      "bare": 16354,
+      "pink": 7777,
+      "red": 7705,
+      "brown": 7688,
+      "nude": 7516
+    },
+    "eyes.finish": {
+      "none": 15447,
+      "matte": 10595,
+      "satin": 10550,
+      "dewy": 10448
+    },
+    "eyes.coverage": {
+      "full": 16226,
+      "bare": 15905,
+      "light": 14909
+    },
+    "cheeks.color": {
+      "bare": 16676,
+      "red": 7847,
+      "nude": 7621,
+      "pink": 7508,
+      "brown": 7388
+    },
+    "cheeks.finish": {
+      "none": 15696,
+      "dewy": 10689,
+      "matte": 10343,
+      "satin": 10312
+    },
+    "cheeks.coverage": {
+      "bare": 16100,
+      "light": 15494,
+      "full": 15446
+    },
+    "skin.color": {
+      "bare": 17067,
+      "red": 7615,
+      "pink": 7540,
+      "nude": 7459,
+      "brown": 7359
+    },
+    "skin.finish": {
+      "none": 15967,
+      "satin": 10554,
+      "matte": 10421,
+      "dewy": 10098
+    },
+    "skin.coverage": {
+      "bare": 16441,
+      "light": 15354,
+      "full": 15245
+    }
+  },
+  "order_sensitive_positions": {
+    "cheeks.coverage": 8856,
+    "cheeks.finish": 12235,
+    "eyes.coverage": 8881,
+    "eyes.finish": 12027,
+    "cheeks.color": 9359,
+    "eyes.color": 9767,
+    "lips.finish": 11635,
+    "skin.coverage": 8760,
+    "skin.finish": 11962,
+    "lips.color": 9248,
+    "lips.coverage": 8541,
+    "skin.color": 9357
+  },
+  "order_sensitive_rate": {
+    "cheeks.coverage": 0.188,
+    "cheeks.finish": 0.26,
+    "eyes.coverage": 0.189,
+    "eyes.finish": 0.256,
+    "cheeks.color": 0.199,
+    "eyes.color": 0.208,
+    "lips.finish": 0.247,
+    "skin.coverage": 0.186,
+    "skin.finish": 0.254,
+    "lips.color": 0.197,
+    "lips.coverage": 0.182,
+    "skin.color": 0.199
+  }
+}

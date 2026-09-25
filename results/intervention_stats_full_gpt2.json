@@ -1,0 +1,1214 @@
+{
+  "cheeks.color": {
+    "meta": {
+      "model": "gpt2",
+      "dataset": "full",
+      "target": "cheeks.color",
+      "other": "skin.color",
+      "edit_layer": 1,
+      "read_layer": 12,
+      "alphas": [
+        0.0,
+        0.5,
+        1.0,
+        2.0,
+        4.0,
+        8.0
+      ],
+      "n_trials": 150,
+      "mean_hidden_norm": 47.50690460205078,
+      "direction_norms": {
+        "nude->pink": 0.7071598172187805,
+        "nude->red": 0.8060588240623474,
+        "nude->brown": 0.6391133666038513,
+        "pink->nude": 0.7071598172187805,
+        "pink->red": 0.739767849445343,
+        "pink->brown": 0.8930338621139526,
+        "red->nude": 0.8060588240623474,
+        "red->pink": 0.739767849445343,
+        "red->brown": 0.41447144746780396,
+        "brown->nude": 0.6391133666038513,
+        "brown->pink": 0.8930338621139526,
+        "brown->red": 0.41447144746780396
+      }
+    },
+    "alphas": {
+      "0.0": {
+        "n": 150,
+        "delta_logodds_target": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "delta_logodds_other": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "target_minus_other_signed": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "p_one_sided_greater": 1.0,
+          "p_two_sided": 1.0
+        },
+        "specificity_ratio": Infinity,
+        "probe_flip_initially_correct": {
+          "n": 25,
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "0.5": {
+        "n": 150,
+        "delta_logodds_target": {
+          "mean": -0.0023473072052001952,
+          "ci95": [
+            -0.003025936563809713,
+            -0.0016660068432490032
+          ]
+        },
+        "delta_logodds_other": {
+          "mean": 0.0006076494852701823,
+          "ci95": [
+            -0.0001498707135518392,
+            0.0013800071080525714
+          ]
+        },
+        "target_minus_other_signed": {
+          "mean": -0.0029549566904703774,
+          "ci95": [
+            -0.004014097571372986,
+            -0.0019387613137563076
+          ],
+          "p_one_sided_greater": 1.0,
+          "p_two_sided": 0.0
+        },
+        "specificity_ratio": 3.8629296364111956,
+        "probe_flip_initially_correct": {
+          "n": 25,
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "1.0": {
+        "n": 150,
+        "delta_logodds_target": {
+          "mean": -0.00473756472269694,
+          "ci95": [
+            -0.0061167257229487095,
+            -0.0033674210309982307
+          ]
+        },
+        "delta_logodds_other": {
+          "mean": 0.0011193180084228516,
+          "ci95": [
+            -0.0003992701371510824,
+            0.002675032456715901
+          ]
+        },
+        "target_minus_other_signed": {
+          "mean": -0.005856882731119791,
+          "ci95": [
+            -0.007953487833340963,
+            -0.0038181495269139607
+          ],
+          "p_one_sided_greater": 1.0,
+          "p_two_sided": 0.0
+        },
+        "specificity_ratio": 4.232545788638113,
+        "probe_flip_initially_correct": {
+          "n": 25,
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "2.0": {
+        "n": 150,
+        "delta_logodds_target": {
+          "mean": -0.00955202579498291,
+          "ci95": [
+            -0.01239355750878652,
+            -0.006722395936648052
+          ]
+        },
+        "delta_logodds_other": {
+          "mean": 0.0019383684794108073,
+          "ci95": [
+            -0.0011559543212254842,
+            0.005066690842310587
+          ]
+        },
+        "target_minus_other_signed": {
+          "mean": -0.011490394274393717,
+          "ci95": [
+            -0.015764988501866656,
+            -0.007310073335965475
+          ],
+          "p_one_sided_greater": 1.0,
+          "p_two_sided": 0.0
+        },
+        "specificity_ratio": 4.927868925048954,
+        "probe_flip_initially_correct": {
+          "n": 25,
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "4.0": {
+        "n": 150,
+        "delta_logodds_target": {
+          "mean": -0.019252923329671223,
+          "ci95": [
+            -0.025504954854647318,
+            -0.013072081128756206
+          ]
+        },
+        "delta_logodds_other": {
+          "mean": 0.00308899720509847,
+          "ci95": [
+            -0.0034259900252024333,
+            0.009559196233749389
+          ]
+        },
+        "target_minus_other_signed": {
+          "mean": -0.022341920534769695,
+          "ci95": [
+            -0.0316876536210378,
+            -0.013202202637990318
+          ],
+          "p_one_sided_greater": 1.0,
+          "p_two_sided": 0.0
+        },
+        "specificity_ratio": 6.232742230356756,
+        "probe_flip_initially_correct": {
+          "n": 25,
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "8.0": {
+        "n": 150,
+        "delta_logodds_target": {
+          "mean": -0.032206640243530274,
+          "ci95": [
+            -0.048127782742182414,
+            -0.016516066392262784
+          ]
+        },
+        "delta_logodds_other": {
+          "mean": 0.005860071182250976,
+          "ci95": [
+            -0.010412501295407613,
+            0.021901995738347363
+          ]
+        },
+        "target_minus_other_signed": {
+          "mean": -0.03806671142578125,
+          "ci95": [
+            -0.06133102997144064,
+            -0.015463452061017359
+          ],
+          "p_one_sided_greater": 0.9995,
+          "p_two_sided": 0.001
+        },
+        "specificity_ratio": 5.495946933388449,
+        "probe_flip_initially_correct": {
+          "n": 25,
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      }
+    }
+  },
+  "lips.color": {
+    "meta": {
+      "model": "gpt2",
+      "dataset": "full",
+      "target": "lips.color",
+      "other": "eyes.color",
+      "edit_layer": 1,
+      "read_layer": 12,
+      "alphas": [
+        0.0,
+        0.5,
+        1.0,
+        2.0,
+        4.0,
+        8.0
+      ],
+      "n_trials": 150,
+      "mean_hidden_norm": 47.50690460205078,
+      "direction_norms": {
+        "nude->pink": 1.1782859563827515,
+        "nude->red": 1.0453195571899414,
+        "nude->brown": 0.5552971363067627,
+        "pink->nude": 1.1782859563827515,
+        "pink->red": 0.6962881684303284,
+        "pink->brown": 0.7849453091621399,
+        "red->nude": 1.0453195571899414,
+        "red->pink": 0.6962881684303284,
+        "red->brown": 0.9405914545059204,
+        "brown->nude": 0.5552971363067627,
+        "brown->pink": 0.7849453091621399,
+        "brown->red": 0.9405914545059204
+      }
+    },
+    "alphas": {
+      "0.0": {
+        "n": 150,
+        "delta_logodds_target": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "delta_logodds_other": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "target_minus_other_signed": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "p_one_sided_greater": 1.0,
+          "p_two_sided": 1.0
+        },
+        "specificity_ratio": Infinity,
+        "probe_flip_initially_correct": {
+          "n": 41,
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "0.5": {
+        "n": 150,
+        "delta_logodds_target": {
+          "mean": -0.0004512230555216471,
+          "ci95": [
+            -0.0017577629884084065,
+            0.0008319306770960489
+          ]
+        },
+        "delta_logodds_other": {
+          "mean": -0.00029911359151204425,
+          "ci95": [
+            -0.0016457314888636272,
+            0.0009876377979914342
+          ]
+        },
+        "target_minus_other_signed": {
+          "mean": -0.00015210946400960287,
+          "ci95": [
+            -0.0015197707414627074,
+            0.0012581892013549798
+          ],
+          "p_one_sided_greater": 0.593,
+          "p_two_sided": 0.814
+        },
+        "specificity_ratio": 1.5085341098700222,
+        "probe_flip_initially_correct": {
+          "n": 41,
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "1.0": {
+        "n": 150,
+        "delta_logodds_target": {
+          "mean": -0.000908064842224121,
+          "ci95": [
+            -0.0035505272150039673,
+            0.0016837758223215737
+          ]
+        },
+        "delta_logodds_other": {
+          "mean": -0.0007696056365966797,
+          "ci95": [
+            -0.0034924751520156857,
+            0.001814559936523435
+          ]
+        },
+        "target_minus_other_signed": {
+          "mean": -0.0001384592056274414,
+          "ci95": [
+            -0.002910981019337972,
+            0.0026825652519861854
+          ],
+          "p_one_sided_greater": 0.5453,
+          "p_two_sided": 0.9094
+        },
+        "specificity_ratio": 1.1799092925562893,
+        "probe_flip_initially_correct": {
+          "n": 41,
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "2.0": {
+        "n": 150,
+        "delta_logodds_target": {
+          "mean": -0.001678800582885742,
+          "ci95": [
+            -0.007258074243863423,
+            0.0036492927471796655
+          ]
+        },
+        "delta_logodds_other": {
+          "mean": -0.0020151789983113605,
+          "ci95": [
+            -0.007612052083015441,
+            0.0033622555732727025
+          ]
+        },
+        "target_minus_other_signed": {
+          "mean": 0.00033637841542561846,
+          "ci95": [
+            -0.005489388664563497,
+            0.006140275875727334
+          ],
+          "p_one_sided_greater": 0.4621,
+          "p_two_sided": 0.9242
+        },
+        "specificity_ratio": 0.83307764932669,
+        "probe_flip_initially_correct": {
+          "n": 41,
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "4.0": {
+        "n": 150,
+        "delta_logodds_target": {
+          "mean": -0.002250402768452962,
+          "ci95": [
+            -0.014729365587234497,
+            0.009723613023757929
+          ]
+        },
+        "delta_logodds_other": {
+          "mean": -0.0033734862009684244,
+          "ci95": [
+            -0.015327990372975667,
+            0.008474387804667154
+          ]
+        },
+        "target_minus_other_signed": {
+          "mean": 0.0011230834325154622,
+          "ci95": [
+            -0.012065014203389485,
+            0.014065902352333069
+          ],
+          "p_one_sided_greater": 0.4431,
+          "p_two_sided": 0.8862
+        },
+        "specificity_ratio": 0.6670852152313357,
+        "probe_flip_initially_correct": {
+          "n": 41,
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "8.0": {
+        "n": 150,
+        "delta_logodds_target": {
+          "mean": 0.024493918418884278,
+          "ci95": [
+            -0.004345687270164489,
+            0.053229869882265725
+          ]
+        },
+        "delta_logodds_other": {
+          "mean": 0.018699361483256023,
+          "ci95": [
+            -0.0071951295932133974,
+            0.04489612376689909
+          ]
+        },
+        "target_minus_other_signed": {
+          "mean": 0.005794556935628256,
+          "ci95": [
+            -0.029812901655832925,
+            0.041359058578809095
+          ],
+          "p_one_sided_greater": 0.3779,
+          "p_two_sided": 0.7558
+        },
+        "specificity_ratio": 1.3098799357837367,
+        "probe_flip_initially_correct": {
+          "n": 41,
+          "mean": 0.07317073170731707,
+          "ci95": [
+            0.0,
+            0.17073170731707318
+          ]
+        }
+      }
+    }
+  },
+  "lips.coverage": {
+    "meta": {
+      "model": "gpt2",
+      "dataset": "full",
+      "target": "lips.coverage",
+      "other": "eyes.coverage",
+      "edit_layer": 1,
+      "read_layer": 12,
+      "alphas": [
+        0.0,
+        0.5,
+        1.0,
+        2.0,
+        4.0,
+        8.0
+      ],
+      "n_trials": 150,
+      "mean_hidden_norm": 47.50690460205078,
+      "direction_norms": {
+        "bare->light": 11.897103309631348,
+        "bare->full": 12.85306167602539,
+        "light->bare": 11.897103309631348,
+        "light->full": 1.0519345998764038,
+        "full->bare": 12.85306167602539,
+        "full->light": 1.0519345998764038
+      }
+    },
+    "alphas": {
+      "0.0": {
+        "n": 150,
+        "delta_logodds_target": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "delta_logodds_other": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "target_minus_other_signed": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "p_one_sided_greater": 1.0,
+          "p_two_sided": 1.0
+        },
+        "specificity_ratio": Infinity,
+        "probe_flip_initially_correct": {
+          "n": 71,
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "0.5": {
+        "n": 150,
+        "delta_logodds_target": {
+          "mean": -0.019501190185546875,
+          "ci95": [
+            -0.035679464975992836,
+            -0.003684587160746258
+          ]
+        },
+        "delta_logodds_other": {
+          "mean": -0.017154776255289713,
+          "ci95": [
+            -0.03202661887804668,
+            -0.0009097509384155378
+          ]
+        },
+        "target_minus_other_signed": {
+          "mean": -0.0023464139302571616,
+          "ci95": [
+            -0.02452764852841695,
+            0.019385846773783365
+          ],
+          "p_one_sided_greater": 0.5854,
+          "p_two_sided": 0.8292
+        },
+        "specificity_ratio": 1.136779045983397,
+        "probe_flip_initially_correct": {
+          "n": 71,
+          "mean": 0.028169014084507043,
+          "ci95": [
+            0.0,
+            0.07042253521126761
+          ]
+        }
+      },
+      "1.0": {
+        "n": 150,
+        "delta_logodds_target": {
+          "mean": -0.04145835240681966,
+          "ci95": [
+            -0.08223741324742635,
+            2.1910587946567627e-05
+          ]
+        },
+        "delta_logodds_other": {
+          "mean": -0.043895845413208005,
+          "ci95": [
+            -0.08676881869633991,
+            -0.0006908251444499136
+          ]
+        },
+        "target_minus_other_signed": {
+          "mean": 0.0024374930063883462,
+          "ci95": [
+            -0.055550429026285805,
+            0.06028275291124978
+          ],
+          "p_one_sided_greater": 0.4697,
+          "p_two_sided": 0.9394
+        },
+        "specificity_ratio": 0.9444709861846078,
+        "probe_flip_initially_correct": {
+          "n": 71,
+          "mean": 0.08450704225352113,
+          "ci95": [
+            0.028169014084507043,
+            0.15492957746478872
+          ]
+        }
+      },
+      "2.0": {
+        "n": 150,
+        "delta_logodds_target": {
+          "mean": -0.10592180252075195,
+          "ci95": [
+            -0.20054664746920267,
+            -0.014064523061116602
+          ]
+        },
+        "delta_logodds_other": {
+          "mean": -0.10623205184936524,
+          "ci95": [
+            -0.19619290280342103,
+            -0.017886353095372554
+          ]
+        },
+        "target_minus_other_signed": {
+          "mean": 0.00031024932861328124,
+          "ci95": [
+            -0.14093499453862507,
+            0.13589624142646783
+          ],
+          "p_one_sided_greater": 0.4965,
+          "p_two_sided": 0.993
+        },
+        "specificity_ratio": 0.997079512979254,
+        "probe_flip_initially_correct": {
+          "n": 71,
+          "mean": 0.14084507042253522,
+          "ci95": [
+            0.07042253521126761,
+            0.22535211267605634
+          ]
+        }
+      },
+      "4.0": {
+        "n": 150,
+        "delta_logodds_target": {
+          "mean": -0.14554651260375975,
+          "ci95": [
+            -0.23024591112136839,
+            -0.0634042403697968
+          ]
+        },
+        "delta_logodds_other": {
+          "mean": 0.02109925905863444,
+          "ci95": [
+            -0.05276422516504922,
+            0.10010308782259618
+          ]
+        },
+        "target_minus_other_signed": {
+          "mean": -0.1666457716623942,
+          "ci95": [
+            -0.2927009061177572,
+            -0.049648813565572165
+          ],
+          "p_one_sided_greater": 0.9975,
+          "p_two_sided": 0.005
+        },
+        "specificity_ratio": 6.8981812204537025,
+        "probe_flip_initially_correct": {
+          "n": 71,
+          "mean": 0.09859154929577464,
+          "ci95": [
+            0.04225352112676056,
+            0.16901408450704225
+          ]
+        }
+      },
+      "8.0": {
+        "n": 150,
+        "delta_logodds_target": {
+          "mean": -0.36745536168416343,
+          "ci95": [
+            -0.47089767607053123,
+            -0.2668062408765158
+          ]
+        },
+        "delta_logodds_other": {
+          "mean": 0.1278395175933838,
+          "ci95": [
+            0.017606588840484622,
+            0.23603015828132626
+          ]
+        },
+        "target_minus_other_signed": {
+          "mean": -0.4952948792775472,
+          "ci95": [
+            -0.6573134119510651,
+            -0.33521435976028446
+          ],
+          "p_one_sided_greater": 1.0,
+          "p_two_sided": 0.0
+        },
+        "specificity_ratio": 2.874348781985553,
+        "probe_flip_initially_correct": {
+          "n": 71,
+          "mean": 0.2676056338028169,
+          "ci95": [
+            0.16901408450704225,
+            0.3665492957746428
+          ]
+        }
+      }
+    }
+  },
+  "lips.finish": {
+    "meta": {
+      "model": "gpt2",
+      "dataset": "full",
+      "target": "lips.finish",
+      "other": "eyes.finish",
+      "edit_layer": 1,
+      "read_layer": 12,
+      "alphas": [
+        0.0,
+        0.5,
+        1.0,
+        2.0,
+        4.0,
+        8.0
+      ],
+      "n_trials": 150,
+      "mean_hidden_norm": 47.50690460205078,
+      "direction_norms": {
+        "matte->dewy": 1.037692666053772,
+        "matte->satin": 0.588181734085083,
+        "dewy->matte": 1.037692666053772,
+        "dewy->satin": 0.7039431929588318,
+        "satin->matte": 0.588181734085083,
+        "satin->dewy": 0.7039431929588318
+      }
+    },
+    "alphas": {
+      "0.0": {
+        "n": 150,
+        "delta_logodds_target": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "delta_logodds_other": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "target_minus_other_signed": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "p_one_sided_greater": 1.0,
+          "p_two_sided": 1.0
+        },
+        "specificity_ratio": Infinity,
+        "probe_flip_initially_correct": {
+          "n": 47,
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "0.5": {
+        "n": 150,
+        "delta_logodds_target": {
+          "mean": 0.013174436887105305,
+          "ci95": [
+            0.010464659929275514,
+            0.015748584469159443
+          ]
+        },
+        "delta_logodds_other": {
+          "mean": -0.0019001261393229167,
+          "ci95": [
+            -0.005373335520426432,
+            0.0016483624776204417
+          ]
+        },
+        "target_minus_other_signed": {
+          "mean": 0.015074563026428223,
+          "ci95": [
+            0.010832041501998901,
+            0.019304206887880957
+          ],
+          "p_one_sided_greater": 0.0,
+          "p_two_sided": 0.0
+        },
+        "specificity_ratio": 6.93345384522726,
+        "probe_flip_initially_correct": {
+          "n": 47,
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "1.0": {
+        "n": 150,
+        "delta_logodds_target": {
+          "mean": 0.025940257708231607,
+          "ci95": [
+            0.020564861377080284,
+            0.03104262431462606
+          ]
+        },
+        "delta_logodds_other": {
+          "mean": -0.0038253275553385415,
+          "ci95": [
+            -0.010773086547851562,
+            0.00327280044555664
+          ]
+        },
+        "target_minus_other_signed": {
+          "mean": 0.02976558526357015,
+          "ci95": [
+            0.02115246836344401,
+            0.03829649925231934
+          ],
+          "p_one_sided_greater": 0.0,
+          "p_two_sided": 0.0
+        },
+        "specificity_ratio": 6.781186011647542,
+        "probe_flip_initially_correct": {
+          "n": 47,
+          "mean": 0.02127659574468085,
+          "ci95": [
+            0.0,
+            0.06382978723404255
+          ]
+        }
+      },
+      "2.0": {
+        "n": 150,
+        "delta_logodds_target": {
+          "mean": 0.05002736250559489,
+          "ci95": [
+            0.0394656728108724,
+            0.060255236228307085
+          ]
+        },
+        "delta_logodds_other": {
+          "mean": -0.007936960856119791,
+          "ci95": [
+            -0.022035924275716146,
+            0.006200593312581378
+          ]
+        },
+        "target_minus_other_signed": {
+          "mean": 0.057964323361714684,
+          "ci95": [
+            0.04029304627577464,
+            0.07559790591398875
+          ],
+          "p_one_sided_greater": 0.0,
+          "p_two_sided": 0.0
+        },
+        "specificity_ratio": 6.303087971893084,
+        "probe_flip_initially_correct": {
+          "n": 47,
+          "mean": 0.06382978723404255,
+          "ci95": [
+            0.0,
+            0.14893617021276595
+          ]
+        }
+      },
+      "4.0": {
+        "n": 150,
+        "delta_logodds_target": {
+          "mean": 0.09400156497955323,
+          "ci95": [
+            0.07186274282137553,
+            0.11575478092829385
+          ]
+        },
+        "delta_logodds_other": {
+          "mean": -0.016165771484375,
+          "ci95": [
+            -0.045496444702148434,
+            0.013026442209879517
+          ]
+        },
+        "target_minus_other_signed": {
+          "mean": 0.11016733646392822,
+          "ci95": [
+            0.07213610676924388,
+            0.14838848082224526
+          ],
+          "p_one_sided_greater": 0.0,
+          "p_two_sided": 0.0
+        },
+        "specificity_ratio": 5.814851773106547,
+        "probe_flip_initially_correct": {
+          "n": 47,
+          "mean": 0.06382978723404255,
+          "ci95": [
+            0.0,
+            0.14893617021276595
+          ]
+        }
+      },
+      "8.0": {
+        "n": 150,
+        "delta_logodds_target": {
+          "mean": 0.17252762794494628,
+          "ci95": [
+            0.12628728048006693,
+            0.2188223198254903
+          ]
+        },
+        "delta_logodds_other": {
+          "mean": -0.018231406211853027,
+          "ci95": [
+            -0.08066159975528717,
+            0.04370997746785479
+          ]
+        },
+        "target_minus_other_signed": {
+          "mean": 0.19075903415679932,
+          "ci95": [
+            0.10754496530691783,
+            0.27567351396878553
+          ],
+          "p_one_sided_greater": 0.0,
+          "p_two_sided": 0.0
+        },
+        "specificity_ratio": 9.463210129824137,
+        "probe_flip_initially_correct": {
+          "n": 47,
+          "mean": 0.2765957446808511,
+          "ci95": [
+            0.14893617021276595,
+            0.40425531914893614
+          ]
+        }
+      }
+    }
+  },
+  "skin.finish": {
+    "meta": {
+      "model": "gpt2",
+      "dataset": "full",
+      "target": "skin.finish",
+      "other": "cheeks.finish",
+      "edit_layer": 6,
+      "read_layer": 12,
+      "alphas": [
+        0.0,
+        0.5,
+        1.0,
+        2.0,
+        4.0,
+        8.0
+      ],
+      "n_trials": 150,
+      "mean_hidden_norm": 64.97727966308594,
+      "direction_norms": {
+        "matte->dewy": 1.1411314010620117,
+        "matte->satin": 1.4988634586334229,
+        "dewy->matte": 1.1411314010620117,
+        "dewy->satin": 1.2921866178512573,
+        "satin->matte": 1.4988634586334229,
+        "satin->dewy": 1.2921866178512573
+      }
+    },
+    "alphas": {
+      "0.0": {
+        "n": 150,
+        "delta_logodds_target": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "delta_logodds_other": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "target_minus_other_signed": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "p_one_sided_greater": 1.0,
+          "p_two_sided": 1.0
+        },
+        "specificity_ratio": Infinity,
+        "probe_flip_initially_correct": {
+          "n": 21,
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "0.5": {
+        "n": 150,
+        "delta_logodds_target": {
+          "mean": 0.0030109628041585287,
+          "ci95": [
+            -0.005850705544153849,
+            0.011570494890213013
+          ]
+        },
+        "delta_logodds_other": {
+          "mean": 0.0004629071553548177,
+          "ci95": [
+            -0.008070531527201335,
+            0.009286192019780476
+          ]
+        },
+        "target_minus_other_signed": {
+          "mean": 0.002548055648803711,
+          "ci95": [
+            -0.009339378277460734,
+            0.014128328879674273
+          ],
+          "p_one_sided_greater": 0.3418,
+          "p_two_sided": 0.6836
+        },
+        "specificity_ratio": 6.504463733879054,
+        "probe_flip_initially_correct": {
+          "n": 21,
+          "mean": 0.047619047619047616,
+          "ci95": [
+            0.0,
+            0.14285714285714285
+          ]
+        }
+      },
+      "1.0": {
+        "n": 150,
+        "delta_logodds_target": {
+          "mean": 0.006602827707926432,
+          "ci95": [
+            -0.011129834016164143,
+            0.02375395544370015
+          ]
+        },
+        "delta_logodds_other": {
+          "mean": 0.0013212076822916668,
+          "ci95": [
+            -0.015748793284098304,
+            0.018985774993896483
+          ]
+        },
+        "target_minus_other_signed": {
+          "mean": 0.005281620025634766,
+          "ci95": [
+            -0.018353355328241984,
+            0.028553842067718504
+          ],
+          "p_one_sided_greater": 0.3355,
+          "p_two_sided": 0.671
+        },
+        "specificity_ratio": 4.997569872189713,
+        "probe_flip_initially_correct": {
+          "n": 21,
+          "mean": 0.047619047619047616,
+          "ci95": [
+            0.0,
+            0.14285714285714285
+          ]
+        }
+      },
+      "2.0": {
+        "n": 150,
+        "delta_logodds_target": {
+          "mean": 0.01563963254292806,
+          "ci95": [
+            -0.019954709847768145,
+            0.050126432021458944
+          ]
+        },
+        "delta_logodds_other": {
+          "mean": 0.0040771484375,
+          "ci95": [
+            -0.030095865885416666,
+            0.039528541564941407
+          ]
+        },
+        "target_minus_other_signed": {
+          "mean": 0.01156248410542806,
+          "ci95": [
+            -0.03557591931025187,
+            0.05821403582890828
+          ],
+          "p_one_sided_greater": 0.3183,
+          "p_two_sided": 0.6366
+        },
+        "specificity_ratio": 3.8359242452594815,
+        "probe_flip_initially_correct": {
+          "n": 21,
+          "mean": 0.09523809523809523,
+          "ci95": [
+            0.0,
+            0.23809523809523808
+          ]
+        }
+      },
+      "4.0": {
+        "n": 150,
+        "delta_logodds_target": {
+          "mean": 0.04074415842692057,
+          "ci95": [
+            -0.030861338456471762,
+            0.11014339598019915
+          ]
+        },
+        "delta_logodds_other": {
+          "mean": 0.013518780072530111,
+          "ci95": [
+            -0.05574567433198293,
+            0.08470143628120422
+          ]
+        },
+        "target_minus_other_signed": {
+          "mean": 0.027225378354390463,
+          "ci95": [
+            -0.06658002018928527,
+            0.12162454390525818
+          ],
+          "p_one_sided_greater": 0.2885,
+          "p_two_sided": 0.577
+        },
+        "specificity_ratio": 3.0138931329840832,
+        "probe_flip_initially_correct": {
+          "n": 21,
+          "mean": 0.23809523809523808,
+          "ci95": [
+            0.047619047619047616,
+            0.42857142857142855
+          ]
+        }
+      },
+      "8.0": {
+        "n": 150,
+        "delta_logodds_target": {
+          "mean": 0.0937480608622233,
+          "ci95": [
+            -0.04819806905587514,
+            0.23041514861583706
+          ]
+        },
+        "delta_logodds_other": {
+          "mean": 0.042762864430745444,
+          "ci95": [
+            -0.09657566285133361,
+            0.1846369611024855
+          ]
+        },
+        "target_minus_other_signed": {
+          "mean": 0.050985196431477864,
+          "ci95": [
+            -0.13835299833615622,
+            0.24240027213096618
+          ],
+          "p_one_sided_greater": 0.3056,
+          "p_two_sided": 0.6112
+        },
+        "specificity_ratio": 2.1922773909135227,
+        "probe_flip_initially_correct": {
+          "n": 21,
+          "mean": 0.7142857142857143,
+          "ci95": [
+            0.5238095238095238,
+            0.9047619047619048
+          ]
+        }
+      }
+    }
+  }
+}

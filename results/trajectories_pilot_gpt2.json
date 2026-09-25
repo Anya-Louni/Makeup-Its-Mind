@@ -1,0 +1,1122 @@
+[
+  {
+    "narrative_id": "test-natural-000000",
+    "coords": [
+      [
+        9.940400123596191,
+        7.852499961853027,
+        -1.3157999515533447
+      ],
+      [
+        0.07020000368356705,
+        8.372900009155273,
+        -0.9799000024795532
+      ],
+      [
+        16.07309913635254,
+        -18.693700790405273,
+        15.468199729919434
+      ],
+      [
+        3.899199962615967,
+        12.695099830627441,
+        6.561100006103516
+      ],
+      [
+        10.0871000289917,
+        1.0053000450134277,
+        -0.5189999938011169
+      ],
+      [
+        11.087900161743164,
+        -21.490299224853516,
+        16.566999435424805
+      ],
+      [
+        -25.680099487304688,
+        -3.210900068283081,
+        -0.8227999806404114
+      ],
+      [
+        -7.7906999588012695,
+        3.3636999130249023,
+        1.0599000453948975
+      ]
+    ],
+    "sentences": [
+      "She laid a dark ruby colour over the surface of her lips in maximum coverage; it came out with a soft un-reflective finish.",
+      "She laid a naked, undertoned neutral over the surface of her lips in a packed-on, solid layer; it came out with a smooth semi-gloss surface.",
+      "She almost went for a tobacco-toned shade, then decided not to.",
+      "With a few strokes she put a naked, undertoned neutral on the socket line as a packed-on, solid layer, ending in a juicy liquid-looking gleam.",
+      "A setting powder went over the soft skin of her lips, leaving nothing that caught light.",
+      "She almost went for a pale peony tone, then decided not to.",
+      "With a few strokes she put a naked, undertoned neutral on the hooded part of her lid as maximum coverage, ending in a smooth semi-gloss surface.",
+      "She laid a burnt-cinnamon colour over the hooded part of her lid in maximum coverage; it came out with a still-damp-seeming shine."
+    ],
+    "labels": [
+      {
+        "lips.color": "red",
+        "lips.finish": "matte",
+        "eyes.color": "bare",
+        "eyes.finish": "none"
+      },
+      {
+        "lips.color": "nude",
+        "lips.finish": "satin",
+        "eyes.color": "bare",
+        "eyes.finish": "none"
+      },
+      {
+        "lips.color": "nude",
+        "lips.finish": "satin",
+        "eyes.color": "bare",
+        "eyes.finish": "none"
+      },
+      {
+        "lips.color": "nude",
+        "lips.finish": "satin",
+        "eyes.color": "nude",
+        "eyes.finish": "dewy"
+      },
+      {
+        "lips.color": "nude",
+        "lips.finish": "matte",
+        "eyes.color": "nude",
+        "eyes.finish": "dewy"
+      },
+      {
+        "lips.color": "nude",
+        "lips.finish": "matte",
+        "eyes.color": "nude",
+        "eyes.finish": "dewy"
+      },
+      {
+        "lips.color": "nude",
+        "lips.finish": "matte",
+        "eyes.color": "nude",
+        "eyes.finish": "satin"
+      },
+      {
+        "lips.color": "nude",
+        "lips.finish": "matte",
+        "eyes.color": "brown",
+        "eyes.finish": "dewy"
+      }
+    ],
+    "action_kinds": [
+      "APPLY",
+      "APPLY",
+      "DISTRACTOR",
+      "APPLY",
+      "BLOT",
+      "DISTRACTOR",
+      "APPLY",
+      "APPLY"
+    ]
+  },
+  {
+    "narrative_id": "test-natural-000001",
+    "coords": [
+      [
+        10.291500091552734,
+        5.962500095367432,
+        -0.29910001158714294
+      ],
+      [
+        13.28499984741211,
+        -0.6152999997138977,
+        -10.183300018310547
+      ],
+      [
+        0.9506999850273132,
+        8.68850040435791,
+        -1.0339000225067139
+      ],
+      [
+        3.650899887084961,
+        2.3766000270843506,
+        -3.815500020980835
+      ],
+      [
+        -7.830900192260742,
+        5.701399803161621,
+        -0.7853000164031982
+      ]
+    ],
+    "sentences": [
+      "She laid a shade that read like skin over the soft skin of her lips in a transparent stain; it came out with a fully dried-down, non-wet look.",
+      "A dark ruby colour stayed capped for the whole routine.",
+      "She laid a dark ruby colour over the socket line in maximum coverage; it came out with an understated silk-like surface.",
+      "She feathered the hooded part of her lid out until it was nearly transparent.",
+      "She laid a tobacco-toned shade over the soft skin of her lips in a packed-on, solid layer; it came out with a smooth semi-gloss surface."
+    ],
+    "labels": [
+      {
+        "lips.color": "nude",
+        "lips.finish": "matte",
+        "eyes.color": "bare",
+        "eyes.finish": "none"
+      },
+      {
+        "lips.color": "nude",
+        "lips.finish": "matte",
+        "eyes.color": "bare",
+        "eyes.finish": "none"
+      },
+      {
+        "lips.color": "nude",
+        "lips.finish": "matte",
+        "eyes.color": "red",
+        "eyes.finish": "satin"
+      },
+      {
+        "lips.color": "nude",
+        "lips.finish": "matte",
+        "eyes.color": "red",
+        "eyes.finish": "satin"
+      },
+      {
+        "lips.color": "brown",
+        "lips.finish": "satin",
+        "eyes.color": "red",
+        "eyes.finish": "satin"
+      }
+    ],
+    "action_kinds": [
+      "APPLY",
+      "DISTRACTOR",
+      "APPLY",
+      "SHEER",
+      "APPLY"
+    ]
+  },
+  {
+    "narrative_id": "test-natural-000002",
+    "coords": [
+      [
+        5.92519998550415,
+        11.979499816894531,
+        3.347399950027466
+      ],
+      [
+        -0.6930999755859375,
+        12.716099739074707,
+        7.049099922180176
+      ],
+      [
+        8.149900436401367,
+        -0.5199999809265137,
+        -0.37459999322891235
+      ],
+      [
+        -8.574299812316895,
+        11.934700012207031,
+        5.890600204467773
+      ],
+      [
+        -9.603699684143066,
+        6.651299953460693,
+        6.119699954986572
+      ],
+      [
+        -1.7702000141143799,
+        1.6088000535964966,
+        -7.850800037384033
+      ]
+    ],
+    "sentences": [
+      "With a few strokes she put a sweet, girlish rose on the socket line as a packed-on, solid layer, ending in a soft un-reflective finish.",
+      "With a few strokes she put a shade that read like skin on the surface of her lips as a light, skin-showing layer, ending in a juicy liquid-looking gleam.",
+      "A clear shine went over the socket line, and it began to gleam.",
+      "With a few strokes she put a dark ruby colour on the soft skin of her lips as a transparent stain, ending in an understated silk-like surface.",
+      "With a few strokes she put a tobacco-toned shade on the socket line as a packed-on, solid layer, ending in a fully dried-down, non-wet look.",
+      "Another heavy pass made the surface of her lips fully opaque."
+    ],
+    "labels": [
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "eyes.color": "pink",
+        "eyes.finish": "matte"
+      },
+      {
+        "lips.color": "nude",
+        "lips.finish": "dewy",
+        "eyes.color": "pink",
+        "eyes.finish": "matte"
+      },
+      {
+        "lips.color": "nude",
+        "lips.finish": "dewy",
+        "eyes.color": "pink",
+        "eyes.finish": "dewy"
+      },
+      {
+        "lips.color": "red",
+        "lips.finish": "satin",
+        "eyes.color": "pink",
+        "eyes.finish": "dewy"
+      },
+      {
+        "lips.color": "red",
+        "lips.finish": "satin",
+        "eyes.color": "brown",
+        "eyes.finish": "matte"
+      },
+      {
+        "lips.color": "red",
+        "lips.finish": "satin",
+        "eyes.color": "brown",
+        "eyes.finish": "matte"
+      }
+    ],
+    "action_kinds": [
+      "APPLY",
+      "APPLY",
+      "GLOSS",
+      "APPLY",
+      "APPLY",
+      "BUILD"
+    ]
+  },
+  {
+    "narrative_id": "test-natural-000003",
+    "coords": [
+      [
+        9.983400344848633,
+        11.8681001663208,
+        3.0750999450683594
+      ],
+      [
+        19.210800170898438,
+        -20.58530044555664,
+        15.37030029296875
+      ],
+      [
+        7.051300048828125,
+        8.298199653625488,
+        1.1714999675750732
+      ],
+      [
+        6.317399978637695,
+        2.842400074005127,
+        -9.101099967956543
+      ],
+      [
+        3.265399932861328,
+        -22.449800491333008,
+        16.348899841308594
+      ],
+      [
+        -30.587200164794922,
+        -10.51710033416748,
+        1.875100016593933
+      ]
+    ],
+    "sentences": [
+      "With a few strokes she put a sweet, girlish rose on the socket line as a transparent stain, ending in a juicy liquid-looking gleam.",
+      "She almost went for a pale peony tone, then decided not to.",
+      "She laid a sweet, girlish rose over the soft skin of her lips in maximum coverage; it came out with a soft un-reflective finish.",
+      "She worked the socket line into a smooth semi-gloss.",
+      "She almost went for a burnt-cinnamon colour, then decided not to.",
+      "With a few strokes she put a sweet, girlish rose on the soft skin of her lips as a transparent stain, ending in a juicy liquid-looking gleam."
+    ],
+    "labels": [
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "eyes.color": "pink",
+        "eyes.finish": "dewy"
+      },
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "eyes.color": "pink",
+        "eyes.finish": "dewy"
+      },
+      {
+        "lips.color": "pink",
+        "lips.finish": "matte",
+        "eyes.color": "pink",
+        "eyes.finish": "dewy"
+      },
+      {
+        "lips.color": "pink",
+        "lips.finish": "matte",
+        "eyes.color": "pink",
+        "eyes.finish": "satin"
+      },
+      {
+        "lips.color": "pink",
+        "lips.finish": "matte",
+        "eyes.color": "pink",
+        "eyes.finish": "satin"
+      },
+      {
+        "lips.color": "pink",
+        "lips.finish": "dewy",
+        "eyes.color": "pink",
+        "eyes.finish": "satin"
+      }
+    ],
+    "action_kinds": [
+      "APPLY",
+      "DISTRACTOR",
+      "APPLY",
+      "SOFTEN",
+      "DISTRACTOR",
+      "APPLY"
+    ]
+  },
+  {
+    "narrative_id": "test-natural-000004",
+    "coords": [
+      [
+        13.016300201416016,
+        -4.438799858093262,
+        -10.028499603271484
+      ],
+      [
+        4.814599990844727,
+        7.928199768066406,
+        -0.4787999987602234
+      ],
+      [
+        4.546500205993652,
+        13.593400001525879,
+        8.11520004272461
+      ],
+      [
+        2.24180006980896,
+        0.26809999346733093,
+        -4.894899845123291
+      ],
+      [
+        14.916999816894531,
+        -16.005300521850586,
+        -4.418099880218506
+      ],
+      [
+        -18.069299697875977,
+        1.0176000595092773,
+        2.172100067138672
+      ]
+    ],
+    "sentences": [
+      "A tobacco-toned shade stayed capped for the whole routine.",
+      "She laid a dark ruby colour over the socket line in maximum coverage; it came out with a soft un-reflective finish.",
+      "With a few strokes she put a sweet, girlish rose on the surface of her lips as a transparent stain, ending in a still-damp-seeming shine.",
+      "She feathered the socket line out until it was nearly transparent.",
+      "A moment passed with nothing done.",
+      "With a few strokes she put a sweet, girlish rose on the socket line as a transparent stain, ending in a smooth semi-gloss surface."
+    ],
+    "labels": [
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "eyes.color": "bare",
+        "eyes.finish": "none"
+      },
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "eyes.color": "red",
+        "eyes.finish": "matte"
+      },
+      {
+        "lips.color": "pink",
+        "lips.finish": "dewy",
+        "eyes.color": "red",
+        "eyes.finish": "matte"
+      },
+      {
+        "lips.color": "pink",
+        "lips.finish": "dewy",
+        "eyes.color": "red",
+        "eyes.finish": "matte"
+      },
+      {
+        "lips.color": "pink",
+        "lips.finish": "dewy",
+        "eyes.color": "red",
+        "eyes.finish": "matte"
+      },
+      {
+        "lips.color": "pink",
+        "lips.finish": "dewy",
+        "eyes.color": "pink",
+        "eyes.finish": "satin"
+      }
+    ],
+    "action_kinds": [
+      "DISTRACTOR",
+      "APPLY",
+      "APPLY",
+      "SHEER",
+      "NOOP",
+      "APPLY"
+    ]
+  },
+  {
+    "narrative_id": "test-natural-000005",
+    "coords": [
+      [
+        7.441500186920166,
+        11.736200332641602,
+        2.0376999378204346
+      ],
+      [
+        -17.964399337768555,
+        4.643899917602539,
+        4.0218000411987305
+      ],
+      [
+        4.704800128936768,
+        12.29889965057373,
+        3.4999001026153564
+      ],
+      [
+        -18.165000915527344,
+        7.031099796295166,
+        4.894800186157227
+      ],
+      [
+        -31.790700912475586,
+        -10.794899940490723,
+        1.9484000205993652
+      ],
+      [
+        7.060699939727783,
+        -6.686200141906738,
+        -5.281799793243408
+      ],
+      [
+        5.0696001052856445,
+        -2.124000072479248,
+        -3.183199882507324
+      ]
+    ],
+    "sentences": [
+      "With a few strokes she put a pale peony tone on the surface of her lips as a transparent stain, ending in a smooth semi-gloss surface.",
+      "With a few strokes she put a sweet, girlish rose on the hooded part of her lid as maximum coverage, ending in a smooth semi-gloss surface.",
+      "She laid a burnt-cinnamon colour over the soft skin of her lips in a packed-on, solid layer; it came out with a juicy liquid-looking gleam.",
+      "With a few strokes she put a dark ruby colour on the hooded part of her lid as a packed-on, solid layer, ending in an understated silk-like surface.",
+      "With a few strokes she put a dark ruby colour on the surface of her lips as a transparent stain, ending in a juicy liquid-looking gleam.",
+      "The density on the socket line was reduced to almost nothing.",
+      "A setting powder went over the socket line, leaving nothing that caught light."
+    ],
+    "labels": [
+      {
+        "lips.color": "pink",
+        "lips.finish": "satin",
+        "eyes.color": "bare",
+        "eyes.finish": "none"
+      },
+      {
+        "lips.color": "pink",
+        "lips.finish": "satin",
+        "eyes.color": "pink",
+        "eyes.finish": "satin"
+      },
+      {
+        "lips.color": "brown",
+        "lips.finish": "dewy",
+        "eyes.color": "pink",
+        "eyes.finish": "satin"
+      },
+      {
+        "lips.color": "brown",
+        "lips.finish": "dewy",
+        "eyes.color": "red",
+        "eyes.finish": "satin"
+      },
+      {
+        "lips.color": "red",
+        "lips.finish": "dewy",
+        "eyes.color": "red",
+        "eyes.finish": "satin"
+      },
+      {
+        "lips.color": "red",
+        "lips.finish": "dewy",
+        "eyes.color": "red",
+        "eyes.finish": "satin"
+      },
+      {
+        "lips.color": "red",
+        "lips.finish": "dewy",
+        "eyes.color": "red",
+        "eyes.finish": "matte"
+      }
+    ],
+    "action_kinds": [
+      "APPLY",
+      "APPLY",
+      "APPLY",
+      "APPLY",
+      "APPLY",
+      "SHEER",
+      "BLOT"
+    ]
+  },
+  {
+    "narrative_id": "test-natural-000006",
+    "coords": [
+      [
+        16.08340072631836,
+        -17.138399124145508,
+        -6.955100059509277
+      ],
+      [
+        10.065500259399414,
+        9.060700416564941,
+        -4.067200183868408
+      ],
+      [
+        5.490300178527832,
+        7.200399875640869,
+        0.65420001745224
+      ],
+      [
+        -4.992300033569336,
+        2.307499885559082,
+        -1.7792999744415283
+      ],
+      [
+        -24.14310073852539,
+        -9.617300033569336,
+        -4.383900165557861
+      ],
+      [
+        8.545700073242188,
+        -4.059100151062012,
+        -12.903800010681152
+      ],
+      [
+        -11.442000389099121,
+        5.411799907684326,
+        -3.318700075149536
+      ],
+      [
+        4.697299957275391,
+        -6.4517998695373535,
+        -3.113100051879883
+      ]
+    ],
+    "sentences": [
+      "A moment passed with nothing done.",
+      "She laid a sweet, girlish rose over the soft skin of her lips in a light, skin-showing layer; it came out with a smooth semi-gloss surface.",
+      "She laid a shade that read like skin over the soft skin of her lips in maximum coverage; it came out with a still-damp-seeming shine.",
+      "She laid a sweet, girlish rose over the surface of her lips in a transparent stain; it came out with a soft un-reflective finish.",
+      "She laid a shade that read like skin over the hooded part of her lid in a packed-on, solid layer; it came out with a soft un-reflective finish.",
+      "A tobacco-toned shade stayed capped for the whole routine.",
+      "She laid a pale peony tone over the hooded part of her lid in a packed-on, solid layer; it came out with an understated silk-like surface.",
+      "The density on the hooded part of her lid was reduced to almost nothing."
+    ],
+    "labels": [
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "eyes.color": "bare",
+        "eyes.finish": "none"
+      },
+      {
+        "lips.color": "pink",
+        "lips.finish": "satin",
+        "eyes.color": "bare",
+        "eyes.finish": "none"
+      },
+      {
+        "lips.color": "nude",
+        "lips.finish": "dewy",
+        "eyes.color": "bare",
+        "eyes.finish": "none"
+      },
+      {
+        "lips.color": "pink",
+        "lips.finish": "matte",
+        "eyes.color": "bare",
+        "eyes.finish": "none"
+      },
+      {
+        "lips.color": "pink",
+        "lips.finish": "matte",
+        "eyes.color": "nude",
+        "eyes.finish": "matte"
+      },
+      {
+        "lips.color": "pink",
+        "lips.finish": "matte",
+        "eyes.color": "nude",
+        "eyes.finish": "matte"
+      },
+      {
+        "lips.color": "pink",
+        "lips.finish": "matte",
+        "eyes.color": "pink",
+        "eyes.finish": "satin"
+      },
+      {
+        "lips.color": "pink",
+        "lips.finish": "matte",
+        "eyes.color": "pink",
+        "eyes.finish": "satin"
+      }
+    ],
+    "action_kinds": [
+      "NOOP",
+      "APPLY",
+      "APPLY",
+      "APPLY",
+      "APPLY",
+      "DISTRACTOR",
+      "APPLY",
+      "SHEER"
+    ]
+  },
+  {
+    "narrative_id": "test-natural-000007",
+    "coords": [
+      [
+        14.729700088500977,
+        -5.267199993133545,
+        -10.808199882507324
+      ],
+      [
+        -9.309399604797363,
+        -11.563799858093262,
+        -9.941699981689453
+      ],
+      [
+        -21.925500869750977,
+        -18.60810089111328,
+        -11.673999786376953
+      ],
+      [
+        2.310699939727783,
+        12.074799537658691,
+        2.4514999389648438
+      ],
+      [
+        -3.3915998935699463,
+        10.579299926757812,
+        6.658699989318848
+      ],
+      [
+        4.259300231933594,
+        0.8659999966621399,
+        -7.7631001472473145
+      ],
+      [
+        -30.298999786376953,
+        -2.4240000247955322,
+        0.07689999788999557
+      ],
+      [
+        -32.23720169067383,
+        -4.098899841308594,
+        -1.2802000045776367
+      ]
+    ],
+    "sentences": [
+      "A pale peony tone stayed capped for the whole routine.",
+      "A naked, undertoned neutral stayed capped for the whole routine.",
+      "A pale peony tone stayed capped for the whole routine.",
+      "With a few strokes she put a pale peony tone on the hooded part of her lid as a transparent stain, ending in an understated silk-like surface.",
+      "With a few strokes she put a tobacco-toned shade on the soft skin of her lips as a packed-on, solid layer, ending in a fully dried-down, non-wet look.",
+      "She worked the socket line until it looked chalk-flat.",
+      "With a few strokes she put a shade that read like skin on the surface of her lips as a light, skin-showing layer, ending in an understated silk-like surface.",
+      "With a few strokes she put a sweet, girlish rose on the socket line as a light, skin-showing layer, ending in an understated silk-like surface."
+    ],
+    "labels": [
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "eyes.color": "bare",
+        "eyes.finish": "none"
+      },
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "eyes.color": "bare",
+        "eyes.finish": "none"
+      },
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "eyes.color": "bare",
+        "eyes.finish": "none"
+      },
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "eyes.color": "pink",
+        "eyes.finish": "satin"
+      },
+      {
+        "lips.color": "brown",
+        "lips.finish": "matte",
+        "eyes.color": "pink",
+        "eyes.finish": "satin"
+      },
+      {
+        "lips.color": "brown",
+        "lips.finish": "matte",
+        "eyes.color": "pink",
+        "eyes.finish": "matte"
+      },
+      {
+        "lips.color": "nude",
+        "lips.finish": "satin",
+        "eyes.color": "pink",
+        "eyes.finish": "matte"
+      },
+      {
+        "lips.color": "nude",
+        "lips.finish": "satin",
+        "eyes.color": "pink",
+        "eyes.finish": "satin"
+      }
+    ],
+    "action_kinds": [
+      "DISTRACTOR",
+      "DISTRACTOR",
+      "DISTRACTOR",
+      "APPLY",
+      "APPLY",
+      "BLOT",
+      "APPLY",
+      "APPLY"
+    ]
+  },
+  {
+    "narrative_id": "test-natural-000008",
+    "coords": [
+      [
+        9.570599555969238,
+        8.939499855041504,
+        -2.9344000816345215
+      ],
+      [
+        1.0085999965667725,
+        7.657599925994873,
+        0.8330000042915344
+      ],
+      [
+        -9.114299774169922,
+        -2.5329999923706055,
+        -8.189399719238281
+      ],
+      [
+        6.4842000007629395,
+        -7.690299987792969,
+        -4.790500164031982
+      ],
+      [
+        0.628600001335144,
+        8.104700088500977,
+        0.7982000112533569
+      ]
+    ],
+    "sentences": [
+      "She laid a dark ruby colour over the hooded part of her lid in maximum coverage; it came out with a smooth semi-gloss surface.",
+      "She laid a dark ruby colour over the surface of her lips in a light, skin-showing layer; it came out with a soft un-reflective finish.",
+      "She worked the surface of her lips into a smooth semi-gloss.",
+      "She erased what was on the surface of her lips entirely.",
+      "She laid a dark ruby colour over the socket line in a transparent stain; it came out with a juicy liquid-looking gleam."
+    ],
+    "labels": [
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "eyes.color": "red",
+        "eyes.finish": "satin"
+      },
+      {
+        "lips.color": "red",
+        "lips.finish": "matte",
+        "eyes.color": "red",
+        "eyes.finish": "satin"
+      },
+      {
+        "lips.color": "red",
+        "lips.finish": "satin",
+        "eyes.color": "red",
+        "eyes.finish": "satin"
+      },
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "eyes.color": "red",
+        "eyes.finish": "satin"
+      },
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "eyes.color": "red",
+        "eyes.finish": "dewy"
+      }
+    ],
+    "action_kinds": [
+      "APPLY",
+      "APPLY",
+      "SOFTEN",
+      "REMOVE",
+      "APPLY"
+    ]
+  },
+  {
+    "narrative_id": "test-natural-000009",
+    "coords": [
+      [
+        8.300399780273438,
+        9.606800079345703,
+        4.874899864196777
+      ],
+      [
+        12.506400108337402,
+        -6.446300029754639,
+        -17.948400497436523
+      ],
+      [
+        13.157400131225586,
+        -4.671500205993652,
+        -11.161299705505371
+      ],
+      [
+        6.912399768829346,
+        9.134599685668945,
+        -1.809499979019165
+      ],
+      [
+        -2.499000072479248,
+        5.329500198364258,
+        0.9668999910354614
+      ],
+      [
+        2.148900032043457,
+        6.051199913024902,
+        -2.457200050354004
+      ]
+    ],
+    "sentences": [
+      "With a few strokes she put a pale peony tone on the soft skin of her lips as a light, skin-showing layer, ending in a fully dried-down, non-wet look.",
+      "She wiped her hands on a towel.",
+      "A stop-sign bright tone stayed capped for the whole routine.",
+      "She laid a sweet, girlish rose over the socket line in a transparent stain; it came out with a smooth semi-gloss surface.",
+      "She laid a pale peony tone over the soft skin of her lips in maximum coverage; it came out with a soft un-reflective finish.",
+      "She topped the soft skin of her lips with a liquid-looking sheen."
+    ],
+    "labels": [
+      {
+        "lips.color": "pink",
+        "lips.finish": "matte",
+        "eyes.color": "bare",
+        "eyes.finish": "none"
+      },
+      {
+        "lips.color": "pink",
+        "lips.finish": "matte",
+        "eyes.color": "bare",
+        "eyes.finish": "none"
+      },
+      {
+        "lips.color": "pink",
+        "lips.finish": "matte",
+        "eyes.color": "bare",
+        "eyes.finish": "none"
+      },
+      {
+        "lips.color": "pink",
+        "lips.finish": "matte",
+        "eyes.color": "pink",
+        "eyes.finish": "satin"
+      },
+      {
+        "lips.color": "pink",
+        "lips.finish": "matte",
+        "eyes.color": "pink",
+        "eyes.finish": "satin"
+      },
+      {
+        "lips.color": "pink",
+        "lips.finish": "dewy",
+        "eyes.color": "pink",
+        "eyes.finish": "satin"
+      }
+    ],
+    "action_kinds": [
+      "APPLY",
+      "NOOP",
+      "DISTRACTOR",
+      "APPLY",
+      "APPLY",
+      "GLOSS"
+    ]
+  },
+  {
+    "narrative_id": "test-natural-000010",
+    "coords": [
+      [
+        7.505499839782715,
+        12.308300018310547,
+        2.3554999828338623
+      ],
+      [
+        18.051700592041016,
+        -22.264400482177734,
+        16.456199645996094
+      ],
+      [
+        5.82420015335083,
+        8.902999877929688,
+        0.1687999963760376
+      ],
+      [
+        9.021699905395508,
+        -5.535600185394287,
+        -4.443600177764893
+      ],
+      [
+        5.338399887084961,
+        7.446300029754639,
+        0.6097999811172485
+      ]
+    ],
+    "sentences": [
+      "With a few strokes she put a pale peony tone on the surface of her lips as a packed-on, solid layer, ending in a smooth semi-gloss surface.",
+      "She almost went for a pale peony tone, then decided not to.",
+      "She laid a tobacco-toned shade over the soft skin of her lips in maximum coverage; it came out with a soft un-reflective finish.",
+      "She erased what was on the soft skin of her lips entirely.",
+      "She laid a shade that read like skin over the socket line in a transparent stain; it came out with a still-damp-seeming shine."
+    ],
+    "labels": [
+      {
+        "lips.color": "pink",
+        "lips.finish": "satin",
+        "eyes.color": "bare",
+        "eyes.finish": "none"
+      },
+      {
+        "lips.color": "pink",
+        "lips.finish": "satin",
+        "eyes.color": "bare",
+        "eyes.finish": "none"
+      },
+      {
+        "lips.color": "brown",
+        "lips.finish": "matte",
+        "eyes.color": "bare",
+        "eyes.finish": "none"
+      },
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "eyes.color": "bare",
+        "eyes.finish": "none"
+      },
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "eyes.color": "nude",
+        "eyes.finish": "dewy"
+      }
+    ],
+    "action_kinds": [
+      "APPLY",
+      "DISTRACTOR",
+      "APPLY",
+      "REMOVE",
+      "APPLY"
+    ]
+  },
+  {
+    "narrative_id": "test-natural-000011",
+    "coords": [
+      [
+        20.088199615478516,
+        -23.373699188232422,
+        14.90779972076416
+      ],
+      [
+        7.807799816131592,
+        12.271599769592285,
+        4.161499977111816
+      ],
+      [
+        2.6947999000549316,
+        12.82800006866455,
+        8.822500228881836
+      ],
+      [
+        9.286700248718262,
+        -1.05840003490448,
+        -6.682199954986572
+      ],
+      [
+        4.371099948883057,
+        5.419400215148926,
+        -4.360599994659424
+      ],
+      [
+        3.102799892425537,
+        5.645100116729736,
+        -5.575200080871582
+      ]
+    ],
+    "sentences": [
+      "She almost went for a sweet, girlish rose, then decided not to.",
+      "With a few strokes she put a naked, undertoned neutral on the socket line as a transparent stain, ending in an understated silk-like surface.",
+      "With a few strokes she put a burnt-cinnamon colour on the surface of her lips as a packed-on, solid layer, ending in a still-damp-seeming shine.",
+      "A naked, undertoned neutral stayed capped for the whole routine.",
+      "She topped the socket line with a liquid-looking sheen.",
+      "She worked the soft skin of her lips into a smooth semi-gloss."
+    ],
+    "labels": [
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "eyes.color": "bare",
+        "eyes.finish": "none"
+      },
+      {
+        "lips.color": "bare",
+        "lips.finish": "none",
+        "eyes.color": "nude",
+        "eyes.finish": "satin"
+      },
+      {
+        "lips.color": "brown",
+        "lips.finish": "dewy",
+        "eyes.color": "nude",
+        "eyes.finish": "satin"
+      },
+      {
+        "lips.color": "brown",
+        "lips.finish": "dewy",
+        "eyes.color": "nude",
+        "eyes.finish": "satin"
+      },
+      {
+        "lips.color": "brown",
+        "lips.finish": "dewy",
+        "eyes.color": "nude",
+        "eyes.finish": "dewy"
+      },
+      {
+        "lips.color": "brown",
+        "lips.finish": "satin",
+        "eyes.color": "nude",
+        "eyes.finish": "dewy"
+      }
+    ],
+    "action_kinds": [
+      "DISTRACTOR",
+      "APPLY",
+      "APPLY",
+      "DISTRACTOR",
+      "GLOSS",
+      "SOFTEN"
+    ]
+  }
+]
