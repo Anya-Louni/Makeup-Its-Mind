@@ -3,9 +3,11 @@
 activations/
 
 # Generated narrative datasets. Regenerable with scripts/02_generate_dataset.py,
-# which is deterministic given --seed.
-data/*/natural.jsonl
-data/*/shuffled.jsonl
+# which is deterministic given --seed. The pilot set is committed anyway, so a
+# replication runs on byte identical narratives rather than on its own draw.
+data/full/*.jsonl
+data/long2/*.jsonl
+data/tiny/*.jsonl
 
 # Large arrays
 *.npy

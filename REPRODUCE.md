@@ -23,6 +23,12 @@ the default despite a marginally lower overall score.
 
 ## 2. Datasets
 
+The pilot narratives are committed, so a replication runs on byte identical data.
+Fingerprints: `natural.jsonl` sha256 `2cc9a1c85019ad94`, `shuffled.jsonl` sha256
+`180476f26a17be60`, 1000 narratives each. Regenerating them reproduces those
+bytes; before correction 21 it did not, because the generator seeded from
+Python's per process randomised string hash.
+
 ```bash
 python scripts/02_generate_dataset.py --name pilot --entities lips eyes \
     --attributes color finish --n 1000
@@ -85,3 +91,12 @@ python scripts/09_report.py   --dataset full --model gpt2
 `results/*.json` are machine-readable; `docs/RESULTS_<dataset>_<model>.md` are
 the generated reports. `docs/CORRECTIONS.md` records every claim that was
 revised, with cause and fix.
+
+## Running the scale arm on a GPU
+
+`colab_scale_arm.ipynb` runs the fourth model, Qwen3-1.7B-Base, on a free Colab
+T4 in about twenty minutes. The same arm takes roughly four hours on a 15 GB CPU
+machine and pages heavily, since the model needs 6.8 GB in float32. The notebook
+clones this repository, checks the dataset fingerprints, runs extraction,
+probing, both read out checks and the decomposition, then prints the four model
+comparison and zips the result files.

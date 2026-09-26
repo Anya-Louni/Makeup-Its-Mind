@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import json
 import random
+import zlib
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Iterable
@@ -217,7 +218,10 @@ def generate_dataset(n_per_split: dict[str, int], cfg: GenConfig,
                      seed: int = 0) -> list[dict]:
     out = []
     for split, n in n_per_split.items():
-        rng = random.Random(hash((seed, split, cfg.condition)) & 0xFFFFFFFF)
+        # zlib.crc32 rather than hash(): Python randomises string hashing per
+        # process, so hash() made the "seed" argument meaningless across runs.
+        key = f"{seed}|{split}|{cfg.condition}".encode()
+        rng = random.Random(zlib.crc32(key))
         for i in range(n):
             out.append(generate_one(i, split, cfg, rng))
     return out

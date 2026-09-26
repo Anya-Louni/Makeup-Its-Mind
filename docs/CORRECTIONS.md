@@ -578,3 +578,31 @@ in the region specific component rather than from a binding the model uses.
 **Fix**: reported as a small effect of unclear origin. Attributing it would
 need a read out that binds. We kept the caveat on the result that came out our
 way as well as on the nulls.
+
+---
+
+## 21. Dataset generation was not reproducible
+
+**Claimed** in `REPRODUCE.md`: `scripts/02_generate_dataset.py` is deterministic
+given `--seed`.
+
+**False.** The per split generator was seeded with
+`hash((seed, split, condition))`. Python randomises string hashing per process,
+so the same `--seed` produced different narratives on every run. Two processes
+asked for the same seed return different draws:
+
+    process A   0.23775159794830125
+    process B   0.97599746632254070
+
+**Why it did not corrupt the reported results.** Each dataset was generated once
+and the files reused for every model, so all four arms ran on identical
+narratives. The bug affects anyone trying to regenerate the data, including us
+on a second machine.
+
+**Fix**: seed from `zlib.crc32` of the key string, which is stable across
+processes and platforms. The pilot narratives are now committed rather than
+gitignored, so a replication runs on byte identical data instead of its own
+draw. Fingerprints:
+
+    data/pilot/natural.jsonl    1000 narratives   sha256 2cc9a1c85019ad94
+    data/pilot/shuffled.jsonl   1000 narratives   sha256 180476f26a17be60
