@@ -27,7 +27,7 @@ Validation selects `C = 0.01`, giving test 0.350 against 0.348 at the default.
 **Outcome**: no change warranted. Recorded in
 `results/regularization_check.md`. The striking number from that sweep was
 incidental: train accuracy 0.897 vs test 0.348, which is the split discipline
-working — train and test share no wordings, so the probe memorises phrasings on
+working. Train and test share no wordings, so the probe memorises phrasings on
 train and must fall back on phrasing-invariant structure at test.
 
 ---
@@ -43,7 +43,7 @@ memorising probe transfers and the gap is meaningful. Here train and test share
 no matter how capable the probe is. The gap was guaranteed, not earned.
 
 **Fix**: report control-task **train** accuracy as the capacity measure
-(it is 0.57–0.79, i.e. the probe genuinely can absorb arbitrary narrative-level
+(it is 0.57–0.79, i.e. The probe genuinely can absorb arbitrary narrative-level
 labels), and lean on MDL and the capacity ablation instead. The test-side
 number is retained only for comparability with the literature.
 
@@ -55,7 +55,8 @@ number is retained only for comparability with the literature.
 uniform code) was an artifact of a non-converged optimiser, corrected to 1.08x.
 
 **Wrong**: that comparison was linear-probe 0.75x against MLP-8 1.08x, both
-computed with identical settings in the same process. Not convergence at all.
+computed with identical settings in the same process. Convergence played no
+part.
 
 **Actual cause**: regularisation. Prequential coding charges `-log2 p` on every
 block; the earliest blocks hold a handful of examples against 768 features, and
@@ -74,11 +75,11 @@ converged optima.
 
 ---
 
-## 4. "Unfair pooling explains the lip results" — hypothesis rejected
+## 4. "Unfair pooling explains the lip results". Hypothesis rejected
 
 **Claimed**: the static-embedding baseline beat the hidden state on
 `lips.color` because the baseline pools over the whole prefix while the hidden
-state is a single token — an unfair comparison.
+state is a single token, which makes the comparison unfair.
 
 **Tested**: stored both read-out conventions from the same forward pass and
 re-probed with mean pooling.
@@ -109,7 +110,7 @@ is significant (p < 0.0001 for `lips.finish`, p ~ 0.002 for `lips.color`).
 
 ---
 
-## 6. "The shuffled-order control is weak" — wrong reading of an average
+## 6. "The shuffled-order control is weak". Wrong reading of an average
 
 **Claimed**: shuffling sentence order barely changes accuracy, so the control
 cannot carry the temporal-structure claim.
@@ -132,7 +133,7 @@ reporting that most targets are not contextual.
 
 ---
 
-## 7. "Binding degrades with the number of entities" — withdrawn
+## 7. "Binding degrades with the number of entities". Withdrawn
 
 **Claimed**, on seeing the 4-entity aggregate: colour selectivity ~0,
 cross-entity transfer equal to within-entity, therefore the probe is
@@ -162,14 +163,14 @@ causal evidence does not support entity-specific binding, so this claim is
 correlational only.)
 Binding decays with **distance**, and past ~5 sentences the representation
 still carries "this value occurred somewhere" while having lost which region it
-applied to — the shared presence code outlives the region-specific binding
+applied to. The shared presence code outlives the region-specific binding
 code. This agrees independently with the concept-direction geometry
 (difference-of-means CAVs aligned across regions at +0.62 to +0.87; the
 discriminative directions pointing apart at -0.04 to -0.24).
 
-A residual entity-count effect may still exist — at matched distance the pilot's
+A residual entity-count effect may still exist. At matched distance the pilot's
 colour margins (+0.119/+0.159/+0.113 at d = 0/1/2) exceed the full set's
-(+0.113/+0.052/+0.066) — but it is a difference of degree, tested directly by
+(+0.113/+0.052/+0.066). But it is a difference of degree, tested directly by
 the length control (2 entities at 4-entity narrative length), not the collapse
 originally claimed.
 
@@ -191,13 +192,13 @@ entities takes colour selectivity from +0.119 to +0.016, and moves the best
 layer from 2 (contextual) to 0 (embeddings).
 
 So the original claim was right in substance and wrong in evidence. It was
-withdrawn correctly at the time — the aggregate it rested on was confounded by
+withdrawn correctly at the time. The aggregate it rested on was confounded by
 distance, and the distance-stratified analysis showed colour binding is
 recoverable at 4 entities at short range. The refined statement is:
 
 > Colour binding survives at 4 entities as a *probe-recoverable* signal at
-> short distance, but the *contextual* colour code — the part the transformer
-> layers contribute over the embeddings — collapses with entity count, not
+> short distance, but the *contextual* colour code. The part the transformer
+> layers contribute over the embeddings. Collapses with entity count, not
 > with narrative length.
 
 ---
@@ -209,7 +210,8 @@ linear 0.359, with selectivity doubling, and was flagged as possible genuine
 non-linear structure worth investigating rather than dismissing.
 
 **Outcome**: on the 4-entity set the same target is flat across a 64x capacity
-range (0.372 / 0.377 / 0.371 / 0.373 / 0.373). Read as pilot noise. Recorded
+range (0.372 / 0.377 / 0.371 / 0.373 / 0.373). We read the pilot value as
+noise. Recorded
 because it was flagged as provisional at the time rather than claimed.
 
 ---
@@ -235,7 +237,7 @@ adjudicator of the hidden-state-vs-baseline question.
 ## 10. The intervention does not demonstrate binding (wrong-direction control)
 
 **Claimed**: the activation-patching result "tests the binding question
-causally" — the edit moves the target region's read-out while the other
+causally". The edit moves the target region's read-out while the other
 region's stays flat, so the representation is bound to a region.
 
 **Missing control**: the design varied *which region is queried* but never
@@ -268,7 +270,7 @@ interchange causally.
 **Two secondary findings from the same run**:
 
 - alpha = 8 is off-distribution: even random directions reach significance
-  there. alpha = 2 is the interpretable dose, and all reported claims should
+  there. Alpha = 2 is the interpretable dose, and all reported claims should
   use it.
 - The finish effect does **not** decay with distance (+0.148 near vs +0.160
   far), unlike the probe binding margin, which is further evidence that what
@@ -323,8 +325,8 @@ and positive in pythia.
 **What this means**: the *specific pattern* of which state variables beat a
 lexical baseline is a property of the model, not of the domain. Any claim of
 the form "face-region state is decodable above baseline" must be stated
-per-model, and the gpt2 lip-variable failure — reported earlier as a real
-negative result about the task — is gpt2-specific.
+per-model, and the gpt2 lip-variable failure. Reported earlier as a real
+negative result about the task. Is gpt2-specific.
 
 **What partially survives**: all four pythia gaps are positive, against gpt2's
 mixed signs, so the weaker claim that contextual representations carry *some*
@@ -381,3 +383,70 @@ withdrawn.
 only as clean as the class balance behind it. Where one class is
 systematically located at a different point in the narrative, the direction
 picks that up, and the intervention tests position rather than state.
+
+---
+
+## 14. The wrong region control cannot support the claim we built on it
+
+**Claimed**: injecting one region's concept direction moves another region's
+read out by the same amount, therefore the causal effect is not entity
+specific.
+
+**Problem**: that test has two readings and cannot separate them. Either the
+model carries no usable binding, or our direction captured the shared value
+component and left the entity specific component out. A difference of means is
+built to separate two label groups, so it recovers what the groups differ on,
+which is the value. Anything entity specific sits in the residual.
+
+**Fix**: decompose the direction and steer with each part alone
+(`22_decompose_direction.py`). For entities E1 and E2 and a value pair,
+
+    shared        s = (d1 + d2) / 2
+    differential  r = (d1 - d2) / 2      so that  d1 = s + r
+
+Both parts rescaled to the norm of d1. Predictions written before the run: the
+shared part raises both read outs equally, and the differential part separates
+them if the model uses the binding.
+
+**Result**, alpha 2, n = 100 per model:
+
+| model | cos(d1, d2) | differential share | shared effect | differential difference | p |
+|---|---|---|---|---|---|
+| gpt2-124M | 0.848 | 28.4% | +0.183 | +0.016 [+0.009, +0.023] | <0.0001 |
+| pythia-410m | 0.743 | 37.7% | +0.190 | -0.000 [-0.006, +0.005] | 0.85 |
+| Qwen3-0.6B-Base | 0.740 | 35.5% | +0.317 | -0.000 [-0.010, +0.010] | 0.91 |
+
+The shared part is causally effective in all three. The entity specific part
+works in gpt2 at about a tenth the strength and does nothing in the other two.
+A random direction of matched norm does nothing anywhere.
+
+**What changed**: the wrong region result is now explained by the ratio between
+the two components rather than by the absence of a binding representation. The
+claim was restated as the entity specific component recovered by a difference
+of means is not required for the read out we tested.
+
+---
+
+## 15. No target replicates across models
+
+**Claimed**, from gpt2 and pythia: no target is significant in the same
+direction in both models, therefore the pattern of which variables beat a
+lexical baseline is a property of the checkpoint.
+
+**Problem**: the conclusion rested on one comparison with one second model.
+
+**Result** with Qwen3-0.6B-Base added:
+
+| target | gpt2 | pythia | Qwen |
+|---|---|---|---|
+| `eyes.color` | +0.062 * | +0.031 | +0.111 * |
+| `eyes.finish` | +0.097 * | +0.014 | +0.120 * |
+| `lips.color` | -0.044 | +0.064 * | -0.031 |
+| `lips.finish` | -0.058 * | +0.024 | -0.048 |
+
+gpt2 and Qwen agree on the sign of all four targets and both reach significance
+on the two eye variables. Pythia is the outlier. The earlier conclusion came
+from the choice of second model.
+
+**What stands**: the direction of a probing result still varies by checkpoint,
+and a two model comparison can mislead in either direction.

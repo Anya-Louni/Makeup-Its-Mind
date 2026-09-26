@@ -18,7 +18,7 @@ unless you set `HF_TOKEN`.
 
 The vocabulary check runs three minimal pairs per term. Terms scoring below
 ~0.6 for the model you pick should be dropped from the lexicon before
-generating data — `pythia-410m` fails `matte` (0.40), which is why `gpt2` is
+generating data. `pythia-410m` fails `matte` (0.40), which is why `gpt2` is
 the default despite a marginally lower overall score.
 
 ## 2. Datasets
@@ -75,7 +75,7 @@ python scripts/09_report.py   --dataset full --model gpt2
   resampling whole narratives**, because positions inside a narrative share its
   wordings and its state and are not independent.
 - Causal claims use **alpha = 2**. At alpha = 8 even random directions of
-  matched norm reach significance, i.e. the edit is off-distribution.
+  matched norm reach significance, i.e. The edit is off-distribution.
 - MDL is reported over a **sweep of the probe's regularisation strength**; a
   single arbitrary `C` produces compression ratios anywhere from 0.75x to
   1.44x on identical data.

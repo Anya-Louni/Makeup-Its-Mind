@@ -1,0 +1,864 @@
+{
+ "decompose": {
+  "gpt2": {
+   "label": "gpt2-124M",
+   "meta": {
+    "layer": 6,
+    "n_trials": 100,
+    "mean_cos_d1_d2": 0.847691324353218,
+    "mean_frac_differential": 0.2841750099712305
+   },
+   "arms": {
+    "full": {
+     "target": {
+      "mean": 0.18924018383026123,
+      "ci95": [
+       0.15450061690807343,
+       0.22204933381080627
+      ],
+      "p_one_sided_greater": 0.0,
+      "p_two_sided": 0.0
+     },
+     "other": {
+      "mean": 0.19055176734924317,
+      "ci95": [
+       0.15481934082508086,
+       0.22395937848091124
+      ],
+      "p_one_sided_greater": 0.0,
+      "p_two_sided": 0.0
+     },
+     "difference": {
+      "mean": -0.0013115835189819337,
+      "ci95": [
+       -0.00723645293712616,
+       0.004975520610809326
+      ],
+      "p_one_sided_greater": 0.6745,
+      "p_two_sided": 0.651
+     }
+    },
+    "shared": {
+     "target": {
+      "mean": 0.18338867664337158,
+      "ci95": [
+       0.1510264526605606,
+       0.2143542696237564
+      ],
+      "p_one_sided_greater": 0.0,
+      "p_two_sided": 0.0
+     },
+     "other": {
+      "mean": 0.18795182228088378,
+      "ci95": [
+       0.15401497113704682,
+       0.2206689853668213
+      ],
+      "p_one_sided_greater": 0.0,
+      "p_two_sided": 0.0
+     },
+     "difference": {
+      "mean": -0.004563145637512207,
+      "ci95": [
+       -0.009857431173324585,
+       0.00054259717464447
+      ],
+      "p_one_sided_greater": 0.9622,
+      "p_two_sided": 0.0756
+     }
+    },
+    "differential": {
+     "target": {
+      "mean": 0.005109715461730957,
+      "ci95": [
+       -0.029944981575012207,
+       0.04049059283733363
+      ],
+      "p_one_sided_greater": 0.391,
+      "p_two_sided": 0.782
+     },
+     "other": {
+      "mean": -0.01066166877746582,
+      "ci95": [
+       -0.04550672519207001,
+       0.024728537917137125
+      ],
+      "p_one_sided_greater": 0.7284,
+      "p_two_sided": 0.5432
+     },
+     "difference": {
+      "mean": 0.015771384239196776,
+      "ci95": [
+       0.0094189612865448,
+       0.02331419861316681
+      ],
+      "p_one_sided_greater": 0.0,
+      "p_two_sided": 0.0
+     }
+    },
+    "random": {
+     "target": {
+      "mean": 0.005290071964263916,
+      "ci95": [
+       -0.029833345592021943,
+       0.04057747501134872
+      ],
+      "p_one_sided_greater": 0.3819,
+      "p_two_sided": 0.7638
+     },
+     "other": {
+      "mean": 0.00717522144317627,
+      "ci95": [
+       -0.027151622056961058,
+       0.04194322955608368
+      ],
+      "p_one_sided_greater": 0.3394,
+      "p_two_sided": 0.6788
+     },
+     "difference": {
+      "mean": -0.0018851494789123536,
+      "ci95": [
+       -0.007595501065254211,
+       0.00404135513305664
+      ],
+      "p_one_sided_greater": 0.7428,
+      "p_two_sided": 0.5144
+     }
+    }
+   }
+  },
+  "pythia": {
+   "label": "pythia-410m",
+   "meta": {
+    "layer": 12,
+    "n_trials": 100,
+    "mean_cos_d1_d2": 0.7426934677362442,
+    "mean_frac_differential": 0.37697370707420363
+   },
+   "arms": {
+    "full": {
+     "target": {
+      "mean": 0.14553330421447755,
+      "ci95": [
+       0.1275102914571762,
+       0.16270644438266754
+      ],
+      "p_one_sided_greater": 0.0,
+      "p_two_sided": 0.0
+     },
+     "other": {
+      "mean": 0.1432913637161255,
+      "ci95": [
+       0.1246832035779953,
+       0.1608682881593704
+      ],
+      "p_one_sided_greater": 0.0,
+      "p_two_sided": 0.0
+     },
+     "difference": {
+      "mean": 0.0022419404983520506,
+      "ci95": [
+       -0.00393487799167633,
+       0.007976249217987058
+      ],
+      "p_one_sided_greater": 0.2262,
+      "p_two_sided": 0.4524
+     }
+    },
+    "shared": {
+     "target": {
+      "mean": 0.1901725149154663,
+      "ci95": [
+       0.1730236396789551,
+       0.20730783176422118
+      ],
+      "p_one_sided_greater": 0.0,
+      "p_two_sided": 0.0
+     },
+     "other": {
+      "mean": 0.1905186128616333,
+      "ci95": [
+       0.17415798103809355,
+       0.20653200817108155
+      ],
+      "p_one_sided_greater": 0.0,
+      "p_two_sided": 0.0
+     },
+     "difference": {
+      "mean": -0.0003460979461669922,
+      "ci95": [
+       -0.006534133434295654,
+       0.005211475729942317
+      ],
+      "p_one_sided_greater": 0.5288,
+      "p_two_sided": 0.9424
+     }
+    },
+    "differential": {
+     "target": {
+      "mean": -0.12156108379364014,
+      "ci95": [
+       -0.14711259746551514,
+       -0.09464764773845674
+      ],
+      "p_one_sided_greater": 1.0,
+      "p_two_sided": 0.0
+     },
+     "other": {
+      "mean": -0.12113712310791015,
+      "ci95": [
+       -0.14664727544784545,
+       -0.09369089198112489
+      ],
+      "p_one_sided_greater": 1.0,
+      "p_two_sided": 0.0
+     },
+     "difference": {
+      "mean": -0.0004239606857299805,
+      "ci95": [
+       -0.005825520992279052,
+       0.005218587636947631
+      ],
+      "p_one_sided_greater": 0.5762,
+      "p_two_sided": 0.8476
+     }
+    },
+    "random": {
+     "target": {
+      "mean": -0.019440402984619142,
+      "ci95": [
+       -0.04238914406299591,
+       0.0032281723022460915
+      ],
+      "p_one_sided_greater": 0.9523,
+      "p_two_sided": 0.0954
+     },
+     "other": {
+      "mean": -0.02219656467437744,
+      "ci95": [
+       -0.04597616386413574,
+       0.0012041854858398334
+      ],
+      "p_one_sided_greater": 0.9689,
+      "p_two_sided": 0.0622
+     },
+     "difference": {
+      "mean": 0.002756161689758301,
+      "ci95": [
+       -0.0029999852180480954,
+       0.00797659432888031
+      ],
+      "p_one_sided_greater": 0.1557,
+      "p_two_sided": 0.3114
+     }
+    }
+   }
+  },
+  "qwen": {
+   "label": "Qwen3-0.6B",
+   "meta": {
+    "layer": 14,
+    "n_trials": 100,
+    "mean_cos_d1_d2": 0.7396433240175248,
+    "mean_frac_differential": 0.3552664838138249
+   },
+   "arms": {
+    "full": {
+     "target": {
+      "mean": 0.34459226608276367,
+      "ci95": [
+       0.2919018406867981,
+       0.3969838027954102
+      ],
+      "p_one_sided_greater": 0.0,
+      "p_two_sided": 0.0
+     },
+     "other": {
+      "mean": 0.3448859357833862,
+      "ci95": [
+       0.2991640448570252,
+       0.39086832284927364
+      ],
+      "p_one_sided_greater": 0.0,
+      "p_two_sided": 0.0
+     },
+     "difference": {
+      "mean": -0.0002936697006225586,
+      "ci95": [
+       -0.016047726154327393,
+       0.016360583782196042
+      ],
+      "p_one_sided_greater": 0.5263,
+      "p_two_sided": 0.9474
+     }
+    },
+    "shared": {
+     "target": {
+      "mean": 0.31730482578277586,
+      "ci95": [
+       0.26560563457012176,
+       0.3676567747592926
+      ],
+      "p_one_sided_greater": 0.0,
+      "p_two_sided": 0.0
+     },
+     "other": {
+      "mean": 0.31897310733795164,
+      "ci95": [
+       0.27411519634723663,
+       0.3636999359130859
+      ],
+      "p_one_sided_greater": 0.0,
+      "p_two_sided": 0.0
+     },
+     "difference": {
+      "mean": -0.0016682815551757812,
+      "ci95": [
+       -0.016907471776008605,
+       0.013778184652328489
+      ],
+      "p_one_sided_greater": 0.5917,
+      "p_two_sided": 0.8166
+     }
+    },
+    "differential": {
+     "target": {
+      "mean": 0.12332041263580322,
+      "ci95": [
+       0.1047666541337967,
+       0.14276149117946624
+      ],
+      "p_one_sided_greater": 0.0,
+      "p_two_sided": 0.0
+     },
+     "other": {
+      "mean": 0.123769690990448,
+      "ci95": [
+       0.10565546280145645,
+       0.14310556089878082
+      ],
+      "p_one_sided_greater": 0.0,
+      "p_two_sided": 0.0
+     },
+     "difference": {
+      "mean": -0.0004492783546447754,
+      "ci95": [
+       -0.009831501662731171,
+       0.00954602897167205
+      ],
+      "p_one_sided_greater": 0.5447,
+      "p_two_sided": 0.9106
+     }
+    },
+    "random": {
+     "target": {
+      "mean": -0.03224713325500488,
+      "ci95": [
+       -0.05813394129276276,
+       -0.006978928685188298
+      ],
+      "p_one_sided_greater": 0.9958,
+      "p_two_sided": 0.0084
+     },
+     "other": {
+      "mean": -0.025771191120147707,
+      "ci95": [
+       -0.04790370434522629,
+       -0.003558228671550765
+      ],
+      "p_one_sided_greater": 0.9886,
+      "p_two_sided": 0.0228
+     },
+     "difference": {
+      "mean": -0.006475942134857178,
+      "ci95": [
+       -0.01809370285272598,
+       0.0035251230597496018
+      ],
+      "p_one_sided_greater": 0.8912,
+      "p_two_sided": 0.2176
+     }
+    }
+   }
+  }
+ },
+ "gaps": [
+  {
+   "target": "eyes.color",
+   "gpt2": {
+    "gap": 0.06197854588796187,
+    "ci95": [
+     0.014490147012824533,
+     0.10989108409321176
+    ],
+    "p": 0.0075
+   },
+   "pythia": {
+    "gap": 0.03098927294398096,
+    "ci95": [
+     -0.02028452898035563,
+     0.08175597898500615
+    ],
+    "p": 0.2315
+   },
+   "qwen": {
+    "gap": 0.11084624553039335,
+    "ci95": [
+     0.06443339415799466,
+     0.16290353016949946
+    ],
+    "p": 0.0
+   }
+  },
+  {
+   "target": "eyes.finish",
+   "gpt2": {
+    "gap": 0.09654350417163288,
+    "ci95": [
+     0.04807404076738609,
+     0.14770011269156855
+    ],
+    "p": 0.0
+   },
+   "pythia": {
+    "gap": 0.014302741358760418,
+    "ci95": [
+     -0.0459556969460793,
+     0.07737432860194689
+    ],
+    "p": 0.639
+   },
+   "qwen": {
+    "gap": 0.12038140643623363,
+    "ci95": [
+     0.07341658635828249,
+     0.16725989277074113
+    ],
+    "p": 0.0
+   }
+  },
+  {
+   "target": "lips.color",
+   "gpt2": {
+    "gap": -0.044100119189511344,
+    "ci95": [
+     -0.09881147360056505,
+     0.011751573358579086
+    ],
+    "p": 0.126
+   },
+   "pythia": {
+    "gap": 0.06436233611442188,
+    "ci95": [
+     0.009601557626617827,
+     0.11981142135482226
+    ],
+    "p": 0.028
+   },
+   "qwen": {
+    "gap": -0.03098927294398096,
+    "ci95": [
+     -0.0966615982754638,
+     0.029872441166488697
+    ],
+    "p": 0.3625
+   }
+  },
+  {
+   "target": "lips.finish",
+   "gpt2": {
+    "gap": -0.05840286054827176,
+    "ci95": [
+     -0.11138619431969814,
+     -0.006009075598802374
+    ],
+    "p": 0.0285
+   },
+   "pythia": {
+    "gap": 0.023837902264600697,
+    "ci95": [
+     -0.03360496144932702,
+     0.08531058676696295
+    ],
+    "p": 0.415
+   },
+   "qwen": {
+    "gap": -0.04767580452920139,
+    "ci95": [
+     -0.10262755252991748,
+     0.008345020686256532
+    ],
+    "p": 0.098
+   }
+  }
+ ],
+ "binding": {
+  "gpt2": {
+   "label": "gpt2-124M",
+   "bins": [
+    "0",
+    "1",
+    "2",
+    "3-4",
+    "5+"
+   ],
+   "values": [
+    0.07277281673416942,
+    0.09622314341720489,
+    0.10542807326192842,
+    0.06441170420106762,
+    0.048676320023402074
+   ]
+  },
+  "pythia": {
+   "label": "pythia-410m",
+   "bins": [
+    "0",
+    "1",
+    "2",
+    "3-4",
+    "5+"
+   ],
+   "values": [
+    0.036411242307117196,
+    0.10424390243902436,
+    0.11479089618009843,
+    0.10385045285878595,
+    0.04488810881965775
+   ]
+  },
+  "qwen": {
+   "label": "Qwen3-0.6B",
+   "bins": [
+    "0",
+    "1",
+    "2",
+    "3-4",
+    "5+"
+   ],
+   "values": [
+    0.1186633287480943,
+    0.1411449918056493,
+    0.15109560718252119,
+    0.11083899937012617,
+    -0.021095997269757704
+   ]
+  }
+ },
+ "depth": {
+  "gpt2": {
+   "label": "gpt2-124M",
+   "n_layers": 12,
+   "points": [
+    {
+     "target": "eyes.color",
+     "layer": 11,
+     "frac": 0.9166666666666666
+    },
+    {
+     "target": "eyes.finish",
+     "layer": 1,
+     "frac": 0.08333333333333333
+    },
+    {
+     "target": "lips.color",
+     "layer": 12,
+     "frac": 1.0
+    },
+    {
+     "target": "lips.finish",
+     "layer": 1,
+     "frac": 0.08333333333333333
+    }
+   ]
+  },
+  "pythia": {
+   "label": "pythia-410m",
+   "n_layers": 24,
+   "points": [
+    {
+     "target": "eyes.color",
+     "layer": 24,
+     "frac": 1.0
+    },
+    {
+     "target": "eyes.finish",
+     "layer": 24,
+     "frac": 1.0
+    },
+    {
+     "target": "lips.color",
+     "layer": 20,
+     "frac": 0.8333333333333334
+    },
+    {
+     "target": "lips.finish",
+     "layer": 24,
+     "frac": 1.0
+    }
+   ]
+  },
+  "qwen": {
+   "label": "Qwen3-0.6B",
+   "n_layers": 28,
+   "points": [
+    {
+     "target": "eyes.color",
+     "layer": 26,
+     "frac": 0.9285714285714286
+    },
+    {
+     "target": "eyes.finish",
+     "layer": 16,
+     "frac": 0.5714285714285714
+    },
+    {
+     "target": "lips.color",
+     "layer": 22,
+     "frac": 0.7857142857142857
+    },
+    {
+     "target": "lips.finish",
+     "layer": 18,
+     "frac": 0.6428571428571429
+    }
+   ]
+  }
+ },
+ "facemap": {
+  "targets": [
+   "eyes.color",
+   "eyes.finish",
+   "lips.color",
+   "lips.finish"
+  ],
+  "frames": [
+   {
+    "sentence": "She laid a dark ruby colour over the surface of her lips in maximum coverage; it came out with a soft un-reflective finish.",
+    "true": {
+     "eyes.color": "bare",
+     "eyes.finish": "none",
+     "lips.color": "red",
+     "lips.finish": "matte"
+    },
+    "gpt2": {
+     "eyes.color": "bare",
+     "eyes.finish": "none",
+     "lips.color": "nude",
+     "lips.finish": "dewy"
+    },
+    "pythia": {
+     "eyes.color": "red",
+     "eyes.finish": "satin",
+     "lips.color": "red",
+     "lips.finish": "matte"
+    },
+    "qwen": {
+     "eyes.color": "bare",
+     "eyes.finish": "none",
+     "lips.color": "red",
+     "lips.finish": "dewy"
+    }
+   },
+   {
+    "sentence": "She laid a naked, undertoned neutral over the surface of her lips in a packed-on, solid layer; it came out with a smooth semi-gloss surface.",
+    "true": {
+     "eyes.color": "bare",
+     "eyes.finish": "none",
+     "lips.color": "nude",
+     "lips.finish": "satin"
+    },
+    "gpt2": {
+     "eyes.color": "bare",
+     "eyes.finish": "satin",
+     "lips.color": "nude",
+     "lips.finish": "dewy"
+    },
+    "pythia": {
+     "eyes.color": "nude",
+     "eyes.finish": "satin",
+     "lips.color": "nude",
+     "lips.finish": "matte"
+    },
+    "qwen": {
+     "eyes.color": "bare",
+     "eyes.finish": "none",
+     "lips.color": "pink",
+     "lips.finish": "dewy"
+    }
+   },
+   {
+    "sentence": "She almost went for a tobacco-toned shade, then decided not to.",
+    "true": {
+     "eyes.color": "bare",
+     "eyes.finish": "none",
+     "lips.color": "nude",
+     "lips.finish": "satin"
+    },
+    "gpt2": {
+     "eyes.color": "bare",
+     "eyes.finish": "none",
+     "lips.color": "nude",
+     "lips.finish": "matte"
+    },
+    "pythia": {
+     "eyes.color": "bare",
+     "eyes.finish": "satin",
+     "lips.color": "red",
+     "lips.finish": "matte"
+    },
+    "qwen": {
+     "eyes.color": "bare",
+     "eyes.finish": "dewy",
+     "lips.color": "red",
+     "lips.finish": "satin"
+    }
+   },
+   {
+    "sentence": "With a few strokes she put a naked, undertoned neutral on the socket line as a packed-on, solid layer, ending in a juicy liquid-looking gleam.",
+    "true": {
+     "eyes.color": "nude",
+     "eyes.finish": "dewy",
+     "lips.color": "nude",
+     "lips.finish": "satin"
+    },
+    "gpt2": {
+     "eyes.color": "brown",
+     "eyes.finish": "dewy",
+     "lips.color": "nude",
+     "lips.finish": "dewy"
+    },
+    "pythia": {
+     "eyes.color": "bare",
+     "eyes.finish": "satin",
+     "lips.color": "red",
+     "lips.finish": "dewy"
+    },
+    "qwen": {
+     "eyes.color": "nude",
+     "eyes.finish": "satin",
+     "lips.color": "red",
+     "lips.finish": "dewy"
+    }
+   },
+   {
+    "sentence": "A setting powder went over the soft skin of her lips, leaving nothing that caught light.",
+    "true": {
+     "eyes.color": "nude",
+     "eyes.finish": "dewy",
+     "lips.color": "nude",
+     "lips.finish": "matte"
+    },
+    "gpt2": {
+     "eyes.color": "brown",
+     "eyes.finish": "none",
+     "lips.color": "nude",
+     "lips.finish": "matte"
+    },
+    "pythia": {
+     "eyes.color": "red",
+     "eyes.finish": "satin",
+     "lips.color": "nude",
+     "lips.finish": "matte"
+    },
+    "qwen": {
+     "eyes.color": "pink",
+     "eyes.finish": "matte",
+     "lips.color": "red",
+     "lips.finish": "dewy"
+    }
+   },
+   {
+    "sentence": "She almost went for a pale peony tone, then decided not to.",
+    "true": {
+     "eyes.color": "nude",
+     "eyes.finish": "dewy",
+     "lips.color": "nude",
+     "lips.finish": "matte"
+    },
+    "gpt2": {
+     "eyes.color": "brown",
+     "eyes.finish": "matte",
+     "lips.color": "nude",
+     "lips.finish": "matte"
+    },
+    "pythia": {
+     "eyes.color": "red",
+     "eyes.finish": "satin",
+     "lips.color": "nude",
+     "lips.finish": "matte"
+    },
+    "qwen": {
+     "eyes.color": "pink",
+     "eyes.finish": "dewy",
+     "lips.color": "pink",
+     "lips.finish": "satin"
+    }
+   },
+   {
+    "sentence": "With a few strokes she put a naked, undertoned neutral on the hooded part of her lid as maximum coverage, ending in a smooth semi-gloss surface.",
+    "true": {
+     "eyes.color": "nude",
+     "eyes.finish": "satin",
+     "lips.color": "nude",
+     "lips.finish": "matte"
+    },
+    "gpt2": {
+     "eyes.color": "brown",
+     "eyes.finish": "satin",
+     "lips.color": "nude",
+     "lips.finish": "satin"
+    },
+    "pythia": {
+     "eyes.color": "nude",
+     "eyes.finish": "satin",
+     "lips.color": "nude",
+     "lips.finish": "satin"
+    },
+    "qwen": {
+     "eyes.color": "red",
+     "eyes.finish": "matte",
+     "lips.color": "brown",
+     "lips.finish": "dewy"
+    }
+   },
+   {
+    "sentence": "She laid a burnt-cinnamon colour over the hooded part of her lid in maximum coverage; it came out with a still-damp-seeming shine.",
+    "true": {
+     "eyes.color": "brown",
+     "eyes.finish": "dewy",
+     "lips.color": "nude",
+     "lips.finish": "matte"
+    },
+    "gpt2": {
+     "eyes.color": "brown",
+     "eyes.finish": "dewy",
+     "lips.color": "nude",
+     "lips.finish": "dewy"
+    },
+    "pythia": {
+     "eyes.color": "nude",
+     "eyes.finish": "satin",
+     "lips.color": "red",
+     "lips.finish": "satin"
+    },
+    "qwen": {
+     "eyes.color": "red",
+     "eyes.finish": "satin",
+     "lips.color": "brown",
+     "lips.finish": "dewy"
+    }
+   }
+  ],
+  "agree": {
+   "gpt2": 0.5625,
+   "pythia": 0.34375,
+   "qwen": 0.28125
+  },
+  "labels": {
+   "gpt2": "gpt2-124M",
+   "pythia": "pythia-410m",
+   "qwen": "Qwen3-0.6B"
+  }
+ }
+}

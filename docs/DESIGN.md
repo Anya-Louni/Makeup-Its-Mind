@@ -2,7 +2,7 @@
 
 ## 1. Why this domain
 
-Existing world-model probing work tracks a single structure — an Othello board,
+Existing world-model probing work tracks a single structure. An Othello board,
 a chess position, a scalar such as temperature. A makeup routine forces several
 independent entities to be tracked at once, each carrying its own attributes,
 updated in an order-dependent sequence. That turns the question from "is the
@@ -11,7 +11,7 @@ is the harder and more interesting claim.
 
 ## 2. The world
 
-Four entities — `lips`, `eyes`, `cheeks`, `skin`. Three attributes each:
+Four entities. `lips`, `eyes`, `cheeks`, `skin`. Three attributes each:
 
 | attribute | values |
 |---|---|
@@ -48,7 +48,7 @@ narrative-level split: it tests generalisation to unseen phrasings of the same
 state, not memorisation of templates.
 
 **Distractor sentences (~18% of positions).** These mention a colour without
-applying it — *"She held a deep crimson up to the light and shook her head"*,
+applying it. *"She held a deep crimson up to the light and shook her head"*,
 *"A tube of a soft pink rolled to the edge of the counter, unused"*. A
 bag-of-words model is actively misled; a state tracker is not.
 
@@ -61,7 +61,7 @@ so binding cannot be read off the colour phrasing.
 |---|---|
 | majority class | trivial |
 | static embedding (model's own embedding layer, mean over prefix) | that no contextual computation is needed |
-| **TF-IDF bag of 1–2-grams over the raw prefix text** | that a purely lexical model does just as well — a stronger competitor than static embeddings, and not in the original spec |
+| **TF-IDF bag of 1–2-grams over the raw prefix text** | that a purely lexical model does just as well. A stronger competitor than static embeddings, and not in the original spec |
 | shuffled narrative order | reliance on plausible routine ordering |
 | **override stratification** | keyword retrieval: on ~25% of positions the value was overridden earlier, so the first mention is the *wrong* answer |
 | Hewitt & Liang control task | probe capacity |
@@ -69,7 +69,7 @@ so binding cannot be read off the colour phrasing.
 | capacity ablation (linear → MLP 8…512) | that non-linear gains are structure rather than parameters |
 | cross-entity probe transfer | that the probe reads "some region is red" rather than "the lips are red" |
 
-### Read-out convention: last token vs. mean pooling
+### Read-out convention: last token vs. Mean pooling
 
 The standard convention is to read the residual stream at the **last token** of
 each sentence. But the non-contextual baseline required by the spec pools the
@@ -82,16 +82,16 @@ baseline (0.349) *beat* the last-token hidden state (0.308). Reporting only
 that would have misattributed a pooling advantage to "the model has no world
 model for lip colour".
 
-So extraction stores both conventions from the same forward pass — `X.npy`
-(last token) and `Xmean.npy` (mean over the prefix) — and `04_probe.py` takes
+So extraction stores both conventions from the same forward pass. `X.npy`
+(last token) and `Xmean.npy` (mean over the prefix). And `04_probe.py` takes
 `--pooling {last,mean}`. The mean-pooled hidden state is the fair counterpart
 to the pooled baseline; the last-token number is the one comparable to the
 probing literature. Both are reported.
 
 **Outcome: the hypothesis was wrong, and that is the useful part.** Pooling
 does raise the lip numbers (`lips.color` 0.308 → 0.344, `lips.finish`
-0.359 → 0.419), but in both cases the best layer moves to **layer 0** — which
-is the mean of the model's own input embeddings, i.e. the static-embedding
+0.359 → 0.419), but in both cases the best layer moves to **layer 0**. Which
+is the mean of the model's own input embeddings, i.e. The static-embedding
 baseline itself. It never overtakes that baseline (0.352 / 0.415). The
 transformer layers add essentially nothing over a bag of embeddings for the
 lip variables. The negative result is real, not a measurement artifact.
@@ -127,7 +127,7 @@ spurious negative result.
 
 Second, and more important: **the static-embedding baseline compresses
 better than the hidden states on every target** (1.48x, 1.63x, 1.58x, 1.66x
-against 1.24x, 1.43x, 1.34x, 1.44x) — even on the eye variables, where
+against 1.24x, 1.43x, 1.34x, 1.44x). Even on the eye variables, where
 held-out accuracy clearly favours the hidden states.
 
 That is not a contradiction; the two metrics answer different questions here.
@@ -193,7 +193,7 @@ Two read-outs, reported separately:
 - **Behavioural read-out.** Append a cue and compare the model's own
   log-probabilities of the competing state words. This is the stronger claim,
   but it is only interpretable if the unintervened model reads the true state
-  out above chance — so the alpha = 0 baseline is always reported, and every
+  out above chance. So the alpha = 0 baseline is always reported, and every
   effect is a **paired** change from it. For `gpt2` the unintervened
   behavioural read-out is near chance, and the pilot showed a strong constant
   word-preference bias; raw flip rates would be meaningless, which is why the
@@ -212,7 +212,7 @@ instruction-tuned, so asking them to define "matte" is unreliable evidence
 either way; instead each term is scored on minimal pairs
 (`"A matte finish reflects almost no ___"` → *light* vs *sound*). Terms that
 scored zero on a single pair were re-tested with three independent pairs, which
-resolved almost all of them — a single failed pair is usually a bad probe, not
+resolved almost all of them. A single failed pair is usually a bad probe, not
 a missing word. The one substantive finding: `pythia-410m` fails `matte`
 (0.40), while `gpt2` handles it (0.80). Since finish is one of the two pilot
 attributes, that counts against pythia despite its marginally higher overall

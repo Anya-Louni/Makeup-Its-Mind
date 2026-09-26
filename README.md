@@ -1,14 +1,14 @@
 # Do LLMs hold an implicit world model of a makeup routine?
 
 Testing whether a language model's internal activations track the true state of
-several face regions — their colour, finish and coverage — as a makeup
+several face regions. Colour, finish and coverage, tracked as a makeup
 application narrative unfolds.
 
 Most world-model probing work tracks a single structure (an Othello board) or a
 single scalar. A makeup routine forces **several independent entities to be
 tracked at once**, each with its own attributes, updated in an order-dependent
-sequence. That makes it a test of *binding* — which attribute belongs to which
-region — not just of presence.
+sequence. That makes it a test of binding. The question is which attribute
+belongs to which region.
 
 ## Research question
 
@@ -73,7 +73,7 @@ Scale to the full setting with
 ## Design decisions that make the result defensible
 
 **Paraphrase variation.** Every attribute value has ten distinct realisations,
-most of which never use the literal label word — `matte` appears as *"a
+most of which avoid the literal label word. `matte` appears as *"a
 chalk-flat surface"*, *"a dead-flat look that caught no light"*, *"a fully
 dried-down, non-wet look"*. A probe that succeeds by spotting the word `matte`
 cannot succeed here.
@@ -97,9 +97,8 @@ sharpest evidence of state tracking rather than keyword retrieval.
 
 **Every control from the spec, plus two more.** Static embedding baseline,
 shuffled-order condition, Hewitt & Liang control task and selectivity,
-prequential MDL, and probe-capacity ablation — plus a TF-IDF bag-of-ngrams
-baseline on the raw prefix text (a stronger lexical competitor than static
-embeddings) and the override stratification above.
+prequential MDL, and probe-capacity ablation. We add a TF-IDF bag-of-ngrams
+baseline on the raw prefix text and the override stratification above.
 
 **Causal intervention with three controls.** The intervention adds a concept
 direction to the residual stream and reads out the model's own preference over
@@ -107,11 +106,9 @@ the state words. Three controls run alongside, and the third is the one that
 mattered:
 
 1. the other face region's read-out, measured in the same forward pass;
-2. a **random direction** at matched norm — does any push of this size move the
-   read-out? (No, at alpha = 2.);
-3. the **other region's concept direction** at matched norm — does the edit
-   need to be *this* region's vector? (No — and that is why we do not claim the
-   intervention demonstrates binding. See `docs/CORRECTIONS.md` #10.)
+2. a **random direction** at matched norm. It moves nothing at alpha 2;
+3. the **other region's concept direction** at matched norm. It works as well
+   as the correct one. See `docs/CORRECTIONS.md` #10 and #14.
 
 Steering strength matters: at alpha = 8 even random directions become
 significant, so alpha = 2 is the interpretable dose and all causal claims use
@@ -119,92 +116,31 @@ it.
 
 ## What we found
 
-Full numbers in `docs/RESULTS_*.md`; every claim that was revised along the way
-is in `docs/CORRECTIONS.md` (eleven entries, including four of our own
-overclaims caught by controls we added later).
+Full numbers in `docs/FINDINGS.md`. Every revised claim is in
+`docs/CORRECTIONS.md`, fifteen entries.
 
-**The canonical write-up is `docs/FINDINGS.md`** — abstract, central claim, and
-the cross-model table of what replicates. Summary below.
+A concept direction built by differencing class means holds two parts. One part
+is shared by every entity that takes the value. The other is specific to one
+entity. We separate them and steer with each alone.
 
-### The headline, stated as narrowly as the evidence supports
+| model | shared effect | entity specific difference | p |
+|---|---|---|---|
+| gpt2-124M | +0.183 | +0.016 [+0.009, +0.023] | <0.0001 |
+| pythia-410m | +0.190 | 0.000 [-0.006, +0.005] | 0.85 |
+| Qwen3-0.6B-Base | +0.317 | 0.000 [-0.010, +0.010] | 0.91 |
 
-> In small language models, an attribute's *value* is linearly decodable,
-> causally load-bearing, and **shared across entities**; the *binding* of that
-> value to a particular entity is linearly decodable and decays with narrative
-> distance, but we find no evidence the model uses it. Which specific variables
-> clear a lexical baseline is a property of the model, not of the task — no
-> target is significant in the same direction in both models tested.
+The shared part carries the causal effect in all three models. The entity
+specific part works in gpt2 at about a tenth the strength and does nothing in
+the other two. A random direction of matched norm does nothing anywhere.
 
-### Supported
+A linear probe recovers which region an attribute belongs to. The margin runs
++0.04 to +0.15 shortly after a value is set, holds in all three models, and
+survives Benjamini-Hochberg across 180 tests. The margin decays with narrative
+distance and turns negative past five sentences on the four region dataset.
 
-- **A real causal effect on the attribute *value*, in both models.** The
-  concept direction shifts the model's own log-odds of the steered value —
-  gpt2 +0.055 [+0.041, +0.070], pythia +0.147 [+0.123, +0.171] at alpha = 2 —
-  while a random direction of matched norm does nothing (gpt2 +0.014 n.s.,
-  pythia -0.009 n.s.). It is **not** entity-specific: the other region's
-  direction works as well or better, in both models.
-- **Binding is probe-recoverable, in both models** (+0.04 to +0.12 at short
-  distance), and on the 4-entity gpt2 set it **decays with distance**: +0.113
-  at distance 0 to -0.124 by distance >= 5. 33/36 region pairs survive
-  Benjamini-Hochberg correction across all 180 tests at distance 0, 29/36 at
-  distance >= 5. Past ~5 sentences the representation still carries "this value
-  occurred somewhere" but has lost which region.
-- **Entity count, not narrative length, breaks the colour code.** A control
-  dataset with 2 entities at 4-entity narrative length keeps colour
-  selectivity (+0.119, best layer 2, contextual); 4 entities at the same
-  length collapses it (+0.016, best layer 0, embeddings).
-- **The signal is linear.** Flat across a 64x range of probe capacity on every
-  target tested.
-- **Four independent measures agree** on which targets use the transformer:
-  best-layer depth, prequential MDL (r = +0.92 with depth), shuffled-order
-  sensitivity, and selectivity.
-- **`eyes.finish` beats every lexical baseline in gpt2**: +0.097
-  [+0.048, +0.148], two-sided p < 0.0001. It does **not** replicate in pythia
-  (+0.014, p = 0.639) — see the next section.
-
-### Does not replicate across models
-
-The pattern of which state variables beat a lexical baseline is model-specific.
-No target is significant in the same direction in both:
-
-| target | gpt2 gap | p2 | pythia gap | p2 |
-|---|---|---|---|---|
-| `eyes.color` | +0.062 | **0.008** | +0.031 | 0.232 |
-| `eyes.finish` | +0.097 | **0.000** | +0.014 | 0.639 |
-| `lips.color` | -0.044 | 0.126 | +0.064 | **0.028** |
-| `lips.finish` | -0.058 | **0.029** | +0.024 | 0.415 |
-
-The two models also place their state code very differently: gpt2 across
-embeddings and middle layers, pythia almost entirely at the output end.
-
-### Not supported, and reported as such
-
-- **The intervention does not demonstrate *binding*, in either model.** The
-  other region's finish direction moves the read-out as well as the correct one
-  (gpt2 +0.149 vs +0.148; pythia +0.195 vs +0.147). The geometry predicts this:
-  those direction vectors have cosine +0.67 to +0.95. The experiment shows a
-  usable attribute-value code, not a bound one.
-- **Colour is not causally load-bearing.** A pre-registered prediction that
-  colour would show a causal effect at short distance failed: no effect at
-  either distance, for any arm.
-- **Most targets do not beat a lexical baseline.** 8 of 12 full-dataset
-  targets peak at the embedding layer; `lips.finish` is *significantly worse*
-  than the static-embedding baseline (two-sided p = 0.0285).
-- **MDL favours the static baseline throughout**, for a documented reason we
-  cannot remove: prequential coding runs on a pool where wordings are shared.
-- **`lips.coverage` intervention reversed** (-0.367 on the target). Diagnosed:
-  the `bare` class sits at mean narrative position 3.65 against 7.5-7.7 for
-  light/full, so its difference-of-means direction encodes "early in the text"
-  rather than "no product". `bare` has been removed from the coverage read-out
-  (matching the treatment of `none` for finish) and the old number is
-  withdrawn. See `docs/CORRECTIONS.md` #13.
-
-### Conventions
-
-p-values are **two-sided** everywhere in the reports; one-sided values are kept
-in the JSON as `p_one_sided_greater`. Confidence intervals on anything measured
-over narrative positions use a **cluster bootstrap resampling whole
-narratives**, since positions within a narrative are not independent.
+gpt2 and Qwen agree on the sign of all four baseline comparisons. pythia
+reverses the pattern. The three models place their state code in different
+layers.
 
 ## Hardware note
 

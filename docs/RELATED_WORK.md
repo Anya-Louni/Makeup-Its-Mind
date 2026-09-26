@@ -19,7 +19,7 @@ reaching >99% from layer four onward. That correction is methodologically
 important for us: **whether a world model looks linear can depend on how the
 target variable is parameterised, not on the model**.
 
-*Difference here*: Othello is one board — a single global state object. This
+*Difference here*: Othello is one board, a single global state object. This
 domain has four independent entities each carrying three attributes, so the
 question shifts from "is the state recoverable" to "is each attribute bound to
 the right entity". The input is also English prose with paraphrase variation
@@ -42,7 +42,7 @@ Trained on simple templates, their probes generalise to short stories and to
 Spanish, and they show models can keep faithful internal representations while
 producing unfaithful outputs.
 
-*Difference here*: their setting is a largely static context — entities and
+*Difference here*: their setting is a largely static context. Entities and
 their properties are asserted, and the probe reads off the resulting
 proposition set. This domain is **sequential and destructive**: an attribute is
 set, later overwritten, blotted, built up, or removed, so the correct answer at
@@ -51,8 +51,8 @@ wrong (~23–27% of positions by construction). That lets us ask a question thei
 setup does not pose: **how long does a binding survive?**
 
 Our main positive result is exactly that. Averaged over 36 region pairs, the
-binding margin — (within-entity accuracy − its majority) − (cross-entity
-accuracy − its majority) — is +0.113 at distance 0 and decays to **−0.124 by
+binding margin. (within-entity accuracy − its majority) − (cross-entity
+accuracy − its majority). Is +0.113 at distance 0 and decays to **−0.124 by
 distance ≥5**, where within-entity falls *below* majority while the cross-entity
 read rises *above* it. Past roughly five sentences the representation still
 carries "this value occurred somewhere" but has lost which region it applied
@@ -70,7 +70,7 @@ Kim and Schuster, *Entity Tracking in Language Models* (ACL 2023), test whether
 a model can infer an entity's final state from an initial description plus a
 sequence of state-changing operations, using ProPara (488 science procedures)
 and Recipes (866 cooking recipes). They find non-trivial but limited tracking,
-and — notably — that only models pretrained on large amounts of code
+and. They also find that only models pretrained on large amounts of code
 (GPT-3.5) exhibit the ability at all.
 
 *Difference here*: their evaluation is **behavioural** (question answering
@@ -103,7 +103,7 @@ the paired change in log-odds rather than on raw read-out accuracy.
    geometry).
 2. **A multi-entity, multi-attribute, order-destructive text domain** with
    exact per-position labels, distractor sentences that mention values without
-   applying them, and train/test splits that share *no surface forms* — a
+   applying them, and train/test splits that share *no surface forms*. A
    harder generalisation test than narrative-level splits.
 3. **Convergence of four independent measures** (best-layer depth, prequential
    MDL, shuffled-order sensitivity, selectivity) on the same partition of
