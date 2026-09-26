@@ -350,10 +350,19 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
     causal. Their result also sets our expectations for scale. At 124M to 600M
     parameters we sit below the regime where strong effects are likely.</p>
 
-    <p>Our contribution is the decomposition test in section 4.2, the binding
-    decay curve, and a domain that is multi entity, order destructive and free of
-    surface overlap between splits. Linear probing, activation patching, control
-    tasks and MDL are standard and we use them as they stand.</p>
+    <p>Against that, our decomposition is not a new account of how binding is
+    represented. Feng and Steinhardt already factor entity from attribute and
+    identify the binding carrier. What we add is a result about the tool rather
+    than the model. A difference of class means, which is the usual way a
+    steering direction gets built, provably mixes the two components, and we
+    measure the mix at 28 to 38 per cent region specific by norm across three
+    models. The consequence is practical. A wrong region control is the standard
+    specificity check in steering work, and it passes on the shared component
+    alone, so it cannot support a binding claim. Separating the components costs
+    one extra arm and no subspace estimation.</p>
+    <p>The binding decay curve and the domain are the other two pieces. Linear
+    probing, activation patching, control tasks and MDL are standard and we use
+    them as they stand.</p>
   </div></div>
 </section>
 
@@ -410,25 +419,40 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
 
 <div class="result">
     <div class="rhead"><div class="rnum">4.1</div><div class="rbody">
-      <h3>The behavioural read out does not bind</h3>
-      <p class="verd v-no">Fails in 3 of 3</p>
-      <p>A null from steering means nothing if the measurement cannot register
-      a difference. We therefore checked the instrument with no steering at all.
-      Take held out positions where the two regions carry different finishes and
-      compare the model's log odds under all four assignments of two values to
-      two regions.</p>
-      <p>Two contrasts follow, both on the lips read out. <strong>Sensitivity</strong>
-      changes the lips value and holds the eyes fixed. <strong>Leakage</strong>
-      changes the eyes value and holds the lips fixed. A read out that binds
-      moves a lot on the first and very little on the second.</p>
-      <p>Every model moves about equally on both. The mean ratio across three
-      models and six read outs is <span class="num">1.07</span>. Sensitivity is
-      significant everywhere, so the instrument is not blind and the null is not
-      a floor effect. It simply answers a question about one region using the
+      <h3>Binding is present in the residual stream and absent from the output</h3>
+      <p class="verd v-no">Holds in 3 of 3</p>
+      <p>A null from steering means nothing if the measurement cannot register a
+      difference, so we checked without steering anything. Take held out
+      positions where the two regions carry different finishes and compare the
+      model's log odds across all four assignments of two values to two regions.
+      Sensitivity changes the value of the region we asked about. Leakage
+      changes the other region's value.</p>
+      <p>Every model moves about equally on both, with a mean sensitivity to
+      leakage ratio of <span class="num">1.07</span>. Sensitivity is significant
+      everywhere, so the instrument registers changes and the null is not a
+      floor effect. The read out answers a question about one region using the
       other region's value.</p>
-      <p>This gates every steering result in the study, including our own. An
-      experiment read through this instrument cannot separate a model that fails
-      to bind from an instrument that fails to bind.</p>
+      <p>The read out here is the model's own next token distribution, so this
+      is a fact about behaviour rather than about our tooling. Set against 4.3,
+      where a probe recovers the binding at a margin of
+      <span class="num">+0.04</span> to <span class="num">+0.15</span>, the
+      pair gives the cleaner statement. <strong>Binding is linearly decodable in
+      the residual stream and the output does not use it.</strong> Feng and
+      Steinhardt find binding ID vectors only above a scale threshold, and our
+      models run 124M to 600M, so present but unused is what we should expect
+      to find down here.</p>
+      <p>Averaging the ratio hides structure worth reporting. In each model one
+      region drives both read outs at nearly the same strength, and which region
+      varies. gpt2 and pythia answer both questions from the eyes value. Qwen
+      answers both from the lips value.</p>
+      <p>We tested the obvious explanation and it holds in one model of three.
+      In Qwen the value of whichever region was acted on more often predicts the
+      read out better than either region does, which is a salience account. In
+      gpt2 and pythia the eyes value dominates and neither recency nor frequency
+      of action explains it. We report a fixed per model preference with no
+      mechanism behind it. One limit: we tested recency of state changes, not
+      recency of mentions, since the distractor sentences name values without
+      applying them.</p>
     </div></div>
     <figure>
       <div class="frame">
@@ -439,9 +463,21 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
       </div>
       <figcaption><b>Figure 2.</b> A read out that binds sits well to the left of
       the diagonal, where sensitivity to its own region exceeds leakage from the
-      other. All six sit on it. The shaded band marks where the instrument
-      answers using the wrong region at least as readily as the right
-      one.</figcaption>
+      other. All six sit on it. The shaded band marks where the read out answers
+      using the wrong region at least as readily as the right one.</figcaption>
+    </figure>
+    <figure>
+      <div class="frame">
+        <p class="ftitle">What predicts the answer</p>
+        <p class="fsub">Average movement in both read outs when each label flips,
+        whichever region the question named.</p>
+        <div id="mechChart"></div>
+      </div>
+      <figcaption><b>Figure 3.</b> If the read out bound correctly, the region
+      named in the question would be the tallest bar in each group. It never is.
+      Qwen tracks the region acted on more often, which is a salience account.
+      gpt2 and pythia track the eyes value whichever region is named, and
+      recency and frequency both fall short of explaining it.</figcaption>
     </figure>
   </div>
 
@@ -469,6 +505,13 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
       apart by <span class="num">+0.016</span>, about a tenth as much, while making
       up 28 per cent of the full direction by norm. That ratio is why injecting the
       wrong region's direction works about as well as the right one.</p>
+      <p>The same caveat from 4.1 applies to this positive result, and we state
+      it rather than keep the one number that came out our way. The gpt2 effect
+      was measured through the read out that 4.1 shows does not bind. A
+      differential of <span class="num">+0.016</span> could come from lexical
+      content carried in <code>r</code> rather than from a binding the model
+      uses. We report it as a small effect of unclear origin, and a read out
+      that binds would be needed to attribute it.</p>
     </div></div>
     <figure>
       <div class="frame">
@@ -477,7 +520,7 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
         95 per cent bootstrap interval. 100 trials per model.</p>
         <div id="decompChart"></div>
       </div>
-      <figcaption><b>Figure 3.</b> Positive values mean the edit moved the target
+      <figcaption><b>Figure 4.</b> Positive values mean the edit moved the target
       region more than the other region. Only gpt2 shows an effect for the region
       specific component, and it sits an order of magnitude below the shared
       component's effect on each read out.</figcaption>
@@ -492,7 +535,7 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
       region's majority rate. The within region probe sits well above majority.
       The gap between them is the binding margin. It is positive in all three
       models shortly after a value is set and peaks two sentences later.</p>
-      <p>The margin then falls. Figure 4 shows the two region dataset, run on all
+      <p>The margin then falls. Figure 5 shows the two region dataset, run on all
       three models, where the margin stays positive throughout. The sign change
       past five sentences appears only on the four region dataset, which we
       extracted for gpt2 alone, and is reported in 4.7. Section 4.2 is our reason for treating this as correlational.</p>
@@ -503,7 +546,7 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
         <p class="fsub">Two region dataset. Four region pairs per model.</p>
         <div id="decayChart"></div>
       </div>
-      <figcaption><b>Figure 4.</b> Two region dataset, all three models. Margin is the
+      <figcaption><b>Figure 5.</b> Two region dataset, all three models. Margin is the
       within region accuracy above its majority, less the cross region accuracy
       above its majority. The four region dataset, gpt2 only, is the one where
       the margin changes sign past distance five.</figcaption>
@@ -536,7 +579,7 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
         significant at two sided p below 0.05.</p>
         <div id="gapChart"></div>
       </div>
-      <figcaption><b>Figure 5.</b> Same data, same splits, same test in all three
+      <figcaption><b>Figure 6.</b> Same data, same splits, same test in all three
       models.</figcaption>
     </figure>
     <div class="tscroll">
@@ -564,7 +607,7 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
         <p class="fsub">Each mark is one state variable.</p>
         <div id="depthChart"></div>
       </div>
-      <figcaption><b>Figure 6.</b> A code read at the output end and a code read at
+      <figcaption><b>Figure 7.</b> A code read at the output end and a code read at
       the embeddings are different objects even when both are linearly
       decodable.</figcaption>
     </figure>
@@ -607,7 +650,7 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
           <span class="key"><svg width="20" height="12" aria-hidden="true"><path d="M2,7 Q10,1 18,7" fill="none" stroke="var(--warn)" stroke-width="2" stroke-dasharray="3 2"/></svg>mismatch</span>
         </div>
       </div>
-      <figcaption><b>Figure 7.</b> Eyeshadow and lip colour carry the region's
+      <figcaption><b>Figure 8.</b> Eyeshadow and lip colour carry the region's
       colour value. Outline style shows agreement with the truth. Over this
       narrative gpt2 is correct on 56 per cent of readings, pythia on 34 per cent
       and Qwen on 28 per cent.</figcaption>

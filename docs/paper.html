@@ -350,10 +350,19 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
     causal. Their result also sets our expectations for scale. At 124M to 600M
     parameters we sit below the regime where strong effects are likely.</p>
 
-    <p>Our contribution is the decomposition test in section 4.2, the binding
-    decay curve, and a domain that is multi entity, order destructive and free of
-    surface overlap between splits. Linear probing, activation patching, control
-    tasks and MDL are standard and we use them as they stand.</p>
+    <p>Against that, our decomposition is not a new account of how binding is
+    represented. Feng and Steinhardt already factor entity from attribute and
+    identify the binding carrier. What we add is a result about the tool rather
+    than the model. A difference of class means, which is the usual way a
+    steering direction gets built, provably mixes the two components, and we
+    measure the mix at 28 to 38 per cent region specific by norm across three
+    models. The consequence is practical. A wrong region control is the standard
+    specificity check in steering work, and it passes on the shared component
+    alone, so it cannot support a binding claim. Separating the components costs
+    one extra arm and no subspace estimation.</p>
+    <p>The binding decay curve and the domain are the other two pieces. Linear
+    probing, activation patching, control tasks and MDL are standard and we use
+    them as they stand.</p>
   </div></div>
 </section>
 
@@ -410,25 +419,40 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
 
 <div class="result">
     <div class="rhead"><div class="rnum">4.1</div><div class="rbody">
-      <h3>The behavioural read out does not bind</h3>
-      <p class="verd v-no">Fails in 3 of 3</p>
-      <p>A null from steering means nothing if the measurement cannot register
-      a difference. We therefore checked the instrument with no steering at all.
-      Take held out positions where the two regions carry different finishes and
-      compare the model's log odds under all four assignments of two values to
-      two regions.</p>
-      <p>Two contrasts follow, both on the lips read out. <strong>Sensitivity</strong>
-      changes the lips value and holds the eyes fixed. <strong>Leakage</strong>
-      changes the eyes value and holds the lips fixed. A read out that binds
-      moves a lot on the first and very little on the second.</p>
-      <p>Every model moves about equally on both. The mean ratio across three
-      models and six read outs is <span class="num">1.07</span>. Sensitivity is
-      significant everywhere, so the instrument is not blind and the null is not
-      a floor effect. It simply answers a question about one region using the
+      <h3>Binding is present in the residual stream and absent from the output</h3>
+      <p class="verd v-no">Holds in 3 of 3</p>
+      <p>A null from steering means nothing if the measurement cannot register a
+      difference, so we checked without steering anything. Take held out
+      positions where the two regions carry different finishes and compare the
+      model's log odds across all four assignments of two values to two regions.
+      Sensitivity changes the value of the region we asked about. Leakage
+      changes the other region's value.</p>
+      <p>Every model moves about equally on both, with a mean sensitivity to
+      leakage ratio of <span class="num">1.07</span>. Sensitivity is significant
+      everywhere, so the instrument registers changes and the null is not a
+      floor effect. The read out answers a question about one region using the
       other region's value.</p>
-      <p>This gates every steering result in the study, including our own. An
-      experiment read through this instrument cannot separate a model that fails
-      to bind from an instrument that fails to bind.</p>
+      <p>The read out here is the model's own next token distribution, so this
+      is a fact about behaviour rather than about our tooling. Set against 4.3,
+      where a probe recovers the binding at a margin of
+      <span class="num">+0.04</span> to <span class="num">+0.15</span>, the
+      pair gives the cleaner statement. <strong>Binding is linearly decodable in
+      the residual stream and the output does not use it.</strong> Feng and
+      Steinhardt find binding ID vectors only above a scale threshold, and our
+      models run 124M to 600M, so present but unused is what we should expect
+      to find down here.</p>
+      <p>Averaging the ratio hides structure worth reporting. In each model one
+      region drives both read outs at nearly the same strength, and which region
+      varies. gpt2 and pythia answer both questions from the eyes value. Qwen
+      answers both from the lips value.</p>
+      <p>We tested the obvious explanation and it holds in one model of three.
+      In Qwen the value of whichever region was acted on more often predicts the
+      read out better than either region does, which is a salience account. In
+      gpt2 and pythia the eyes value dominates and neither recency nor frequency
+      of action explains it. We report a fixed per model preference with no
+      mechanism behind it. One limit: we tested recency of state changes, not
+      recency of mentions, since the distractor sentences name values without
+      applying them.</p>
     </div></div>
     <figure>
       <div class="frame">
@@ -439,9 +463,21 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
       </div>
       <figcaption><b>Figure 2.</b> A read out that binds sits well to the left of
       the diagonal, where sensitivity to its own region exceeds leakage from the
-      other. All six sit on it. The shaded band marks where the instrument
-      answers using the wrong region at least as readily as the right
-      one.</figcaption>
+      other. All six sit on it. The shaded band marks where the read out answers
+      using the wrong region at least as readily as the right one.</figcaption>
+    </figure>
+    <figure>
+      <div class="frame">
+        <p class="ftitle">What predicts the answer</p>
+        <p class="fsub">Average movement in both read outs when each label flips,
+        whichever region the question named.</p>
+        <div id="mechChart"></div>
+      </div>
+      <figcaption><b>Figure 3.</b> If the read out bound correctly, the region
+      named in the question would be the tallest bar in each group. It never is.
+      Qwen tracks the region acted on more often, which is a salience account.
+      gpt2 and pythia track the eyes value whichever region is named, and
+      recency and frequency both fall short of explaining it.</figcaption>
     </figure>
   </div>
 
@@ -469,6 +505,13 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
       apart by <span class="num">+0.016</span>, about a tenth as much, while making
       up 28 per cent of the full direction by norm. That ratio is why injecting the
       wrong region's direction works about as well as the right one.</p>
+      <p>The same caveat from 4.1 applies to this positive result, and we state
+      it rather than keep the one number that came out our way. The gpt2 effect
+      was measured through the read out that 4.1 shows does not bind. A
+      differential of <span class="num">+0.016</span> could come from lexical
+      content carried in <code>r</code> rather than from a binding the model
+      uses. We report it as a small effect of unclear origin, and a read out
+      that binds would be needed to attribute it.</p>
     </div></div>
     <figure>
       <div class="frame">
@@ -477,7 +520,7 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
         95 per cent bootstrap interval. 100 trials per model.</p>
         <div id="decompChart"></div>
       </div>
-      <figcaption><b>Figure 3.</b> Positive values mean the edit moved the target
+      <figcaption><b>Figure 4.</b> Positive values mean the edit moved the target
       region more than the other region. Only gpt2 shows an effect for the region
       specific component, and it sits an order of magnitude below the shared
       component's effect on each read out.</figcaption>
@@ -492,7 +535,7 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
       region's majority rate. The within region probe sits well above majority.
       The gap between them is the binding margin. It is positive in all three
       models shortly after a value is set and peaks two sentences later.</p>
-      <p>The margin then falls. Figure 4 shows the two region dataset, run on all
+      <p>The margin then falls. Figure 5 shows the two region dataset, run on all
       three models, where the margin stays positive throughout. The sign change
       past five sentences appears only on the four region dataset, which we
       extracted for gpt2 alone, and is reported in 4.7. Section 4.2 is our reason for treating this as correlational.</p>
@@ -503,7 +546,7 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
         <p class="fsub">Two region dataset. Four region pairs per model.</p>
         <div id="decayChart"></div>
       </div>
-      <figcaption><b>Figure 4.</b> Two region dataset, all three models. Margin is the
+      <figcaption><b>Figure 5.</b> Two region dataset, all three models. Margin is the
       within region accuracy above its majority, less the cross region accuracy
       above its majority. The four region dataset, gpt2 only, is the one where
       the margin changes sign past distance five.</figcaption>
@@ -536,7 +579,7 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
         significant at two sided p below 0.05.</p>
         <div id="gapChart"></div>
       </div>
-      <figcaption><b>Figure 5.</b> Same data, same splits, same test in all three
+      <figcaption><b>Figure 6.</b> Same data, same splits, same test in all three
       models.</figcaption>
     </figure>
     <div class="tscroll">
@@ -564,7 +607,7 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
         <p class="fsub">Each mark is one state variable.</p>
         <div id="depthChart"></div>
       </div>
-      <figcaption><b>Figure 6.</b> A code read at the output end and a code read at
+      <figcaption><b>Figure 7.</b> A code read at the output end and a code read at
       the embeddings are different objects even when both are linearly
       decodable.</figcaption>
     </figure>
@@ -607,7 +650,7 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
           <span class="key"><svg width="20" height="12" aria-hidden="true"><path d="M2,7 Q10,1 18,7" fill="none" stroke="var(--warn)" stroke-width="2" stroke-dasharray="3 2"/></svg>mismatch</span>
         </div>
       </div>
-      <figcaption><b>Figure 7.</b> Eyeshadow and lip colour carry the region's
+      <figcaption><b>Figure 8.</b> Eyeshadow and lip colour carry the region's
       colour value. Outline style shows agreement with the truth. Over this
       narrative gpt2 is correct on 56 per cent of readings, pythia on 34 per cent
       and Qwen on 28 per cent.</figcaption>
@@ -776,7 +819,7 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
 </div>
 
 <script>
-const D = {"decompose":{"gpt2":{"label":"gpt2-124M","meta":{"layer":6,"n_trials":100,"mean_cos_d1_d2":0.847691324353218,"mean_frac_differential":0.2841750099712305},"arms":{"full":{"difference":{"mean":-0.0013115835189819337,"ci95":[-0.00723645293712616,0.004975520610809326],"p":0.651},"target":{"mean":0.18924018383026123}},"shared":{"difference":{"mean":-0.004563145637512207,"ci95":[-0.009857431173324585,0.00054259717464447],"p":0.0756},"target":{"mean":0.18338867664337158}},"differential":{"difference":{"mean":0.015771384239196776,"ci95":[0.0094189612865448,0.02331419861316681],"p":0.0},"target":{"mean":0.005109715461730957}},"random":{"difference":{"mean":-0.0018851494789123536,"ci95":[-0.007595501065254211,0.00404135513305664],"p":0.5144},"target":{"mean":0.005290071964263916}}}},"pythia":{"label":"pythia-410m","meta":{"layer":12,"n_trials":100,"mean_cos_d1_d2":0.7426934677362442,"mean_frac_differential":0.37697370707420363},"arms":{"full":{"difference":{"mean":0.0022419404983520506,"ci95":[-0.00393487799167633,0.007976249217987058],"p":0.4524},"target":{"mean":0.14553330421447755}},"shared":{"difference":{"mean":-0.0003460979461669922,"ci95":[-0.006534133434295654,0.005211475729942317],"p":0.9424},"target":{"mean":0.1901725149154663}},"differential":{"difference":{"mean":-0.0004239606857299805,"ci95":[-0.005825520992279052,0.005218587636947631],"p":0.8476},"target":{"mean":-0.12156108379364014}},"random":{"difference":{"mean":0.002756161689758301,"ci95":[-0.0029999852180480954,0.00797659432888031],"p":0.3114},"target":{"mean":-0.019440402984619142}}}},"qwen":{"label":"Qwen3-0.6B","meta":{"layer":14,"n_trials":100,"mean_cos_d1_d2":0.7396433240175248,"mean_frac_differential":0.3552664838138249},"arms":{"full":{"difference":{"mean":-0.0002936697006225586,"ci95":[-0.016047726154327393,0.016360583782196042],"p":0.9474},"target":{"mean":0.34459226608276367}},"shared":{"difference":{"mean":-0.0016682815551757812,"ci95":[-0.016907471776008605,0.013778184652328489],"p":0.8166},"target":{"mean":0.31730482578277586}},"differential":{"difference":{"mean":-0.0004492783546447754,"ci95":[-0.009831501662731171,0.00954602897167205],"p":0.9106},"target":{"mean":0.12332041263580322}},"random":{"difference":{"mean":-0.006475942134857178,"ci95":[-0.01809370285272598,0.0035251230597496018],"p":0.2176},"target":{"mean":-0.03224713325500488}}}}},"gaps":[{"target":"eyes.color","gpt2":{"gap":0.06197854588796187,"ci95":[0.014490147012824533,0.10989108409321176],"p":0.0075},"pythia":{"gap":0.03098927294398096,"ci95":[-0.02028452898035563,0.08175597898500615],"p":0.2315},"qwen":{"gap":0.11084624553039335,"ci95":[0.06443339415799466,0.16290353016949946],"p":0.0}},{"target":"eyes.finish","gpt2":{"gap":0.09654350417163288,"ci95":[0.04807404076738609,0.14770011269156855],"p":0.0},"pythia":{"gap":0.014302741358760418,"ci95":[-0.0459556969460793,0.07737432860194689],"p":0.639},"qwen":{"gap":0.12038140643623363,"ci95":[0.07341658635828249,0.16725989277074113],"p":0.0}},{"target":"lips.color","gpt2":{"gap":-0.044100119189511344,"ci95":[-0.09881147360056505,0.011751573358579086],"p":0.126},"pythia":{"gap":0.06436233611442188,"ci95":[0.009601557626617827,0.11981142135482226],"p":0.028},"qwen":{"gap":-0.03098927294398096,"ci95":[-0.0966615982754638,0.029872441166488697],"p":0.3625}},{"target":"lips.finish","gpt2":{"gap":-0.05840286054827176,"ci95":[-0.11138619431969814,-0.006009075598802374],"p":0.0285},"pythia":{"gap":0.023837902264600697,"ci95":[-0.03360496144932702,0.08531058676696295],"p":0.415},"qwen":{"gap":-0.04767580452920139,"ci95":[-0.10262755252991748,0.008345020686256532],"p":0.098}}],"binding":{"gpt2":{"label":"gpt2-124M","bins":["0","1","2","3-4","5+"],"values":[0.07277281673416942,0.09622314341720489,0.10542807326192842,0.06441170420106762,0.048676320023402074]},"pythia":{"label":"pythia-410m","bins":["0","1","2","3-4","5+"],"values":[0.036411242307117196,0.10424390243902436,0.11479089618009843,0.10385045285878595,0.04488810881965775]},"qwen":{"label":"Qwen3-0.6B","bins":["0","1","2","3-4","5+"],"values":[0.1186633287480943,0.1411449918056493,0.15109560718252119,0.11083899937012617,-0.021095997269757704]}},"depth":{"gpt2":{"label":"gpt2-124M","n_layers":12,"points":[{"target":"eyes.color","layer":11,"frac":0.9166666666666666},{"target":"eyes.finish","layer":1,"frac":0.08333333333333333},{"target":"lips.color","layer":12,"frac":1.0},{"target":"lips.finish","layer":1,"frac":0.08333333333333333}]},"pythia":{"label":"pythia-410m","n_layers":24,"points":[{"target":"eyes.color","layer":24,"frac":1.0},{"target":"eyes.finish","layer":24,"frac":1.0},{"target":"lips.color","layer":20,"frac":0.8333333333333334},{"target":"lips.finish","layer":24,"frac":1.0}]},"qwen":{"label":"Qwen3-0.6B","n_layers":28,"points":[{"target":"eyes.color","layer":26,"frac":0.9285714285714286},{"target":"eyes.finish","layer":16,"frac":0.5714285714285714},{"target":"lips.color","layer":22,"frac":0.7857142857142857},{"target":"lips.finish","layer":18,"frac":0.6428571428571429}]}},"facemap":{"targets":["eyes.color","eyes.finish","lips.color","lips.finish"],"frames":[{"sentence":"She laid a dark ruby colour over the surface of her lips in maximum coverage; it came out with a soft un-reflective finish.","true":{"eyes.color":"bare","eyes.finish":"none","lips.color":"red","lips.finish":"matte"},"gpt2":{"eyes.color":"bare","eyes.finish":"none","lips.color":"nude","lips.finish":"dewy"},"pythia":{"eyes.color":"red","eyes.finish":"satin","lips.color":"red","lips.finish":"matte"},"qwen":{"eyes.color":"bare","eyes.finish":"none","lips.color":"red","lips.finish":"dewy"}},{"sentence":"She laid a naked, undertoned neutral over the surface of her lips in a packed-on, solid layer; it came out with a smooth semi-gloss surface.","true":{"eyes.color":"bare","eyes.finish":"none","lips.color":"nude","lips.finish":"satin"},"gpt2":{"eyes.color":"bare","eyes.finish":"satin","lips.color":"nude","lips.finish":"dewy"},"pythia":{"eyes.color":"nude","eyes.finish":"satin","lips.color":"nude","lips.finish":"matte"},"qwen":{"eyes.color":"bare","eyes.finish":"none","lips.color":"pink","lips.finish":"dewy"}},{"sentence":"She almost went for a tobacco-toned shade, then decided not to.","true":{"eyes.color":"bare","eyes.finish":"none","lips.color":"nude","lips.finish":"satin"},"gpt2":{"eyes.color":"bare","eyes.finish":"none","lips.color":"nude","lips.finish":"matte"},"pythia":{"eyes.color":"bare","eyes.finish":"satin","lips.color":"red","lips.finish":"matte"},"qwen":{"eyes.color":"bare","eyes.finish":"dewy","lips.color":"red","lips.finish":"satin"}},{"sentence":"With a few strokes she put a naked, undertoned neutral on the socket line as a packed-on, solid layer, ending in a juicy liquid-looking gleam.","true":{"eyes.color":"nude","eyes.finish":"dewy","lips.color":"nude","lips.finish":"satin"},"gpt2":{"eyes.color":"brown","eyes.finish":"dewy","lips.color":"nude","lips.finish":"dewy"},"pythia":{"eyes.color":"bare","eyes.finish":"satin","lips.color":"red","lips.finish":"dewy"},"qwen":{"eyes.color":"nude","eyes.finish":"satin","lips.color":"red","lips.finish":"dewy"}},{"sentence":"A setting powder went over the soft skin of her lips, leaving nothing that caught light.","true":{"eyes.color":"nude","eyes.finish":"dewy","lips.color":"nude","lips.finish":"matte"},"gpt2":{"eyes.color":"brown","eyes.finish":"none","lips.color":"nude","lips.finish":"matte"},"pythia":{"eyes.color":"red","eyes.finish":"satin","lips.color":"nude","lips.finish":"matte"},"qwen":{"eyes.color":"pink","eyes.finish":"matte","lips.color":"red","lips.finish":"dewy"}},{"sentence":"She almost went for a pale peony tone, then decided not to.","true":{"eyes.color":"nude","eyes.finish":"dewy","lips.color":"nude","lips.finish":"matte"},"gpt2":{"eyes.color":"brown","eyes.finish":"matte","lips.color":"nude","lips.finish":"matte"},"pythia":{"eyes.color":"red","eyes.finish":"satin","lips.color":"nude","lips.finish":"matte"},"qwen":{"eyes.color":"pink","eyes.finish":"dewy","lips.color":"pink","lips.finish":"satin"}},{"sentence":"With a few strokes she put a naked, undertoned neutral on the hooded part of her lid as maximum coverage, ending in a smooth semi-gloss surface.","true":{"eyes.color":"nude","eyes.finish":"satin","lips.color":"nude","lips.finish":"matte"},"gpt2":{"eyes.color":"brown","eyes.finish":"satin","lips.color":"nude","lips.finish":"satin"},"pythia":{"eyes.color":"nude","eyes.finish":"satin","lips.color":"nude","lips.finish":"satin"},"qwen":{"eyes.color":"red","eyes.finish":"matte","lips.color":"brown","lips.finish":"dewy"}},{"sentence":"She laid a burnt-cinnamon colour over the hooded part of her lid in maximum coverage; it came out with a still-damp-seeming shine.","true":{"eyes.color":"brown","eyes.finish":"dewy","lips.color":"nude","lips.finish":"matte"},"gpt2":{"eyes.color":"brown","eyes.finish":"dewy","lips.color":"nude","lips.finish":"dewy"},"pythia":{"eyes.color":"nude","eyes.finish":"satin","lips.color":"red","lips.finish":"satin"},"qwen":{"eyes.color":"red","eyes.finish":"satin","lips.color":"brown","lips.finish":"dewy"}}],"agree":{"gpt2":0.5625,"pythia":0.34375,"qwen":0.28125},"labels":{"gpt2":"gpt2-124M","pythia":"pythia-410m","qwen":"Qwen3-0.6B"}},"validity":{"gpt2":{"lips":{"sens":0.20069597205337214,"sens_ci":[0.023593203875483297,0.3755073060794752],"leak":0.3155229776212485,"leak_ci":[0.15486318002833,0.46835671981962584],"ratio":0.6360740303810335},"eyes":{"sens":0.3575586753316445,"sens_ci":[0.19809478910842743,0.5103386586255365],"leak":0.22843691767478475,"leak_ci":[0.053052528537049594,0.3974580764770507],"ratio":1.5652403252992781}},"pythia":{"lips":{"sens":0.3845815269314513,"sens_ci":[0.16696794397976936,0.5970291185135744],"leak":0.5442964818217967,"leak_ci":[0.32777047523177494,0.7548258428526397],"ratio":0.7065662552957007},"eyes":{"sens":0.5512667693714104,"sens_ci":[0.3250559837511271,0.7654023772419087],"leak":0.3801330206345539,"leak_ci":[0.16088228809590244,0.5918793525014604],"ratio":1.450194377881679}},"qwen":{"lips":{"sens":0.5299966675894601,"sens_ci":[0.3215103769788937,0.740647003358724],"leak":0.39959340992540415,"leak_ci":[0.19795424430677208,0.6037128272623118],"ratio":1.3263398605307317},"eyes":{"sens":0.3790472356399687,"sens_ci":[0.2107318683425979,0.5469584727641379],"leak":0.5000603758558935,"leak_ci":[0.32228824265149175,0.6726145424404922],"ratio":0.7580029411272569}}}};
+const D = {"decompose":{"gpt2":{"label":"gpt2-124M","meta":{"layer":6,"n_trials":100,"mean_cos_d1_d2":0.847691324353218,"mean_frac_differential":0.2841750099712305},"arms":{"full":{"difference":{"mean":-0.0013115835189819337,"ci95":[-0.00723645293712616,0.004975520610809326],"p":0.651},"target":{"mean":0.18924018383026123}},"shared":{"difference":{"mean":-0.004563145637512207,"ci95":[-0.009857431173324585,0.00054259717464447],"p":0.0756},"target":{"mean":0.18338867664337158}},"differential":{"difference":{"mean":0.015771384239196776,"ci95":[0.0094189612865448,0.02331419861316681],"p":0.0},"target":{"mean":0.005109715461730957}},"random":{"difference":{"mean":-0.0018851494789123536,"ci95":[-0.007595501065254211,0.00404135513305664],"p":0.5144},"target":{"mean":0.005290071964263916}}}},"pythia":{"label":"pythia-410m","meta":{"layer":12,"n_trials":100,"mean_cos_d1_d2":0.7426934677362442,"mean_frac_differential":0.37697370707420363},"arms":{"full":{"difference":{"mean":0.0022419404983520506,"ci95":[-0.00393487799167633,0.007976249217987058],"p":0.4524},"target":{"mean":0.14553330421447755}},"shared":{"difference":{"mean":-0.0003460979461669922,"ci95":[-0.006534133434295654,0.005211475729942317],"p":0.9424},"target":{"mean":0.1901725149154663}},"differential":{"difference":{"mean":-0.0004239606857299805,"ci95":[-0.005825520992279052,0.005218587636947631],"p":0.8476},"target":{"mean":-0.12156108379364014}},"random":{"difference":{"mean":0.002756161689758301,"ci95":[-0.0029999852180480954,0.00797659432888031],"p":0.3114},"target":{"mean":-0.019440402984619142}}}},"qwen":{"label":"Qwen3-0.6B","meta":{"layer":14,"n_trials":100,"mean_cos_d1_d2":0.7396433240175248,"mean_frac_differential":0.3552664838138249},"arms":{"full":{"difference":{"mean":-0.0002936697006225586,"ci95":[-0.016047726154327393,0.016360583782196042],"p":0.9474},"target":{"mean":0.34459226608276367}},"shared":{"difference":{"mean":-0.0016682815551757812,"ci95":[-0.016907471776008605,0.013778184652328489],"p":0.8166},"target":{"mean":0.31730482578277586}},"differential":{"difference":{"mean":-0.0004492783546447754,"ci95":[-0.009831501662731171,0.00954602897167205],"p":0.9106},"target":{"mean":0.12332041263580322}},"random":{"difference":{"mean":-0.006475942134857178,"ci95":[-0.01809370285272598,0.0035251230597496018],"p":0.2176},"target":{"mean":-0.03224713325500488}}}}},"gaps":[{"target":"eyes.color","gpt2":{"gap":0.06197854588796187,"ci95":[0.014490147012824533,0.10989108409321176],"p":0.0075},"pythia":{"gap":0.03098927294398096,"ci95":[-0.02028452898035563,0.08175597898500615],"p":0.2315},"qwen":{"gap":0.11084624553039335,"ci95":[0.06443339415799466,0.16290353016949946],"p":0.0}},{"target":"eyes.finish","gpt2":{"gap":0.09654350417163288,"ci95":[0.04807404076738609,0.14770011269156855],"p":0.0},"pythia":{"gap":0.014302741358760418,"ci95":[-0.0459556969460793,0.07737432860194689],"p":0.639},"qwen":{"gap":0.12038140643623363,"ci95":[0.07341658635828249,0.16725989277074113],"p":0.0}},{"target":"lips.color","gpt2":{"gap":-0.044100119189511344,"ci95":[-0.09881147360056505,0.011751573358579086],"p":0.126},"pythia":{"gap":0.06436233611442188,"ci95":[0.009601557626617827,0.11981142135482226],"p":0.028},"qwen":{"gap":-0.03098927294398096,"ci95":[-0.0966615982754638,0.029872441166488697],"p":0.3625}},{"target":"lips.finish","gpt2":{"gap":-0.05840286054827176,"ci95":[-0.11138619431969814,-0.006009075598802374],"p":0.0285},"pythia":{"gap":0.023837902264600697,"ci95":[-0.03360496144932702,0.08531058676696295],"p":0.415},"qwen":{"gap":-0.04767580452920139,"ci95":[-0.10262755252991748,0.008345020686256532],"p":0.098}}],"binding":{"gpt2":{"label":"gpt2-124M","bins":["0","1","2","3-4","5+"],"values":[0.07277281673416942,0.09622314341720489,0.10542807326192842,0.06441170420106762,0.048676320023402074]},"pythia":{"label":"pythia-410m","bins":["0","1","2","3-4","5+"],"values":[0.036411242307117196,0.10424390243902436,0.11479089618009843,0.10385045285878595,0.04488810881965775]},"qwen":{"label":"Qwen3-0.6B","bins":["0","1","2","3-4","5+"],"values":[0.1186633287480943,0.1411449918056493,0.15109560718252119,0.11083899937012617,-0.021095997269757704]}},"depth":{"gpt2":{"label":"gpt2-124M","n_layers":12,"points":[{"target":"eyes.color","layer":11,"frac":0.9166666666666666},{"target":"eyes.finish","layer":1,"frac":0.08333333333333333},{"target":"lips.color","layer":12,"frac":1.0},{"target":"lips.finish","layer":1,"frac":0.08333333333333333}]},"pythia":{"label":"pythia-410m","n_layers":24,"points":[{"target":"eyes.color","layer":24,"frac":1.0},{"target":"eyes.finish","layer":24,"frac":1.0},{"target":"lips.color","layer":20,"frac":0.8333333333333334},{"target":"lips.finish","layer":24,"frac":1.0}]},"qwen":{"label":"Qwen3-0.6B","n_layers":28,"points":[{"target":"eyes.color","layer":26,"frac":0.9285714285714286},{"target":"eyes.finish","layer":16,"frac":0.5714285714285714},{"target":"lips.color","layer":22,"frac":0.7857142857142857},{"target":"lips.finish","layer":18,"frac":0.6428571428571429}]}},"facemap":{"targets":["eyes.color","eyes.finish","lips.color","lips.finish"],"frames":[{"sentence":"She laid a dark ruby colour over the surface of her lips in maximum coverage; it came out with a soft un-reflective finish.","true":{"eyes.color":"bare","eyes.finish":"none","lips.color":"red","lips.finish":"matte"},"gpt2":{"eyes.color":"bare","eyes.finish":"none","lips.color":"nude","lips.finish":"dewy"},"pythia":{"eyes.color":"red","eyes.finish":"satin","lips.color":"red","lips.finish":"matte"},"qwen":{"eyes.color":"bare","eyes.finish":"none","lips.color":"red","lips.finish":"dewy"}},{"sentence":"She laid a naked, undertoned neutral over the surface of her lips in a packed-on, solid layer; it came out with a smooth semi-gloss surface.","true":{"eyes.color":"bare","eyes.finish":"none","lips.color":"nude","lips.finish":"satin"},"gpt2":{"eyes.color":"bare","eyes.finish":"satin","lips.color":"nude","lips.finish":"dewy"},"pythia":{"eyes.color":"nude","eyes.finish":"satin","lips.color":"nude","lips.finish":"matte"},"qwen":{"eyes.color":"bare","eyes.finish":"none","lips.color":"pink","lips.finish":"dewy"}},{"sentence":"She almost went for a tobacco-toned shade, then decided not to.","true":{"eyes.color":"bare","eyes.finish":"none","lips.color":"nude","lips.finish":"satin"},"gpt2":{"eyes.color":"bare","eyes.finish":"none","lips.color":"nude","lips.finish":"matte"},"pythia":{"eyes.color":"bare","eyes.finish":"satin","lips.color":"red","lips.finish":"matte"},"qwen":{"eyes.color":"bare","eyes.finish":"dewy","lips.color":"red","lips.finish":"satin"}},{"sentence":"With a few strokes she put a naked, undertoned neutral on the socket line as a packed-on, solid layer, ending in a juicy liquid-looking gleam.","true":{"eyes.color":"nude","eyes.finish":"dewy","lips.color":"nude","lips.finish":"satin"},"gpt2":{"eyes.color":"brown","eyes.finish":"dewy","lips.color":"nude","lips.finish":"dewy"},"pythia":{"eyes.color":"bare","eyes.finish":"satin","lips.color":"red","lips.finish":"dewy"},"qwen":{"eyes.color":"nude","eyes.finish":"satin","lips.color":"red","lips.finish":"dewy"}},{"sentence":"A setting powder went over the soft skin of her lips, leaving nothing that caught light.","true":{"eyes.color":"nude","eyes.finish":"dewy","lips.color":"nude","lips.finish":"matte"},"gpt2":{"eyes.color":"brown","eyes.finish":"none","lips.color":"nude","lips.finish":"matte"},"pythia":{"eyes.color":"red","eyes.finish":"satin","lips.color":"nude","lips.finish":"matte"},"qwen":{"eyes.color":"pink","eyes.finish":"matte","lips.color":"red","lips.finish":"dewy"}},{"sentence":"She almost went for a pale peony tone, then decided not to.","true":{"eyes.color":"nude","eyes.finish":"dewy","lips.color":"nude","lips.finish":"matte"},"gpt2":{"eyes.color":"brown","eyes.finish":"matte","lips.color":"nude","lips.finish":"matte"},"pythia":{"eyes.color":"red","eyes.finish":"satin","lips.color":"nude","lips.finish":"matte"},"qwen":{"eyes.color":"pink","eyes.finish":"dewy","lips.color":"pink","lips.finish":"satin"}},{"sentence":"With a few strokes she put a naked, undertoned neutral on the hooded part of her lid as maximum coverage, ending in a smooth semi-gloss surface.","true":{"eyes.color":"nude","eyes.finish":"satin","lips.color":"nude","lips.finish":"matte"},"gpt2":{"eyes.color":"brown","eyes.finish":"satin","lips.color":"nude","lips.finish":"satin"},"pythia":{"eyes.color":"nude","eyes.finish":"satin","lips.color":"nude","lips.finish":"satin"},"qwen":{"eyes.color":"red","eyes.finish":"matte","lips.color":"brown","lips.finish":"dewy"}},{"sentence":"She laid a burnt-cinnamon colour over the hooded part of her lid in maximum coverage; it came out with a still-damp-seeming shine.","true":{"eyes.color":"brown","eyes.finish":"dewy","lips.color":"nude","lips.finish":"matte"},"gpt2":{"eyes.color":"brown","eyes.finish":"dewy","lips.color":"nude","lips.finish":"dewy"},"pythia":{"eyes.color":"nude","eyes.finish":"satin","lips.color":"red","lips.finish":"satin"},"qwen":{"eyes.color":"red","eyes.finish":"satin","lips.color":"brown","lips.finish":"dewy"}}],"agree":{"gpt2":0.5625,"pythia":0.34375,"qwen":0.28125},"labels":{"gpt2":"gpt2-124M","pythia":"pythia-410m","qwen":"Qwen3-0.6B"}},"validity":{"gpt2":{"lips":{"sens":0.20069597205337214,"sens_ci":[0.023593203875483297,0.3755073060794752],"leak":0.3155229776212485,"leak_ci":[0.15486318002833,0.46835671981962584],"ratio":0.6360740303810335},"eyes":{"sens":0.3575586753316445,"sens_ci":[0.19809478910842743,0.5103386586255365],"leak":0.22843691767478475,"leak_ci":[0.053052528537049594,0.3974580764770507],"ratio":1.5652403252992781}},"pythia":{"lips":{"sens":0.3845815269314513,"sens_ci":[0.16696794397976936,0.5970291185135744],"leak":0.5442964818217967,"leak_ci":[0.32777047523177494,0.7548258428526397],"ratio":0.7065662552957007},"eyes":{"sens":0.5512667693714104,"sens_ci":[0.3250559837511271,0.7654023772419087],"leak":0.3801330206345539,"leak_ci":[0.16088228809590244,0.5918793525014604],"ratio":1.450194377881679}},"qwen":{"lips":{"sens":0.5299966675894601,"sens_ci":[0.3215103769788937,0.740647003358724],"leak":0.39959340992540415,"leak_ci":[0.19795424430677208,0.6037128272623118],"ratio":1.3263398605307317},"eyes":{"sens":0.3790472356399687,"sens_ci":[0.2107318683425979,0.5469584727641379],"leak":0.5000603758558935,"leak_ci":[0.32228824265149175,0.6726145424404922],"ratio":0.7580029411272569}}},"mechanism":{"gpt2":{"lips":0.2186875863278166,"eyes":0.2875075352688631,"last":0.18024330987380102,"more":0.10784978624703227},"pythia":{"lips":0.44642099167438265,"eyes":0.5496909568707148,"last":0.4489715420282804,"more":0.2999384575995846},"qwen":{"lips":0.5236209466102275,"eyes":0.4321269951760769,"last":0.5434555422801237,"more":0.575610459714696}}};
 const RM = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const NS = "http://www.w3.org/2000/svg";
 const el = (n, a = {}) => { const e = document.createElementNS(NS, n);
@@ -918,7 +961,56 @@ const stagger = () => (RM ? 0 : 0.5 + 0.05 * tick++);
   document.getElementById("leakChart").appendChild(svg);
 })();
 
-/* ---- Figure 3, decomposition results ---- */
+/* ---- Figure 3, what predicts the answer ---- */
+(function () {
+  const W = 800, H = 320, L = 74, R = 30, T = 46, B = 76;
+  const keys = [["lips", "lips value"], ["eyes", "eyes value"],
+                ["last", "region acted on last"], ["more", "region acted on more often"]];
+  const hi = 0.62;
+  const gw = (W - L - R) / MK.length;
+  const bw = gw / (keys.length + 1.1);
+  const y = v => T + (1 - v / hi) * (H - T - B);
+  const svg = el("svg", {viewBox: `0 0 ${W} ${H}`, role: "img",
+    "aria-label": "Which label best predicts the read out in each model"});
+  for (let v = 0; v <= 0.601; v += 0.2) {
+    svg.appendChild(el("line", {x1: L, y1: y(v), x2: W - R, y2: y(v),
+      stroke: v === 0 ? "var(--ink)" : "var(--hair)", "stroke-width": v === 0 ? 1.4 : 1}));
+    svg.appendChild(tx(L - 12, y(v) + 4, v.toFixed(1), {"text-anchor": "end", "font-size": 11}));
+  }
+  const SHADE = {lips: .34, eyes: .58, last: .82, more: 1};
+  MK.forEach((mk, gi) => {
+    const x0 = L + gi * gw + bw * 0.5;
+    const vals = D.mechanism[mk];
+    let best = null;
+    keys.forEach(([k]) => { if (best === null || vals[k] > vals[best]) best = k; });
+    keys.forEach(([k, lab], bi) => {
+      const px = x0 + bi * bw, v = vals[k];
+      const bar = el("rect", {x: px, y: y(v), width: bw * 0.84,
+        height: y(0) - y(v), fill: MC[mk], opacity: SHADE[k]});
+      if (!RM) { bar.style.transformOrigin = `${px}px ${y(0)}px`;
+        bar.style.transform = "scaleY(1)";
+        bar.style.animation = `fade .5s ease ${stagger()}s both`; }
+      svg.appendChild(bar);
+      if (k === best) svg.appendChild(tx(px + bw * 0.42, y(v) - 7, "▲",
+        {"text-anchor": "middle", "font-size": 10, fill: MC[mk]}));
+      const t = tx(0, 0, lab, {"font-size": 10.5, fill: "var(--ink-3)",
+        "text-anchor": "end"});
+      t.setAttribute("transform",
+        `translate(${px + bw * 0.5} ${H - B + 12}) rotate(-38)`);
+      svg.appendChild(t);
+    });
+    svg.appendChild(tx(x0 + (keys.length * bw) / 2 - bw * 0.5, T - 20,
+      D.decompose[mk].label, {"text-anchor": "middle", "font-size": 12.5,
+      fill: "var(--ink)", "font-weight": 600}));
+  });
+  svg.appendChild(tx(L - 12, T - 20, "movement", {"text-anchor": "end", "font-size": 10.5}));
+  svg.appendChild(tx((L + W - R) / 2, H - 8,
+    "triangle marks the strongest predictor in each model",
+    {"text-anchor": "middle", "font-size": 11, fill: "var(--ink-3)"}));
+  document.getElementById("mechChart").appendChild(svg);
+})();
+
+/* ---- Figure 4, decomposition results ---- */
 (function () {
   const arms = [["shared", "shared component"], ["differential", "region specific component"],
                 ["full", "full direction"], ["random", "random, matched norm"]];
@@ -974,7 +1066,7 @@ const stagger = () => (RM ? 0 : 0.5 + 0.05 * tick++);
   document.getElementById("decompChart").appendChild(svg);
 })();
 
-/* ---- Figure 4, decay ---- */
+/* ---- Figure 5, decay ---- */
 (function () {
   const W = 800, H = 300, L = 72, R = 132, T = 30, B = 58;
   const bins = D.binding.gpt2.bins, lo = -0.06, hi = 0.18;
@@ -1011,7 +1103,7 @@ const stagger = () => (RM ? 0 : 0.5 + 0.05 * tick++);
   document.getElementById("decayChart").appendChild(svg);
 })();
 
-/* ---- Figure 5, baseline gaps ---- */
+/* ---- Figure 6, baseline gaps ---- */
 (function () {
   const W = 800, H = 330, L = 78, R = 26, T = 42, B = 66;
   const lo = -0.13, hi = 0.20;
@@ -1066,7 +1158,7 @@ const stagger = () => (RM ? 0 : 0.5 + 0.05 * tick++);
   });
 })();
 
-/* ---- Figure 6, depth ---- */
+/* ---- Figure 7, depth ---- */
 (function () {
   const W = 800, H = 230, L = 176, R = 34, T = 46, B = 52;
   const x = f => L + f * (W - L - R);
@@ -1100,7 +1192,7 @@ const stagger = () => (RM ? 0 : 0.5 + 0.05 * tick++);
   document.getElementById("depthChart").appendChild(svg);
 })();
 
-/* ---- Figure 7, faces ---- */
+/* ---- Figure 8, faces ---- */
 (function () {
   const F = D.facemap, TG = F.targets, N = F.frames.length;
   const SW = {bare: "var(--sw-bare)", nude: "var(--sw-nude)", pink: "var(--sw-pink)",

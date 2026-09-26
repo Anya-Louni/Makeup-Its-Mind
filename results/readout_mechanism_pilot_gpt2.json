@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "model": "gpt2",
+    "dataset": "pilot",
+    "values": [
+      "matte",
+      "dewy"
+    ],
+    "n": 220,
+    "last_region_counts": {
+      "eyes": 109,
+      "lips": 111
+    }
+  },
+  "effects": {
+    "lips|v_e1": {
+      "mean": 0.19827416856238184,
+      "ci95": [
+        0.00782512800490603,
+        0.3842940156764172
+      ],
+      "n": 94,
+      "p_one_sided_greater": 0.0205,
+      "p_two_sided": 0.041,
+      "description": "value of lips"
+    },
+    "lips|v_e2": {
+      "mean": 0.26200827211141586,
+      "ci95": [
+        0.09509740918874741,
+        0.42912951130419963
+      ],
+      "n": 96,
+      "p_one_sided_greater": 0.000375,
+      "p_two_sided": 0.00075,
+      "description": "value of eyes"
+    },
+    "lips|v_last": {
+      "mean": 0.159830609193215,
+      "ci95": [
+        -0.002230944541784431,
+        0.3231275113729328
+      ],
+      "n": 104,
+      "p_one_sided_greater": 0.0275,
+      "p_two_sided": 0.055,
+      "description": "value of the region acted on last"
+    },
+    "lips|v_more": {
+      "mean": 0.08818242515342822,
+      "ci95": [
+        -0.10855834112651105,
+        0.2810426227424454
+      ],
+      "n": 69,
+      "p_one_sided_greater": 0.184625,
+      "p_two_sided": 0.36925,
+      "description": "value of the region acted on more often"
+    },
+    "eyes|v_e1": {
+      "mean": 0.23910100409325133,
+      "ci95": [
+        0.05471171521125956,
+        0.4199932565080359
+      ],
+      "n": 94,
+      "p_one_sided_greater": 0.006375,
+      "p_two_sided": 0.01275,
+      "description": "value of lips"
+    },
+    "eyes|v_e2": {
+      "mean": 0.31300679842631024,
+      "ci95": [
+        0.148497074842453,
+        0.4786329209804534
+      ],
+      "n": 96,
+      "p_one_sided_greater": 0.0,
+      "p_two_sided": 0.0,
+      "description": "value of eyes"
+    },
+    "eyes|v_last": {
+      "mean": 0.20065601055438703,
+      "ci95": [
+        0.0395408740410438,
+        0.3637186545592087
+      ],
+      "n": 104,
+      "p_one_sided_greater": 0.00775,
+      "p_two_sided": 0.0155,
+      "description": "value of the region acted on last"
+    },
+    "eyes|v_more": {
+      "mean": 0.12751714734063632,
+      "ci95": [
+        -0.06436704829119254,
+        0.31916645989901776
+      ],
+      "n": 69,
+      "p_one_sided_greater": 0.09625,
+      "p_two_sided": 0.1925,
+      "description": "value of the region acted on more often"
+    }
+  }
+}

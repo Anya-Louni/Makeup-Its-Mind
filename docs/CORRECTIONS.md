@@ -510,3 +510,71 @@ and is the earliest close relative of this domain.
 **Wrong**: we described Kim and Schuster (ACL 2023) as evaluating on ProPara and
 Recipes. Their data is a synthetic boxes and objects setup with operations that
 move, remove and add objects. Corrected.
+
+---
+
+## 18. The leakage mean hid a per model structure, and recency explains one case of three
+
+**Observed**: the sensitivity to leakage ratio averages 1.07 across three models
+and six read outs, which reads as the read out mixing regions at random.
+
+**It is not random.** Grouping by which region's value moves the read out,
+rather than by which region the question named:
+
+| model | lips value drives | eyes value drives | dominant |
+|---|---|---|---|
+| gpt2-124M | +0.219 | +0.288 | eyes |
+| pythia-410m | +0.446 | +0.550 | eyes |
+| Qwen3-0.6B | +0.524 | +0.432 | lips |
+
+In each model one region drives both read outs at nearly the same strength.
+
+**Mechanism test** (`24_readout_mechanism.py`). For every trial we know the
+action history, so each position can be labelled by the value of the region
+acted on last and the value of the region acted on more often, then compared
+against the two fixed regions.
+
+| model | region acted on last | region acted on more often | beats the dominant region? |
+|---|---|---|---|
+| gpt2-124M | +0.180 | +0.108 | no |
+| pythia-410m | +0.449 | +0.300 | no |
+| Qwen3-0.6B | +0.543 | **+0.576** | yes |
+
+Qwen tracks the region acted on more often better than it tracks either fixed
+region, which is a salience account. gpt2 and pythia track the eyes value
+whichever region the question named, and neither recency nor frequency of
+action explains it. We report a fixed per model preference with no mechanism
+behind it.
+
+**Limit**: we tested recency of state changes. Recency of mentions was not
+tested, and the distractor sentences name values without applying them.
+
+---
+
+## 19. The framing put the failure on the tool
+
+**Claimed**: the behavioural read out does not bind, so it cannot test binding.
+
+**Better**: the read out is the model's own next token distribution, so the
+leakage is a fact about model behaviour rather than about our tooling. Paired
+with the probe result, which recovers binding at a margin of +0.04 to +0.15 in
+all three models, the statement is that binding is linearly decodable in the
+residual stream and the output does not use it. Present but unused is a sharper
+claim than an instrument failure, and it fits Feng and Steinhardt's scale
+threshold: their binding ID vectors appear only in sufficiently large models,
+and ours run 124M to 600M.
+
+---
+
+## 20. The one positive result inherited the same caveat
+
+**Claimed**: gpt2 shows a region specific causal effect of +0.016, p below
+0.0001, with a dose response.
+
+**Problem**: that effect was measured through the same read out that correction
+18 shows does not bind. A differential could come from lexical content carried
+in the region specific component rather than from a binding the model uses.
+
+**Fix**: reported as a small effect of unclear origin. Attributing it would
+need a read out that binds. We kept the caveat on the result that came out our
+way as well as on the nulls.

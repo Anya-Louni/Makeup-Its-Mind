@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "model": "EleutherAI/pythia-410m",
+    "dataset": "pilot",
+    "values": [
+      "matte",
+      "dewy"
+    ],
+    "n": 220,
+    "last_region_counts": {
+      "eyes": 109,
+      "lips": 111
+    }
+  },
+  "effects": {
+    "lips|v_e1": {
+      "mean": 0.43479188452375694,
+      "ci95": [
+        0.17583850787041033,
+        0.6966963171958923
+      ],
+      "n": 94,
+      "p_one_sided_greater": 0.000125,
+      "p_two_sided": 0.00025,
+      "description": "value of lips"
+    },
+    "lips|v_e2": {
+      "mean": 0.5380526433388392,
+      "ci95": [
+        0.3132667468239864,
+        0.7557468815396229
+      ],
+      "n": 96,
+      "p_one_sided_greater": 0.0,
+      "p_two_sided": 0.0,
+      "description": "value of eyes"
+    },
+    "lips|v_last": {
+      "mean": 0.4412377247443566,
+      "ci95": [
+        0.1979201756990873,
+        0.6797268364291924
+      ],
+      "n": 104,
+      "p_one_sided_greater": 0.000125,
+      "p_two_sided": 0.00025,
+      "description": "value of the region acted on last"
+    },
+    "lips|v_more": {
+      "mean": 0.30623321947844134,
+      "ci95": [
+        0.046344299938367764,
+        0.5621169964472452
+      ],
+      "n": 69,
+      "p_one_sided_greater": 0.0095,
+      "p_two_sided": 0.019,
+      "description": "value of the region acted on more often"
+    },
+    "eyes|v_e1": {
+      "mean": 0.4580500988250083,
+      "ci95": [
+        0.19660980143445606,
+        0.7250447024690343
+      ],
+      "n": 94,
+      "p_one_sided_greater": 0.000125,
+      "p_two_sided": 0.00025,
+      "description": "value of lips"
+    },
+    "eyes|v_e2": {
+      "mean": 0.5613292704025904,
+      "ci95": [
+        0.32904481701552873,
+        0.7886271061996619
+      ],
+      "n": 96,
+      "p_one_sided_greater": 0.0,
+      "p_two_sided": 0.0,
+      "description": "value of eyes"
+    },
+    "eyes|v_last": {
+      "mean": 0.45670535931220424,
+      "ci95": [
+        0.20750387253669594,
+        0.699272676385366
+      ],
+      "n": 104,
+      "p_one_sided_greater": 0.000125,
+      "p_two_sided": 0.00025,
+      "description": "value of the region acted on last"
+    },
+    "eyes|v_more": {
+      "mean": 0.2936436957207279,
+      "ci95": [
+        0.02096793357876764,
+        0.5630199363266211
+      ],
+      "n": 69,
+      "p_one_sided_greater": 0.01725,
+      "p_two_sided": 0.0345,
+      "description": "value of the region acted on more often"
+    }
+  }
+}

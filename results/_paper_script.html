@@ -141,7 +141,56 @@ const stagger = () => (RM ? 0 : 0.5 + 0.05 * tick++);
   document.getElementById("leakChart").appendChild(svg);
 })();
 
-/* ---- Figure 3, decomposition results ---- */
+/* ---- Figure 3, what predicts the answer ---- */
+(function () {
+  const W = 800, H = 320, L = 74, R = 30, T = 46, B = 76;
+  const keys = [["lips", "lips value"], ["eyes", "eyes value"],
+                ["last", "region acted on last"], ["more", "region acted on more often"]];
+  const hi = 0.62;
+  const gw = (W - L - R) / MK.length;
+  const bw = gw / (keys.length + 1.1);
+  const y = v => T + (1 - v / hi) * (H - T - B);
+  const svg = el("svg", {viewBox: `0 0 ${W} ${H}`, role: "img",
+    "aria-label": "Which label best predicts the read out in each model"});
+  for (let v = 0; v <= 0.601; v += 0.2) {
+    svg.appendChild(el("line", {x1: L, y1: y(v), x2: W - R, y2: y(v),
+      stroke: v === 0 ? "var(--ink)" : "var(--hair)", "stroke-width": v === 0 ? 1.4 : 1}));
+    svg.appendChild(tx(L - 12, y(v) + 4, v.toFixed(1), {"text-anchor": "end", "font-size": 11}));
+  }
+  const SHADE = {lips: .34, eyes: .58, last: .82, more: 1};
+  MK.forEach((mk, gi) => {
+    const x0 = L + gi * gw + bw * 0.5;
+    const vals = D.mechanism[mk];
+    let best = null;
+    keys.forEach(([k]) => { if (best === null || vals[k] > vals[best]) best = k; });
+    keys.forEach(([k, lab], bi) => {
+      const px = x0 + bi * bw, v = vals[k];
+      const bar = el("rect", {x: px, y: y(v), width: bw * 0.84,
+        height: y(0) - y(v), fill: MC[mk], opacity: SHADE[k]});
+      if (!RM) { bar.style.transformOrigin = `${px}px ${y(0)}px`;
+        bar.style.transform = "scaleY(1)";
+        bar.style.animation = `fade .5s ease ${stagger()}s both`; }
+      svg.appendChild(bar);
+      if (k === best) svg.appendChild(tx(px + bw * 0.42, y(v) - 7, "▲",
+        {"text-anchor": "middle", "font-size": 10, fill: MC[mk]}));
+      const t = tx(0, 0, lab, {"font-size": 10.5, fill: "var(--ink-3)",
+        "text-anchor": "end"});
+      t.setAttribute("transform",
+        `translate(${px + bw * 0.5} ${H - B + 12}) rotate(-38)`);
+      svg.appendChild(t);
+    });
+    svg.appendChild(tx(x0 + (keys.length * bw) / 2 - bw * 0.5, T - 20,
+      D.decompose[mk].label, {"text-anchor": "middle", "font-size": 12.5,
+      fill: "var(--ink)", "font-weight": 600}));
+  });
+  svg.appendChild(tx(L - 12, T - 20, "movement", {"text-anchor": "end", "font-size": 10.5}));
+  svg.appendChild(tx((L + W - R) / 2, H - 8,
+    "triangle marks the strongest predictor in each model",
+    {"text-anchor": "middle", "font-size": 11, fill: "var(--ink-3)"}));
+  document.getElementById("mechChart").appendChild(svg);
+})();
+
+/* ---- Figure 4, decomposition results ---- */
 (function () {
   const arms = [["shared", "shared component"], ["differential", "region specific component"],
                 ["full", "full direction"], ["random", "random, matched norm"]];
@@ -197,7 +246,7 @@ const stagger = () => (RM ? 0 : 0.5 + 0.05 * tick++);
   document.getElementById("decompChart").appendChild(svg);
 })();
 
-/* ---- Figure 4, decay ---- */
+/* ---- Figure 5, decay ---- */
 (function () {
   const W = 800, H = 300, L = 72, R = 132, T = 30, B = 58;
   const bins = D.binding.gpt2.bins, lo = -0.06, hi = 0.18;
@@ -234,7 +283,7 @@ const stagger = () => (RM ? 0 : 0.5 + 0.05 * tick++);
   document.getElementById("decayChart").appendChild(svg);
 })();
 
-/* ---- Figure 5, baseline gaps ---- */
+/* ---- Figure 6, baseline gaps ---- */
 (function () {
   const W = 800, H = 330, L = 78, R = 26, T = 42, B = 66;
   const lo = -0.13, hi = 0.20;
@@ -289,7 +338,7 @@ const stagger = () => (RM ? 0 : 0.5 + 0.05 * tick++);
   });
 })();
 
-/* ---- Figure 6, depth ---- */
+/* ---- Figure 7, depth ---- */
 (function () {
   const W = 800, H = 230, L = 176, R = 34, T = 46, B = 52;
   const x = f => L + f * (W - L - R);
@@ -323,7 +372,7 @@ const stagger = () => (RM ? 0 : 0.5 + 0.05 * tick++);
   document.getElementById("depthChart").appendChild(svg);
 })();
 
-/* ---- Figure 7, faces ---- */
+/* ---- Figure 8, faces ---- */
 (function () {
   const F = D.facemap, TG = F.targets, N = F.frames.length;
   const SW = {bare: "var(--sw-bare)", nude: "var(--sw-nude)", pink: "var(--sw-pink)",
