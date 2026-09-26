@@ -1,0 +1,59 @@
+{
+  "meta": {
+    "model": "gpt2",
+    "dataset": "pilot",
+    "target": "lips.finish",
+    "other": "eyes.finish",
+    "values": [
+      "matte",
+      "dewy"
+    ],
+    "per_cell": 60
+  },
+  "lips_readout": {
+    "sensitivity": {
+      "mean": 0.20069597205337214,
+      "ci95": [
+        0.023593203875483297,
+        0.3755073060794752
+      ],
+      "n": 98,
+      "p_one_sided_greater": 0.0137,
+      "p_two_sided": 0.0274
+    },
+    "leakage": {
+      "mean": 0.3155229776212485,
+      "ci95": [
+        0.15486318002833,
+        0.46835671981962584
+      ],
+      "n": 101,
+      "p_one_sided_greater": 0.0001,
+      "p_two_sided": 0.0002
+    },
+    "selectivity_ratio": 0.6360740303810335
+  },
+  "eyes_readout": {
+    "sensitivity": {
+      "mean": 0.3575586753316445,
+      "ci95": [
+        0.19809478910842743,
+        0.5103386586255365
+      ],
+      "n": 101,
+      "p_one_sided_greater": 0.0,
+      "p_two_sided": 0.0
+    },
+    "leakage": {
+      "mean": 0.22843691767478475,
+      "ci95": [
+        0.053052528537049594,
+        0.3974580764770507
+      ],
+      "n": 98,
+      "p_one_sided_greater": 0.005,
+      "p_two_sided": 0.01
+    },
+    "selectivity_ratio": 1.5652403252992781
+  }
+}

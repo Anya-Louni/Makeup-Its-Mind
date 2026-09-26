@@ -1,0 +1,59 @@
+{
+  "meta": {
+    "model": "EleutherAI/pythia-410m",
+    "dataset": "pilot",
+    "target": "lips.finish",
+    "other": "eyes.finish",
+    "values": [
+      "matte",
+      "dewy"
+    ],
+    "per_cell": 60
+  },
+  "lips_readout": {
+    "sensitivity": {
+      "mean": 0.3845815269314513,
+      "ci95": [
+        0.16696794397976936,
+        0.5970291185135744
+      ],
+      "n": 98,
+      "p_one_sided_greater": 0.0003,
+      "p_two_sided": 0.0006
+    },
+    "leakage": {
+      "mean": 0.5442964818217967,
+      "ci95": [
+        0.32777047523177494,
+        0.7548258428526397
+      ],
+      "n": 101,
+      "p_one_sided_greater": 0.0,
+      "p_two_sided": 0.0
+    },
+    "selectivity_ratio": 0.7065662552957007
+  },
+  "eyes_readout": {
+    "sensitivity": {
+      "mean": 0.5512667693714104,
+      "ci95": [
+        0.3250559837511271,
+        0.7654023772419087
+      ],
+      "n": 101,
+      "p_one_sided_greater": 0.0,
+      "p_two_sided": 0.0
+    },
+    "leakage": {
+      "mean": 0.3801330206345539,
+      "ci95": [
+        0.16088228809590244,
+        0.5918793525014604
+      ],
+      "n": 98,
+      "p_one_sided_greater": 0.0005,
+      "p_two_sided": 0.001
+    },
+    "selectivity_ratio": 1.450194377881679
+  }
+}

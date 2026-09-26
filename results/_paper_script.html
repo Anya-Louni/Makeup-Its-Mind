@@ -1,0 +1,409 @@
+<script>
+const D = {"decompose":{"gpt2":{"label":"gpt2-124M","meta":{"layer":6,"n_trials":100,"mean_cos_d1_d2":0.847691324353218,"mean_frac_differential":0.2841750099712305},"arms":{"full":{"difference":{"mean":-0.0013115835189819337,"ci95":[-0.00723645293712616,0.004975520610809326],"p":0.651},"target":{"mean":0.18924018383026123}},"shared":{"difference":{"mean":-0.004563145637512207,"ci95":[-0.009857431173324585,0.00054259717464447],"p":0.0756},"target":{"mean":0.18338867664337158}},"differential":{"difference":{"mean":0.015771384239196776,"ci95":[0.0094189612865448,0.02331419861316681],"p":0.0},"target":{"mean":0.005109715461730957}},"random":{"difference":{"mean":-0.0018851494789123536,"ci95":[-0.007595501065254211,0.00404135513305664],"p":0.5144},"target":{"mean":0.005290071964263916}}}},"pythia":{"label":"pythia-410m","meta":{"layer":12,"n_trials":100,"mean_cos_d1_d2":0.7426934677362442,"mean_frac_differential":0.37697370707420363},"arms":{"full":{"difference":{"mean":0.0022419404983520506,"ci95":[-0.00393487799167633,0.007976249217987058],"p":0.4524},"target":{"mean":0.14553330421447755}},"shared":{"difference":{"mean":-0.0003460979461669922,"ci95":[-0.006534133434295654,0.005211475729942317],"p":0.9424},"target":{"mean":0.1901725149154663}},"differential":{"difference":{"mean":-0.0004239606857299805,"ci95":[-0.005825520992279052,0.005218587636947631],"p":0.8476},"target":{"mean":-0.12156108379364014}},"random":{"difference":{"mean":0.002756161689758301,"ci95":[-0.0029999852180480954,0.00797659432888031],"p":0.3114},"target":{"mean":-0.019440402984619142}}}},"qwen":{"label":"Qwen3-0.6B","meta":{"layer":14,"n_trials":100,"mean_cos_d1_d2":0.7396433240175248,"mean_frac_differential":0.3552664838138249},"arms":{"full":{"difference":{"mean":-0.0002936697006225586,"ci95":[-0.016047726154327393,0.016360583782196042],"p":0.9474},"target":{"mean":0.34459226608276367}},"shared":{"difference":{"mean":-0.0016682815551757812,"ci95":[-0.016907471776008605,0.013778184652328489],"p":0.8166},"target":{"mean":0.31730482578277586}},"differential":{"difference":{"mean":-0.0004492783546447754,"ci95":[-0.009831501662731171,0.00954602897167205],"p":0.9106},"target":{"mean":0.12332041263580322}},"random":{"difference":{"mean":-0.006475942134857178,"ci95":[-0.01809370285272598,0.0035251230597496018],"p":0.2176},"target":{"mean":-0.03224713325500488}}}}},"gaps":[{"target":"eyes.color","gpt2":{"gap":0.06197854588796187,"ci95":[0.014490147012824533,0.10989108409321176],"p":0.0075},"pythia":{"gap":0.03098927294398096,"ci95":[-0.02028452898035563,0.08175597898500615],"p":0.2315},"qwen":{"gap":0.11084624553039335,"ci95":[0.06443339415799466,0.16290353016949946],"p":0.0}},{"target":"eyes.finish","gpt2":{"gap":0.09654350417163288,"ci95":[0.04807404076738609,0.14770011269156855],"p":0.0},"pythia":{"gap":0.014302741358760418,"ci95":[-0.0459556969460793,0.07737432860194689],"p":0.639},"qwen":{"gap":0.12038140643623363,"ci95":[0.07341658635828249,0.16725989277074113],"p":0.0}},{"target":"lips.color","gpt2":{"gap":-0.044100119189511344,"ci95":[-0.09881147360056505,0.011751573358579086],"p":0.126},"pythia":{"gap":0.06436233611442188,"ci95":[0.009601557626617827,0.11981142135482226],"p":0.028},"qwen":{"gap":-0.03098927294398096,"ci95":[-0.0966615982754638,0.029872441166488697],"p":0.3625}},{"target":"lips.finish","gpt2":{"gap":-0.05840286054827176,"ci95":[-0.11138619431969814,-0.006009075598802374],"p":0.0285},"pythia":{"gap":0.023837902264600697,"ci95":[-0.03360496144932702,0.08531058676696295],"p":0.415},"qwen":{"gap":-0.04767580452920139,"ci95":[-0.10262755252991748,0.008345020686256532],"p":0.098}}],"binding":{"gpt2":{"label":"gpt2-124M","bins":["0","1","2","3-4","5+"],"values":[0.07277281673416942,0.09622314341720489,0.10542807326192842,0.06441170420106762,0.048676320023402074]},"pythia":{"label":"pythia-410m","bins":["0","1","2","3-4","5+"],"values":[0.036411242307117196,0.10424390243902436,0.11479089618009843,0.10385045285878595,0.04488810881965775]},"qwen":{"label":"Qwen3-0.6B","bins":["0","1","2","3-4","5+"],"values":[0.1186633287480943,0.1411449918056493,0.15109560718252119,0.11083899937012617,-0.021095997269757704]}},"depth":{"gpt2":{"label":"gpt2-124M","n_layers":12,"points":[{"target":"eyes.color","layer":11,"frac":0.9166666666666666},{"target":"eyes.finish","layer":1,"frac":0.08333333333333333},{"target":"lips.color","layer":12,"frac":1.0},{"target":"lips.finish","layer":1,"frac":0.08333333333333333}]},"pythia":{"label":"pythia-410m","n_layers":24,"points":[{"target":"eyes.color","layer":24,"frac":1.0},{"target":"eyes.finish","layer":24,"frac":1.0},{"target":"lips.color","layer":20,"frac":0.8333333333333334},{"target":"lips.finish","layer":24,"frac":1.0}]},"qwen":{"label":"Qwen3-0.6B","n_layers":28,"points":[{"target":"eyes.color","layer":26,"frac":0.9285714285714286},{"target":"eyes.finish","layer":16,"frac":0.5714285714285714},{"target":"lips.color","layer":22,"frac":0.7857142857142857},{"target":"lips.finish","layer":18,"frac":0.6428571428571429}]}},"facemap":{"targets":["eyes.color","eyes.finish","lips.color","lips.finish"],"frames":[{"sentence":"She laid a dark ruby colour over the surface of her lips in maximum coverage; it came out with a soft un-reflective finish.","true":{"eyes.color":"bare","eyes.finish":"none","lips.color":"red","lips.finish":"matte"},"gpt2":{"eyes.color":"bare","eyes.finish":"none","lips.color":"nude","lips.finish":"dewy"},"pythia":{"eyes.color":"red","eyes.finish":"satin","lips.color":"red","lips.finish":"matte"},"qwen":{"eyes.color":"bare","eyes.finish":"none","lips.color":"red","lips.finish":"dewy"}},{"sentence":"She laid a naked, undertoned neutral over the surface of her lips in a packed-on, solid layer; it came out with a smooth semi-gloss surface.","true":{"eyes.color":"bare","eyes.finish":"none","lips.color":"nude","lips.finish":"satin"},"gpt2":{"eyes.color":"bare","eyes.finish":"satin","lips.color":"nude","lips.finish":"dewy"},"pythia":{"eyes.color":"nude","eyes.finish":"satin","lips.color":"nude","lips.finish":"matte"},"qwen":{"eyes.color":"bare","eyes.finish":"none","lips.color":"pink","lips.finish":"dewy"}},{"sentence":"She almost went for a tobacco-toned shade, then decided not to.","true":{"eyes.color":"bare","eyes.finish":"none","lips.color":"nude","lips.finish":"satin"},"gpt2":{"eyes.color":"bare","eyes.finish":"none","lips.color":"nude","lips.finish":"matte"},"pythia":{"eyes.color":"bare","eyes.finish":"satin","lips.color":"red","lips.finish":"matte"},"qwen":{"eyes.color":"bare","eyes.finish":"dewy","lips.color":"red","lips.finish":"satin"}},{"sentence":"With a few strokes she put a naked, undertoned neutral on the socket line as a packed-on, solid layer, ending in a juicy liquid-looking gleam.","true":{"eyes.color":"nude","eyes.finish":"dewy","lips.color":"nude","lips.finish":"satin"},"gpt2":{"eyes.color":"brown","eyes.finish":"dewy","lips.color":"nude","lips.finish":"dewy"},"pythia":{"eyes.color":"bare","eyes.finish":"satin","lips.color":"red","lips.finish":"dewy"},"qwen":{"eyes.color":"nude","eyes.finish":"satin","lips.color":"red","lips.finish":"dewy"}},{"sentence":"A setting powder went over the soft skin of her lips, leaving nothing that caught light.","true":{"eyes.color":"nude","eyes.finish":"dewy","lips.color":"nude","lips.finish":"matte"},"gpt2":{"eyes.color":"brown","eyes.finish":"none","lips.color":"nude","lips.finish":"matte"},"pythia":{"eyes.color":"red","eyes.finish":"satin","lips.color":"nude","lips.finish":"matte"},"qwen":{"eyes.color":"pink","eyes.finish":"matte","lips.color":"red","lips.finish":"dewy"}},{"sentence":"She almost went for a pale peony tone, then decided not to.","true":{"eyes.color":"nude","eyes.finish":"dewy","lips.color":"nude","lips.finish":"matte"},"gpt2":{"eyes.color":"brown","eyes.finish":"matte","lips.color":"nude","lips.finish":"matte"},"pythia":{"eyes.color":"red","eyes.finish":"satin","lips.color":"nude","lips.finish":"matte"},"qwen":{"eyes.color":"pink","eyes.finish":"dewy","lips.color":"pink","lips.finish":"satin"}},{"sentence":"With a few strokes she put a naked, undertoned neutral on the hooded part of her lid as maximum coverage, ending in a smooth semi-gloss surface.","true":{"eyes.color":"nude","eyes.finish":"satin","lips.color":"nude","lips.finish":"matte"},"gpt2":{"eyes.color":"brown","eyes.finish":"satin","lips.color":"nude","lips.finish":"satin"},"pythia":{"eyes.color":"nude","eyes.finish":"satin","lips.color":"nude","lips.finish":"satin"},"qwen":{"eyes.color":"red","eyes.finish":"matte","lips.color":"brown","lips.finish":"dewy"}},{"sentence":"She laid a burnt-cinnamon colour over the hooded part of her lid in maximum coverage; it came out with a still-damp-seeming shine.","true":{"eyes.color":"brown","eyes.finish":"dewy","lips.color":"nude","lips.finish":"matte"},"gpt2":{"eyes.color":"brown","eyes.finish":"dewy","lips.color":"nude","lips.finish":"dewy"},"pythia":{"eyes.color":"nude","eyes.finish":"satin","lips.color":"red","lips.finish":"satin"},"qwen":{"eyes.color":"red","eyes.finish":"satin","lips.color":"brown","lips.finish":"dewy"}}],"agree":{"gpt2":0.5625,"pythia":0.34375,"qwen":0.28125},"labels":{"gpt2":"gpt2-124M","pythia":"pythia-410m","qwen":"Qwen3-0.6B"}}};
+const RM = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const NS = "http://www.w3.org/2000/svg";
+const el = (n, a = {}) => { const e = document.createElementNS(NS, n);
+  for (const k in a) e.setAttribute(k, a[k]); return e; };
+const tx = (x, y, s, a = {}) => { const t = el("text", Object.assign(
+  {x, y, "font-family": "Archivo, sans-serif", "font-size": 11.5,
+   fill: "var(--ink-3)"}, a)); t.textContent = s; return t; };
+const MK = ["gpt2", "pythia", "qwen"];
+const MC = {gpt2: "var(--c1)", pythia: "var(--c2)", qwen: "var(--c3)"};
+let tick = 0;
+const stagger = () => (RM ? 0 : 0.5 + 0.05 * tick++);
+
+/* ---- Figure 1, the decomposition drawn ---- */
+(function () {
+  const W = 430, H = 300, ox = 62, oy = 236;
+  const svg = el("svg", {viewBox: `0 0 ${W} ${H}`, role: "img",
+    "aria-label": "Two region directions, their shared average and their half difference"});
+  const ray = (deg, len) => [ox + len * Math.cos(deg * Math.PI / 180),
+                             oy - len * Math.sin(deg * Math.PI / 180)];
+  const A = 52, Bd = 28, LEN = 236;
+  const pa = ray(A, LEN), pb = ray(Bd, LEN);
+  const mid = (A + Bd) / 2;
+  const ps = ray(mid, LEN * 0.97);
+
+  svg.appendChild(el("line", {x1: ox, y1: oy, x2: W - 14, y2: oy,
+    stroke: "var(--hair)", "stroke-width": 1}));
+  const arc = el("path", {d: `M ${ray(Bd, 96)[0]} ${ray(Bd, 96)[1]}
+      A 96 96 0 0 0 ${ray(A, 96)[0]} ${ray(A, 96)[1]}`,
+    fill: "none", stroke: "var(--ink-3)", "stroke-width": 1, "stroke-dasharray": "2 4"});
+  svg.appendChild(arc);
+  svg.appendChild(tx(ray(mid, 118)[0] + 4, ray(mid, 118)[1] + 4, "cos 0.74 to 0.85",
+    {"font-size": 10.5}));
+
+  function arrow(p, colour, w, dash) {
+    const g = el("g");
+    const ln = el("line", {x1: ox, y1: oy, x2: p[0], y2: p[1], stroke: colour,
+      "stroke-width": w, "stroke-linecap": "round"});
+    if (dash) ln.setAttribute("stroke-dasharray", dash);
+    g.appendChild(ln);
+    const ang = Math.atan2(oy - p[1], p[0] - ox);
+    const hx = p[0], hy = p[1], k = 9;
+    g.appendChild(el("path", {d:
+      `M ${hx} ${hy} L ${hx - k * Math.cos(ang - 0.4)} ${hy + k * Math.sin(ang - 0.4)}
+       L ${hx - k * Math.cos(ang + 0.4)} ${hy + k * Math.sin(ang + 0.4)} Z`,
+      fill: colour}));
+    if (!RM) {
+      const L = Math.hypot(p[0] - ox, oy - p[1]);
+      ln.style.strokeDasharray = dash || L;
+      ln.style.strokeDashoffset = L;
+      ln.style.animation = `draw .8s cubic-bezier(.2,.85,.3,1) ${stagger()}s forwards`;
+      g.lastChild.style.animation = `fade .4s ease ${stagger() + .5}s both`;
+    }
+    return g;
+  }
+  svg.appendChild(arrow(pa, "var(--ink)", 2.2));
+  svg.appendChild(arrow(pb, "var(--ink)", 2.2));
+  svg.appendChild(arrow(ps, "var(--c2)", 3.4));
+  svg.appendChild(tx(pa[0] + 8, pa[1] - 2, "d lips", {fill: "var(--ink)",
+    "font-weight": 600, "font-size": 12}));
+  svg.appendChild(tx(pb[0] + 8, pb[1] + 12, "d eyes", {fill: "var(--ink)",
+    "font-weight": 600, "font-size": 12}));
+  svg.appendChild(tx(ps[0] - 46, ps[1] - 12, "s  shared", {fill: "var(--c2)",
+    "font-weight": 600, "font-size": 12}));
+
+  /* the half difference, drawn from the tip of s to the tip of d_lips */
+  const rg = el("g");
+  const rl = el("line", {x1: ps[0], y1: ps[1], x2: pa[0], y2: pa[1],
+    stroke: "var(--sand)", "stroke-width": 3.4, "stroke-linecap": "round"});
+  rg.appendChild(rl);
+  rg.appendChild(tx((ps[0] + pa[0]) / 2 - 4, (ps[1] + pa[1]) / 2 - 10,
+    "r  region specific", {fill: "var(--sand)", "font-weight": 600,
+    "font-size": 12, "text-anchor": "end"}));
+  if (!RM) rg.style.animation = `fade .6s ease ${1.5}s both`;
+  svg.appendChild(rg);
+  svg.appendChild(el("circle", {cx: ox, cy: oy, r: 3.6, fill: "var(--ink)"}));
+  document.getElementById("heroFig").appendChild(svg);
+})();
+
+/* ---- Figure 2, read out sensitivity against leakage ---- */
+(function () {
+  const W = 800, H = 430, L = 86, R = 42, T = 40, B = 74;
+  const hi = 0.72;
+  const x = v => L + (v / hi) * (W - L - R);
+  const y = v => T + (1 - v / hi) * (H - T - B);
+  const svg = el("svg", {viewBox: `0 0 ${W} ${H}`, role: "img",
+    "aria-label": "Sensitivity to the region asked about against leakage from the other region"});
+
+  /* the band where leakage meets or beats sensitivity */
+  svg.appendChild(el("path", {d: `M ${x(0)} ${y(0)} L ${x(hi)} ${y(hi)} L ${x(0)} ${y(hi)} Z`,
+    fill: "var(--warn)", opacity: .07}));
+  svg.appendChild(el("line", {x1: x(0), y1: y(0), x2: x(hi), y2: y(hi),
+    stroke: "var(--warn)", "stroke-width": 1.4, "stroke-dasharray": "5 4"}));
+  svg.appendChild(tx(x(.20), y(.50), "the read out answers using the wrong region",
+    {fill: "var(--warn)", "font-size": 12, "font-weight": 600}));
+  svg.appendChild(tx(x(.20), y(.50) + 16, "at least as readily as the right one",
+    {fill: "var(--warn)", "font-size": 12, "font-weight": 600}));
+  svg.appendChild(tx(x(.50), y(.12), "a read out that binds", {fill: "var(--ok)",
+    "font-size": 12, "font-weight": 600}));
+  svg.appendChild(tx(x(.50), y(.12) + 16, "would sit down here", {fill: "var(--ok)",
+    "font-size": 12, "font-weight": 600}));
+
+  for (let v = 0; v <= 0.7001; v += 0.2) {
+    svg.appendChild(el("line", {x1: x(v), y1: T - 8, x2: x(v), y2: H - B + 6,
+      stroke: "var(--hair)", "stroke-width": 1}));
+    svg.appendChild(el("line", {x1: L - 8, y1: y(v), x2: W - R, y2: y(v),
+      stroke: "var(--hair)", "stroke-width": 1}));
+    svg.appendChild(tx(x(v), H - B + 22, v.toFixed(1), {"text-anchor": "middle",
+      "font-size": 11}));
+    svg.appendChild(tx(L - 14, y(v) + 4, v.toFixed(1), {"text-anchor": "end",
+      "font-size": 11}));
+  }
+  svg.appendChild(tx((L + W - R) / 2, H - B + 46,
+    "sensitivity: change in log odds when the region we asked about changes",
+    {"text-anchor": "middle", "font-size": 12}));
+  const yl = tx(0, 0, "leakage: change when the OTHER region changes",
+    {"text-anchor": "middle", "font-size": 12});
+  yl.setAttribute("transform", `translate(24 ${(T + H - B) / 2}) rotate(-90)`);
+  svg.appendChild(yl);
+
+  let k = 0;
+  MK.forEach(mk => {
+    ["lips", "eyes"].forEach(reg => {
+      const d = D.validity[mk][reg];
+      const cx = x(d.sens), cy = y(d.leak);
+      const g = el("g");
+      g.appendChild(el("line", {x1: x(d.sens_ci[0]), y1: cy, x2: x(d.sens_ci[1]),
+        y2: cy, stroke: MC[mk], "stroke-width": 1.4, opacity: .5}));
+      g.appendChild(el("line", {x1: cx, y1: y(d.leak_ci[0]), x2: cx,
+        y2: y(d.leak_ci[1]), stroke: MC[mk], "stroke-width": 1.4, opacity: .5}));
+      g.appendChild(el("circle", {cx, cy, r: 7, fill: MC[mk],
+        stroke: "var(--raise)", "stroke-width": 2}));
+      g.appendChild(tx(cx + 12, cy + 4, `${D.decompose[mk].label} ${reg}`,
+        {"font-size": 11.5, fill: "var(--ink-2)", "font-weight": 500}));
+      if (!RM) g.style.animation = `fade .55s ease ${stagger()}s both`;
+      svg.appendChild(g);
+      k++;
+    });
+  });
+  document.getElementById("leakChart").appendChild(svg);
+})();
+
+/* ---- Figure 3, decomposition results ---- */
+(function () {
+  const arms = [["shared", "shared component"], ["differential", "region specific component"],
+                ["full", "full direction"], ["random", "random, matched norm"]];
+  const W = 800, rowH = 86, T = 44, B = 54, L = 196, R = 104;
+  const H = T + arms.length * rowH + B;
+  const lo = -0.03, hi = 0.035;
+  const x = v => L + (v - lo) / (hi - lo) * (W - L - R);
+  const svg = el("svg", {viewBox: `0 0 ${W} ${H}`, role: "img",
+    "aria-label": "Difference between the two regions read outs for each steered component"});
+  for (let v = -0.03; v <= 0.0351; v += 0.01) {
+    const z = Math.abs(v) < 1e-9;
+    svg.appendChild(el("line", {x1: x(v), y1: T - 12, x2: x(v), y2: H - B + 6,
+      stroke: z ? "var(--ink)" : "var(--hair)", "stroke-width": z ? 1.4 : 1}));
+    svg.appendChild(tx(x(v), H - B + 22, (v > 0 ? "+" : "") + v.toFixed(2),
+      {"text-anchor": "middle", "font-size": 11}));
+  }
+  svg.appendChild(tx((L + W - R) / 2, H - B + 42,
+    "difference between the two regions' read outs",
+    {"text-anchor": "middle", "font-size": 11.5}));
+  arms.forEach(([key, label], ai) => {
+    const y0 = T + ai * rowH;
+    if (ai) svg.appendChild(el("line", {x1: 0, y1: y0 - 12, x2: W, y2: y0 - 12,
+      stroke: "var(--hair)", "stroke-width": 1}));
+    svg.appendChild(tx(L - 18, y0 + 26, label, {"text-anchor": "end",
+      "font-size": 13, "font-weight": 600, fill: "var(--ink)"}));
+    MK.forEach((mk, i) => {
+      const a = D.decompose[mk].arms[key].difference;
+      const yy = y0 + 8 + i * 18, h = 11;
+      const ns = (a.ci95[0] <= 0 && a.ci95[1] >= 0);
+      const x0 = x(Math.min(0, a.mean)), x1 = x(Math.max(0, a.mean));
+      const bar = el("rect", {x: x0, y: yy, width: Math.max(x1 - x0, 1.4),
+        height: h, fill: MC[mk], opacity: ns ? 0.26 : 1});
+      if (!RM) { bar.style.transformOrigin = `${x(0)}px ${yy}px`;
+        bar.style.animation = `grow .66s cubic-bezier(.16,.9,.28,1) ${stagger()}s both`; }
+      svg.appendChild(bar);
+      svg.appendChild(el("line", {x1: x(a.ci95[0]), y1: yy + h / 2,
+        x2: x(a.ci95[1]), y2: yy + h / 2, stroke: "var(--ink)", "stroke-width": 1.1}));
+      [a.ci95[0], a.ci95[1]].forEach(v => svg.appendChild(el("line",
+        {x1: x(v), y1: yy + 1, x2: x(v), y2: yy + h - 1,
+         stroke: "var(--ink)", "stroke-width": 1.1})));
+      svg.appendChild(tx(W - R + 10, yy + h - 1,
+        `${a.mean >= 0 ? "+" : ""}${a.mean.toFixed(3)}`,
+        {"font-size": 11.5, "font-variant-numeric": "tabular-nums",
+         fill: ns ? "var(--ink-3)" : "var(--ink)", "font-weight": ns ? 400 : 600}));
+    });
+  });
+  MK.forEach((mk, i) => {
+    const lx = L + i * 190;
+    svg.appendChild(el("rect", {x: lx, y: T - 34, width: 11, height: 11, fill: MC[mk]}));
+    svg.appendChild(tx(lx + 17, T - 24, D.decompose[mk].label,
+      {"font-size": 11.5, fill: "var(--ink-2)", "font-weight": 500}));
+  });
+  document.getElementById("decompChart").appendChild(svg);
+})();
+
+/* ---- Figure 4, decay ---- */
+(function () {
+  const W = 800, H = 300, L = 72, R = 132, T = 30, B = 58;
+  const bins = D.binding.gpt2.bins, lo = -0.06, hi = 0.18;
+  const x = i => L + i * (W - L - R) / (bins.length - 1);
+  const y = v => T + (hi - v) / (hi - lo) * (H - T - B);
+  const svg = el("svg", {viewBox: `0 0 ${W} ${H}`, role: "img",
+    "aria-label": "Binding margin against distance since the value last changed"});
+  for (let v = -0.05; v <= 0.1801; v += 0.05) {
+    const yy = y(v); if (yy < T - 1 || yy > H - B + 1) continue;
+    const z = Math.abs(v) < 1e-9;
+    svg.appendChild(el("line", {x1: L, y1: yy, x2: W - R, y2: yy,
+      stroke: z ? "var(--ink)" : "var(--hair)", "stroke-width": z ? 1.4 : 1}));
+    svg.appendChild(tx(L - 12, yy + 4, (v > 0 ? "+" : "") + v.toFixed(2),
+      {"text-anchor": "end", "font-size": 11}));
+  }
+  bins.forEach((b, i) => svg.appendChild(tx(x(i), H - B + 22, b,
+    {"text-anchor": "middle", "font-size": 12, fill: "var(--ink-2)", "font-weight": 500})));
+  svg.appendChild(tx((L + W - R) / 2, H - B + 42,
+    "sentences since this value last changed", {"text-anchor": "middle", "font-size": 11.5}));
+  MK.forEach((mk, si) => {
+    const vals = D.binding[mk].values;
+    const d = vals.map((v, i) => `${i ? "L" : "M"} ${x(i)} ${y(v)}`).join(" ");
+    const path = el("path", {d, fill: "none", stroke: MC[mk], "stroke-width": 2.6,
+      "stroke-linejoin": "round", "stroke-linecap": "round"});
+    svg.appendChild(path);
+    if (!RM) { const len = Math.ceil(path.getTotalLength()) + 2;
+      path.style.strokeDasharray = len; path.style.strokeDashoffset = len;
+      path.style.animation = `draw 1s cubic-bezier(.2,.85,.3,1) ${stagger()}s forwards`; }
+    vals.forEach((v, i) => svg.appendChild(el("circle", {cx: x(i), cy: y(v), r: 4,
+      fill: "var(--raise)", stroke: MC[mk], "stroke-width": 2.2})));
+    svg.appendChild(tx(W - R + 12, y(vals[vals.length - 1]) + 4,
+      D.binding[mk].label, {"font-size": 12, fill: MC[mk], "font-weight": 600}));
+  });
+  document.getElementById("decayChart").appendChild(svg);
+})();
+
+/* ---- Figure 5, baseline gaps ---- */
+(function () {
+  const W = 800, H = 330, L = 78, R = 26, T = 42, B = 66;
+  const lo = -0.13, hi = 0.20;
+  const x = i => L + (i + 0.5) * (W - L - R) / D.gaps.length;
+  const y = v => T + (hi - v) / (hi - lo) * (H - T - B);
+  const svg = el("svg", {viewBox: `0 0 ${W} ${H}`, role: "img",
+    "aria-label": "Accuracy gap over the static embedding baseline in three models"});
+  for (let v = -0.10; v <= 0.1851; v += 0.05) {
+    const yy = y(v), z = Math.abs(v) < 1e-9;
+    svg.appendChild(el("line", {x1: L, y1: yy, x2: W - R, y2: yy,
+      stroke: z ? "var(--ink)" : "var(--hair)", "stroke-width": z ? 1.4 : 1}));
+    svg.appendChild(tx(L - 12, yy + 4, (v > 0 ? "+" : "") + v.toFixed(2),
+      {"text-anchor": "end", "font-size": 11}));
+  }
+  const bw = 20;
+  D.gaps.forEach((g, i) => {
+    MK.forEach((mk, j) => {
+      const d = g[mk], px = x(i) + (j - 1) * (bw + 4) - bw / 2;
+      const sig = d.p < 0.05;
+      const top = d.gap >= 0 ? y(d.gap) : y(0), h = Math.abs(y(d.gap) - y(0));
+      const bar = el("rect", {x: px, y: top, width: bw, height: Math.max(h, 1),
+        fill: MC[mk], opacity: sig ? 1 : 0.26});
+      if (!RM) { bar.style.transformOrigin = `${px}px ${y(0)}px`;
+        bar.style.animation = `grow .66s cubic-bezier(.16,.9,.28,1) ${stagger()}s both`; }
+      svg.appendChild(bar);
+      const cx = px + bw / 2;
+      svg.appendChild(el("line", {x1: cx, y1: y(d.ci95[0]), x2: cx, y2: y(d.ci95[1]),
+        stroke: "var(--ink)", "stroke-width": 1.2}));
+    });
+    const nm = g.target.split(".");
+    svg.appendChild(tx(x(i), H - B + 24, nm[0], {"text-anchor": "middle",
+      "font-size": 12.5, fill: "var(--ink)", "font-weight": 600}));
+    svg.appendChild(tx(x(i), H - B + 40, nm[1], {"text-anchor": "middle", "font-size": 12}));
+  });
+  MK.forEach((mk, j) => {
+    const lx = L + j * 160;
+    svg.appendChild(el("rect", {x: lx, y: T - 32, width: 11, height: 11, fill: MC[mk]}));
+    svg.appendChild(tx(lx + 17, T - 22, D.decompose[mk].label,
+      {"font-size": 11.5, fill: "var(--ink-2)", "font-weight": 500}));
+  });
+  document.getElementById("gapChart").appendChild(svg);
+
+  const tb = document.getElementById("gapTable");
+  D.gaps.forEach(g => {
+    const cell = d => {
+      const c = d.p < 0.05 ? (d.gap > 0 ? "pos" : "neg") : "nil";
+      return `<td class="${c}">${d.gap >= 0 ? "+" : ""}${d.gap.toFixed(3)}</td>` +
+             `<td class="${c}">${d.p < 0.0001 ? "<0.0001" : d.p.toFixed(3)}</td>`;
+    };
+    tb.insertAdjacentHTML("beforeend", `<tr><td><code>${g.target}</code></td>` +
+      MK.map(mk => cell(g[mk])).join("") + `</tr>`);
+  });
+})();
+
+/* ---- Figure 6, depth ---- */
+(function () {
+  const W = 800, H = 230, L = 176, R = 34, T = 46, B = 52;
+  const x = f => L + f * (W - L - R);
+  const y = i => T + i * (H - T - B) / (MK.length - 1);
+  const svg = el("svg", {viewBox: `0 0 ${W} ${H}`, role: "img",
+    "aria-label": "Best probing layer as a fraction of depth"});
+  [[0, "embeddings"], [0.5, "middle"], [1, "output"]].forEach(([f, lab]) => {
+    svg.appendChild(el("line", {x1: x(f), y1: T - 20, x2: x(f), y2: H - B + 8,
+      stroke: "var(--hair)", "stroke-width": 1, "stroke-dasharray": "3 4"}));
+    svg.appendChild(tx(x(f), T - 28, lab, {"text-anchor": "middle", "font-size": 11}));
+  });
+  MK.forEach((mk, ri) => {
+    const row = D.depth[mk], yy = y(ri);
+    svg.appendChild(el("line", {x1: L, y1: yy, x2: W - R, y2: yy,
+      stroke: "var(--hair)", "stroke-width": 1}));
+    svg.appendChild(tx(L - 18, yy + 4, `${row.label}, ${row.n_layers} layers`,
+      {"text-anchor": "end", "font-size": 12, fill: "var(--ink)", "font-weight": 500}));
+    const seen = {};
+    row.points.forEach(d => {
+      const k = d.frac.toFixed(3); seen[k] = (seen[k] || 0) + 1;
+      const off = (seen[k] - 1) * 10 - 5;
+      const c = el("circle", {cx: x(d.frac), cy: yy + off, r: 5.4, fill: MC[mk],
+        stroke: "var(--raise)", "stroke-width": 1.6});
+      c.appendChild(el("title")).textContent = `${d.target}, layer ${d.layer}`;
+      if (!RM) c.style.animation = `fade .5s ease ${stagger()}s both`;
+      svg.appendChild(c);
+    });
+  });
+  svg.appendChild(tx((L + W - R) / 2, H - B + 30, "best layer divided by depth",
+    {"text-anchor": "middle", "font-size": 11.5}));
+  document.getElementById("depthChart").appendChild(svg);
+})();
+
+/* ---- Figure 7, faces ---- */
+(function () {
+  const F = D.facemap, TG = F.targets, N = F.frames.length;
+  const SW = {bare: "var(--sw-bare)", nude: "var(--sw-nude)", pink: "var(--sw-pink)",
+              red: "var(--sw-red)", brown: "var(--sw-brown)"};
+  const lid = (cx, cy, r) => `M ${cx - r * 1.25} ${cy - 1}
+    Q ${cx} ${cy - r * 1.95} ${cx + r * 1.25} ${cy - 1}
+    Q ${cx} ${cy - r * 0.5} ${cx - r * 1.25} ${cy - 1} Z`;
+  const eye = (cx, cy, r) => `M ${cx - r} ${cy} Q ${cx} ${cy - r * 0.82} ${cx + r} ${cy}
+    Q ${cx} ${cy + r * 0.72} ${cx - r} ${cy} Z`;
+  const lip = (cx, cy, w, hu, hl) => `M ${cx - w} ${cy}
+    C ${cx - w * 0.58} ${cy - hu * 1.55} ${cx - w * 0.22} ${cy - hu * 0.95} ${cx} ${cy - hu * 0.34}
+    C ${cx + w * 0.22} ${cy - hu * 0.95} ${cx + w * 0.58} ${cy - hu * 1.55} ${cx + w} ${cy}
+    C ${cx + w * 0.52} ${cy + hl * 1.7} ${cx - w * 0.52} ${cy + hl * 1.7} ${cx - w} ${cy} Z`;
+
+  function face(st, truth, ring) {
+    const svg = el("svg", {viewBox: "0 0 190 214", role: "img"});
+    const EY = 96, ER = 13, LX = 71, RX = 119;
+    svg.appendChild(el("path", {d: "M40,86 Q42,26 95,26 Q148,26 150,86", fill: "var(--sunk)"}));
+    svg.appendChild(el("ellipse", {cx: 95, cy: 108, rx: 55, ry: 74,
+      fill: "var(--sunk)", stroke: "var(--edge)", "stroke-width": 1}));
+    [LX, RX].forEach(ex => svg.appendChild(el("path", {
+      d: `M ${ex - ER * 1.15} ${EY - ER * 1.9} Q ${ex} ${EY - ER * 2.65} ${ex + ER * 1.05} ${EY - ER * 1.95}`,
+      fill: "none", stroke: "var(--ink-2)", "stroke-width": 2.4,
+      "stroke-linecap": "round", opacity: .7})));
+    const ec = st["eyes.color"], ef = st["eyes.finish"];
+    const lc = st["lips.color"], lf = st["lips.finish"];
+    const eok = truth ? (ec === truth["eyes.color"] && ef === truth["eyes.finish"]) : true;
+    const lok = truth ? (lc === truth["lips.color"] && lf === truth["lips.finish"]) : true;
+    const eS = ring ? (eok ? "var(--ok)" : "var(--warn)") : "var(--ink-2)";
+    const lS = ring ? (lok ? "var(--ok)" : "var(--warn)") : "var(--ink-2)";
+    [LX, RX].forEach(ex => {
+      svg.appendChild(el("path", {d: lid(ex, EY, ER), fill: SW[ec] || "var(--sw-bare)",
+        opacity: ec === "bare" ? .32 : .82, stroke: eS, "stroke-width": ring ? 2.1 : 1.1,
+        "stroke-dasharray": ring && !eok ? "4 3" : "none", "stroke-linejoin": "round"}));
+      svg.appendChild(el("path", {d: eye(ex, EY + 5, ER * 0.92), fill: "var(--raise)",
+        stroke: "var(--ink-2)", "stroke-width": 1.3}));
+      svg.appendChild(el("circle", {cx: ex, cy: EY + 5, r: 4.4, fill: "var(--ink-2)"}));
+      svg.appendChild(el("circle", {cx: ex + 1.4, cy: EY + 3.4, r: 1.4, fill: "var(--raise)"}));
+    });
+    svg.appendChild(el("path", {d: "M95,104 Q92,126 99,129", fill: "none",
+      stroke: "var(--ink-2)", "stroke-width": 1.5, "stroke-linecap": "round", opacity: .5}));
+    svg.appendChild(el("path", {d: lip(95, 156, 25, 11, 12),
+      fill: SW[lc] || "var(--sw-bare)", opacity: lc === "bare" ? .32 : .85,
+      stroke: lS, "stroke-width": ring ? 2.1 : 1.1,
+      "stroke-dasharray": ring && !lok ? "4 3" : "none", "stroke-linejoin": "round"}));
+    svg.appendChild(el("path", {d: "M72,156 Q95,150 118,156", fill: "none",
+      stroke: "var(--ink)", "stroke-width": .9, opacity: .32}));
+    return svg;
+  }
+  const mount = (id, node) => { const t = document.getElementById(id);
+    t.innerHTML = ""; t.appendChild(node); };
+  const word = v => v === "none" ? "bare" : v;
+  const panels = [["faceTrue", "readTrue", "true", false],
+                  ["faceA", "readA", "gpt2", true],
+                  ["faceB", "readB", "pythia", true],
+                  ["faceC", "readC", "qwen", true]];
+  function render(i) {
+    const f = F.frames[i];
+    panels.forEach(([fid, rid, key, ring]) => {
+      mount(fid, face(f[key], ring ? f.true : null, ring));
+      document.getElementById(rid).innerHTML = TG.map(t => {
+        const ok = !ring || f[key][t] === f.true[t];
+        const c = ring ? (ok ? "var(--ok)" : "var(--warn)") : "var(--ink-3)";
+        return `<div style="color:${c}">${t.replace(".", " ")} ${word(f[key][t])}</div>`;
+      }).join("");
+    });
+    document.getElementById("faceSentence").textContent = f.sentence;
+    document.getElementById("faceStep").textContent = `${i + 1} / ${N}`;
+    document.getElementById("faceRange").value = i;
+  }
+  let idx = 0, timer = null;
+  const btn = document.getElementById("playBtn"), rng = document.getElementById("faceRange");
+  rng.max = N - 1;
+  const stop = () => { clearInterval(timer); timer = null; btn.textContent = "Play"; };
+  btn.addEventListener("click", () => {
+    if (timer) return stop();
+    btn.textContent = "Pause";
+    timer = setInterval(() => { idx = (idx + 1) % N; render(idx); }, 2200);
+  });
+  rng.addEventListener("input", e => { stop(); idx = +e.target.value; render(idx); });
+  render(0);
+})();
+</script>

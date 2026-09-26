@@ -64,24 +64,54 @@ CAVs for the same value on different regions are strongly aligned (+0.62 to
 +0.87, the presence component) while the discriminative directions point apart
 (−0.04 to −0.24, the binding component).
 
-## 3. Procedural / entity state tracking
+## 3. Binding, and the closest prior work
 
-Kim and Schuster, *Entity Tracking in Language Models* (ACL 2023), test whether
-a model can infer an entity's final state from an initial description plus a
-sequence of state-changing operations, using ProPara (488 science procedures)
-and Recipes (866 cooking recipes). They find non-trivial but limited tracking,
-and. They also find that only models pretrained on large amounts of code
-(GPT-3.5) exhibit the ability at all.
+Feng and Steinhardt, *How do Language Models Bind Entities in Context?*
+(ICLR 2024), is the nearest neighbour to our section 4.1 and we should have
+positioned against it from the start. They show that models attach **binding ID
+vectors** to entities and to their attributes, that these vectors occupy a
+continuous subspace where distance tracks discernability, and that they often
+transfer across tasks. They establish this with causal interventions, and they
+report it in every sufficiently large model from the Pythia and LLaMA families.
 
-*Difference here*: their evaluation is **behavioural** (question answering
-about the final state); ours is **representational and causal** (probes on
-activations plus activation patching). Their finding is also a direct warning
-about our scale: if entity tracking in natural procedural text needs
-code-pretrained GPT-3.5-class models, a 124M-parameter GPT-2 is far below the
-regime where strong results should be expected. Our modest effect sizes are
-consistent with theirs, and our behavioural read-out is indeed near chance
-un-intervened (0.32 for `lips.finish`), which is why the causal claim rests on
-the paired change in log-odds rather than on raw read-out accuracy.
+Two things follow for us. First, our shared and differential decomposition is a
+coarse version of the same question: a binding ID is precisely the part of a
+representation that our `r` term tries to isolate. Their factorisation is
+sharper, and our contribution is not the idea that entity and attribute
+information separate. It is the narrower point that a difference of means
+direction does not isolate the entity part, so steering with one tests the
+value and not the binding.
+
+Second, the phrase *sufficiently large* matters for our result. Their mechanism
+appears above a scale threshold. Our three models run 124M to 600M parameters.
+A null for the entity specific component in pythia-410m and Qwen3-0.6B is
+consistent with sitting below that threshold, and the small positive effect in
+gpt2 does not contradict it. This is a better account of our nulls than any we
+gave before, and it makes a larger model the obvious next arm.
+
+Feng, Russell and Steinhardt (ICLR 2025) extend the line to propositional
+probes, decoding lexical concepts and composing propositions such as
+`WorksAs(Greg, nurse)`. Their setting asserts properties and reads them off.
+Ours overwrites them in sequence, which lets us ask how long a binding
+survives.
+
+## 4. Entity state in text
+
+Li, Nye and Andreas, *Implicit Representations of Meaning in Neural Language
+Models* (ACL 2021), is the earliest close relative. In BART and T5 they find
+contextual representations that behave like models of entities and situations
+as a discourse unfolds, supporting a linear read out of each entity's current
+properties and relations, and manipulable with predictable effects on
+generation. They work in Alchemy and TextWorld. Our domain is built on the same
+premise and adds a shared palette across entities so that the value word alone
+cannot identify the entity.
+
+Kim and Schuster, *Entity Tracking in Language Models* (ACL 2023), probe
+whether a model can infer an entity's final state from an initial description
+and a series of operations. Their data is a synthetic boxes and objects setup,
+with operations that move, remove and add objects, and it is distributed
+password protected to keep it out of future training sets. Their evaluation is
+behavioural where ours is representational and causal.
 
 ## 4. Probing methodology
 

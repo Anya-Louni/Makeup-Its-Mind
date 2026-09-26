@@ -450,3 +450,63 @@ from the choice of second model.
 
 **What stands**: the direction of a probing result still varies by checkpoint,
 and a two model comparison can mislead in either direction.
+
+---
+
+## 16. The behavioural read out does not bind, so it cannot test binding
+
+**Claimed**: the region specific component of a concept direction produces no
+causal effect in pythia and Qwen, therefore the entity specific component is
+not required for the attribute read out.
+
+**Missing check**: the measurement itself was never validated. Unaided
+behavioural accuracy is near chance, so a zero could be a floor effect.
+
+**Test** (`23_readout_validity.py`), with no steering at all. Take held out
+positions where the two regions carry different finishes, compare the model's
+log odds across all four assignments of two values to two regions, and split
+the result into two contrasts. Sensitivity changes the value of the region we
+asked about. Leakage changes the other region's value.
+
+| model | read out | sensitivity | leakage | ratio |
+|---|---|---|---|---|
+| gpt2-124M | lips | +0.201 | +0.316 | 0.64 |
+| gpt2-124M | eyes | +0.358 | +0.228 | 1.57 |
+| pythia-410m | lips | +0.385 | +0.544 | 0.71 |
+| pythia-410m | eyes | +0.551 | +0.380 | 1.45 |
+| Qwen3-0.6B | lips | +0.530 | +0.400 | 1.33 |
+| Qwen3-0.6B | eyes | +0.379 | +0.500 | 0.76 |
+
+Mean ratio 1.07. Sensitivity is significant everywhere, so the instrument
+registers changes and the null is not a floor effect. It answers a question
+about one region using the other region's value just as readily.
+
+**What changed**: a steering experiment read through this instrument cannot
+separate a model that fails to bind from an instrument that fails to bind. The
+claim above is withdrawn. The probe based binding margin stands, because the
+probe is trained per region and does bind.
+
+---
+
+## 17. Missing the closest prior work, and two wrong dataset descriptions
+
+**Missed**: Feng and Steinhardt, *How do Language Models Bind Entities in
+Context?* (ICLR 2024). They identify binding ID vectors attached to entities and
+attributes, established through causal interventions, occupying a continuous
+subspace where distance tracks discernability. This is the nearest neighbour to
+our shared and differential decomposition and we cited only their 2025
+propositional probes paper.
+
+Two consequences. Our novelty claim for the decomposition shrinks to the narrow
+point that a difference of means fails to isolate the entity part. And their
+mechanism appears in *every sufficiently large* model of the Pythia and LLaMA
+families, so a null at 124M to 600M parameters is consistent with sitting below
+that threshold rather than evidence against the mechanism.
+
+**Missed**: Li, Nye and Andreas, *Implicit Representations of Meaning in Neural
+Language Models* (ACL 2021), which probes entity state in Alchemy and TextWorld
+and is the earliest close relative of this domain.
+
+**Wrong**: we described Kim and Schuster (ACL 2023) as evaluating on ProPara and
+Recipes. Their data is a synthetic boxes and objects setup with operations that
+move, remove and add objects. Corrected.
