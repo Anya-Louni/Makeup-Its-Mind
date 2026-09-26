@@ -1,0 +1,13 @@
+# Language statistics.
+# The figures are emitted by scripts/08_figures.py, 18_binding_map.py and
+# 21_dual_binding_map.py. The write-up is a rendered document. Neither is
+# source, so both are kept out of the language breakdown.
+figures/*.html   linguist-generated=true
+docs/paper.html  linguist-documentation=true
+
+# Result files are data, not source.
+results/*.json   linguist-generated=true
+results/*.npz    linguist-generated=true
+
+# Keep shell scripts with LF endings on every platform.
+*.sh text eol=lf
