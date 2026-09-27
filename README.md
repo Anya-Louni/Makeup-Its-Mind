@@ -117,30 +117,31 @@ it.
 ## What we found
 
 Full numbers in `docs/FINDINGS.md`. Every revised claim is in
-`docs/CORRECTIONS.md`, fifteen entries.
+`docs/CORRECTIONS.md`, twenty one entries.
 
-A concept direction built by differencing class means holds two parts. One part
-is shared by every entity that takes the value. The other is specific to one
-entity. We separate them and steer with each alone.
+A concept direction built by differencing class means holds two parts. One is
+shared by every entity that takes the value. The other is specific to one
+entity. We separate them and steer with each alone, across four models.
 
-| model | shared effect | entity specific difference | p |
+| model | shared effect | region specific difference | p |
 |---|---|---|---|
 | gpt2-124M | +0.183 | +0.016 [+0.009, +0.023] | <0.0001 |
 | pythia-410m | +0.190 | 0.000 [-0.006, +0.005] | 0.85 |
 | Qwen3-0.6B-Base | +0.317 | 0.000 [-0.010, +0.010] | 0.91 |
+| Qwen3-1.7B-Base | +0.556 | +0.007 [-0.008, +0.022] | 0.36 |
 
-The shared part carries the causal effect in all three models. The entity
-specific part works in gpt2 at about a tenth the strength and does nothing in
-the other two. A random direction of matched norm does nothing anywhere.
+The shared value component triples in causal strength from 124M to 1.7B. The
+region specific component is significant only in the smallest model, where the
+effect could be lexical. A random direction of matched norm does nothing
+anywhere.
 
-A linear probe recovers which region an attribute belongs to. The margin runs
-+0.04 to +0.15 shortly after a value is set, holds in all three models, and
-survives Benjamini-Hochberg across 180 tests. The margin decays with narrative
-distance and turns negative past five sentences on the four region dataset.
+The behavioural read out answers a question about one region using the other
+region's value. Mean sensitivity to leakage ratio is 1.07 in the three smaller
+models. At 1.7B one of the two read outs reaches 2.00, so it begins to bind.
 
-gpt2 and Qwen agree on the sign of all four baseline comparisons. pythia
-reverses the pattern. The three models place their state code in different
-layers.
+The representation improves with scale. Qwen3-1.7B is the first model where all
+four state variables clear the lexical baseline, and its binding margins are the
+highest measured.
 
 ## Hardware note
 

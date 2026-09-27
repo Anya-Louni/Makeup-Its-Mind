@@ -1,0 +1,259 @@
+{
+  "meta": {
+    "dataset": "pilot",
+    "model": "Qwen/Qwen3-1.7B-Base",
+    "seeds": 1,
+    "n_test": 839,
+    "n_test_narratives": 150
+  },
+  "targets": {
+    "eyes.color": {
+      "layer": 28,
+      "n_classes": 5,
+      "accuracy_by_seed": {
+        "hidden": [
+          0.40047675804529204
+        ],
+        "static_embedding": [
+          0.3289630512514899
+        ],
+        "ngram_tfidf": [
+          0.2550655542312277
+        ],
+        "majority": [
+          0.17878426698450536
+        ]
+      },
+      "accuracy_mean": {
+        "hidden": 0.40047675804529204,
+        "static_embedding": 0.3289630512514899,
+        "ngram_tfidf": 0.2550655542312277,
+        "majority": 0.17878426698450536
+      },
+      "accuracy_sd_over_seeds": {
+        "hidden": 0.0,
+        "static_embedding": 0.0,
+        "ngram_tfidf": 0.0,
+        "majority": 0.0
+      },
+      "gaps": {
+        "static_embedding": {
+          "gap": 0.07151370679380215,
+          "ci95": [
+            0.023499698660069266,
+            0.12171915288568412
+          ],
+          "n_narratives": 150,
+          "p_one_sided_greater": 0.00275,
+          "p_two_sided": 0.0055
+        },
+        "ngram_tfidf": {
+          "gap": 0.14541120381406436,
+          "ci95": [
+            0.0987036602865407,
+            0.19316485083251547
+          ],
+          "n_narratives": 150,
+          "p_one_sided_greater": 0.0,
+          "p_two_sided": 0.0
+        },
+        "majority": {
+          "gap": 0.22169249106078667,
+          "ci95": [
+            0.15217196042697212,
+            0.29008589582226735
+          ],
+          "n_narratives": 150,
+          "p_one_sided_greater": 0.0,
+          "p_two_sided": 0.0
+        }
+      }
+    },
+    "eyes.finish": {
+      "layer": 18,
+      "n_classes": 4,
+      "accuracy_by_seed": {
+        "hidden": [
+          0.466030989272944
+        ],
+        "static_embedding": [
+          0.36829558998808104
+        ],
+        "ngram_tfidf": [
+          0.2598331346841478
+        ],
+        "majority": [
+          0.26102502979737785
+        ]
+      },
+      "accuracy_mean": {
+        "hidden": 0.466030989272944,
+        "static_embedding": 0.36829558998808104,
+        "ngram_tfidf": 0.2598331346841478,
+        "majority": 0.26102502979737785
+      },
+      "accuracy_sd_over_seeds": {
+        "hidden": 0.0,
+        "static_embedding": 0.0,
+        "ngram_tfidf": 0.0,
+        "majority": 0.0
+      },
+      "gaps": {
+        "static_embedding": {
+          "gap": 0.09773539928486297,
+          "ci95": [
+            0.04704180148323628,
+            0.1475211608222491
+          ],
+          "n_narratives": 150,
+          "p_one_sided_greater": 0.0,
+          "p_two_sided": 0.0
+        },
+        "ngram_tfidf": {
+          "gap": 0.2061978545887962,
+          "ci95": [
+            0.16038853481281093,
+            0.25556858147713946
+          ],
+          "n_narratives": 150,
+          "p_one_sided_greater": 0.0,
+          "p_two_sided": 0.0
+        },
+        "majority": {
+          "gap": 0.20500595947556616,
+          "ci95": [
+            0.13229587893235092,
+            0.2722950266003472
+          ],
+          "n_narratives": 150,
+          "p_one_sided_greater": 0.0,
+          "p_two_sided": 0.0
+        }
+      }
+    },
+    "lips.color": {
+      "layer": 28,
+      "n_classes": 5,
+      "accuracy_by_seed": {
+        "hidden": [
+          0.3694874851013111
+        ],
+        "static_embedding": [
+          0.3075089392133492
+        ],
+        "ngram_tfidf": [
+          0.3218116805721097
+        ],
+        "majority": [
+          0.20143027413587605
+        ]
+      },
+      "accuracy_mean": {
+        "hidden": 0.3694874851013111,
+        "static_embedding": 0.3075089392133492,
+        "ngram_tfidf": 0.3218116805721097,
+        "majority": 0.20143027413587605
+      },
+      "accuracy_sd_over_seeds": {
+        "hidden": 0.0,
+        "static_embedding": 0.0,
+        "ngram_tfidf": 0.0,
+        "majority": 0.0
+      },
+      "gaps": {
+        "static_embedding": {
+          "gap": 0.06197854588796187,
+          "ci95": [
+            0.009444821901940263,
+            0.11452184179456909
+          ],
+          "n_narratives": 150,
+          "p_one_sided_greater": 0.00975,
+          "p_two_sided": 0.0195
+        },
+        "ngram_tfidf": {
+          "gap": 0.04767580452920139,
+          "ci95": [
+            -0.008304667054067953,
+            0.10247576334148774
+          ],
+          "n_narratives": 150,
+          "p_one_sided_greater": 0.05475,
+          "p_two_sided": 0.1095
+        },
+        "majority": {
+          "gap": 0.16805721096543502,
+          "ci95": [
+            0.11574714617012655,
+            0.2219630827537627
+          ],
+          "n_narratives": 150,
+          "p_one_sided_greater": 0.0,
+          "p_two_sided": 0.0
+        }
+      }
+    },
+    "lips.finish": {
+      "layer": 27,
+      "n_classes": 4,
+      "accuracy_by_seed": {
+        "hidden": [
+          0.5041716328963052
+        ],
+        "static_embedding": [
+          0.4064362336114422
+        ],
+        "ngram_tfidf": [
+          0.3933253873659118
+        ],
+        "majority": [
+          0.266984505363528
+        ]
+      },
+      "accuracy_mean": {
+        "hidden": 0.5041716328963052,
+        "static_embedding": 0.4064362336114422,
+        "ngram_tfidf": 0.3933253873659118,
+        "majority": 0.266984505363528
+      },
+      "accuracy_sd_over_seeds": {
+        "hidden": 0.0,
+        "static_embedding": 0.0,
+        "ngram_tfidf": 0.0,
+        "majority": 0.0
+      },
+      "gaps": {
+        "static_embedding": {
+          "gap": 0.09773539928486297,
+          "ci95": [
+            0.04004381309825975,
+            0.15412027503779965
+          ],
+          "n_narratives": 150,
+          "p_one_sided_greater": 0.00025,
+          "p_two_sided": 0.0005
+        },
+        "ngram_tfidf": {
+          "gap": 0.11084624553039335,
+          "ci95": [
+            0.05053999757011946,
+            0.16646419217110014
+          ],
+          "n_narratives": 150,
+          "p_one_sided_greater": 0.0,
+          "p_two_sided": 0.0
+        },
+        "majority": {
+          "gap": 0.23718712753277715,
+          "ci95": [
+            0.17073024155722324,
+            0.3036466303864591
+          ],
+          "n_narratives": 150,
+          "p_one_sided_greater": 0.0,
+          "p_two_sided": 0.0
+        }
+      }
+    }
+  }
+}

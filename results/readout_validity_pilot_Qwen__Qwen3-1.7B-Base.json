@@ -1,0 +1,59 @@
+{
+  "meta": {
+    "model": "Qwen/Qwen3-1.7B-Base",
+    "dataset": "pilot",
+    "target": "lips.finish",
+    "other": "eyes.finish",
+    "values": [
+      "matte",
+      "dewy"
+    ],
+    "per_cell": 60
+  },
+  "lips_readout": {
+    "sensitivity": {
+      "mean": 0.6543090416460621,
+      "ci95": [
+        0.36835814154877955,
+        0.9403711037368189
+      ],
+      "n": 98,
+      "p_one_sided_greater": 0.0,
+      "p_two_sided": 0.0
+    },
+    "leakage": {
+      "mean": 0.5981890423463123,
+      "ci95": [
+        0.32715277760335715,
+        0.8645489961794106
+      ],
+      "n": 101,
+      "p_one_sided_greater": 0.0,
+      "p_two_sided": 0.0
+    },
+    "selectivity_ratio": 1.0938164949990172
+  },
+  "eyes_readout": {
+    "sensitivity": {
+      "mean": 0.6986856767446687,
+      "ci95": [
+        0.49698115982631647,
+        0.9016233543358226
+      ],
+      "n": 101,
+      "p_one_sided_greater": 0.0,
+      "p_two_sided": 0.0
+    },
+    "leakage": {
+      "mean": 0.3497605445433636,
+      "ci95": [
+        0.15498326061939707,
+        0.5427428806922874
+      ],
+      "n": 98,
+      "p_one_sided_greater": 0.0001,
+      "p_two_sided": 0.0002
+    },
+    "selectivity_ratio": 1.9976114734635118
+  }
+}

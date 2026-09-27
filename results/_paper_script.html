@@ -7,8 +7,9 @@ const el = (n, a = {}) => { const e = document.createElementNS(NS, n);
 const tx = (x, y, s, a = {}) => { const t = el("text", Object.assign(
   {x, y, "font-family": "Archivo, sans-serif", "font-size": 11.5,
    fill: "var(--ink-3)"}, a)); t.textContent = s; return t; };
-const MK = ["gpt2", "pythia", "qwen"];
-const MC = {gpt2: "var(--c1)", pythia: "var(--c2)", qwen: "var(--c3)"};
+const MK = ["gpt2", "pythia", "qwen", "qwen17"];
+const MC = {gpt2: "var(--c1)", pythia: "var(--c2)", qwen: "var(--c3)",
+            qwen17: "var(--sand)"};
 let tick = 0;
 const stagger = () => (RM ? 0 : 0.5 + 0.05 * tick++);
 
@@ -80,8 +81,8 @@ const stagger = () => (RM ? 0 : 0.5 + 0.05 * tick++);
 
 /* ---- Figure 2, read out sensitivity against leakage ---- */
 (function () {
-  const W = 800, H = 430, L = 86, R = 42, T = 40, B = 74;
-  const hi = 0.72;
+  const W = 800, H = 452, L = 86, R = 42, T = 40, B = 74;
+  const hi = 0.78;
   const x = v => L + (v / hi) * (W - L - R);
   const y = v => T + (1 - v / hi) * (H - T - B);
   const svg = el("svg", {viewBox: `0 0 ${W} ${H}`, role: "img",
@@ -101,7 +102,7 @@ const stagger = () => (RM ? 0 : 0.5 + 0.05 * tick++);
   svg.appendChild(tx(x(.50), y(.12) + 16, "would sit down here", {fill: "var(--ok)",
     "font-size": 12, "font-weight": 600}));
 
-  for (let v = 0; v <= 0.7001; v += 0.2) {
+  for (let v = 0; v <= 0.7601; v += 0.2) {
     svg.appendChild(el("line", {x1: x(v), y1: T - 8, x2: x(v), y2: H - B + 6,
       stroke: "var(--hair)", "stroke-width": 1}));
     svg.appendChild(el("line", {x1: L - 8, y1: y(v), x2: W - R, y2: y(v),
@@ -143,12 +144,12 @@ const stagger = () => (RM ? 0 : 0.5 + 0.05 * tick++);
 
 /* ---- Figure 3, what predicts the answer ---- */
 (function () {
-  const W = 800, H = 320, L = 74, R = 30, T = 46, B = 76;
+  const W = 800, H = 330, L = 74, R = 22, T = 46, B = 80;
   const keys = [["lips", "lips value"], ["eyes", "eyes value"],
                 ["last", "region acted on last"], ["more", "region acted on more often"]];
   const hi = 0.62;
   const gw = (W - L - R) / MK.length;
-  const bw = gw / (keys.length + 1.1);
+  const bw = gw / (keys.length + 0.7);
   const y = v => T + (1 - v / hi) * (H - T - B);
   const svg = el("svg", {viewBox: `0 0 ${W} ${H}`, role: "img",
     "aria-label": "Which label best predicts the read out in each model"});
@@ -173,7 +174,7 @@ const stagger = () => (RM ? 0 : 0.5 + 0.05 * tick++);
       svg.appendChild(bar);
       if (k === best) svg.appendChild(tx(px + bw * 0.42, y(v) - 7, "▲",
         {"text-anchor": "middle", "font-size": 10, fill: MC[mk]}));
-      const t = tx(0, 0, lab, {"font-size": 10.5, fill: "var(--ink-3)",
+      const t = tx(0, 0, lab, {"font-size": 9.5, fill: "var(--ink-3)",
         "text-anchor": "end"});
       t.setAttribute("transform",
         `translate(${px + bw * 0.5} ${H - B + 12}) rotate(-38)`);
@@ -194,7 +195,7 @@ const stagger = () => (RM ? 0 : 0.5 + 0.05 * tick++);
 (function () {
   const arms = [["shared", "shared component"], ["differential", "region specific component"],
                 ["full", "full direction"], ["random", "random, matched norm"]];
-  const W = 800, rowH = 86, T = 44, B = 54, L = 196, R = 104;
+  const W = 800, rowH = 100, T = 44, B = 54, L = 196, R = 104;
   const H = T + arms.length * rowH + B;
   const lo = -0.03, hi = 0.035;
   const x = v => L + (v - lo) / (hi - lo) * (W - L - R);
@@ -218,7 +219,7 @@ const stagger = () => (RM ? 0 : 0.5 + 0.05 * tick++);
       "font-size": 13, "font-weight": 600, fill: "var(--ink)"}));
     MK.forEach((mk, i) => {
       const a = D.decompose[mk].arms[key].difference;
-      const yy = y0 + 8 + i * 18, h = 11;
+      const yy = y0 + 6 + i * 19, h = 12;
       const ns = (a.ci95[0] <= 0 && a.ci95[1] >= 0);
       const x0 = x(Math.min(0, a.mean)), x1 = x(Math.max(0, a.mean));
       const bar = el("rect", {x: x0, y: yy, width: Math.max(x1 - x0, 1.4),
@@ -238,7 +239,7 @@ const stagger = () => (RM ? 0 : 0.5 + 0.05 * tick++);
     });
   });
   MK.forEach((mk, i) => {
-    const lx = L + i * 190;
+    const lx = L + i * 146;
     svg.appendChild(el("rect", {x: lx, y: T - 34, width: 11, height: 11, fill: MC[mk]}));
     svg.appendChild(tx(lx + 17, T - 24, D.decompose[mk].label,
       {"font-size": 11.5, fill: "var(--ink-2)", "font-weight": 500}));
@@ -248,7 +249,7 @@ const stagger = () => (RM ? 0 : 0.5 + 0.05 * tick++);
 
 /* ---- Figure 5, decay ---- */
 (function () {
-  const W = 800, H = 300, L = 72, R = 132, T = 30, B = 58;
+  const W = 800, H = 312, L = 72, R = 132, T = 30, B = 58;
   const bins = D.binding.gpt2.bins, lo = -0.06, hi = 0.18;
   const x = i => L + i * (W - L - R) / (bins.length - 1);
   const y = v => T + (hi - v) / (hi - lo) * (H - T - B);
@@ -298,10 +299,10 @@ const stagger = () => (RM ? 0 : 0.5 + 0.05 * tick++);
     svg.appendChild(tx(L - 12, yy + 4, (v > 0 ? "+" : "") + v.toFixed(2),
       {"text-anchor": "end", "font-size": 11}));
   }
-  const bw = 20;
+  const bw = 16;
   D.gaps.forEach((g, i) => {
     MK.forEach((mk, j) => {
-      const d = g[mk], px = x(i) + (j - 1) * (bw + 4) - bw / 2;
+      const d = g[mk], px = x(i) + (j - 1.5) * (bw + 4) - bw / 2;
       const sig = d.p < 0.05;
       const top = d.gap >= 0 ? y(d.gap) : y(0), h = Math.abs(y(d.gap) - y(0));
       const bar = el("rect", {x: px, y: top, width: bw, height: Math.max(h, 1),
@@ -319,7 +320,7 @@ const stagger = () => (RM ? 0 : 0.5 + 0.05 * tick++);
     svg.appendChild(tx(x(i), H - B + 40, nm[1], {"text-anchor": "middle", "font-size": 12}));
   });
   MK.forEach((mk, j) => {
-    const lx = L + j * 160;
+    const lx = L + j * 132;
     svg.appendChild(el("rect", {x: lx, y: T - 32, width: 11, height: 11, fill: MC[mk]}));
     svg.appendChild(tx(lx + 17, T - 22, D.decompose[mk].label,
       {"font-size": 11.5, fill: "var(--ink-2)", "font-weight": 500}));
@@ -340,7 +341,7 @@ const stagger = () => (RM ? 0 : 0.5 + 0.05 * tick++);
 
 /* ---- Figure 7, depth ---- */
 (function () {
-  const W = 800, H = 230, L = 176, R = 34, T = 46, B = 52;
+  const W = 800, H = 272, L = 176, R = 34, T = 46, B = 52;
   const x = f => L + f * (W - L - R);
   const y = i => T + i * (H - T - B) / (MK.length - 1);
   const svg = el("svg", {viewBox: `0 0 ${W} ${H}`, role: "img",

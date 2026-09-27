@@ -206,7 +206,7 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
   <p class="author rise" style="animation-delay:.14s">Anya Louni</p>
   <dl class="meta rise" style="animation-delay:.18s">
     <div><dt>Domain</dt><dd>Makeup routine, 4 regions, 3 attributes</dd></div>
-    <div><dt>Models</dt><dd>gpt2-124M, pythia-410m, Qwen3-0.6B</dd></div>
+    <div><dt>Models</dt><dd>gpt2-124M, pythia-410m, Qwen3-0.6B, Qwen3-1.7B</dd></div>
     <div><dt>Narratives</dt><dd>7,400</dd></div>
     <div><dt>Labelled positions</dt><dd>83,655</dd></div>
   </dl>
@@ -237,24 +237,24 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
 
 <div class="verdict rise" style="animation-delay:.42s">
   <div class="vcell">
-    <p class="vname"><span class="swatch" style="background:var(--warn)"></span>The instrument</p>
-    <p class="vstat" style="color:var(--warn)">1.07</p>
-    <p class="vsub">Mean ratio of sensitivity to leakage across three models and
-    six read outs. A value of 1 means the read out answers about a region using
-    the other region's value just as readily.</p>
+    <p class="vname"><span class="swatch" style="background:var(--c2)"></span>The value code</p>
+    <p class="vstat" style="color:var(--c2)">3.0x</p>
+    <p class="vsub">Growth in the shared component's causal effect from 124M to
+    1.7B parameters, +0.183 to +0.556. It rises monotonically with size.</p>
   </div>
   <div class="vcell">
-    <p class="vname"><span class="swatch" style="background:var(--c2)"></span>The direction</p>
-    <p class="vstat" style="color:var(--c2)">28%</p>
-    <p class="vsub">Share of a difference of means direction that is region
-    specific. The other 72 per cent is the value, shared by both regions, and it
-    carries the causal effect.</p>
+    <p class="vname"><span class="swatch" style="background:var(--warn)"></span>The binding code</p>
+    <p class="vstat" style="color:var(--warn)">0.007</p>
+    <p class="vsub">Causal effect of the region specific component at 1.7B,
+    p = 0.36. Still absent at the largest size we ran, while the value code
+    tripled.</p>
   </div>
   <div class="vcell">
     <p class="vname"><span class="swatch" style="background:var(--ok)"></span>The probe</p>
-    <p class="vstat" style="color:var(--ok)">+0.04</p>
-    <p class="vsub">Binding margin shortly after a value is set, lowest of the
-    three models. The probe does bind. Every other measurement here does not.</p>
+    <p class="vstat" style="color:var(--ok)">4 / 4</p>
+    <p class="vsub">Targets clearing the lexical baseline at 1.7B, against two
+    of four at 124M. The representation improves with scale even where the
+    output does not.</p>
   </div>
 </div>
 
@@ -265,17 +265,22 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
     <p>A concept direction built by differencing class means mixes two things.
     One part is shared by every entity that takes the value. The other is
     specific to one entity. We separate them and steer with each part alone.
-    The shared part carries the causal effect in all three models we tested. The
-    region specific part moves the two regions apart in gpt2 by
-    <span class="num">+0.016</span>, and by <span class="num">0.000</span> in
-    pythia-410m and Qwen3-0.6B-Base.</p>
+    The shared part carries the causal effect in all four models we tested,
+    and it grows with size, from <span class="num">+0.183</span> at 124M
+    parameters to <span class="num">+0.556</span> at 1.7B. The region specific
+    part moves the two regions apart in gpt2 by <span class="num">+0.016</span>,
+    and by <span class="num">0.000</span> in pythia-410m and Qwen3-0.6B. At
+    1.7B, three times the largest of those, it is still
+    <span class="num">+0.007</span> with p = 0.36. The value code strengthens
+    with scale and the binding code does not appear.</p>
 
     <p>Before reading anything into that null we checked the measuring
     instrument. With no steering at all, we asked whether the behavioural read
     out can tell the two regions apart. Changing the lips value moves the lips
     read out. Changing the <em>eyes</em> value moves it by about the same
-    amount. Across three models and six read outs the mean ratio of sensitivity
-    to leakage is <span class="num">1.07</span>. The read out answers a question
+    amount. Across the three smaller models the mean ratio of sensitivity to leakage is
+      <span class="num">1.07</span>, and at 1.7B one of the two read outs reaches
+      <span class="num">2.00</span>. The read out answers a question
     about one region using the other region's value.</p>
 
     <p>That result gates the rest. A steering experiment read through this
@@ -286,17 +291,25 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
     <p>What survives is the probe. A linear probe trained per region does
     recover which region an attribute belongs to, with a binding margin of
     <span class="num">+0.04</span> to <span class="num">+0.15</span> shortly
-    after a value is set in all three models, surviving Benjamini-Hochberg
+    after a value is set in all four models, surviving Benjamini-Hochberg
     correction across 180 tests. Four regions give twelve ordered region pairs
     per attribute and three attributes, so 36 tests per distance bin and 180
     across five bins, and 33 of 36 clear correction at distance zero. The margin
     decays with narrative distance. On the four region dataset, which we
     extracted for gpt2 only, it turns negative past five sentences.</p>
 
+    <p>The representation improves with scale even where the output does not. At
+    1.7B all four state variables clear the lexical baseline, against two of
+    four at 124M, and the binding margin is the highest we measured. One of the
+    two read outs also begins to bind, reaching a sensitivity to leakage ratio
+    of <span class="num">2.00</span> against roughly
+    <span class="num">1.07</span> in the smaller models.</p>
+
     <p>Feng and Steinhardt (ICLR 2024) find binding ID vectors in every
-    sufficiently large model of the Pythia and LLaMA families. Our models run
-    124M to 600M parameters. A null at this scale is consistent with sitting
-    below that threshold and is not evidence against the mechanism.</p>
+    sufficiently large model of the Pythia and LLaMA families. Our four models
+    run 124M to 1.7B parameters. A null across that range is consistent with
+    sitting below their threshold rather than evidence against the mechanism,
+    and it puts a lower bound on where to look.</p>
   </div></div>
 </section>
 
@@ -427,7 +440,7 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
       model's log odds across all four assignments of two values to two regions.
       Sensitivity changes the value of the region we asked about. Leakage
       changes the other region's value.</p>
-      <p>Every model moves about equally on both, with a mean sensitivity to
+      <p>The three smaller models move about equally on both, with a mean sensitivity to
       leakage ratio of <span class="num">1.07</span>. Sensitivity is significant
       everywhere, so the instrument registers changes and the null is not a
       floor effect. The read out answers a question about one region using the
@@ -439,7 +452,7 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
       pair gives the cleaner statement. <strong>Binding is linearly decodable in
       the residual stream and the output does not use it.</strong> Feng and
       Steinhardt find binding ID vectors only above a scale threshold, and our
-      models run 124M to 600M, so present but unused is what we should expect
+      models run 124M to 1.7B, so present but unused is what we should expect
       to find down here.</p>
       <p>Averaging the ratio hides structure worth reporting. In each model one
       region drives both read outs at nearly the same strength, and which region
@@ -493,7 +506,7 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
       <code>r</code> raises the lip read out and lowers the eye read out, giving a
       positive difference. If the model does not use it, <code>r</code> moves
       neither.</p>
-      <p>The shared part behaved the same way in all three models. It raised both
+      <p>The shared part behaved the same way in all four models. It raised both
       read outs by nearly identical amounts, so the difference between regions
       stayed at zero. The entity specific part produced a difference of
       <span class="num">+0.016</span> in gpt2 with p below 0.0001 and a dose
@@ -536,7 +549,8 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
       The gap between them is the binding margin. It is positive in all three
       models shortly after a value is set and peaks two sentences later.</p>
       <p>The margin then falls. Figure 5 shows the two region dataset, run on all
-      three models, where the margin stays positive throughout. The sign change
+      four models, where the margin stays positive throughout and is largest at
+      1.7B. The sign change
       past five sentences appears only on the four region dataset, which we
       extracted for gpt2 alone, and is reported in 4.7. Section 4.2 is our reason for treating this as correlational.</p>
     </div></div>
@@ -546,7 +560,7 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
         <p class="fsub">Two region dataset. Four region pairs per model.</p>
         <div id="decayChart"></div>
       </div>
-      <figcaption><b>Figure 5.</b> Two region dataset, all three models. Margin is the
+      <figcaption><b>Figure 5.</b> Two region dataset, all four models. Margin is the
       within region accuracy above its majority, less the cross region accuracy
       above its majority. The four region dataset, gpt2 only, is the one where
       the margin changes sign past distance five.</figcaption>
@@ -555,12 +569,13 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
 
   <div class="result">
     <div class="rhead"><div class="rnum">4.4</div><div class="rbody">
-      <h3>Two of three models agree on which variables beat a lexical baseline</h3>
+      <h3>Which variables beat a lexical baseline depends on the model, and improves with size</h3>
       <p class="verd v-mix">gpt2 and Qwen agree. pythia reverses.</p>
-      <p>gpt2 and Qwen both clear the static embedding baseline on the two eye
-      variables and both fall below it on the two lip variables. The sign matches
-      on all four targets. pythia gives the opposite pattern, with its only
-      significant gap on <code>lips.color</code>.</p>
+      <p>gpt2 and Qwen3-0.6B both clear the static embedding baseline on the two
+      eye variables and both fall below it on the two lip variables. The sign
+      matches on all four targets. pythia gives the opposite pattern, with its
+      only significant gap on <code>lips.color</code>. Qwen3-1.7B clears the
+      baseline on all four, which is the first model here to do so.</p>
       <p>The evidence is thin. Two of the four targets are not significant in
       any model, sign agreement on four targets is a weak test, and our own
       robustness check lists <code>eyes.color</code> as fragile, since it falls
@@ -592,7 +607,7 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
 
   <div class="result">
     <div class="rhead"><div class="rnum">4.5</div><div class="rbody">
-      <h3>The three models place their state code in different layers</h3>
+      <h3>The models place their state code in different layers</h3>
       <p class="verd v-mix">Differs across all three</p>
       <p>gpt2 spreads across the embedding layer and the middle of the network. On
       the four region dataset eight of twelve targets peak at layer 0, where the
@@ -615,7 +630,7 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
 
   <div class="result">
     <div class="rhead"><div class="rnum">4.6</div><div class="rbody">
-      <h3>One narrative, read by three models</h3>
+      <h3>One narrative, read by four models</h3>
       <p class="verd v-one">Illustration</p>
       <p>The probe read out for each region, sentence by sentence, against the
       true state. This is the first narrative in the held out split by index,
@@ -673,6 +688,39 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
       dataset needed for this was extracted for gpt2 only.</p>
     </div></div>
   </div>
+  <div class="result">
+    <div class="rhead"><div class="rnum">4.8</div><div class="rbody">
+      <h3>What scale changes, and what it leaves alone</h3>
+      <p class="verd v-mix">Four models, 124M to 1.7B</p>
+      <p>Qwen3-1.7B is roughly three times the largest of the other three and
+      was run on the same narratives, byte for byte. Three things move with size
+      and one does not.</p>
+      <p><strong>The value code strengthens.</strong> The shared component's
+      causal effect rises monotonically, <span class="num">+0.183</span>,
+      <span class="num">+0.190</span>, <span class="num">+0.317</span>,
+      <span class="num">+0.556</span>.</p>
+      <p><strong>The representation improves.</strong> At 1.7B all four state
+      variables clear the static embedding baseline, at
+      <span class="num">+0.072</span>, <span class="num">+0.098</span>,
+      <span class="num">+0.062</span> and <span class="num">+0.098</span>, every
+      one significant. The lip variables that fell below the baseline in gpt2
+      and Qwen3-0.6B now clear it. Binding margins are the highest of any model,
+      peaking at <span class="num">+0.199</span>.</p>
+      <p><strong>The read out starts to bind.</strong> The eyes read out reaches
+      a sensitivity to leakage ratio of <span class="num">2.00</span>,
+      sensitivity <span class="num">+0.699</span> against leakage
+      <span class="num">+0.350</span>. The lips read out is still at
+      <span class="num">1.09</span>, so this is one of two.</p>
+      <p><strong>The binding code does not appear.</strong> The region specific
+      component is <span class="num">+0.007</span> with p = 0.36. Across a
+      fourteen fold range of parameters it is significant only in the smallest
+      model, where 4.2 argues the effect could be lexical.</p>
+      <p>The salience account from 4.1 fits Qwen3-0.6B alone. At 1.7B the eyes
+      value dominates again, <span class="num">+0.667</span>, with recency at
+      <span class="num">+0.606</span>, so it is not a size trend.</p>
+    </div></div>
+  </div>
+
 </section>
 
 <section>
@@ -772,10 +820,10 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
 <section>
   <div class="shead"><div class="snum">7</div><h2>Limitations</h2></div>
   <div class="shead"><div></div><div class="col">
-    <p><strong>Three small models.</strong> 124M, 410M and 600M parameters. Kim and
+    <p><strong>Four small models.</strong> 124M, 410M, 600M and 1.7B parameters. Kim and
     Schuster find entity tracking in procedural text needs code pretrained models at
-    GPT-3.5 scale. Three models establish that the pattern varies and say little
-    about the range over which it varies.</p>
+    GPT-3.5 scale. Four models establish that the pattern varies with size in some places and
+    holds flat in others, across a fourteen fold parameter range.</p>
     <p><strong>Synthetic text.</strong> The paraphrase disjoint split makes this a
     real generalisation test and the distractor sentences make it adversarial to bag
     of words. The text still comes from templates.</p>
@@ -797,8 +845,9 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
   <div class="shead"><div></div><div class="col">
     <p>Steering with a difference of means direction moves the value of an
     attribute. The component shared across entities carries that effect in all
-    three models. The entity specific component moves the two regions apart in gpt2
-    at about a tenth the strength and does nothing in pythia or Qwen.</p>
+    four models, and it triples in strength from 124M to 1.7B parameters. The entity specific component moves the two regions apart in gpt2
+    at about a tenth the strength and does nothing in the other three, including
+    at 1.7B.</p>
     <p>A probe recovers the binding, the margin decays with narrative distance, and
     the causal evidence for the model using that binding is thin. The defensible
     statement is that the entity specific component recovered by a difference of
