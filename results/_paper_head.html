@@ -1,3 +1,6 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
 <title>Makeup Its Mind</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -285,7 +288,7 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
 
     <p>That result gates the rest. A steering experiment read through this
     instrument cannot separate a model that fails to bind from an instrument
-    that fails to bind. Our earlier conclusion rested on exactly that
+    that fails to bind. Our earlier conclusion rested on that
     instrument, and we withdraw it.</p>
 
     <p>What survives is the probe. A linear probe trained per region does
@@ -308,8 +311,8 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
     <p>Feng and Steinhardt (ICLR 2024) find binding ID vectors in every
     sufficiently large model of the Pythia and LLaMA families. Our four models
     run 124M to 1.7B parameters. A null across that range is consistent with
-    sitting below their threshold rather than evidence against the mechanism,
-    and it puts a lower bound on where to look.</p>
+    sitting below their threshold. It is not evidence against the mechanism, and
+    it puts a lower bound on where to look.</p>
   </div></div>
 </section>
 
@@ -357,18 +360,35 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
     them off. Ours overwrites them in sequence, which lets us ask how long a
     binding survives.</p>
 
-    <p>Kim and Schuster (ACL 2023) evaluate final state inference on ProPara and
-    Recipes and find the ability appears only in models pretrained on large
-    amounts of code. Their evaluation is behavioural. Ours is representational and
-    causal. Their result also sets our expectations for scale. At 124M to 600M
-    parameters we sit below the regime where strong effects are likely.</p>
+    <p>Feng and Steinhardt, <em>How do Language Models Bind Entities in Context?</em>
+    (ICLR 2024), is the closest prior work. They show that models attach binding
+    ID vectors to entities and to their attributes, establish it causally, and
+    find the vectors occupy a continuous subspace where distance tracks
+    discernability. They report the mechanism in every sufficiently large model
+    of the Pythia and LLaMA families. The paper does not name a cutoff we could
+    verify, and pythia-410m sits inside our own set without showing one.</p>
+
+    <p>Li, Nye and Andreas, <em>Implicit Representations of Meaning in Neural
+    Language Models</em> (ACL 2021), is the earliest close relative. In BART and
+    T5 they find contextual representations that behave like models of entities
+    as a discourse unfolds, supporting a linear read out of each entity's
+    current properties and manipulable with predictable effects on generation.
+    They work in Alchemy and TextWorld.</p>
+
+    <p>Kim and Schuster (ACL 2023) probe whether a model can infer an entity's
+    final state from an initial description and a series of operations. Their
+    data is a synthetic boxes and objects setup, with operations that move,
+    remove and add objects. Their evaluation is behavioural where ours is
+    representational and causal. They find the ability appears only in models
+    pretrained on large amounts of code, which sets our expectations for scale.
+    Our four models span 124M to 1.7B.</p>
 
     <p>Against that, our decomposition is not a new account of how binding is
     represented. Feng and Steinhardt already factor entity from attribute and
     identify the binding carrier. What we add is a result about the tool rather
     than the model. A difference of class means, which is the usual way a
-    steering direction gets built, provably mixes the two components, and we
-    measure the mix at 28 to 38 per cent region specific by norm across three
+    steering direction gets built, mixes the two components by construction, and
+    we measure the mix at 28 to 38 per cent region specific by norm across four
     models. The consequence is practical. A wrong region control is the standard
     specificity check in steering work, and it passes on the shared component
     alone, so it cannot support a binding claim. Separating the components costs
@@ -396,7 +416,8 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
     three minimal pairs, for example "a matte finish reflects almost no ___" with
     <em>light</em> against <em>sound</em>. gpt2 is the primary model. pythia-410m
     and Qwen3-0.6B-Base are replication checks chosen to differ in family, depth
-    and training data.</p>
+    and training data. Qwen3-1.7B-Base is the scale arm, roughly three times the
+    largest of the others, run on a GPU against byte identical narratives.</p>
 
     <p><strong>Probing.</strong> Residual stream at the last token of each
     sentence, every layer, logistic regression and MLP probes. Baselines are
@@ -415,7 +436,7 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
     narrative positions use a cluster bootstrap that resamples whole narratives,
     since positions inside a narrative share wording and state. Causal claims use
     a steering gain of g = 2, where g is a multiple of the full direction's norm.
-    We write it as g rather than alpha to keep it apart from the significance
+    We write it as g instead of alpha to keep it apart from the significance
     level. At g = 8 a random direction of matched norm also reaches
     significance, which puts the edit off distribution. MDL is reported
     over a sweep of probe regularisation, since a single value of <code>C</code>
@@ -427,13 +448,14 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
   <div class="shead"><div class="snum">4</div><h2>Results</h2></div>
   <div class="shead"><div></div><div class="col">
     <p>Results run in order of how well they are supported. The first was designed
-    to settle an ambiguity in our own earlier work.</p>
+    to check whether the measurement could register the thing the rest of the
+    study set out to test.</p>
   </div></div>
 
 <div class="result">
     <div class="rhead"><div class="rnum">4.1</div><div class="rbody">
       <h3>Binding is present in the residual stream and absent from the output</h3>
-      <p class="verd v-no">Holds in 3 of 3</p>
+      <p class="verd v-no">Holds in the three smaller models, weakens at 1.7B</p>
       <p>A null from steering means nothing if the measurement cannot register a
       difference, so we checked without steering anything. Take held out
       positions where the two regions carry different finishes and compare the
@@ -446,7 +468,7 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
       floor effect. The read out answers a question about one region using the
       other region's value.</p>
       <p>The read out here is the model's own next token distribution, so this
-      is a fact about behaviour rather than about our tooling. Set against 4.3,
+      is a fact about behaviour and not about our tooling. Set against 4.3,
       where a probe recovers the binding at a margin of
       <span class="num">+0.04</span> to <span class="num">+0.15</span>, the
       pair gives the cleaner statement. <strong>Binding is linearly decodable in
@@ -476,8 +498,9 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
       </div>
       <figcaption><b>Figure 2.</b> A read out that binds sits well to the left of
       the diagonal, where sensitivity to its own region exceeds leakage from the
-      other. All six sit on it. The shaded band marks where the read out answers
-      using the wrong region at least as readily as the right one.</figcaption>
+      other. Seven of the eight sit on it. The 1.7B eyes read out is the one point that
+      pulls clear, at a ratio of 2.00. The shaded band marks where the read out
+      answers using the wrong region at least as readily as the right one.</figcaption>
     </figure>
     <figure>
       <div class="frame">
@@ -497,7 +520,7 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
   <div class="result">
     <div class="rhead"><div class="rnum">4.2</div><div class="rbody">
       <h3>The causal effect rides on the shared component</h3>
-      <p class="verd v-ok">Shared effect in 3 of 3. Region specific effect in 1 of 3.</p>
+      <p class="verd v-ok">Shared effect in 4 of 4. Region specific effect in 1 of 4.</p>
       <p>A direction built as <code>mean(dewy) − mean(matte)</code> for the lips
       contains two parts. One part is what lips and eyes have in common when
       either turns dewy. The other separates them. Both parts were rescaled to the
@@ -506,25 +529,51 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
       <code>r</code> raises the lip read out and lowers the eye read out, giving a
       positive difference. If the model does not use it, <code>r</code> moves
       neither.</p>
-      <p>The shared part behaved the same way in all four models. It raised both
-      read outs by nearly identical amounts, so the difference between regions
-      stayed at zero. The entity specific part produced a difference of
+      <p>The shared part raised both read outs by nearly identical amounts in
+      the three smaller models, so the difference between regions stayed at zero.
+      The entity specific part produced a difference of
       <span class="num">+0.016</span> in gpt2 with p below 0.0001 and a dose
-      response that doubles at g = 4. In pythia and Qwen the difference was
-      <span class="num">0.000</span>. A random direction produced nothing
-      anywhere.</p>
+      response that doubles at g = 4. In pythia-410m and Qwen3-0.6B the difference
+      was <span class="num">0.000</span>, and at 1.7B
+      <span class="num">+0.007</span> with p = 0.36. A random direction produced
+      nothing anywhere.</p>
+
+      <p>Qwen3-1.7B breaks the pattern on the shared arm. There the shared part
+      alone moved the two read outs apart by <span class="num">+0.038</span>
+      [+0.005, +0.070] with p = 0.0216, and the full direction moved them apart
+      by <span class="num">+0.042</span>. The entity specific part accounts for
+      <span class="num">+0.007</span> of that and is not significant, so the whole
+      asymmetry at 1.7B sits in the component that carries no region information.
+      A direction built to be identical for lips and eyes acts more strongly on
+      one of them. The size is a tenth of the shared arm's push on each read out,
+      which is <span class="num">+0.556</span> and <span class="num">+0.518</span>,
+      so it reads as unequal sensitivity of the two read outs to the same edit
+      and not as binding. It is also the one place where the full direction
+      looks region selective, and the decomposition shows that appearance comes
+      from the shared half.</p>
       <p>The gpt2 effect is real and small. The shared part moves each read out by
       <span class="num">+0.183</span>. The entity specific part moves the regions
       apart by <span class="num">+0.016</span>, about a tenth as much, while making
       up 28 per cent of the full direction by norm. That ratio is why injecting the
       wrong region's direction works about as well as the right one.</p>
       <p>The same caveat from 4.1 applies to this positive result, and we state
-      it rather than keep the one number that came out our way. The gpt2 effect
+      it instead of keeping the one number that came out our way. The gpt2 effect
       was measured through the read out that 4.1 shows does not bind. A
       differential of <span class="num">+0.016</span> could come from lexical
-      content carried in <code>r</code> rather than from a binding the model
+      content carried in <code>r</code> and not from a binding the model
       uses. We report it as a small effect of unclear origin, and a read out
       that binds would be needed to attribute it.</p>
+
+      <p>At 1.7B one read out does bind, so we can put <code>r</code> through it.
+      Section 4.1 gives the eyes read out a sensitivity to leakage ratio of
+      <span class="num">2.00</span> in that model. Here the target is the lips and
+      the other region is the eyes, so <code>r</code> should push the eyes read
+      out down. It pushes it up, by <span class="num">+0.062</span>
+      [+0.037, +0.088] with p below 0.0001. The push on the lips read out is
+      <span class="num">+0.069</span>, so <code>r</code> raises both read outs by
+      almost the same amount. Read through the one channel that tracks its own
+      region, the entity specific component behaves as a weak value push with no
+      region attached.</p>
     </div></div>
     <figure>
       <div class="frame">
@@ -536,17 +585,19 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
       <figcaption><b>Figure 4.</b> Positive values mean the edit moved the target
       region more than the other region. Only gpt2 shows an effect for the region
       specific component, and it sits an order of magnitude below the shared
-      component's effect on each read out.</figcaption>
+      component's effect on each read out. Qwen3-1.7B is significant on the shared
+      and full arms, where a direction carrying no region information still moves
+      one read out further than the other.</figcaption>
     </figure>
   </div>
 
   <div class="result">
     <div class="rhead"><div class="rnum">4.3</div><div class="rbody">
       <h3>Binding is recoverable by a probe and decays with distance</h3>
-      <p class="verd v-ok">Replicates in 3 of 3</p>
+      <p class="verd v-ok">Replicates in 4 of 4</p>
       <p>A probe trained on one region and read against another sits at that
       region's majority rate. The within region probe sits well above majority.
-      The gap between them is the binding margin. It is positive in all three
+      The gap between them is the binding margin. It is positive in all four
       models shortly after a value is set and peaks two sentences later.</p>
       <p>The margin then falls. Figure 5 shows the two region dataset, run on all
       four models, where the margin stays positive throughout and is largest at
@@ -594,12 +645,12 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
         significant at two sided p below 0.05.</p>
         <div id="gapChart"></div>
       </div>
-      <figcaption><b>Figure 6.</b> Same data, same splits, same test in all three
-      models.</figcaption>
+      <figcaption><b>Figure 6.</b> Same data, same splits, same test in all four models.
+      Qwen3-1.7B is the only one to clear the baseline on every target.</figcaption>
     </figure>
     <div class="tscroll">
       <table>
-        <thead><tr><th>Target</th><th>gpt2</th><th>p</th><th>pythia</th><th>p</th><th>Qwen</th><th>p</th></tr></thead>
+        <thead><tr><th>Target</th><th>gpt2</th><th>p</th><th>pythia</th><th>p</th><th>Qwen 0.6B</th><th>p</th><th>Qwen 1.7B</th><th>p</th></tr></thead>
         <tbody id="gapTable"></tbody>
       </table>
     </div>
@@ -608,11 +659,12 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
   <div class="result">
     <div class="rhead"><div class="rnum">4.5</div><div class="rbody">
       <h3>The models place their state code in different layers</h3>
-      <p class="verd v-mix">Differs across all three</p>
+      <p class="verd v-mix">Differs across all four</p>
       <p>gpt2 spreads across the embedding layer and the middle of the network. On
       the four region dataset eight of twelve targets peak at layer 0, where the
       transformer adds nothing over a bag of embeddings. pythia sits at layers 20
-      to 24 of 24. Qwen sits at layers 16 to 26 of 28. The models also disagree
+      to 24 of 24. Qwen3-0.6B sits at layers 16 to 26 of 28 and Qwen3-1.7B at
+      layers 18 to 28 of 28. The models also disagree
       with each other on a held out narrative more often than they disagree with
       the truth.</p>
     </div></div>
@@ -630,12 +682,13 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
 
   <div class="result">
     <div class="rhead"><div class="rnum">4.6</div><div class="rbody">
-      <h3>One narrative, read by four models</h3>
+      <h3>One narrative, read by three models</h3>
       <p class="verd v-one">Illustration</p>
       <p>The probe read out for each region, sentence by sentence, against the
       true state. This is the first narrative in the held out split by index,
-      chosen before we looked at any of them, and it is one case rather than
-      evidence.</p>
+      chosen before we looked at any of them, and it is one case, not evidence.
+      Qwen3-1.7B is absent here because its activations were produced on a
+      hosted GPU and only the result files came back.</p>
     </div></div>
     <figure>
       <div class="frame">
@@ -726,29 +779,42 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
 <section>
   <div class="shead"><div class="snum">5</div><h2>Discussion</h2></div>
   <div class="shead"><div></div><div class="col">
-    <p>Section 4.2 changes how we read every steering result in this study. A
-    difference of means direction is built to separate two label groups. The
-    component that separates them best is the one the groups differ on, which is
-    the value. Everything entity specific sits in the residual. Steering with the
-    full direction therefore tests the value component and says little about the
-    binding component.</p>
+    <p>The result we would defend is that the binding is present and the model
+    does not use it. A probe reads which region an attribute belongs to at a
+    margin of <span class="num">+0.04</span> to <span class="num">+0.15</span>
+    in all four models. The model's own next token distribution answers a
+    question about one region using the other region's value, at a sensitivity
+    to leakage ratio of <span class="num">1.07</span> in the three smaller
+    models. Steering the component that carries the region information moves
+    nothing in three of four. Three measurements, two of them causal, point the
+    same way.</p>
+
+    <p>Section 4.2 explains why the earlier reading was wrong. A difference of
+    means direction is built to separate two label groups. The component that
+    separates them best is the one the groups differ on, which is the value.
+    Everything entity specific sits in the residual. Steering with the full
+    direction tests the value component and says little about the binding
+    component.</p>
 
     <p>Three consequences follow. Wrong region controls are weak on their own,
     since a shared component guarantees they pass. A cosine between two class
-    directions is a statement about the construction rather than about the model.
-    And a steering result that moves a read out is evidence for a value code,
-    which is a weaker claim than binding.</p>
+    directions describes the construction and not the model. And a steering
+    result that moves a read out is evidence for a value code, which is weaker
+    than binding.</p>
 
-    <p>The decomposition gives a sharper reading. In gpt2 the entity specific
-    component is causally effective at about a tenth the strength of the value
-    component. In pythia and Qwen it is inert at the doses we can use while staying
-    on distribution. A larger model may change this, and the test costs one extra
-    arm.</p>
+    <p>Scale moves the representation and leaves the use of it alone. From 124M
+    to 1.7B the value code's causal effect triples, all four state variables
+    come to clear the lexical baseline, the binding margin reaches its highest
+    value, and one of the two read outs starts to bind. The region specific
+    component stays inert across the whole range. Feng and Steinhardt find
+    binding ID vectors above a scale threshold, and 1.7B may still sit below it,
+    so the reading we prefer is that these models build the binding before they
+    learn to read it.</p>
 
     <p>On replication, our earlier two model comparison concluded that no target
-    replicated. The third model shows that conclusion was an artifact of which
-    second model we picked. gpt2 and Qwen agree on the sign of all four targets.
-    Adding a model changed the answer, which is the argument for running more than
+    replicated. The third model shows that conclusion came from which second
+    model we picked. gpt2 and Qwen agree on the sign of all four targets. Adding
+    a model changed the answer, which is the argument for running more than
     two.</p>
   </div></div>
 </section>
@@ -756,7 +822,7 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
 <section class="corr">
   <div class="shead"><div class="snum">6</div><h2>Corrections</h2></div>
   <div class="shead"><div></div><div class="col">
-    <p>Seventeen claims were revised during this work. The nine below are the
+    <p>Twenty one claims were revised during this work. The nine below are the
     ones that changed a reported number or a conclusion. The full log sits in
     <code>docs/CORRECTIONS.md</code> in the repository. Several headline results
     have their current form because a first version looked too clean and was
@@ -835,33 +901,37 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
     <p><strong>A bounded dose.</strong> The decomposition uses g = 2 and g = 4. At
     g = 8 a random direction also reaches significance. A larger entity specific
     effect could exist above that range and would be unreadable.</p>
-    <p><strong>Single model rows.</strong> Section 4.6 was run on gpt2 alone. Given
-    4.3 those results should be treated as claims about one checkpoint.</p>
+    <p><strong>Single model rows.</strong> Section 4.7 was run on gpt2 alone. Given
+    4.4 those results should be treated as claims about one checkpoint.</p>
   </div></div>
 </section>
 
 <section>
   <div class="shead"><div class="snum">8</div><h2>Conclusion</h2></div>
   <div class="shead"><div></div><div class="col">
+    <p>A probe reads which face region an attribute belongs to in all four
+    models. The models' own output answers a question about one region using the
+    other region's value. Steering the component that carries the region
+    information moves the two read outs by the same amount in three of four
+    models. The binding is in the residual stream and the read out does not use
+    it.</p>
     <p>Steering with a difference of means direction moves the value of an
     attribute. The component shared across entities carries that effect in all
-    four models, and it triples in strength from 124M to 1.7B parameters. The entity specific component moves the two regions apart in gpt2
-    at about a tenth the strength and does nothing in the other three, including
-    at 1.7B.</p>
-    <p>A probe recovers the binding, the margin decays with narrative distance, and
-    the causal evidence for the model using that binding is thin. The defensible
-    statement is that the entity specific component recovered by a difference of
-    means is not required for the read out we tested.</p>
-    <p>Anyone reading a binding claim off a steering result should decompose the
-    direction first. The shared component will pass a wrong region control on its
-    own.</p>
+    four models and triples in strength from 124M to 1.7B. The entity specific
+    component moves the two regions apart in gpt2 at about a tenth the strength
+    and does nothing in the other three.</p>
+    <p>Scale improves what is there and leaves its use flat. Across a fourteen
+    fold parameter range the representation gets better on every measure we
+    have, and the region specific component stays inert. Anyone reading a
+    binding claim off a steering result should decompose the direction first.
+    The shared component will pass a wrong region control on its own.</p>
   </div></div>
 </section>
 
 <div class="foot">
-  Code, data generators and result files are released with this write up. Twenty
-  two analysis scripts, eight modules, four orchestration chains and a corrections
-  log.<br>
+  Code, data generators and result files are released with this write up.
+  Twenty four analysis scripts, eight modules, four orchestration chains and a
+  corrections log.<br>
   Conventions: two sided p values, cluster bootstrap over narratives, intervention
   at gain g = 2, MDL over a regularisation sweep.
 </div>
