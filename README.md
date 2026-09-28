@@ -4,6 +4,8 @@ Testing whether a language model's internal activations track the true state of
 several face regions. Colour, finish and coverage, tracked as a makeup
 application narrative unfolds.
 
+**Read the write-up: <https://anya-louni.github.io/Makeup-Its-Mind/>**
+
 Most world-model probing work tracks a single structure (an Othello board) or a
 single scalar. A makeup routine forces **several independent entities to be
 tracked at once**, each with its own attributes, updated in an order-dependent

@@ -80,8 +80,10 @@ python scripts/09_report.py   --dataset full --model gpt2
 - Confidence intervals over narrative positions use a **cluster bootstrap
   resampling whole narratives**, because positions inside a narrative share its
   wordings and its state and are not independent.
-- Causal claims use **alpha = 2**. At alpha = 8 even random directions of
-  matched norm reach significance, i.e. The edit is off-distribution.
+- Causal claims use a steering gain of **g = 2**, in units of the full
+  direction's norm. At g = 8 a random direction of matched norm also reaches
+  significance, which puts the edit off distribution. The gain is written g to
+  keep it apart from the significance level.
 - MDL is reported over a **sweep of the probe's regularisation strength**; a
   single arbitrary `C` produces compression ratios anywhere from 0.75x to
   1.44x on identical data.
@@ -100,3 +102,19 @@ machine and pages heavily, since the model needs 6.8 GB in float32. The notebook
 clones this repository, checks the dataset fingerprints, runs extraction,
 probing, both read out checks and the decomposition, then prints the four model
 comparison and zips the result files.
+
+## The write-up
+
+`docs/index.html` is built from three sources:
+
+    results/_paper_head.html        markup and styles
+    results/_paper_script.html      chart code
+    results/_paperdata_inline.json  every number the charts draw
+
+Rebuild it after editing any of them:
+
+    python scripts/25_build_paper.py
+
+`.github/workflows/pages.yml` runs that build on every push to main and
+publishes `docs/` to GitHub Pages. Enable it once under Settings, Pages, Source,
+GitHub Actions.

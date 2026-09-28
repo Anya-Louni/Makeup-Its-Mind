@@ -3,7 +3,7 @@
 # 21_dual_binding_map.py. The write-up is a rendered document. Neither is
 # source, so both are kept out of the language breakdown.
 figures/*.html   linguist-generated=true
-docs/paper.html  linguist-documentation=true
+docs/index.html  linguist-documentation=true
 
 # Result files are data, not source.
 results/*.json   linguist-generated=true

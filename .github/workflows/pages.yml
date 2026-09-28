@@ -1,0 +1,69 @@
+name: Pages
+
+# Rebuilds the write-up from results/_paper_head.html, results/_paper_script.html
+# and results/_paperdata_inline.json, then publishes docs/ to GitHub Pages.
+# Runs on every push to main that touches one of those sources.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'results/_paper_head.html'
+      - 'results/_paper_script.html'
+      - 'results/_paperdata_inline.json'
+      - 'scripts/25_build_paper.py'
+      - 'docs/**'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Build the page
+        run: python scripts/25_build_paper.py
+
+      - name: Check it parses
+        run: |
+          python - <<'PY'
+          import pathlib, re, sys
+          p = pathlib.Path('docs/index.html')
+          s = p.read_text(encoding='utf-8')
+          assert s.startswith('<!doctype html>'), 'missing doctype'
+          assert '<div id="decompChart">' in s, 'missing a figure mount'
+          m = re.search(r'const D = (\{.*?\});\n', s, re.S)
+          assert m, 'missing the data declaration'
+          import json; json.loads(m.group(1))
+          print(f'{p} ok, {len(s):,} bytes')
+          PY
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
