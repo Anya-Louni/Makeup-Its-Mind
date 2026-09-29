@@ -606,3 +606,45 @@ draw. Fingerprints:
 
     data/pilot/natural.jsonl    1000 narratives   sha256 2cc9a1c85019ad94
     data/pilot/shuffled.jsonl   1000 narratives   sha256 180476f26a17be60
+
+## 22. The shared and differential components were treated as a clean split
+
+**Claimed** in section 4.2: `s` carries the value and `r` carries everything
+region specific, so a null on the `r` arm means the region specific component is
+causally inert.
+
+**Incomplete.** The split is only clean when the two parts are orthogonal, and
+
+    s . r = ((d1 + d2) / 2) . ((d1 - d2) / 2) = (|d1|^2 - |d2|^2) / 4
+
+so they are orthogonal exactly when the two class directions have equal norms.
+Nothing in the construction forces that. When the norms differ, `r` carries some
+of the value direction, and rescaling `r` to `|d1|` amplifies it. An effect on
+the `r` arm could then be the value component in disguise rather than a region
+effect, which cuts against the gpt2 positive and against reading the +0.06 push
+on the other read out at 1.7B as a value push.
+
+**Fix**: `scripts/22_decompose_direction.py` now records `cos(s, r)` and
+`|d2|/|d1|` per trial, so the size of the leak is reported instead of assumed,
+and adds an `orthogonal` arm that steers
+
+    r_perp = r - (r . s_hat) s_hat
+
+rescaled like the others. That arm cannot carry any of the value direction
+whatever the norms do, so it is the strict version of the region specific test.
+
+## 23. The behavioural read out was assumed to measure what we asked it
+
+**Claimed** implicitly by every steering result before section 4.1: asking the
+model about the lips and reading its log odds measures the lips.
+
+**False.** Section 4.1 tested it and the read out moves about as much when the
+other region's value changes as when the named region's does, at a mean
+sensitivity to leakage ratio of 1.07 across the three smaller models. This was
+assumed for most of the project rather than checked, and it is the reason
+correction 15 had to be withdrawn.
+
+**Fix**: `scripts/23_readout_validity.py` measures sensitivity and leakage with
+no steering, and the paper now gates every causal claim on it. At 1.7B the eyes
+read out reaches a ratio of 2.00, which gives one channel that can register
+binding, and the region specific component is tested through it.

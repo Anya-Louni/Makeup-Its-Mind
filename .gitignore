@@ -21,3 +21,10 @@ __pycache__/
 .ipynb_checkpoints/
 .DS_Store
 Thumbs.db
+
+# Installers and other large binaries that land in the working directory.
+# Nothing here is part of the project.
+*.exe
+*.msi
+*.dmg
+*.zip

@@ -194,6 +194,7 @@ const stagger = () => (RM ? 0 : 0.5 + 0.05 * tick++);
 /* ---- Figure 4, decomposition results ---- */
 (function () {
   const arms = [["shared", "shared component"], ["differential", "region specific component"],
+                ["orthogonal", "shared part projected out"],
                 ["full", "full direction"], ["random", "random, matched norm"]];
   const W = 800, rowH = 100, T = 44, B = 54, L = 196, R = 104;
   const H = T + arms.length * rowH + B;
@@ -218,8 +219,14 @@ const stagger = () => (RM ? 0 : 0.5 + 0.05 * tick++);
     svg.appendChild(tx(L - 18, y0 + 26, label, {"text-anchor": "end",
       "font-size": 13, "font-weight": 600, fill: "var(--ink)"}));
     MK.forEach((mk, i) => {
-      const a = D.decompose[mk].arms[key].difference;
       const yy = y0 + 6 + i * 19, h = 12;
+      const entry = D.decompose[mk].arms[key];
+      if (!entry) {
+        svg.appendChild(tx(x(0) + 8, yy + h - 1, "not run at this size",
+          {"font-size": 11, fill: "var(--ink-3)", "font-style": "italic"}));
+        return;
+      }
+      const a = entry.difference;
       const ns = (a.ci95[0] <= 0 && a.ci95[1] >= 0);
       const x0 = x(Math.min(0, a.mean)), x1 = x(Math.max(0, a.mean));
       const bar = el("rect", {x: x0, y: yy, width: Math.max(x1 - x0, 1.4),

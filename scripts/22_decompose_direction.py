@@ -26,6 +26,21 @@ component that distinguishes them, i.e. everything entity-specific that a
 difference of means can see. All arms are rescaled to the norm of d1 so the
 comparison is about direction and not magnitude.
 
+The split is only clean when s and r are orthogonal, and
+
+    s . r = (|d1|^2 - |d2|^2) / 4
+
+so they are orthogonal exactly when the two class directions have equal norms.
+A norm mismatch leaks shared value content into r, and after r is rescaled to
+|d1| that leak is amplified. An effect seen on the `differential` arm could
+then be the value component in disguise. The `orthogonal` arm removes the
+ambiguity: it is r with s projected out,
+
+    r_perp = r - (r . s_hat) s_hat
+
+rescaled to |d1| like the others. cos(s, r) and |d2| / |d1| are recorded per
+trial so the size of the leak is reported rather than assumed.
+
 Predictions, written before the run:
 
   shared arm        raises the read-out for BOTH entities by similar amounts,
@@ -35,6 +50,9 @@ Predictions, written before the run:
                     If it is not used, neither read-out moves and D ~ 0.
   full arm          contains s, so it raises both. This reproduces the earlier
                     result and is included as a check on the harness.
+  orthogonal arm    r with the shared component projected out. This is the
+                    strict test of the entity-specific claim, since it cannot
+                    carry any of the value direction.
   random arm        nothing.
 
 D for the differential arm is the quantity the objection turns on. A clearly
@@ -148,16 +166,24 @@ def main() -> None:
             s = (d1 + d2) / 2.0
             r = (d1 - d2) / 2.0
             n1 = float(np.linalg.norm(d1))
-            geom["frac_differential"].append(float(np.linalg.norm(r)) / n1)
-            geom["cos_d1_d2"].append(float(
-                d1 @ d2 / (n1 * np.linalg.norm(d2))))
+            n2 = float(np.linalg.norm(d2))
+            ns, nr = float(np.linalg.norm(s)), float(np.linalg.norm(r))
+            geom["frac_differential"].append(nr / n1)
+            geom["cos_d1_d2"].append(float(d1 @ d2 / (n1 * n2)))
+            geom["cos_s_r"].append(float(s @ r / (ns * nr)))
+            geom["norm_ratio_d2_d1"].append(n2 / n1)
+
+            # r with the shared component projected out, so the arm carries no
+            # part of the value direction whatever the two norms do.
+            r_perp = r - (r @ s) / (ns * ns) * s
 
             def unit(v):
                 nv = np.linalg.norm(v)
                 return torch.from_numpy((v / nv * n1).astype(np.float32))
             g = rng.standard_normal(d1.shape[0])
             arms = {"full": unit(d1), "shared": unit(s),
-                    "differential": unit(r), "random": unit(g)}
+                    "differential": unit(r), "orthogonal": unit(r_perp),
+                    "random": unit(g)}
 
             base1 = score(obj, text, args.entity, spec)
             base2 = score(obj, text, args.other_entity, spec)
@@ -181,7 +207,7 @@ def main() -> None:
                 print(f"  {n + 1}/{len(cand)}", flush=True)
 
     summary = {}
-    for arm in ("full", "shared", "differential", "random"):
+    for arm in ("full", "shared", "differential", "orthogonal", "random"):
         for alpha in args.alphas:
             rs = [x for x in rows if x["arm"] == arm and x["alpha"] == alpha]
             if not rs:
@@ -199,7 +225,10 @@ def main() -> None:
                     "target": t1, "other": t2, "layer": layer,
                     "alphas": args.alphas, "n_trials": len(cand),
                     "mean_frac_differential": float(np.mean(geom["frac_differential"])),
-                    "mean_cos_d1_d2": float(np.mean(geom["cos_d1_d2"]))},
+                    "mean_cos_d1_d2": float(np.mean(geom["cos_d1_d2"])),
+                    "mean_cos_s_r": float(np.mean(geom["cos_s_r"])),
+                    "max_abs_cos_s_r": float(np.max(np.abs(geom["cos_s_r"]))),
+                    "mean_norm_ratio_d2_d1": float(np.mean(geom["norm_ratio_d2_d1"]))},
            "summary": summary, "rows": rows}
     path = (ROOT / "results" /
             f"decompose_{args.dataset}_{tag}_{t1}_L{layer}.json")
@@ -207,7 +236,12 @@ def main() -> None:
 
     print(f"\ncos(d1, d2) = {out['meta']['mean_cos_d1_d2']:.3f};  "
           f"differential component is {100 * out['meta']['mean_frac_differential']:.1f}% "
-          f"of the full direction by norm\n")
+          f"of the full direction by norm")
+    _m = out["meta"]
+    print(f"cos(s, r) = {_m['mean_cos_s_r']:+.3f} "
+          f"(max |cos| {_m['max_abs_cos_s_r']:.3f}), "
+          f"|d2|/|d1| = {_m['mean_norm_ratio_d2_d1']:.3f}. "
+          f"s and r are orthogonal only when that ratio is 1.\n")
     print(f"{'arm':>14}{'a':>5}{'n':>5}"
           f"{'delta target':>26}{'delta other':>26}{'difference':>26}{'p2':>9}")
     for k, v in summary.items():
