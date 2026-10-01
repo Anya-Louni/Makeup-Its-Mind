@@ -193,7 +193,7 @@ Two read-outs, reported separately:
 - **Behavioural read-out.** Append a cue and compare the model's own
   log-probabilities of the competing state words. This is the stronger claim,
   but it is only interpretable if the unintervened model reads the true state
-  out above chance. So the alpha = 0 baseline is always reported, and every
+  out above chance. So the g = 0 baseline is always reported, and every
   effect is a **paired** change from it. For `gpt2` the unintervened
   behavioural read-out is near chance, and the pilot showed a strong constant
   word-preference bias; raw flip rates would be meaningless, which is why the

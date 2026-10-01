@@ -1,7 +1,7 @@
 # Findings
 
 Four models, 124M to 1.7B parameters, run on byte identical narratives.
-`CORRECTIONS.md` lists the twenty one claims revised on the way here.
+`CORRECTIONS.md` lists the twenty three claims revised on the way here.
 
 ## Main result
 
@@ -21,6 +21,40 @@ The shared part carries the causal effect in every model and triples from
 part is significant only in the smallest model, where section 4.2 of the
 write up argues the effect could be lexical. At 1.7B it is +0.007, p = 0.36.
 
+Across the arm by model by gain grid of 38 difference tests,
+Benjamini-Hochberg at 0.05 keeps four, all of them gpt2, on the region
+specific arm and on its orthogonalised version at both gains.
+
+## Is the decomposition clean?
+
+`s` and `r` are orthogonal only when the two class directions have equal
+norms, since `s . r = (|d1|^2 - |d2|^2) / 4`. They do not, quite, so some
+value content leaks into `r`. The `orthogonal` arm steers `r` with `s`
+projected out and cannot carry any of the value direction.
+
+| model | \|d2\|/\|d1\| | cos(s, r) | raw `r` | `r` with `s` removed | p |
+|---|---|---|---|---|---|
+| gpt2-124M | 1.065 | -0.133 | +0.016 | +0.013 [+0.007, +0.020] | 0.0000 |
+| pythia-410m | 1.106 | -0.160 | -0.000 | +0.002 [-0.004, +0.007] | 0.5818 |
+| Qwen3-0.6B | 1.000 | -0.010 | -0.000 | +0.002 [-0.008, +0.013] | 0.6528 |
+| Qwen3-1.7B | 1.007 est | -0.010 est | +0.007 | not run | |
+
+Four fifths of the gpt2 effect survives the projection and the two nulls stay
+null, so neither result is an artifact of the norm mismatch. The leak is
+negative in all three measured models, so it lowers the read outs rather than
+raising them. The 1.7B row is estimated from the stored geometry, since its
+activations were produced on a hosted GPU and only the result files came
+back. `colab_scale_arm.ipynb` produces the measured version.
+
+## The region specific component through a read out that binds
+
+At 1.7B the eyes read out reaches a selectivity ratio of 2.00, which makes it
+the one instrument here with a demonstrated ability to tell the two regions
+apart. Steering `r` toward the lips should lower the eyes read out. It raises
+it, by +0.062 [+0.037, +0.088], close to its +0.069 push on the lips. The gap
+between the two is +0.007. A read out that can register a region registers
+none here.
+
 ## Central claim
 
 > The value component of a steering direction strengthens with scale and the
@@ -33,6 +67,7 @@ write up argues the effect could be lexical. At 1.7B it is +0.007, p = 0.36.
 |---|---|---|---|---|
 | shared component causal effect | +0.183 | +0.190 | +0.317 | +0.556 |
 | region specific causal effect | +0.016 | -0.000 | -0.000 | +0.007 |
+| region specific, shared part removed | +0.013 | +0.002 | +0.002 | not run |
 | targets clearing the lexical baseline | 2 of 4 | 1 of 4 | 2 of 4 | 4 of 4 |
 | best read out selectivity ratio | 1.57 | 1.45 | 1.33 | 2.00 |
 | peak binding margin | +0.105 | +0.115 | +0.151 | +0.199 |
@@ -69,7 +104,10 @@ and not the second.
 | `lips.color` | -0.044 | +0.064 * | -0.031 | +0.062 * |
 | `lips.finish` | -0.058 * | +0.024 | -0.048 | +0.098 * |
 
-Qwen3-1.7B is the first model to clear the baseline on all four.
+Qwen3-1.7B is the first model to clear the baseline on all four, and it also
+breaks the agreement between gpt2 and Qwen3-0.6B by taking both lip targets
+positive where those two put them negative. No target is significant in all
+four models.
 
 ## Binding margin by distance
 
@@ -91,9 +129,9 @@ regularisation.
 
 ## Limitations
 
-Four models at 124M to 1.7B. Feng and Steinhardt find binding ID vectors in
-every sufficiently large model of the Pythia and LLaMA families, so a null
-across this range puts a lower bound on where to look rather than ruling the
-mechanism out. The text is synthetic. The models report the true state at
+Four models at 124M to 1.7B. Feng and Steinhardt report binding ID vectors in
+every sufficiently large model of the Pythia and LLaMA families without naming
+a cutoff we could verify, so a null across this range is consistent with the
+mechanism emerging at a larger scale and is not evidence against it. The text is synthetic. The models report the true state at
 roughly chance without intervention, so causal claims rest on paired changes
 in log odds. The decomposition uses g = 2 and g = 4.

@@ -53,6 +53,13 @@ scripts/
   16_intervene_v2.py          NEAR/FAR + random + wrong-direction controls
   17_significance.py          cluster-bootstrap gap vs every baseline
   18_binding_map.py           animated face diagram: true state vs probe
+  19_multiple_comparisons.py  Benjamini-Hochberg across the whole test grid
+  20_crossmodel_figures.py    cross-model comparison figures
+  21_dual_binding_map.py      two-region face diagram, several models at once
+  22_decompose_direction.py   shared vs region-specific steering, orthogonality
+  23_readout_validity.py      does the read-out answer about the named region?
+  24_readout_mechanism.py     what predicts the read-out if the region does not
+  25_build_paper.py           assemble docs/index.html from its three sources
 ```
 
 ## Running it
@@ -108,18 +115,18 @@ the state words. Three controls run alongside, and the third is the one that
 mattered:
 
 1. the other face region's read-out, measured in the same forward pass;
-2. a **random direction** at matched norm. It moves nothing at alpha 2;
+2. a **random direction** at matched norm. It moves nothing at g = 2;
 3. the **other region's concept direction** at matched norm. It works as well
    as the correct one. See `docs/CORRECTIONS.md` #10 and #14.
 
-Steering strength matters: at alpha = 8 even random directions become
-significant, so alpha = 2 is the interpretable dose and all causal claims use
-it.
+Steering strength matters. At g = 8 even a random direction of matched norm
+reaches significance, so g = 2 is the interpretable dose and all causal claims
+use it. The gain is written g to keep it apart from the significance level.
 
 ## What we found
 
 Full numbers in `docs/FINDINGS.md`. Every revised claim is in
-`docs/CORRECTIONS.md`, twenty one entries.
+`docs/CORRECTIONS.md`, twenty three entries.
 
 A concept direction built by differencing class means holds two parts. One is
 shared by every entity that takes the value. The other is specific to one
@@ -137,9 +144,17 @@ region specific component is significant only in the smallest model, where the
 effect could be lexical. A random direction of matched norm does nothing
 anywhere.
 
+The two parts are orthogonal only when the two class directions have equal
+norms, since `s . r = (|d1|^2 - |d2|^2) / 4`. They do not, quite, so we also
+steer `r` with `s` projected out. The gpt2 effect survives at +0.013
+[+0.007, +0.020] against +0.016 raw, and the two nulls stay null, so neither
+result comes from the norm mismatch.
+
 The behavioural read out answers a question about one region using the other
 region's value. Mean sensitivity to leakage ratio is 1.07 in the three smaller
 models. At 1.7B one of the two read outs reaches 2.00, so it begins to bind.
+Put through that read out, the region specific component raises the region it
+should lower, by +0.062 against +0.069 on the region it was steered toward.
 
 The representation improves with scale. Qwen3-1.7B is the first model where all
 four state variables clear the lexical baseline, and its binding margins are the
