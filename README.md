@@ -126,7 +126,7 @@ use it. The gain is written g to keep it apart from the significance level.
 ## What we found
 
 Full numbers in `docs/FINDINGS.md`. Every revised claim is in
-`docs/CORRECTIONS.md`, twenty three entries.
+`docs/CORRECTIONS.md`, twenty four entries.
 
 A concept direction built by differencing class means holds two parts. One is
 shared by every entity that takes the value. The other is specific to one
@@ -139,22 +139,33 @@ entity. We separate them and steer with each alone, across four models.
 | Qwen3-0.6B-Base | +0.317 | 0.000 [-0.010, +0.010] | 0.91 |
 | Qwen3-1.7B-Base | +0.556 | +0.007 [-0.008, +0.022] | 0.36 |
 
-The shared value component triples in causal strength from 124M to 1.7B. The
-region specific component is significant only in the smallest model, where the
-effect could be lexical. A random direction of matched norm does nothing
-anywhere.
+The shared value component triples in causal strength from 124M to 1.7B. A
+random direction of matched norm does nothing anywhere.
 
 The two parts are orthogonal only when the two class directions have equal
 norms, since `s . r = (|d1|^2 - |d2|^2) / 4`. They do not, quite, so we also
-steer `r` with `s` projected out. The gpt2 effect survives at +0.013
-[+0.007, +0.020] against +0.016 raw, and the two nulls stay null, so neither
-result comes from the norm mismatch.
+steer `r` with `s` projected out. The leak is negative in every model, so it
+suppresses the difference rather than inflating it.
+
+| model | raw `r` | `r` with `s` removed | p |
+|---|---|---|---|
+| gpt2-124M | +0.016 | +0.013 [+0.007, +0.020] | <0.0001 |
+| pythia-410m | -0.000 | +0.002 [-0.004, +0.007] | 0.58 |
+| Qwen3-0.6B | -0.000 | +0.002 [-0.008, +0.013] | 0.65 |
+| Qwen3-1.7B | +0.007 | +0.024 [+0.005, +0.042] | 0.015 |
+
+The gpt2 effect survives the projection, so it is not an artifact of the norm
+mismatch. At 1.7B the projection turns a null into a dose responsive effect,
+since the leak had been cancelling it. Neither 1.7B result survives
+Benjamini-Hochberg across the forty test grid, and the cleaned component raises
+both read outs rather than separating them, so we report it as a small uneven
+push and not as binding.
 
 The behavioural read out answers a question about one region using the other
 region's value. Mean sensitivity to leakage ratio is 1.07 in the three smaller
 models. At 1.7B one of the two read outs reaches 2.00, so it begins to bind.
 Put through that read out, the region specific component raises the region it
-should lower, by +0.062 against +0.069 on the region it was steered toward.
+should lower, by +0.110 against +0.134 on the region it was steered toward.
 
 The representation improves with scale. Qwen3-1.7B is the first model where all
 four state variables clear the lexical baseline, and its binding margins are the

@@ -648,3 +648,40 @@ correction 15 had to be withdrawn.
 no steering, and the paper now gates every causal claim on it. At 1.7B the eyes
 read out reaches a ratio of 2.00, which gives one channel that can register
 binding, and the region specific component is tested through it.
+
+## 24. The region specific component does nothing above 124M
+
+**Claimed** in section 4.2 and in the conclusion: the entity specific component
+is causally effective in gpt2 and inert in every larger model, so the binding
+code does not appear anywhere in a fourteen fold parameter range.
+
+**False above 1.7B, once the decomposition is cleaned.** Correction 22 added an
+arm that projects `s` out of `r`. The leak it removes is negative in all four
+models, `cos(s, r)` of -0.133, -0.160, -0.010 and -0.040, so it suppresses the
+measured difference rather than inflating it. In gpt2 and the two middle models
+removing it changes little. At Qwen3-1.7B it changes the sign of the
+conclusion:
+
+    raw r         +0.007  [-0.008, +0.022]  p = 0.3598
+    r_perp        +0.024  [+0.005, +0.042]  p = 0.0150
+    r_perp, g=4   +0.042  [+0.006, +0.078]  p = 0.0226
+
+The dose response doubles with the gain, which is what a real direction should
+do and what the raw arm failed to show.
+
+**Why we still do not call it binding.** It does not survive correction. Across
+the forty test grid Benjamini-Hochberg at 0.05 keeps four, all of them gpt2.
+And the shape is wrong: the cleaned component raises the lips read out by
++0.134 and the eyes read out by +0.110. Binding predicts the other region
+falls. Both rise, so the arm is detecting an uneven push rather than a
+direction that selects a region.
+
+**Fix**: section 4.2 reports the cleaned arm alongside the raw one, the
+abstract and conclusion no longer say the component does nothing above 124M,
+and the headline for the binding code is now that it stays an order of
+magnitude behind the value code rather than that it is absent.
+
+**Note on how this was found.** The orthogonalisation was added to defend the
+gpt2 positive against a reviewer's objection that it could be leaked value
+content. It did defend it. It also overturned a null we had reported with more
+confidence than the measurement supported.

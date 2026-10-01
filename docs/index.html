@@ -247,10 +247,10 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
   </div>
   <div class="vcell">
     <p class="vname"><span class="swatch" style="background:var(--warn)"></span>The binding code</p>
-    <p class="vstat" style="color:var(--warn)">0.007</p>
-    <p class="vsub">Causal effect of the region specific component at 1.7B,
-    p = 0.36, and the same figure read through the one read out that binds.
-    Still absent at the largest size we ran, while the value code tripled.</p>
+    <p class="vstat" style="color:var(--warn)">0.024</p>
+    <p class="vsub">Region specific effect at 1.7B once the shared part is
+    removed, p = 0.0150, against +0.556 for the value code. It raises both read
+    outs, where binding predicts one falls.</p>
   </div>
   <div class="vcell">
     <p class="vname"><span class="swatch" style="background:var(--ok)"></span>The probe</p>
@@ -273,9 +273,11 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
     parameters to <span class="num">+0.556</span> at 1.7B. The region specific
     part moves the two regions apart in gpt2 by <span class="num">+0.016</span>,
     and by <span class="num">0.000</span> in pythia-410m and Qwen3-0.6B. At
-    1.7B, three times the largest of those, it is still
-    <span class="num">+0.007</span> with p = 0.36. The value code strengthens
-    with scale and the binding code does not appear.</p>
+    1.7B it is <span class="num">+0.007</span> with p = 0.36, and
+    <span class="num">+0.024</span> with p = 0.0150 once the shared component is
+    projected out, which no model below it shows. Neither 1.7B result survives
+    correction across the grid. The value code strengthens with scale and the
+    region specific code stays an order of magnitude behind it.</p>
 
     <p>Before reading anything into that null we checked the measuring
     instrument. With no steering at all, we asked whether the behavioural read
@@ -310,10 +312,11 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
 
     <p>That read out gives the one test of the region specific component through
     an instrument that can register a region. Steering the component that should
-    lower it raises it instead, by <span class="num">+0.062</span>
-    [+0.037, +0.088], nearly matching its <span class="num">+0.069</span> push on
-    the region we steered toward. Where the model can tell the two regions apart,
-    the region specific component still moves both the same way.</p>
+    lower it raises it instead, by <span class="num">+0.110</span>, against
+    <span class="num">+0.134</span> on the region we steered toward. Where the
+    model can tell the two regions apart, the region specific component still
+    moves both the same way, and the asymmetry between them is what the arm
+    reports.</p>
 
     <p>Feng and Steinhardt (ICLR 2024) report binding ID vectors in every
     sufficiently large model of the Pythia and LLaMA families. Our four models
@@ -538,7 +541,7 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
   <div class="result">
     <div class="rhead"><div class="rnum">4.2</div><div class="rbody">
       <h3>The causal effect rides on the shared component</h3>
-      <p class="verd v-ok">Shared effect in 4 of 4. Region specific effect in 1 of 4.</p>
+      <p class="verd v-ok">Shared effect in 4 of 4. Region specific effect in 2 of 4, one tenth the size.</p>
       <p>A direction built as <code>mean(dewy) − mean(matte)</code> for the lips
       contains two parts. One part is what lips and eyes have in common when
       either turns dewy. The other separates them. Both parts were rescaled to the
@@ -568,13 +571,12 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
       so it reads as unequal sensitivity of the two read outs to the same edit
       and not as binding.</p>
 
-      <p>Those p values are uncorrected. The arm by model by gain grid holds 38
+      <p>Those p values are uncorrected. The arm by model by gain grid holds 40
       difference tests and Benjamini-Hochberg at 0.05 keeps four, all of them
       gpt2, on the entity specific arm and on its orthogonalised version at both
-      gains. The 1.7B shared and full results do not survive, so we report them
-      as the largest departure from zero in the grid and not as an established
-      effect. Correction leaves the entity specific nulls where they were, since
-      it only makes a null safer.</p>
+      gains. Every 1.7B result sits in the band just under 0.05 and none of them
+      survives, so we report them as the largest departures from zero in the grid
+      and not as established effects.</p>
       <p>The gpt2 effect is real and small. The shared part moves each read out by
       <span class="num">+0.183</span>. The entity specific part moves the regions
       apart by <span class="num">+0.016</span>, about a tenth as much, while making
@@ -582,24 +584,40 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
       wrong region's direction works about as well as the right one.</p>
       <p>The split is only clean if the two parts are orthogonal, and they are
       orthogonal only when <code>d1</code> and <code>d2</code> have equal norms.
-      They do not, quite. The ratio runs
-      <span class="num">1.065</span>, <span class="num">1.106</span> and
-      <span class="num">1.000</span> across the three models we could measure,
-      giving <code>cos(s, r)</code> of <span class="num">−0.133</span>,
-      <span class="num">−0.160</span> and <span class="num">−0.010</span>. So
+      They do not, quite. The ratio runs <span class="num">1.065</span>,
+      <span class="num">1.106</span>, <span class="num">1.000</span> and
+      <span class="num">1.022</span>, giving <code>cos(s, r)</code> of
+      <span class="num">−0.133</span>, <span class="num">−0.160</span>,
+      <span class="num">−0.010</span> and <span class="num">−0.040</span>. So
       <code>r</code> does carry some of the value direction, and a difference on
-      that arm could in principle be the value component in disguise.</p>
+      that arm could in principle be the value component in disguise. The leak
+      is negative in every model, so it suppresses the difference rather than
+      inflating it.</p>
 
-      <p>It is not. Steering <code>r</code> with <code>s</code> projected out
-      leaves the gpt2 effect at <span class="num">+0.013</span>
-      [+0.007, +0.020] with p below 0.0001, against
-      <span class="num">+0.016</span> for the raw component, and the dose
-      response holds at <span class="num">+0.027</span> for g = 4. Four fifths
-      of the effect survives removing every trace of the shared direction. The
-      two nulls stay null, at <span class="num">+0.002</span> in both. The leak
-      also runs the wrong way to manufacture an effect, since
-      <code>cos(s, r)</code> is negative in all three, so projecting
-      <code>s</code> out raises the read outs rather than lowering them.</p>
+      <p>Removing it does not take the gpt2 effect away. Steering <code>r</code>
+      with <code>s</code> projected out leaves it at
+      <span class="num">+0.013</span> [+0.007, +0.020] with p below 0.0001,
+      against <span class="num">+0.016</span> for the raw component, and the
+      dose response holds at <span class="num">+0.027</span> for g = 4. Four
+      fifths survives. pythia and Qwen3-0.6B stay null, at
+      <span class="num">+0.002</span> in both.</p>
+
+      <p>At 1.7B removing it creates an effect. The raw component was
+      <span class="num">+0.007</span> with p = 0.36. Cleaned, it is
+      <span class="num">+0.024</span> [+0.005, +0.042] with p = 0.0150, and it
+      doubles to <span class="num">+0.042</span> at g = 4. That is the dose
+      response a real direction should show, and the negative leak is what had
+      been hiding it. This is the one place in the study where a region specific
+      component acts at scale, and we did not predict it.</p>
+
+      <p>Two things keep us from calling it binding. It does not survive
+      correction: across the 40 test grid Benjamini-Hochberg at 0.05 keeps four,
+      all gpt2. And the shape is wrong. Binding predicts the other region falls.
+      The cleaned component raises the lips read out by
+      <span class="num">+0.134</span> and the eyes read out by
+      <span class="num">+0.110</span>. Both rise. What the arm detects is a
+      slightly uneven push, not a direction that moves one region and leaves the
+      other.</p>
 
       <p>The same caveat from 4.1 applies to this positive result, and we state
       it instead of keeping the one number that came out our way. The gpt2 effect
@@ -616,16 +634,13 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
       out down. It pushes it up, by <span class="num">+0.062</span>
       [+0.037, +0.088] with p below 0.0001. The push on the lips read out is
       <span class="num">+0.069</span>, so <code>r</code> raises both read outs by
-      almost the same amount. Read through the one channel that tracks its own
-      region, the entity specific component behaves as a weak value push with no
-      region attached. This is the strongest test in the paper, because it is
-      the only one that puts the region specific component through an instrument
-      that can register a region. The orthogonalised arm has not been run at
-      1.7B, whose activations were produced on a hosted GPU. The norm ratio
-      there is <span class="num">1.007</span>, which implies a
-      <code>cos(s, r)</code> near <span class="num">−0.01</span> and a leak too
-      small and of the wrong sign to produce an upward push, but that is an
-      estimate from the stored geometry and not a measurement.</p>
+      almost the same amount. The cleaned component behaves the same way, raising
+      the eyes read out by <span class="num">+0.110</span> against
+      <span class="num">+0.134</span> on the lips. This is the sharpest test in
+      the paper, because it is the only one that puts the region specific
+      component through an instrument with a demonstrated ability to register a
+      region. That instrument says the component raises the region it should
+      lower.</p>
     </div></div>
     <figure>
       <div class="frame">
@@ -639,10 +654,10 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
       specific component, and it sits an order of magnitude below the shared
       component's effect on each read out. The third row repeats that arm with
       the shared component projected out, the version that cannot carry any of
-      the value direction. Qwen3-1.7B is significant on the shared and
-      full arms, where a direction carrying no region information still moves one
-      read out further than the other, and it does not survive correction across
-      the grid.</figcaption>
+      the value direction. It is where Qwen3-1.7B turns a null into
+      <span class="num">+0.024</span>, since the leak it removes was negative.
+      Every Qwen3-1.7B bar here sits just under p = 0.05 and none survives
+      correction across the grid.</figcaption>
     </figure>
   </div>
 
@@ -828,17 +843,19 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
       sensitivity <span class="num">+0.699</span> against leakage
       <span class="num">+0.350</span>. The lips read out is still at
       <span class="num">1.09</span>, so this is one of two.</p>
-      <p><strong>The binding code does not appear.</strong> The region specific
-      component is <span class="num">+0.007</span> with p = 0.36. Across a
-      fourteen fold range of parameters it is significant only in the smallest
-      model, where 4.2 argues the effect could be lexical. The sharper version
-      uses the eyes read out, which is the only instrument in this study with a
-      demonstrated ability to tell the two regions apart. Put through it, the
-      region specific component moves the eyes by <span class="num">+0.062</span>
-      where binding predicts a fall, and by <span class="num">+0.069</span> on
-      the lips. The gap between those two is the binding effect, and it is
-      <span class="num">+0.007</span>. A read out that can register a region
-      registers no region here.</p>
+      <p><strong>The binding code stays an order of magnitude behind.</strong>
+      The region specific component is <span class="num">+0.007</span> with
+      p = 0.36 as built, and <span class="num">+0.024</span> with p = 0.0150
+      once the shared part is projected out. That cleaned effect is the only one
+      of its kind above 124M and it has a dose response, doubling at g = 4. It
+      does not survive correction across the grid, and it sits against
+      <span class="num">+0.556</span> for the value code in the same model.</p>
+      <p>The sharper version uses the eyes read out, the only instrument here
+      with a demonstrated ability to tell the two regions apart. Put through it,
+      the cleaned component raises the eyes by <span class="num">+0.110</span>
+      where binding predicts a fall, and the lips by
+      <span class="num">+0.134</span>. A read out that can register a region
+      sees a push on both, tilted toward the one we aimed at.</p>
       <p>The salience account from 4.1 fits Qwen3-0.6B alone. At 1.7B the eyes
       value dominates again, <span class="num">+0.667</span>, with recency at
       <span class="num">+0.606</span>, so it is not a size trend.</p>
@@ -874,14 +891,25 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
     result that moves a read out is evidence for a value code, which is weaker
     than binding.</p>
 
-    <p>Scale moves the representation and leaves the use of it alone. From 124M
-    to 1.7B the value code's causal effect triples, all four state variables
+    <p>Scale moves the representation far more than it moves the use of it. From
+    124M to 1.7B the value code's causal effect triples, all four state variables
     come to clear the lexical baseline, the binding margin reaches its highest
     value, and one of the two read outs starts to bind. The region specific
-    component stays inert across the whole range. This is consistent with the
-    binding mechanism Feng and Steinhardt describe emerging at a larger scale,
-    a threshold we could not locate, so the reading we prefer is that these
-    models build the binding before they learn to read it.</p>
+    component gains a nominal effect at 1.7B once the shared part is removed,
+    <span class="num">+0.024</span> against <span class="num">+0.556</span> for
+    the value code in the same model, and it does not survive correction. This
+    is consistent with the binding mechanism Feng and Steinhardt describe
+    emerging at a larger scale, a threshold we could not locate, so the reading
+    we prefer is that these models build the binding well before they learn to
+    use it.</p>
+
+    <p>That result arrived from a check we ran to defend an earlier claim rather
+    than to make a new one. The orthogonalisation was meant to show that the
+    gpt2 effect was not an artifact of unequal norms, which it did. At 1.7B the
+    same correction turned a null into a dose responsive effect, because the
+    leak there was negative and had been cancelling it. Anyone steering with a
+    difference of means should run the projection for that reason alone, in
+    either direction.</p>
 
     <p>On replication, our earlier two model comparison concluded that no target
     replicated. The third model shows that conclusion came from which second
@@ -894,7 +922,7 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
 <section class="corr">
   <div class="shead"><div class="snum">6</div><h2>Corrections</h2></div>
   <div class="shead"><div></div><div class="col">
-    <p>Twenty three claims were revised during this work. The ten below are the
+    <p>Twenty four claims were revised during this work. The eleven below are the
     ones that changed a reported number or a conclusion. The full log sits in
     <code>docs/CORRECTIONS.md</code> in the repository. Several headline results
     have their current form because a first version looked too clean and was
@@ -959,6 +987,17 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
     text. Our read out spec excluded the analogous null value for finish and
     included it for coverage. Fixed and the old number withdrawn.</p>
 
+    <h3>The region specific component does nothing above 124M</h3>
+    <p>Withdrawn. True of the component as a difference of means builds it, and
+    false once the shared part is projected out. The two parts are orthogonal
+    only when the class directions have equal norms, and the leak is negative in
+    every model, so it suppresses the difference. At 1.7B the raw component is
+    <span class="num">+0.007</span> with p = 0.36 and the cleaned one is
+    <span class="num">+0.024</span> with p = 0.0150 and a dose response. It does
+    not survive correction across the grid and it raises both read outs rather
+    than separating them, so we report it as a small uneven push and not as
+    binding.</p>
+
     <h3>Checks that changed nothing</h3>
     <p>Probe regularisation swept, with validation selecting C = 0.01 and test
     accuracy moving from 0.348 to 0.350. Benjamini-Hochberg across 180 tests leaves
@@ -997,20 +1036,26 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
     <p>A probe reads which face region an attribute belongs to in all four
     models. The models' own output answers a question about one region using the
     other region's value. Steering the component that carries the region
-    information moves the two read outs by the same amount in three of four
-    models, and it does so in the fourth even when read through the one channel
-    that can tell the regions apart. The binding is in the residual stream and
-    the read out does not use it.</p>
+    information moves the two read outs by nearly the same amount in every
+    model, including through the one channel that can tell the regions apart,
+    where it raises the region it should lower. The binding is in the residual
+    stream and the read out does not use it.</p>
     <p>Steering with a difference of means direction moves the value of an
     attribute. The component shared across entities carries that effect in all
     four models and triples in strength from 124M to 1.7B. The entity specific
-    component moves the two regions apart in gpt2 at about a tenth the strength
-    and does nothing in the other three.</p>
-    <p>Scale improves what is there and leaves its use flat. Across a fourteen
-    fold parameter range the representation gets better on every measure we
-    have, and the region specific component stays inert. Anyone reading a
-    binding claim off a steering result should decompose the direction first.
-    The shared component will pass a wrong region control on its own.</p>
+    component moves the two regions apart in gpt2 at about a tenth the strength,
+    does nothing in the two middle models, and reaches
+    <span class="num">+0.024</span> at 1.7B once the shared part is projected
+    out, which is a twentieth of the value effect in that model.</p>
+    <p>Scale improves what is there much faster than it improves the use of it.
+    Across a fourteen fold parameter range the representation gets better on
+    every measure we have, while the region specific component stays one to two
+    orders of magnitude behind the value component and never flips the sign that
+    binding predicts. Anyone reading a binding claim off a steering result
+    should decompose the direction first and project the shared part out of the
+    remainder. The shared component will pass a wrong region control on its own,
+    and its leak into the remainder can hide an effect as easily as invent
+    one.</p>
   </div></div>
 </section>
 
@@ -1024,7 +1069,7 @@ input[type=range]{flex:1 1 200px;accent-color:var(--c1);height:20px}
 </div>
 
 <script>
-const D = {"decompose":{"gpt2":{"label":"gpt2-124M","meta":{"layer":6,"n_trials":100,"mean_cos_d1_d2":0.847691324353218,"mean_frac_differential":0.2841750099712305,"mean_cos_s_r":-0.13313249096274377,"max_abs_cos_s_r":0.36765456199645996,"mean_norm_ratio_d2_d1":1.0653612829759294},"arms":{"full":{"difference":{"mean":-0.0013060855865478515,"ci95":[-0.007236283183097839,0.004977290987968441],"p":0.6516},"target":{"mean":0.18924125671386718},"other":{"mean":0.19054734230041503}},"shared":{"difference":{"mean":-0.004560778141021729,"ci95":[-0.00985628229379654,0.0005423242449760434],"p":0.0758},"target":{"mean":0.18339226007461548},"other":{"mean":0.18795303821563722}},"differential":{"difference":{"mean":0.015769872665405273,"ci95":[0.009417026877403258,0.02331107294559479],"p":0.0},"target":{"mean":0.005108489990234375},"other":{"mean":-0.010661382675170899}},"orthogonal":{"difference":{"mean":0.012663261890411377,"ci95":[0.006718899726867676,0.019811641275882717],"p":0.0},"target":{"mean":0.05356858015060425},"other":{"mean":0.04090531826019287}},"random":{"difference":{"mean":-0.001883847713470459,"ci95":[-0.007592444002628326,0.00404136836528778],"p":0.5142},"target":{"mean":0.005293581485748291},"other":{"mean":0.00717742919921875}}}},"pythia":{"label":"pythia-410m","meta":{"layer":12,"n_trials":100,"mean_cos_d1_d2":0.7426934677362442,"mean_frac_differential":0.37697370707420363,"mean_cos_s_r":-0.15953512981534004,"max_abs_cos_s_r":0.31531861424446106,"mean_norm_ratio_d2_d1":1.1064661539630019},"arms":{"full":{"difference":{"mean":0.002262940406799316,"ci95":[-0.003921204090118408,0.007998248815536499],"p":0.4488},"target":{"mean":0.1455553150177002},"other":{"mean":0.14329237461090089}},"shared":{"difference":{"mean":-0.0003378486633300781,"ci95":[-0.006535152912139892,0.005221797943115233],"p":0.9458},"target":{"mean":0.19018784999847413},"other":{"mean":0.1905256986618042}},"differential":{"difference":{"mean":-0.0004388999938964844,"ci95":[-0.005831230878829956,0.0051999336481094345],"p":0.8462},"target":{"mean":-0.12156223773956298},"other":{"mean":-0.1211233377456665}},"orthogonal":{"difference":{"mean":0.0016170930862426758,"ci95":[-0.0039199056625366215,0.0073658058643341065],"p":0.5818},"target":{"mean":-0.08764007568359375},"other":{"mean":-0.08925716876983643}},"random":{"difference":{"mean":0.002779574394226074,"ci95":[-0.002976484775543213,0.008001018881797786],"p":0.3086},"target":{"mean":-0.01941267490386963},"other":{"mean":-0.0221922492980957}}}},"qwen":{"label":"Qwen3-0.6B","meta":{"layer":14,"n_trials":100,"mean_cos_d1_d2":0.7396433240175248,"mean_frac_differential":0.3552664838138249,"mean_cos_s_r":-0.009825530834496022,"max_abs_cos_s_r":0.1140914261341095,"mean_norm_ratio_d2_d1":0.9998801306518128},"arms":{"full":{"difference":{"mean":-0.0002936697006225586,"ci95":[-0.016047726154327393,0.016360583782196042],"p":0.9474},"target":{"mean":0.34459226608276367},"other":{"mean":0.3448859357833862}},"shared":{"difference":{"mean":-0.0016682815551757812,"ci95":[-0.016907471776008605,0.013778184652328489],"p":0.8166},"target":{"mean":0.31730482578277586},"other":{"mean":0.31897310733795164}},"differential":{"difference":{"mean":-0.0004492783546447754,"ci95":[-0.009831501662731171,0.00954602897167205],"p":0.9106},"target":{"mean":0.12332041263580322},"other":{"mean":0.123769690990448}},"orthogonal":{"difference":{"mean":0.0024114561080932615,"ci95":[-0.007628126740455627,0.012953258752822874],"p":0.6528},"target":{"mean":0.1518271541595459},"other":{"mean":0.14941569805145263}},"random":{"difference":{"mean":-0.006475942134857178,"ci95":[-0.01809370285272598,0.0035251230597496018],"p":0.2176},"target":{"mean":-0.03224713325500488},"other":{"mean":-0.025771191120147707}}}},"qwen17":{"label":"Qwen3-1.7B","meta":{"layer":14,"n_trials":100,"mean_cos_d1_d2":0.7244427686929703,"mean_frac_differential":0.372481560880344},"arms":{"full":{"difference":{"mean":0.0422371768951416,"ci95":[0.006810517072677613,0.0767101508975029],"p":0.0182},"target":{"mean":0.561634624004364},"other":{"mean":0.5193974471092224}},"shared":{"difference":{"mean":0.0379407525062561,"ci95":[0.005221232533454895,0.07031437385082244],"p":0.0216},"target":{"mean":0.5555838322639466},"other":{"mean":0.5176430797576904}},"differential":{"difference":{"mean":0.007025370597839356,"ci95":[-0.00793163698911667,0.022408797562122343],"p":0.3598},"target":{"mean":0.06879786968231201},"other":{"mean":0.06177249908447266}},"random":{"difference":{"mean":-0.00404970645904541,"ci95":[-0.01887283605337143,0.010373774349689481],"p":0.5772},"target":{"mean":-0.023740854263305664},"other":{"mean":-0.019691147804260255}}}}},"gaps":[{"target":"eyes.color","gpt2":{"gap":0.06197854588796187,"ci95":[0.014490147012824533,0.10989108409321176],"p":0.0075},"pythia":{"gap":0.03098927294398096,"ci95":[-0.02028452898035563,0.08175597898500615],"p":0.2315},"qwen":{"gap":0.11084624553039335,"ci95":[0.06443339415799466,0.16290353016949946],"p":0.0},"qwen17":{"gap":0.07151370679380215,"ci95":[0.023499698660069266,0.12171915288568412],"p":0.0055}},{"target":"eyes.finish","gpt2":{"gap":0.09654350417163288,"ci95":[0.04807404076738609,0.14770011269156855],"p":0.0},"pythia":{"gap":0.014302741358760418,"ci95":[-0.0459556969460793,0.07737432860194689],"p":0.639},"qwen":{"gap":0.12038140643623363,"ci95":[0.07341658635828249,0.16725989277074113],"p":0.0},"qwen17":{"gap":0.09773539928486297,"ci95":[0.04704180148323628,0.1475211608222491],"p":0.0}},{"target":"lips.color","gpt2":{"gap":-0.044100119189511344,"ci95":[-0.09881147360056505,0.011751573358579086],"p":0.126},"pythia":{"gap":0.06436233611442188,"ci95":[0.009601557626617827,0.11981142135482226],"p":0.028},"qwen":{"gap":-0.03098927294398096,"ci95":[-0.0966615982754638,0.029872441166488697],"p":0.3625},"qwen17":{"gap":0.06197854588796187,"ci95":[0.009444821901940263,0.11452184179456909],"p":0.0195}},{"target":"lips.finish","gpt2":{"gap":-0.05840286054827176,"ci95":[-0.11138619431969814,-0.006009075598802374],"p":0.0285},"pythia":{"gap":0.023837902264600697,"ci95":[-0.03360496144932702,0.08531058676696295],"p":0.415},"qwen":{"gap":-0.04767580452920139,"ci95":[-0.10262755252991748,0.008345020686256532],"p":0.098},"qwen17":{"gap":0.09773539928486297,"ci95":[0.04004381309825975,0.15412027503779965],"p":0.0005}}],"binding":{"gpt2":{"label":"gpt2-124M","bins":["0","1","2","3-4","5+"],"values":[0.07277281673416942,0.09622314341720489,0.10542807326192842,0.06441170420106762,0.048676320023402074]},"pythia":{"label":"pythia-410m","bins":["0","1","2","3-4","5+"],"values":[0.036411242307117196,0.10424390243902436,0.11479089618009843,0.10385045285878595,0.04488810881965775]},"qwen":{"label":"Qwen3-0.6B","bins":["0","1","2","3-4","5+"],"values":[0.1186633287480943,0.1411449918056493,0.15109560718252119,0.11083899937012617,-0.021095997269757704]},"qwen17":{"label":"Qwen3-1.7B","bins":["0","1","2","3-4","5+"],"values":[0.1286689954456598,0.18804306050965647,0.1989046215470323,0.09902965585277212,0.068397445273268]}},"depth":{"gpt2":{"label":"gpt2-124M","n_layers":12,"points":[{"target":"eyes.color","layer":11,"frac":0.9166666666666666},{"target":"eyes.finish","layer":1,"frac":0.08333333333333333},{"target":"lips.color","layer":12,"frac":1.0},{"target":"lips.finish","layer":1,"frac":0.08333333333333333}]},"pythia":{"label":"pythia-410m","n_layers":24,"points":[{"target":"eyes.color","layer":24,"frac":1.0},{"target":"eyes.finish","layer":24,"frac":1.0},{"target":"lips.color","layer":20,"frac":0.8333333333333334},{"target":"lips.finish","layer":24,"frac":1.0}]},"qwen":{"label":"Qwen3-0.6B","n_layers":28,"points":[{"target":"eyes.color","layer":26,"frac":0.9285714285714286},{"target":"eyes.finish","layer":16,"frac":0.5714285714285714},{"target":"lips.color","layer":22,"frac":0.7857142857142857},{"target":"lips.finish","layer":18,"frac":0.6428571428571429}]},"qwen17":{"label":"Qwen3-1.7B","n_layers":28,"points":[{"target":"eyes.color","layer":28,"frac":1.0},{"target":"eyes.finish","layer":18,"frac":0.6428571428571429},{"target":"lips.color","layer":28,"frac":1.0},{"target":"lips.finish","layer":27,"frac":0.9642857142857143}]}},"facemap":{"targets":["eyes.color","eyes.finish","lips.color","lips.finish"],"frames":[{"sentence":"She laid a dark ruby colour over the surface of her lips in maximum coverage; it came out with a soft un-reflective finish.","true":{"eyes.color":"bare","eyes.finish":"none","lips.color":"red","lips.finish":"matte"},"gpt2":{"eyes.color":"bare","eyes.finish":"none","lips.color":"nude","lips.finish":"dewy"},"pythia":{"eyes.color":"red","eyes.finish":"satin","lips.color":"red","lips.finish":"matte"},"qwen":{"eyes.color":"bare","eyes.finish":"none","lips.color":"red","lips.finish":"dewy"}},{"sentence":"She laid a naked, undertoned neutral over the surface of her lips in a packed-on, solid layer; it came out with a smooth semi-gloss surface.","true":{"eyes.color":"bare","eyes.finish":"none","lips.color":"nude","lips.finish":"satin"},"gpt2":{"eyes.color":"bare","eyes.finish":"satin","lips.color":"nude","lips.finish":"dewy"},"pythia":{"eyes.color":"nude","eyes.finish":"satin","lips.color":"nude","lips.finish":"matte"},"qwen":{"eyes.color":"bare","eyes.finish":"none","lips.color":"pink","lips.finish":"dewy"}},{"sentence":"She almost went for a tobacco-toned shade, then decided not to.","true":{"eyes.color":"bare","eyes.finish":"none","lips.color":"nude","lips.finish":"satin"},"gpt2":{"eyes.color":"bare","eyes.finish":"none","lips.color":"nude","lips.finish":"matte"},"pythia":{"eyes.color":"bare","eyes.finish":"satin","lips.color":"red","lips.finish":"matte"},"qwen":{"eyes.color":"bare","eyes.finish":"dewy","lips.color":"red","lips.finish":"satin"}},{"sentence":"With a few strokes she put a naked, undertoned neutral on the socket line as a packed-on, solid layer, ending in a juicy liquid-looking gleam.","true":{"eyes.color":"nude","eyes.finish":"dewy","lips.color":"nude","lips.finish":"satin"},"gpt2":{"eyes.color":"brown","eyes.finish":"dewy","lips.color":"nude","lips.finish":"dewy"},"pythia":{"eyes.color":"bare","eyes.finish":"satin","lips.color":"red","lips.finish":"dewy"},"qwen":{"eyes.color":"nude","eyes.finish":"satin","lips.color":"red","lips.finish":"dewy"}},{"sentence":"A setting powder went over the soft skin of her lips, leaving nothing that caught light.","true":{"eyes.color":"nude","eyes.finish":"dewy","lips.color":"nude","lips.finish":"matte"},"gpt2":{"eyes.color":"brown","eyes.finish":"none","lips.color":"nude","lips.finish":"matte"},"pythia":{"eyes.color":"red","eyes.finish":"satin","lips.color":"nude","lips.finish":"matte"},"qwen":{"eyes.color":"pink","eyes.finish":"matte","lips.color":"red","lips.finish":"dewy"}},{"sentence":"She almost went for a pale peony tone, then decided not to.","true":{"eyes.color":"nude","eyes.finish":"dewy","lips.color":"nude","lips.finish":"matte"},"gpt2":{"eyes.color":"brown","eyes.finish":"matte","lips.color":"nude","lips.finish":"matte"},"pythia":{"eyes.color":"red","eyes.finish":"satin","lips.color":"nude","lips.finish":"matte"},"qwen":{"eyes.color":"pink","eyes.finish":"dewy","lips.color":"pink","lips.finish":"satin"}},{"sentence":"With a few strokes she put a naked, undertoned neutral on the hooded part of her lid as maximum coverage, ending in a smooth semi-gloss surface.","true":{"eyes.color":"nude","eyes.finish":"satin","lips.color":"nude","lips.finish":"matte"},"gpt2":{"eyes.color":"brown","eyes.finish":"satin","lips.color":"nude","lips.finish":"satin"},"pythia":{"eyes.color":"nude","eyes.finish":"satin","lips.color":"nude","lips.finish":"satin"},"qwen":{"eyes.color":"red","eyes.finish":"matte","lips.color":"brown","lips.finish":"dewy"}},{"sentence":"She laid a burnt-cinnamon colour over the hooded part of her lid in maximum coverage; it came out with a still-damp-seeming shine.","true":{"eyes.color":"brown","eyes.finish":"dewy","lips.color":"nude","lips.finish":"matte"},"gpt2":{"eyes.color":"brown","eyes.finish":"dewy","lips.color":"nude","lips.finish":"dewy"},"pythia":{"eyes.color":"nude","eyes.finish":"satin","lips.color":"red","lips.finish":"satin"},"qwen":{"eyes.color":"red","eyes.finish":"satin","lips.color":"brown","lips.finish":"dewy"}}],"agree":{"gpt2":0.5625,"pythia":0.34375,"qwen":0.28125},"labels":{"gpt2":"gpt2-124M","pythia":"pythia-410m","qwen":"Qwen3-0.6B"}},"validity":{"gpt2":{"lips":{"sens":0.20069597205337214,"sens_ci":[0.023593203875483297,0.3755073060794752],"leak":0.3155229776212485,"leak_ci":[0.15486318002833,0.46835671981962584],"ratio":0.6360740303810335},"eyes":{"sens":0.3575586753316445,"sens_ci":[0.19809478910842743,0.5103386586255365],"leak":0.22843691767478475,"leak_ci":[0.053052528537049594,0.3974580764770507],"ratio":1.5652403252992781}},"pythia":{"lips":{"sens":0.3845815269314513,"sens_ci":[0.16696794397976936,0.5970291185135744],"leak":0.5442964818217967,"leak_ci":[0.32777047523177494,0.7548258428526397],"ratio":0.7065662552957007},"eyes":{"sens":0.5512667693714104,"sens_ci":[0.3250559837511271,0.7654023772419087],"leak":0.3801330206345539,"leak_ci":[0.16088228809590244,0.5918793525014604],"ratio":1.450194377881679}},"qwen":{"lips":{"sens":0.5299966675894601,"sens_ci":[0.3215103769788937,0.740647003358724],"leak":0.39959340992540415,"leak_ci":[0.19795424430677208,0.6037128272623118],"ratio":1.3263398605307317},"eyes":{"sens":0.3790472356399687,"sens_ci":[0.2107318683425979,0.5469584727641379],"leak":0.5000603758558935,"leak_ci":[0.32228824265149175,0.6726145424404922],"ratio":0.7580029411272569}},"qwen17":{"lips":{"sens":0.6543090416460621,"sens_ci":[0.36835814154877955,0.9403711037368189],"leak":0.5981890423463123,"leak_ci":[0.32715277760335715,0.8645489961794106],"ratio":1.0938164949990172},"eyes":{"sens":0.6986856767446687,"sens_ci":[0.49698115982631647,0.9016233543358226],"leak":0.3497605445433636,"leak_ci":[0.15498326061939707,0.5427428806922874],"ratio":1.9976114734635118}}},"mechanism":{"gpt2":{"lips":0.2186875863278166,"eyes":0.2875075352688631,"last":0.18024330987380102,"more":0.10784978624703227},"pythia":{"lips":0.44642099167438265,"eyes":0.5496909568707148,"last":0.4489715420282804,"more":0.2999384575995846},"qwen":{"lips":0.5236209466102275,"eyes":0.4321269951760769,"last":0.5434555422801237,"more":0.575610459714696},"qwen17":{"lips":0.6045038547921688,"eyes":0.6666343373556931,"last":0.6056151241064072,"more":0.43898987597313477}}};
+const D = {"decompose":{"gpt2":{"label":"gpt2-124M","meta":{"layer":6,"n_trials":100,"mean_cos_d1_d2":0.847691324353218,"mean_frac_differential":0.2841750099712305,"mean_cos_s_r":-0.13313249096274377,"max_abs_cos_s_r":0.36765456199645996,"mean_norm_ratio_d2_d1":1.0653612829759294},"arms":{"full":{"difference":{"mean":-0.0013060855865478515,"ci95":[-0.007236283183097839,0.004977290987968441],"p":0.6516},"target":{"mean":0.18924125671386718},"other":{"mean":0.19054734230041503}},"shared":{"difference":{"mean":-0.004560778141021729,"ci95":[-0.00985628229379654,0.0005423242449760434],"p":0.0758},"target":{"mean":0.18339226007461548},"other":{"mean":0.18795303821563722}},"differential":{"difference":{"mean":0.015769872665405273,"ci95":[0.009417026877403258,0.02331107294559479],"p":0.0},"target":{"mean":0.005108489990234375},"other":{"mean":-0.010661382675170899}},"orthogonal":{"difference":{"mean":0.012663261890411377,"ci95":[0.006718899726867676,0.019811641275882717],"p":0.0},"target":{"mean":0.05356858015060425},"other":{"mean":0.04090531826019287}},"random":{"difference":{"mean":-0.001883847713470459,"ci95":[-0.007592444002628326,0.00404136836528778],"p":0.5142},"target":{"mean":0.005293581485748291},"other":{"mean":0.00717742919921875}}}},"pythia":{"label":"pythia-410m","meta":{"layer":12,"n_trials":100,"mean_cos_d1_d2":0.7426934677362442,"mean_frac_differential":0.37697370707420363,"mean_cos_s_r":-0.15953512981534004,"max_abs_cos_s_r":0.31531861424446106,"mean_norm_ratio_d2_d1":1.1064661539630019},"arms":{"full":{"difference":{"mean":0.002262940406799316,"ci95":[-0.003921204090118408,0.007998248815536499],"p":0.4488},"target":{"mean":0.1455553150177002},"other":{"mean":0.14329237461090089}},"shared":{"difference":{"mean":-0.0003378486633300781,"ci95":[-0.006535152912139892,0.005221797943115233],"p":0.9458},"target":{"mean":0.19018784999847413},"other":{"mean":0.1905256986618042}},"differential":{"difference":{"mean":-0.0004388999938964844,"ci95":[-0.005831230878829956,0.0051999336481094345],"p":0.8462},"target":{"mean":-0.12156223773956298},"other":{"mean":-0.1211233377456665}},"orthogonal":{"difference":{"mean":0.0016170930862426758,"ci95":[-0.0039199056625366215,0.0073658058643341065],"p":0.5818},"target":{"mean":-0.08764007568359375},"other":{"mean":-0.08925716876983643}},"random":{"difference":{"mean":0.002779574394226074,"ci95":[-0.002976484775543213,0.008001018881797786],"p":0.3086},"target":{"mean":-0.01941267490386963},"other":{"mean":-0.0221922492980957}}}},"qwen":{"label":"Qwen3-0.6B","meta":{"layer":14,"n_trials":100,"mean_cos_d1_d2":0.7396433240175248,"mean_frac_differential":0.3552664838138249,"mean_cos_s_r":-0.009825530834496022,"max_abs_cos_s_r":0.1140914261341095,"mean_norm_ratio_d2_d1":0.9998801306518128},"arms":{"full":{"difference":{"mean":-0.0002936697006225586,"ci95":[-0.016047726154327393,0.016360583782196042],"p":0.9474},"target":{"mean":0.34459226608276367},"other":{"mean":0.3448859357833862}},"shared":{"difference":{"mean":-0.0016682815551757812,"ci95":[-0.016907471776008605,0.013778184652328489],"p":0.8166},"target":{"mean":0.31730482578277586},"other":{"mean":0.31897310733795164}},"differential":{"difference":{"mean":-0.0004492783546447754,"ci95":[-0.009831501662731171,0.00954602897167205],"p":0.9106},"target":{"mean":0.12332041263580322},"other":{"mean":0.123769690990448}},"orthogonal":{"difference":{"mean":0.0024114561080932615,"ci95":[-0.007628126740455627,0.012953258752822874],"p":0.6528},"target":{"mean":0.1518271541595459},"other":{"mean":0.14941569805145263}},"random":{"difference":{"mean":-0.006475942134857178,"ci95":[-0.01809370285272598,0.0035251230597496018],"p":0.2176},"target":{"mean":-0.03224713325500488},"other":{"mean":-0.025771191120147707}}}},"qwen17":{"label":"Qwen3-1.7B","meta":{"layer":14,"n_trials":100,"mean_cos_d1_d2":0.7244427686929703,"mean_frac_differential":0.372481560880344,"mean_cos_s_r":-0.039792107455432414,"max_abs_cos_s_r":0.22300468385219574,"mean_norm_ratio_d2_d1":1.0218854164029059},"arms":{"full":{"difference":{"mean":0.0422371768951416,"ci95":[0.006810517072677613,0.0767101508975029],"p":0.0182},"target":{"mean":0.561634624004364},"other":{"mean":0.5193974471092224}},"shared":{"difference":{"mean":0.0379407525062561,"ci95":[0.005221232533454895,0.07031437385082244],"p":0.0216},"target":{"mean":0.5555838322639466},"other":{"mean":0.5176430797576904}},"differential":{"difference":{"mean":0.007025370597839356,"ci95":[-0.00793163698911667,0.022408797562122343],"p":0.3598},"target":{"mean":0.06879786968231201},"other":{"mean":0.06177249908447266}},"orthogonal":{"difference":{"mean":0.02367668390274048,"ci95":[0.004805188834667206,0.042291966259479515],"p":0.015},"target":{"mean":0.13392386674880982},"other":{"mean":0.11024718284606934}},"random":{"difference":{"mean":-0.00404970645904541,"ci95":[-0.01887283605337143,0.010373774349689481],"p":0.5772},"target":{"mean":-0.023740854263305664},"other":{"mean":-0.019691147804260255}}}}},"gaps":[{"target":"eyes.color","gpt2":{"gap":0.06197854588796187,"ci95":[0.014490147012824533,0.10989108409321176],"p":0.0075},"pythia":{"gap":0.03098927294398096,"ci95":[-0.02028452898035563,0.08175597898500615],"p":0.2315},"qwen":{"gap":0.11084624553039335,"ci95":[0.06443339415799466,0.16290353016949946],"p":0.0},"qwen17":{"gap":0.07151370679380215,"ci95":[0.023499698660069266,0.12171915288568412],"p":0.0055}},{"target":"eyes.finish","gpt2":{"gap":0.09654350417163288,"ci95":[0.04807404076738609,0.14770011269156855],"p":0.0},"pythia":{"gap":0.014302741358760418,"ci95":[-0.0459556969460793,0.07737432860194689],"p":0.639},"qwen":{"gap":0.12038140643623363,"ci95":[0.07341658635828249,0.16725989277074113],"p":0.0},"qwen17":{"gap":0.09773539928486297,"ci95":[0.04704180148323628,0.1475211608222491],"p":0.0}},{"target":"lips.color","gpt2":{"gap":-0.044100119189511344,"ci95":[-0.09881147360056505,0.011751573358579086],"p":0.126},"pythia":{"gap":0.06436233611442188,"ci95":[0.009601557626617827,0.11981142135482226],"p":0.028},"qwen":{"gap":-0.03098927294398096,"ci95":[-0.0966615982754638,0.029872441166488697],"p":0.3625},"qwen17":{"gap":0.06197854588796187,"ci95":[0.009444821901940263,0.11452184179456909],"p":0.0195}},{"target":"lips.finish","gpt2":{"gap":-0.05840286054827176,"ci95":[-0.11138619431969814,-0.006009075598802374],"p":0.0285},"pythia":{"gap":0.023837902264600697,"ci95":[-0.03360496144932702,0.08531058676696295],"p":0.415},"qwen":{"gap":-0.04767580452920139,"ci95":[-0.10262755252991748,0.008345020686256532],"p":0.098},"qwen17":{"gap":0.09773539928486297,"ci95":[0.04004381309825975,0.15412027503779965],"p":0.0005}}],"binding":{"gpt2":{"label":"gpt2-124M","bins":["0","1","2","3-4","5+"],"values":[0.07277281673416942,0.09622314341720489,0.10542807326192842,0.06441170420106762,0.048676320023402074]},"pythia":{"label":"pythia-410m","bins":["0","1","2","3-4","5+"],"values":[0.036411242307117196,0.10424390243902436,0.11479089618009843,0.10385045285878595,0.04488810881965775]},"qwen":{"label":"Qwen3-0.6B","bins":["0","1","2","3-4","5+"],"values":[0.1186633287480943,0.1411449918056493,0.15109560718252119,0.11083899937012617,-0.021095997269757704]},"qwen17":{"label":"Qwen3-1.7B","bins":["0","1","2","3-4","5+"],"values":[0.1286689954456598,0.18804306050965647,0.1989046215470323,0.09902965585277212,0.068397445273268]}},"depth":{"gpt2":{"label":"gpt2-124M","n_layers":12,"points":[{"target":"eyes.color","layer":11,"frac":0.9166666666666666},{"target":"eyes.finish","layer":1,"frac":0.08333333333333333},{"target":"lips.color","layer":12,"frac":1.0},{"target":"lips.finish","layer":1,"frac":0.08333333333333333}]},"pythia":{"label":"pythia-410m","n_layers":24,"points":[{"target":"eyes.color","layer":24,"frac":1.0},{"target":"eyes.finish","layer":24,"frac":1.0},{"target":"lips.color","layer":20,"frac":0.8333333333333334},{"target":"lips.finish","layer":24,"frac":1.0}]},"qwen":{"label":"Qwen3-0.6B","n_layers":28,"points":[{"target":"eyes.color","layer":26,"frac":0.9285714285714286},{"target":"eyes.finish","layer":16,"frac":0.5714285714285714},{"target":"lips.color","layer":22,"frac":0.7857142857142857},{"target":"lips.finish","layer":18,"frac":0.6428571428571429}]},"qwen17":{"label":"Qwen3-1.7B","n_layers":28,"points":[{"target":"eyes.color","layer":28,"frac":1.0},{"target":"eyes.finish","layer":18,"frac":0.6428571428571429},{"target":"lips.color","layer":28,"frac":1.0},{"target":"lips.finish","layer":27,"frac":0.9642857142857143}]}},"facemap":{"targets":["eyes.color","eyes.finish","lips.color","lips.finish"],"frames":[{"sentence":"She laid a dark ruby colour over the surface of her lips in maximum coverage; it came out with a soft un-reflective finish.","true":{"eyes.color":"bare","eyes.finish":"none","lips.color":"red","lips.finish":"matte"},"gpt2":{"eyes.color":"bare","eyes.finish":"none","lips.color":"nude","lips.finish":"dewy"},"pythia":{"eyes.color":"red","eyes.finish":"satin","lips.color":"red","lips.finish":"matte"},"qwen":{"eyes.color":"bare","eyes.finish":"none","lips.color":"red","lips.finish":"dewy"}},{"sentence":"She laid a naked, undertoned neutral over the surface of her lips in a packed-on, solid layer; it came out with a smooth semi-gloss surface.","true":{"eyes.color":"bare","eyes.finish":"none","lips.color":"nude","lips.finish":"satin"},"gpt2":{"eyes.color":"bare","eyes.finish":"satin","lips.color":"nude","lips.finish":"dewy"},"pythia":{"eyes.color":"nude","eyes.finish":"satin","lips.color":"nude","lips.finish":"matte"},"qwen":{"eyes.color":"bare","eyes.finish":"none","lips.color":"pink","lips.finish":"dewy"}},{"sentence":"She almost went for a tobacco-toned shade, then decided not to.","true":{"eyes.color":"bare","eyes.finish":"none","lips.color":"nude","lips.finish":"satin"},"gpt2":{"eyes.color":"bare","eyes.finish":"none","lips.color":"nude","lips.finish":"matte"},"pythia":{"eyes.color":"bare","eyes.finish":"satin","lips.color":"red","lips.finish":"matte"},"qwen":{"eyes.color":"bare","eyes.finish":"dewy","lips.color":"red","lips.finish":"satin"}},{"sentence":"With a few strokes she put a naked, undertoned neutral on the socket line as a packed-on, solid layer, ending in a juicy liquid-looking gleam.","true":{"eyes.color":"nude","eyes.finish":"dewy","lips.color":"nude","lips.finish":"satin"},"gpt2":{"eyes.color":"brown","eyes.finish":"dewy","lips.color":"nude","lips.finish":"dewy"},"pythia":{"eyes.color":"bare","eyes.finish":"satin","lips.color":"red","lips.finish":"dewy"},"qwen":{"eyes.color":"nude","eyes.finish":"satin","lips.color":"red","lips.finish":"dewy"}},{"sentence":"A setting powder went over the soft skin of her lips, leaving nothing that caught light.","true":{"eyes.color":"nude","eyes.finish":"dewy","lips.color":"nude","lips.finish":"matte"},"gpt2":{"eyes.color":"brown","eyes.finish":"none","lips.color":"nude","lips.finish":"matte"},"pythia":{"eyes.color":"red","eyes.finish":"satin","lips.color":"nude","lips.finish":"matte"},"qwen":{"eyes.color":"pink","eyes.finish":"matte","lips.color":"red","lips.finish":"dewy"}},{"sentence":"She almost went for a pale peony tone, then decided not to.","true":{"eyes.color":"nude","eyes.finish":"dewy","lips.color":"nude","lips.finish":"matte"},"gpt2":{"eyes.color":"brown","eyes.finish":"matte","lips.color":"nude","lips.finish":"matte"},"pythia":{"eyes.color":"red","eyes.finish":"satin","lips.color":"nude","lips.finish":"matte"},"qwen":{"eyes.color":"pink","eyes.finish":"dewy","lips.color":"pink","lips.finish":"satin"}},{"sentence":"With a few strokes she put a naked, undertoned neutral on the hooded part of her lid as maximum coverage, ending in a smooth semi-gloss surface.","true":{"eyes.color":"nude","eyes.finish":"satin","lips.color":"nude","lips.finish":"matte"},"gpt2":{"eyes.color":"brown","eyes.finish":"satin","lips.color":"nude","lips.finish":"satin"},"pythia":{"eyes.color":"nude","eyes.finish":"satin","lips.color":"nude","lips.finish":"satin"},"qwen":{"eyes.color":"red","eyes.finish":"matte","lips.color":"brown","lips.finish":"dewy"}},{"sentence":"She laid a burnt-cinnamon colour over the hooded part of her lid in maximum coverage; it came out with a still-damp-seeming shine.","true":{"eyes.color":"brown","eyes.finish":"dewy","lips.color":"nude","lips.finish":"matte"},"gpt2":{"eyes.color":"brown","eyes.finish":"dewy","lips.color":"nude","lips.finish":"dewy"},"pythia":{"eyes.color":"nude","eyes.finish":"satin","lips.color":"red","lips.finish":"satin"},"qwen":{"eyes.color":"red","eyes.finish":"satin","lips.color":"brown","lips.finish":"dewy"}}],"agree":{"gpt2":0.5625,"pythia":0.34375,"qwen":0.28125},"labels":{"gpt2":"gpt2-124M","pythia":"pythia-410m","qwen":"Qwen3-0.6B"}},"validity":{"gpt2":{"lips":{"sens":0.20069597205337214,"sens_ci":[0.023593203875483297,0.3755073060794752],"leak":0.3155229776212485,"leak_ci":[0.15486318002833,0.46835671981962584],"ratio":0.6360740303810335},"eyes":{"sens":0.3575586753316445,"sens_ci":[0.19809478910842743,0.5103386586255365],"leak":0.22843691767478475,"leak_ci":[0.053052528537049594,0.3974580764770507],"ratio":1.5652403252992781}},"pythia":{"lips":{"sens":0.3845815269314513,"sens_ci":[0.16696794397976936,0.5970291185135744],"leak":0.5442964818217967,"leak_ci":[0.32777047523177494,0.7548258428526397],"ratio":0.7065662552957007},"eyes":{"sens":0.5512667693714104,"sens_ci":[0.3250559837511271,0.7654023772419087],"leak":0.3801330206345539,"leak_ci":[0.16088228809590244,0.5918793525014604],"ratio":1.450194377881679}},"qwen":{"lips":{"sens":0.5299966675894601,"sens_ci":[0.3215103769788937,0.740647003358724],"leak":0.39959340992540415,"leak_ci":[0.19795424430677208,0.6037128272623118],"ratio":1.3263398605307317},"eyes":{"sens":0.3790472356399687,"sens_ci":[0.2107318683425979,0.5469584727641379],"leak":0.5000603758558935,"leak_ci":[0.32228824265149175,0.6726145424404922],"ratio":0.7580029411272569}},"qwen17":{"lips":{"sens":0.6543090416460621,"sens_ci":[0.36835814154877955,0.9403711037368189],"leak":0.5981890423463123,"leak_ci":[0.32715277760335715,0.8645489961794106],"ratio":1.0938164949990172},"eyes":{"sens":0.6986856767446687,"sens_ci":[0.49698115982631647,0.9016233543358226],"leak":0.3497605445433636,"leak_ci":[0.15498326061939707,0.5427428806922874],"ratio":1.9976114734635118}}},"mechanism":{"gpt2":{"lips":0.2186875863278166,"eyes":0.2875075352688631,"last":0.18024330987380102,"more":0.10784978624703227},"pythia":{"lips":0.44642099167438265,"eyes":0.5496909568707148,"last":0.4489715420282804,"more":0.2999384575995846},"qwen":{"lips":0.5236209466102275,"eyes":0.4321269951760769,"last":0.5434555422801237,"more":0.575610459714696},"qwen17":{"lips":0.6045038547921688,"eyes":0.6666343373556931,"last":0.6056151241064072,"more":0.43898987597313477}}};
 const RM = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const NS = "http://www.w3.org/2000/svg";
 const el = (n, a = {}) => { const e = document.createElementNS(NS, n);

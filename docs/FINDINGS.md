@@ -1,7 +1,7 @@
 # Findings
 
 Four models, 124M to 1.7B parameters, run on byte identical narratives.
-`CORRECTIONS.md` lists the twenty three claims revised on the way here.
+`CORRECTIONS.md` lists the twenty four claims revised on the way here.
 
 ## Main result
 
@@ -18,12 +18,14 @@ Steering with each part alone separates them.
 
 The shared part carries the causal effect in every model and triples from
 +0.183 to +0.556 across a fourteen fold parameter range. The region specific
-part is significant only in the smallest model, where section 4.2 of the
-write up argues the effect could be lexical. At 1.7B it is +0.007, p = 0.36.
+part is significant in gpt2, where section 4.2 of the write up argues the
+effect could be lexical, and at 1.7B once the shared part is projected out.
+As built it is +0.007 at 1.7B, p = 0.36.
 
-Across the arm by model by gain grid of 38 difference tests,
+Across the arm by model by gain grid of 40 difference tests,
 Benjamini-Hochberg at 0.05 keeps four, all of them gpt2, on the region
-specific arm and on its orthogonalised version at both gains.
+specific arm and on its orthogonalised version at both gains. Every
+Qwen3-1.7B result sits just under 0.05 and none survives.
 
 ## Is the decomposition clean?
 
@@ -37,29 +39,35 @@ projected out and cannot carry any of the value direction.
 | gpt2-124M | 1.065 | -0.133 | +0.016 | +0.013 [+0.007, +0.020] | 0.0000 |
 | pythia-410m | 1.106 | -0.160 | -0.000 | +0.002 [-0.004, +0.007] | 0.5818 |
 | Qwen3-0.6B | 1.000 | -0.010 | -0.000 | +0.002 [-0.008, +0.013] | 0.6528 |
-| Qwen3-1.7B | 1.007 est | -0.010 est | +0.007 | not run | |
+| Qwen3-1.7B | 1.022 | -0.040 | +0.007 | +0.024 [+0.005, +0.042] | 0.0150 |
 
-Four fifths of the gpt2 effect survives the projection and the two nulls stay
-null, so neither result is an artifact of the norm mismatch. The leak is
-negative in all three measured models, so it lowers the read outs rather than
-raising them. The 1.7B row is estimated from the stored geometry, since its
-activations were produced on a hosted GPU and only the result files came
-back. `colab_scale_arm.ipynb` produces the measured version.
+The leak is negative in every model, so it suppresses the difference rather
+than inflating it. Four fifths of the gpt2 effect survives the projection, so
+that result is not an artifact of the norm mismatch. The two middle models stay
+null.
+
+At 1.7B the projection turns a null into an effect, +0.007 at p = 0.36 raw
+against +0.024 at p = 0.0150 cleaned, doubling to +0.042 at g = 4. The negative
+leak had been cancelling it. We do not call it binding: it fails
+Benjamini-Hochberg across the forty test grid, which keeps four tests, all
+gpt2, and it raises the lips read out by +0.134 and the eyes read out by
++0.110, where binding predicts the second falls.
 
 ## The region specific component through a read out that binds
 
 At 1.7B the eyes read out reaches a selectivity ratio of 2.00, which makes it
 the one instrument here with a demonstrated ability to tell the two regions
 apart. Steering `r` toward the lips should lower the eyes read out. It raises
-it, by +0.062 [+0.037, +0.088], close to its +0.069 push on the lips. The gap
-between the two is +0.007. A read out that can register a region registers
-none here.
+it, by +0.062, close to its +0.069 push on the lips. With the shared part
+projected out the same holds at larger magnitudes, +0.110 on the eyes against
++0.134 on the lips. A read out that can register a region sees a push on both,
+tilted toward the one we aimed at.
 
 ## Central claim
 
 > The value component of a steering direction strengthens with scale and the
-> entity specific component does not appear. A probe recovers the binding and
-> the model's output does not use it.
+> entity specific component stays an order of magnitude behind it. A probe
+> recovers the binding and the model's output does not use it.
 
 ## What scale changes
 
@@ -67,7 +75,7 @@ none here.
 |---|---|---|---|---|
 | shared component causal effect | +0.183 | +0.190 | +0.317 | +0.556 |
 | region specific causal effect | +0.016 | -0.000 | -0.000 | +0.007 |
-| region specific, shared part removed | +0.013 | +0.002 | +0.002 | not run |
+| region specific, shared part removed | +0.013 | +0.002 | +0.002 | +0.024 |
 | targets clearing the lexical baseline | 2 of 4 | 1 of 4 | 2 of 4 | 4 of 4 |
 | best read out selectivity ratio | 1.57 | 1.45 | 1.33 | 2.00 |
 | peak binding margin | +0.105 | +0.115 | +0.151 | +0.199 |
@@ -76,7 +84,8 @@ Three things improve with size. The value code strengthens, the
 representation improves until all four state variables clear the lexical
 baseline at 1.7B, and one of the two read outs begins to bind, reaching a
 selectivity ratio of 2.00 against roughly 1.07 in the smaller models. The
-causal binding component does not appear anywhere in that range.
+causal binding component stays one to two orders of magnitude behind the
+value component across that range.
 
 ## Read out sensitivity against leakage
 
